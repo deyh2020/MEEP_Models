@@ -116,3 +116,7 @@ dmypy.json
 #Data Files
 *.h5
 *.pdf
+*.pk1
+*.out
+*.error
+*.json
