@@ -114,5 +114,5 @@ dmypy.json
 .pyre/
 
 #Data Files
-.h5
-.pdf
+*.h5
+*.pdf
