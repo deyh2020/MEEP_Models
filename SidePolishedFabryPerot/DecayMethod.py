@@ -28,7 +28,7 @@ Depth=40
 GAP=100
 
 
-sim,src,tran = MF.buildModel(coreN,cladN,TL,Depth,GAP)
+sim,src,tran = MF.buildModelSQR(coreN,cladN,TL,Depth,GAP)
 
 
 t = (1e-6/3e8)
@@ -48,7 +48,7 @@ plt.savefig(workingDir+"ModelatStart.pdf")
 #print('savefig')
 
 
-DecayFactor = 1e-10
+DecayFactor = 1e-8
 pt = mp.Vector3(x=0,y=0,z=0)
 
 MF.tic()
@@ -73,7 +73,7 @@ plt.savefig(workingDir+"FieldsAtEnd.pdf")
 fcen = 1/1.55
 df = 16
 nfreq=100
-resolution=2
+resolution=10
 
 meta = {
         "DecayFactor": DecayFactor,

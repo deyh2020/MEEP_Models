@@ -107,6 +107,101 @@ def buildModel(coreN,cladN,TL,Depth,GAP):
 
     return sim,src,tran
 
+def buildModelSQR(coreN,cladN,TL,Depth,GAP):
+    cell_size = mp.Vector3(400,70,0)
+
+    pml_layers = [mp.PML(thickness=4)]
+
+    PDMSn = 1.41
+    
+    r1 = 4.1
+    r2 = 62.5
+    
+    Width = 62.5    # width of bubbles
+    CladLeft = 5   # amount of cladding left from initial polish (thickness of cladding before getting to the core.
+    
+
+    PDMS = mp.Block(
+                   center=mp.Vector3(0,0,0),
+                   size=mp.Vector3(mp.inf,mp.inf,mp.inf),
+                   material=mp.Medium(index=PDMSn)
+                    )
+    
+    
+    
+
+    Clad = mp.Block(
+                   center=mp.Vector3(x=0,y=(-r2/2 + CladLeft),z=0),
+                   size=mp.Vector3(x=mp.inf,y=r2,z=mp.inf),
+                   material=mp.Medium(index=1.4402)
+                    )
+
+    
+    
+    Core = mp.Block(
+                   center=mp.Vector3(0,0,0),
+                   size=mp.Vector3(mp.inf,2*r1,mp.inf),
+                   material=mp.Medium(index=1.4452)
+                    )
+    
+    
+    LH = mp.Block(
+                   center=mp.Vector3(x=-GAP/2,y=-(Depth/2 - 2*r1 - CladLeft),z=0),
+                   size=mp.Vector3(Width,Depth,mp.inf),
+                   material=mp.Medium(index=PDMSn)
+                    )
+    RH = mp.Block(
+                   center=mp.Vector3(x=GAP/2,y=-(Depth/2 - 2*r1 - CladLeft),z=0),
+                   size=mp.Vector3(Width,Depth,mp.inf),
+                   material=mp.Medium(index=PDMSn)
+                    )
+
+
+
+    geometry = [PDMS,Clad,Core,LH,RH]
+
+    fcen = 1/1.55
+    df = 16
+
+
+    kx = 0.4    # initial guess for wavevector in x-direction of eigenmode
+    kpoint = mp.Vector3(kx)
+    bnum = 1    # band number of eigenmode
+
+    src = [mp.EigenModeSource(src=mp.GaussianSource(fcen,fwidth=df),
+                                  center=mp.Vector3(x=-195,y=0),
+                                  size=mp.Vector3(y=40),
+                                  direction=mp.X,
+                                  eig_kpoint=kpoint,
+                                  eig_band=bnum,
+                                  #eig_parity=mp.EVEN_Y+mp.ODD_Z,
+                                  eig_match_freq=True)]
+
+    symmetries = [mp.Mirror(mp.Y,phase=+1)]
+
+    sim = mp.Simulation(cell_size=cell_size,
+                        geometry=geometry,
+                        sources=src,
+                        resolution=10,
+                        force_complex_fields=False,
+                        #symmetries=symmetries,
+                        boundary_layers=pml_layers,
+                        #k_point=mp.Vector3(mp.X)
+                       )
+
+
+    # src flux
+    src_fr = mp.FluxRegion(center=mp.Vector3(-150,0,0), size=mp.Vector3(0,40,0))                            
+    src = sim.add_flux(fcen, 8e-3, 100, src_fr)
+
+
+
+    # transmitted flux
+    tran_fr = mp.FluxRegion(center=mp.Vector3(150,0,0), size=mp.Vector3(0,40,0))
+    tran = sim.add_flux(fcen, 8e-3, 100, tran_fr)
+
+    return sim,src,tran
+
 
 def dumpData2File(meta,today,workingDir,sim,src,tran,nfreq):
     
