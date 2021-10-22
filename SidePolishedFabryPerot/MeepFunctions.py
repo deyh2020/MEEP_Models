@@ -13,7 +13,7 @@ def buildModel(coreN,cladN,TL,Depth,GAP):
 
     pml_layers = [mp.PML(thickness=4)]
 
-    PDMSn = 1.41
+    
 
     PDMS = mp.Block(
                    center=mp.Vector3(0,0,0),

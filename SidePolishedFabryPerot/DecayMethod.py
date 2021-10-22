@@ -11,10 +11,6 @@ import sys, getopt,os
 # -f for filename
 
 
-
-
-
-
 #input function arguments
 
 nOffset,filename = MF.main(sys.argv[1:])   

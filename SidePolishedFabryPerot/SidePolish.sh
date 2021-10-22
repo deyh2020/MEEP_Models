@@ -5,6 +5,6 @@
 module load meep
 
  
-srun python3 DecayMethod.py -i 0 -o SQRbubblesSetTime
+srun python3 Test.py
 
 
