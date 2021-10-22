@@ -34,8 +34,9 @@ sim,src,tran = MF.buildModelSQR(coreN,cladN,TL,Depth,GAP)
 t = (1e-6/3e8)
 tFactor = 1e-15/t # converts femptoseconds into unitless MEEP 
 
+Simtime = 1e9
 
-#print("Actual Simtime:", Simtime*t)
+print("Actual Simtime:", Simtime*t)
 
 workingDir = MF.mkALLDIRS(sim,filename)
 
@@ -53,13 +54,13 @@ pt = mp.Vector3(x=0,y=0,z=0)
 
 MF.tic()
 
-#sim.run(mp.at_beginning(mp.output_epsilon),
-#        mp.at_every(10500, mp.output_dpwr),
-#        until=(Simtime*tFactor))
-
 sim.run(mp.at_beginning(mp.output_epsilon),
-      mp.at_every(20000, mp.output_dpwr),
-      until_after_sources=mp.stop_when_fields_decayed(750,mp.Ez,pt,DecayFactor))
+        mp.at_every(10500, mp.output_dpwr),
+        until=(Simtime*tFactor))
+
+#sim.run(mp.at_beginning(mp.output_epsilon),
+#      mp.at_every(20000, mp.output_dpwr),
+#      until_after_sources=mp.stop_when_fields_decayed(750,mp.Ez,pt,DecayFactor))
 
 
 T = MF.toc()
