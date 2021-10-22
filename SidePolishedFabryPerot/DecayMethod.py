@@ -34,7 +34,7 @@ sim,src,tran = MF.buildModelSQR(coreN,cladN,TL,Depth,GAP)
 t = (1e-6/3e8)
 tFactor = 1e-15/t # converts femptoseconds into unitless MEEP 
 
-Simtime = 1e9
+Simtime = 1e5
 
 print("Actual Simtime:", Simtime*t)
 
