@@ -24,15 +24,14 @@ class Model:
 		self.R2     = 62.5
 		self.CladLeft = 5
 
-		##Resonator Dimentions
+		##Resonator Dimentions / um
 		self.Depth  = 40
 		self.Width  = 62.5
 		self.GAP    = 100
-		self.Rw     = 1
 
-		##Src properties
+		##Src properties / c=1
 		self.fcen   = 1/1.55
-		self.df     = 16
+		self.df     = 0.1*self.fcen
 		self.nfreq  = 100
 
 		##MEEP properties
@@ -46,6 +45,9 @@ class Model:
 		self.sim    = None
 		self.Objlist = []
 		self.Notes   = ''
+		self.SimSize = 60
+		self.PMLThick = 1
+		self.SrcSize  = self.SimSize - 2*self.PMLThick
 
 
 
@@ -75,8 +77,12 @@ class Model:
 
 	def buildFibre(self):
 
-		self.cell_size = mp.Vector3(400,50,0)
-		self.pml_layers = [mp.PML(thickness=4)]
+		self.SrcSize  = self.SimSize - 2*self.PMLThick
+		self.cell_size = mp.Vector3(self.SimSize,self.SimSize,0)
+		self.pml_layers = [
+			mp.PML(thickness=self.PMLThick,direction=mp.X),
+			mp.PML(thickness=self.PMLThick,direction=mp.Y)
+			]
 
 		self.PDMS = mp.Block(
 			center=mp.Vector3(0,0,0),
@@ -84,84 +90,55 @@ class Model:
 			material=mp.Medium(index=self.PDMSn)
 			)
 
-		self.Clad = mp.Block(
-			center=mp.Vector3(x=0,y=(-62.5/2 + self.CladLeft),z=0),
-			size=mp.Vector3(x=mp.inf,y=62.5,z=mp.inf),
-			material=mp.Medium(index=self.cladN)
-			)
-
-		self.Core = mp.Block(
-			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,8.2,mp.inf),
+		self.Core = mp.Cylinder(
+			radius=self.R1,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
 			material=mp.Medium(index=self.coreN)
 			)
 
-		self.Objlist.extend([self.PDMS,self.Clad,self.Core])
+		self.Clad = mp.Cylinder(
+			radius=self.R2,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
+			material=mp.Medium(index=self.cladN)
+			)
 
+		self.Objlist.extend([self.Clad,self.Core])
 
-	def addtriBubbles(self):
-
-		RW = self.Rw
-		TL = self.Width
-
-		verts = [
-	            
-	            mp.Vector3(x=-(RW/2+TL/2) ,y=self.R2 ,z=0)   ,
-	            mp.Vector3(x=(RW/2+TL/2)  ,y=self.R2 ,z=0)  ,
-	            mp.Vector3(x=(RW/2)       ,y=self.R2-self.Depth ,z=0)   ,
-	             mp.Vector3(x=-(RW/2)     ,y=self.R2-self.Depth ,z=0)
-	        
-	            ]
-
-
-		self.LH = mp.Prism(center=mp.Vector3(x=-self.GAP/2,y=0,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.PDMSn),
-	                     height=1
-	                     )
-
-		self.RH = mp.Prism(center=mp.Vector3(x=self.GAP/2,y=0,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.PDMSn),
-	                     height=1
-	                     )
-
-		self.Objlist.extend([self.LH,self.RH])
-
-
-	def sqrBubbles(self):
-
-		x=1
 
 
 	def BuildModel(self):   # builds sim and plots structure to file 
 		
-		kx = 0.4
-		kpoint = mp.Vector3(kx)
+		
+		kpoint = mp.Vector3(z=self.fcen*self.coreN)
 
 		self.src = [
-				mp.EigenModeSource(src=mp.GaussianSource(self.fcen,fwidth=self.df),
-				center=mp.Vector3(x=-150,y=0),
-				size=mp.Vector3(y=20),
-				direction=mp.X,
-				eig_kpoint=kpoint,
-				eig_band=1,
-				#eig_parity=mp.EVEN_Y+mp.ODD_Z,
-				eig_match_freq=True
+				mp.EigenModeSource(
+					src=mp.GaussianSource(
+						self.fcen,
+						fwidth=self.df
+						),
+				    center=mp.Vector3(0,0,0),
+				    size=mp.Vector3(40,40,0),
+				    direction=mp.Z,
+				    eig_kpoint=kpoint,
+				    eig_band=1,
+				    eig_parity=mp.ODD_Y,
+				    eig_match_freq=True
 				)
 			]
 
 		
 		self.sim = mp.Simulation(
-			geometry_center=mp.Vector3(x=0,y=-5,z=0),
 			cell_size=self.cell_size,
 			geometry=self.Objlist,
 			sources=self.src,
 			resolution=self.res,
-			force_complex_fields=False,
+			force_complex_fields=True,
 			eps_averaging=False,
 			boundary_layers=self.pml_layers,
-			#k_point=mp.Vector3(mp.X)
+			k_point=kpoint
 			)
 
 
@@ -170,18 +147,75 @@ class Model:
 
 		# src flux
 		src_fr = mp.FluxRegion(center=mp.Vector3(-190,0,0), size=mp.Vector3(0,20,0))                            
-		self.srcE = self.sim.add_flux(self.fcen, 8e-3, 100, src_fr)
+		#self.srcE = self.sim.add_flux(self.fcen, 8e-3, 100, src_fr)
 
 
 
 		# transmitted flux
 		tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
-		self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
+		#self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
+
+		#plt.figure(dpi=200)
+		#self.sim.plot3D()
+		#	eps_parameters={'alpha':0.8, 'interpolation':'none'}
+		#	)
+		#plt.savefig(self.workingDir+"ModelatStart.pdf")
+		#plt.show()
+
+    
+
+	def GetEigenModes(self):
+		self.sim.init_sim()
+
+		k_point = mp.Vector3(z=self.fcen*self.coreN)
+
+		self.EigenmodeData = self.sim.get_eigenmode(
+			self.fcen,
+			mp.Z,
+			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
+			band_num=1,
+			kpoint=k_point,
+			match_frequency=True,
+			parity=mp.NO_PARITY)
+
+
+		print(self.EigenmodeData.band_num)
+		print(self.EigenmodeData.freq)
+		print(self.EigenmodeData.group_velocity)
+		print(self.EigenmodeData.k)
+
+
+
+	def RunKpoints(self):
+		self.sim.init_sim()
+		k_interp = 4
+		self.sim.run_k_points(2000,mp.interpolate(k_interp,[mp.Vector3(),mp.Vector3(2*0.64516)]))
+
+
+
+	def RunAndPlotF(self):
+
+		t = (1e-6/3e8)
+		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
+
+		print("Actual Simtime:", self.SimT*t)
+
+		self.sim.run(
+			#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(10500, mp.output_dpwr),
+			until=(self.SimT*tFactor)
+			)
 
 		plt.figure(dpi=200)
-		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-		plt.savefig(self.workingDir+"ModelatStart.pdf")
-		#plt.show()
+
+		self.sim.plot2D(
+			output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+			fields=mp.Ez
+			#plot_sources_flag=True,
+			#plot_monitors_flag=True
+			)
+		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
+		plt.show()
 
 
 	def RunSetT(self):
@@ -198,7 +232,9 @@ class Model:
 			)
 
 		plt.figure(dpi=200)
-		self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
+		self.sim.plot3D(
+			fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True
+			)
 		plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
 
 		self.meta = {
