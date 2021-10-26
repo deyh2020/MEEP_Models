@@ -59,23 +59,13 @@ def parallel_waveguide(s,xodd):
 
     sim.change_sources(eig_sources)
 
-    flux_reg = mp.FluxRegion(direction=mp.Z, center=mp.Vector3(), size=mp.Vector3(sx,sy))
-    wvg_flux = sim.add_flux(fcen, 0, 1, flux_reg)
 
-    force_reg1 = mp.ForceRegion(mp.Vector3(0.49*s), direction=mp.X, weight=1, size=mp.Vector3(y=sy))
-    force_reg2 = mp.ForceRegion(mp.Vector3(0.5*s+1.01*a), direction=mp.X, weight=-1, size=mp.Vector3(y=sy))
-    wvg_force = sim.add_force(fcen, 0, 1, force_reg1, force_reg2)
+    sim.run(until=100)
 
-    sim.run(until_after_sources=1500)
-
-    flux = mp.get_fluxes(wvg_flux)[0]
-    force = mp.get_forces(wvg_force)[0]
-    print("data:, {}, {}, {}, {}, {}".format("xodd" if xodd else "xeven", s, flux, force, -force/flux))
     plt.figure(dpi=200)
-
     sim.plot2D(
         #output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
-        fields=mp.Ez,
+        fields=mp.Ey,
         plot_sources_flag=False,
         plot_monitors_flag=False
         )
@@ -84,17 +74,10 @@ def parallel_waveguide(s,xodd):
 
     sim.reset_meep()
 
-    return flux, force
 
 
-s = np.arange(0.05,1.05,0.05)
-fluxes_odd = np.zeros(s.size)
-forces_odd = np.zeros(s.size)
-fluxes_even = np.zeros(s.size)
-forces_even = np.zeros(s.size)
 
-
-k = 1
-fluxes_odd[k], forces_odd[k] = parallel_waveguide(s[k],True)
-fluxes_even[k], forces_even[k] = parallel_waveguide(s[k],False)
+s = 0.1
+parallel_waveguide(s,True)
+parallel_waveguide(s,False)
 plt.show()

@@ -22,7 +22,7 @@ class Model:
 		##Fibre Dimentions
 		self.R1     = 4.1
 		self.R2     = 62.5
-		self.CladLeft = 5
+		self.Pad = 1
 
 		##Resonator Dimentions / um
 		self.Depth  = 40
@@ -56,28 +56,6 @@ class Model:
 		self.srcE  = np.array([])
 		self.tranE = np.array([])
 
-	def pltModel(self):
-		plt.figure(dpi=200)
-		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-		plt.show()
-		
-
-	def mkALLDIRS(self):
-		
-		self.workingDir = 'data/'+self.today+'/'+self.filename+'/'
-
-		print('WD:',self.workingDir)
-
-		try:
-			os.makedirs(self.workingDir)
-		except:
-			print('AlreadyDir')
-
-		self.sim.use_output_directory(self.workingDir)
-
-
-	
-
 
 	def buildFibre(self):
 
@@ -87,12 +65,6 @@ class Model:
 			mp.PML(thickness=self.PMLThick,direction=mp.X),
 			mp.PML(thickness=self.PMLThick,direction=mp.Y)
 			]
-
-		self.PDMS = mp.Block(
-			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,mp.inf,mp.inf),
-			material=mp.Medium(index=self.PDMSn)
-			)
 
 		self.Core = mp.Cylinder(
 			radius=self.R1,
@@ -109,52 +81,40 @@ class Model:
 			)
 
 		self.Objlist.extend([self.Clad,self.Core])
-		print(self.Objlist)
 
-
-	def buildTestWG(self):
-
-		Si = mp.Medium(index=3.45)
+	def buildPolishedFibre(self):
 
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
 		self.cell_size = mp.Vector3(self.SimSize,self.SimSize,0)
-		dpml = 1.0
-		self.pml_layers = [mp.PML(dpml)]
 
+		self.pml_layers = [
+			mp.PML(thickness=self.PMLThick,direction=mp.X),
+			mp.PML(thickness=self.PMLThick,direction=mp.Y)
+			]
 
-		WG1 = mp.Block(
-						center=mp.Vector3(-0.5-0.01),
-						size=mp.Vector3(1,1,mp.inf),
-                        material=Si)
+		self.PolishedZone = mp.Block(
+			center=mp.Vector3(y=31.25+4.1+1), 
+			size=mp.Vector3(125,62.5,mp.inf), 
+			material=mp.Medium(index=1.0))
 		
-		WG2 = mp.Block(
-						center=mp.Vector3(0.5+0.01),
-                        size=mp.Vector3(1,1,mp.inf),
-                        material=Si)
 
+		self.Core = mp.Cylinder(
+			radius=self.R1,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
+			material=mp.Medium(index=self.coreN)
+			)
 
-		self.Objlist.extend([WG1,WG2])
+		self.Clad = mp.Cylinder(
+			radius=self.R2,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
+			material=mp.Medium(index=self.cladN)
+			)
+
+		self.Objlist.extend([self.Clad])
 		print(self.Objlist)
 
-
-
-	def BuildTestModel(self):   # builds sim and plots structure to file 
-
-		self.kpoint = mp.Vector3(z=0.5)
-
-		symmetries = [mp.Mirror(mp.X, phase=1),
-                  mp.Mirror(mp.Y, phase=-1)]
-
-		self.sim = mp.Simulation(resolution=self.res,
-							cell_size=self.cell_size,
-							geometry=self.Objlist,
-							boundary_layers=self.pml_layers,
-							symmetries=symmetries,
-							k_point=self.kpoint)
-
-		#self.pltModel()
-
-    
 
 	def GetEigenModes(self):
 		self.sim.init_sim()
@@ -210,7 +170,7 @@ class Model:
 						fwidth=self.df
 						),
 				    center=mp.Vector3(0,0,0),
-				    size=mp.Vector3(40,40,0),
+				    size=mp.Vector3(self.SrcSize,self.SrcSize,0),
 				    direction=mp.Z,
 				    eig_kpoint=kpoint,
 				    eig_band=1,
@@ -236,13 +196,13 @@ class Model:
 
 
 		# src flux
-		src_fr = mp.FluxRegion(center=mp.Vector3(-190,0,0), size=mp.Vector3(0,20,0))                            
+		#src_fr = mp.FluxRegion(center=mp.Vector3(-190,0,0), size=mp.Vector3(0,20,0))                            
 		#self.srcE = self.sim.add_flux(self.fcen, 8e-3, 100, src_fr)
 
 
 
 		# transmitted flux
-		tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
+		#tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
 		#self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
 
 		self.pltModel()
@@ -259,14 +219,14 @@ class Model:
 			#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(10500, mp.output_dpwr),
 			#until=(self.SimT*tFactor)
-			until_after_sources=1500
+			until_after_sources=self.SimT
 			)
 
 		plt.figure(dpi=200)
 
 		self.sim.plot2D(
 			output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
-			fields=mp.Ez,
+			fields=mp.Ey,
 			plot_sources_flag=False,
 			plot_monitors_flag=False
 			)
@@ -320,6 +280,25 @@ class Model:
 		#axes.plot(wl,1-Src-Tran,label='Loss')
 		axes.legend()
 		plt.savefig(self.workingDir+"Spectrum.pdf")
+
+	def pltModel(self):
+		plt.figure(dpi=200)
+		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
+		plt.show()
+		
+
+	def mkALLDIRS(self):
+		
+		self.workingDir = 'data/'+self.today+'/'+self.filename+'/'
+
+		print('WD:',self.workingDir)
+
+		try:
+			os.makedirs(self.workingDir)
+		except:
+			print('AlreadyDir')
+
+		self.sim.use_output_directory(self.workingDir)
 
 	def dumpData2File(self):
     
