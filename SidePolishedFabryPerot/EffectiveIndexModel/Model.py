@@ -48,6 +48,7 @@ class Model:
 		self.SimSize = 60
 		self.PMLThick = 1
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
+		self.kpoint = mp.Vector3(z=self.fcen*self.coreN)
 
 
 
@@ -58,6 +59,7 @@ class Model:
 	def pltModel(self):
 		plt.figure(dpi=200)
 		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
+		plt.show()
 		
 
 	def mkALLDIRS(self):
@@ -73,6 +75,8 @@ class Model:
 
 		self.sim.use_output_directory(self.workingDir)
 
+
+	
 
 
 	def buildFibre(self):
@@ -105,6 +109,92 @@ class Model:
 			)
 
 		self.Objlist.extend([self.Clad,self.Core])
+		print(self.Objlist)
+
+
+	def buildTestWG(self):
+
+		Si = mp.Medium(index=3.45)
+
+		self.SrcSize  = self.SimSize - 2*self.PMLThick
+		self.cell_size = mp.Vector3(self.SimSize,self.SimSize,0)
+		dpml = 1.0
+		self.pml_layers = [mp.PML(dpml)]
+
+
+		WG1 = mp.Block(
+						center=mp.Vector3(-0.5-0.01),
+						size=mp.Vector3(1,1,mp.inf),
+                        material=Si)
+		
+		WG2 = mp.Block(
+						center=mp.Vector3(0.5+0.01),
+                        size=mp.Vector3(1,1,mp.inf),
+                        material=Si)
+
+
+		self.Objlist.extend([WG1,WG2])
+		print(self.Objlist)
+
+
+
+	def BuildTestModel(self):   # builds sim and plots structure to file 
+
+		self.kpoint = mp.Vector3(z=0.5)
+
+		symmetries = [mp.Mirror(mp.X, phase=1),
+                  mp.Mirror(mp.Y, phase=-1)]
+
+		self.sim = mp.Simulation(resolution=self.res,
+							cell_size=self.cell_size,
+							geometry=self.Objlist,
+							boundary_layers=self.pml_layers,
+							symmetries=symmetries,
+							k_point=self.kpoint)
+
+		#self.pltModel()
+
+    
+
+	def GetEigenModes(self):
+		self.sim.init_sim()
+
+
+		self.EigenmodeData = self.sim.get_eigenmode(
+			0.22,
+			mp.Z,
+			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
+			band_num=1,
+			kpoint=self.kpoint,
+			match_frequency=False,
+			parity=mp.ODD_Y
+			)
+
+		fcen = self.EigenmodeData.freq
+
+		print(fcen)
+
+		self.sim.reset_meep()
+		self.SrcSize  = self.SimSize - 2*self.PMLThick
+
+		eig_sources = [mp.EigenModeSource(src=mp.GaussianSource(fcen, fwidth=0.1*fcen),
+                                      size=mp.Vector3(self.SrcSize,self.SrcSize),
+                                      center=mp.Vector3(),
+                                      eig_band=1,
+                                      eig_kpoint=self.kpoint,
+                                      eig_match_freq=False,
+                                      eig_parity=mp.ODD_Y)]
+
+		self.sim.change_sources(eig_sources)
+
+
+
+
+
+	def RunKpoints(self):
+		self.sim.init_sim()
+		k_interp = 4
+		self.sim.run_k_points(2000,mp.interpolate(k_interp,[mp.Vector3(),mp.Vector3(2*0.64516)]))
 
 
 
@@ -155,42 +245,7 @@ class Model:
 		tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
 		#self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
 
-		#plt.figure(dpi=200)
-		#self.sim.plot3D()
-		#	eps_parameters={'alpha':0.8, 'interpolation':'none'}
-		#	)
-		#plt.savefig(self.workingDir+"ModelatStart.pdf")
-		#plt.show()
-
-    
-
-	def GetEigenModes(self):
-		self.sim.init_sim()
-
-		k_point = mp.Vector3(z=self.fcen*self.coreN)
-
-		self.EigenmodeData = self.sim.get_eigenmode(
-			self.fcen,
-			mp.Z,
-			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
-			band_num=1,
-			kpoint=k_point,
-			match_frequency=True,
-			parity=mp.NO_PARITY)
-
-
-		print(self.EigenmodeData.band_num)
-		print(self.EigenmodeData.freq)
-		print(self.EigenmodeData.group_velocity)
-		print(self.EigenmodeData.k)
-
-
-
-	def RunKpoints(self):
-		self.sim.init_sim()
-		k_interp = 4
-		self.sim.run_k_points(2000,mp.interpolate(k_interp,[mp.Vector3(),mp.Vector3(2*0.64516)]))
-
+		self.pltModel()
 
 
 	def RunAndPlotF(self):
@@ -203,16 +258,17 @@ class Model:
 		self.sim.run(
 			#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(10500, mp.output_dpwr),
-			until=(self.SimT*tFactor)
+			#until=(self.SimT*tFactor)
+			until_after_sources=1500
 			)
 
 		plt.figure(dpi=200)
 
 		self.sim.plot2D(
 			output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
-			fields=mp.Ez
-			#plot_sources_flag=True,
-			#plot_monitors_flag=True
+			fields=mp.Ez,
+			plot_sources_flag=False,
+			plot_monitors_flag=False
 			)
 		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
 		plt.show()

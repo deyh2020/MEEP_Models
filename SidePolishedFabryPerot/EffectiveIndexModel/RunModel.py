@@ -1,26 +1,29 @@
 import Model as M
 import time as time
 
-Model = M.Model() 
+Model = M.Model()
 
-Model.SimSize = 60
-Model.PMLThick = 2
+Model.SimSize = 6
+Model.PMLThick = 1
 
-Model.buildFibre()
+Model.buildTestWG()
 
-Model.res = 3
+#Model.buildFibre()
+
+Model.res = 40
 Model.filename = 'Debugging'
 Model.Notes    = 'Trying to get Bloch BC working'
 
 
-Model.BuildModel() 
 
-Model.SimT = 100  #setSimtime in fs
+Model.BuildTestModel() 
 
-#Model.GetEigenModes()
+Model.GetEigenModes()
 
-Model.RunKpoints()
+
+
+Model.SimT = 1500  #setSimtime in fs
 
 #while 1:
-#Model.RunAndPlotF()
+Model.RunAndPlotF()
 #time.sleep(1)
