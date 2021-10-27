@@ -22,7 +22,7 @@ class Model:
 		##Fibre Dimentions
 		self.R1     = 4.1
 		self.R2     = 62.5
-		self.Pad = 1
+		self.Pad    = 1
 
 		##Resonator Dimentions / um
 		self.Depth  = 40
@@ -45,10 +45,10 @@ class Model:
 		self.sim    = None
 		self.Objlist = []
 		self.Notes   = ''
-		self.SimSize = 60
-		self.PMLThick = 1
+		self.SimSize = 40
+		self.PMLThick = 2
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
-		self.kpoint = mp.Vector3(z=self.fcen*self.coreN)
+		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
 
 
 
@@ -70,7 +70,7 @@ class Model:
 			radius=self.R1,
 			height=mp.inf,
 			axis=mp.Vector3(0,0,1),
-			material=mp.Medium(index=self.coreN)
+			material=self.coreN#mp.Medium(index=self.coreN)
 			)
 
 		self.Clad = mp.Cylinder(
@@ -82,7 +82,7 @@ class Model:
 
 		self.Objlist.extend([self.Clad,self.Core])
 
-	def buildPolishedFibre(self):
+	def buildPolishedFibre(self,WPDMS=False):
 
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
 		self.cell_size = mp.Vector3(self.SimSize,self.SimSize,0)
@@ -93,9 +93,9 @@ class Model:
 			]
 
 		self.PolishedZone = mp.Block(
-			center=mp.Vector3(y=31.25+4.1+1), 
+			center=mp.Vector3(y=self.R2/2+self.R1+self.Pad), 
 			size=mp.Vector3(125,62.5,mp.inf), 
-			material=mp.Medium(index=1.0))
+			material=mp.Medium(index=self.PDMSn if WPDMS else 1.0))
 		
 
 		self.Core = mp.Cylinder(
@@ -112,7 +112,7 @@ class Model:
 			material=mp.Medium(index=self.cladN)
 			)
 
-		self.Objlist.extend([self.Clad])
+		self.Objlist.extend([self.Clad,self.Core,self.PolishedZone])
 		print(self.Objlist)
 
 
@@ -131,8 +131,9 @@ class Model:
 			)
 
 		fcen = self.EigenmodeData.freq
-
-		print(fcen)
+		k = self.EigenmodeData.k
+		vg = self.EigenmodeData.group_velocity
+		
 
 		self.sim.reset_meep()
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
@@ -141,11 +142,16 @@ class Model:
                                       size=mp.Vector3(self.SrcSize,self.SrcSize),
                                       center=mp.Vector3(),
                                       eig_band=1,
-                                      eig_kpoint=self.kpoint,
+                                      eig_kpoint=k,
                                       eig_match_freq=False,
                                       eig_parity=mp.ODD_Y)]
 
 		self.sim.change_sources(eig_sources)
+
+		
+		wi = self.sim.run_k_points(100, [k])
+		print(wi)
+
 
 
 
@@ -153,12 +159,18 @@ class Model:
 
 	def RunKpoints(self):
 		self.sim.init_sim()
-		k_interp = 4
-		self.sim.run_k_points(2000,mp.interpolate(k_interp,[mp.Vector3(),mp.Vector3(2*0.64516)]))
+
+		k_interp = 19
+		
+		kpoint = mp.Vector3(z=self.fcen*self.coreN)
+		
+		wi = self.sim.run_k_points(100, mp.interpolate(k_interp, [kpoint]))
+		
+		print('Complex i',wi)
 
 
 
-	def BuildModel(self):   # builds sim and plots structure to file 
+	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
 		
 		
 		kpoint = mp.Vector3(z=self.fcen*self.coreN)
@@ -188,7 +200,8 @@ class Model:
 			force_complex_fields=True,
 			eps_averaging=False,
 			boundary_layers=self.pml_layers,
-			k_point=kpoint
+			k_point=kpoint,   
+			ensure_periodicity=False
 			)
 
 
@@ -204,8 +217,8 @@ class Model:
 		# transmitted flux
 		#tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
 		#self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
-
-		self.pltModel()
+		if Plot:
+			self.pltModel()
 
 
 	def RunAndPlotF(self):
@@ -225,10 +238,11 @@ class Model:
 		plt.figure(dpi=200)
 
 		self.sim.plot2D(
-			output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
 			fields=mp.Ey,
 			plot_sources_flag=False,
-			plot_monitors_flag=False
+			plot_monitors_flag=False,
+			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
 		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
 		plt.show()
