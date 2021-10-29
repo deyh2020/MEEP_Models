@@ -70,7 +70,7 @@ class Model:
 			radius=self.R1,
 			height=mp.inf,
 			axis=mp.Vector3(0,0,1),
-			material=self.coreN#mp.Medium(index=self.coreN)
+			material=mp.Medium(index=self.coreN)
 			)
 
 		self.Clad = mp.Cylinder(
@@ -134,6 +134,7 @@ class Model:
 		k = self.EigenmodeData.k
 		vg = self.EigenmodeData.group_velocity
 		
+		print("vg",vg)
 
 		self.sim.reset_meep()
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
@@ -156,18 +157,23 @@ class Model:
 
 
 
+	def RunHarmv(self):
+		self.harm = mp.Harminv(mp.Ey, self.kpoint, self.fcen, self.df)
+		self.sim.run(
+			mp.after_sources(self.harm),
+			until_after_sources=100)
 
-	def RunKpoints(self):
-		self.sim.init_sim()
-
-		k_interp = 19
-		
-		kpoint = mp.Vector3(z=self.fcen*self.coreN)
-		
-		wi = self.sim.run_k_points(100, mp.interpolate(k_interp, [kpoint]))
-		
-		print('Complex i',wi)
-
+		self.EigenmodeData = self.sim.get_eigenmode(
+			self.fcen,
+			mp.Z,
+			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
+			band_num=1,
+			kpoint=self.kpoint,
+			match_frequency=False,
+			parity=mp.ODD_Y
+			)
+		self.k = self.EigenmodeData.k
+		self.vg = self.EigenmodeData.group_velocity
 
 
 	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
@@ -229,9 +235,6 @@ class Model:
 		print("Actual Simtime:", self.SimT*t)
 
 		self.sim.run(
-			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(10500, mp.output_dpwr),
-			#until=(self.SimT*tFactor)
 			until_after_sources=self.SimT
 			)
 
@@ -246,6 +249,14 @@ class Model:
 			)
 		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
 		plt.show()
+		self.kpoint = self.sim.k_point
+
+
+	def calcNEFF(self):
+
+		NEFF = (self.wi * self.wl ) / (2 * np.pi * self.gv)
+		
+		return NEFF
 
 
 	def RunSetT(self):
