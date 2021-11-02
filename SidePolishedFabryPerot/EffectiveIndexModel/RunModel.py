@@ -5,7 +5,7 @@ import numpy as np
 Model = M.Model()
 
 Model.df     = Model.fcen*1000
-Model.res = 4
+Model.res = 10
 Model.filename = 'Debugging'
 Model.Notes    = 'Trying to get Bloch BC working'
 
@@ -29,16 +29,33 @@ Model.RunHarmv()
 a = 1e-6
 c = 2.99e8
 
-wi = Model.harm.modes[0].decay 
-vg = Model.vg 
 
-b = (wi/vg) * 2*np.pi/a
+wi = Model.harm.modes[0].decay * (2*np.pi/a) 
 
-print("Calculated B: ",b)
+vg = Model.vg  * c     # grab group v and convert to m/s
 
+print('wi',wi)
+print('vg',vg)
 
-neff = b*(1.55e-6/(2 * np.pi))
-print("Calculated Neff: ",neff)
+lam = 1.55e-6
+
+k0 = 2*np.pi/lam
+k  = 1/Model.kpoint.z * 2*np.pi/a
+
+print('k0',k0)
+print('k',k)
+
+bi = wi/vg
+
+b = complex(k,bi)
+
+print("")
+
+#print("Propagation Constant =",b)
+
+neff = b/k0
+
+print("n_eff =",neff)
 
 
 #while 1:

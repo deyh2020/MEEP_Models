@@ -161,7 +161,7 @@ class Model:
 		self.harm = mp.Harminv(mp.Ey, self.kpoint, self.fcen, self.df)
 		self.sim.run(
 			mp.after_sources(self.harm),
-			until_after_sources=100)
+			until_after_sources=1000)
 
 		self.EigenmodeData = self.sim.get_eigenmode(
 			self.fcen,
