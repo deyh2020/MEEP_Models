@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -t 3:00:00          
-#SBATCH --ntasks=16 
+#SBATCH -t 00:10:00          
+#SBATCH --ntasks=2 
 
 module load meep
 

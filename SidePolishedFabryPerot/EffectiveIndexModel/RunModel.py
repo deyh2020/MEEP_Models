@@ -5,7 +5,7 @@ import numpy as np
 Model = M.Model()
 
 Model.df     = Model.fcen*1000
-Model.res = 10
+Model.res = 4
 Model.filename = 'Debugging'
 Model.Notes    = 'Trying to get Bloch BC working'
 
@@ -16,7 +16,7 @@ Model.Pad = 0       #Cladding left over from polishing
 Model.buildFibre()
 #Model.buildPolishedFibre(WPDMS=True)
 
-Model.BuildModel(Plot=False) 
+Model.BuildModel(Plot=True) 
 
 #Model.GetEigenModes() #also sets sources up at the fundamental mode
 

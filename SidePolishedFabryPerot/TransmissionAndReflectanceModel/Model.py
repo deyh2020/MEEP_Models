@@ -134,7 +134,7 @@ class Model:
 		x=1
 
 
-	def BuildModel(self):   # builds sim and plots structure to file 
+	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
 		
 		kx = 0.4
 		kpoint = mp.Vector3(kx)
@@ -159,7 +159,7 @@ class Model:
 			sources=self.src,
 			resolution=self.res,
 			force_complex_fields=False,
-			eps_averaging=False,
+			eps_averaging=True,
 			boundary_layers=self.pml_layers,
 			#k_point=mp.Vector3(mp.X)
 			)
@@ -178,10 +178,8 @@ class Model:
 		tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
 		self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
 
-		plt.figure(dpi=200)
-		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-		plt.savefig(self.workingDir+"ModelatStart.pdf")
-		#plt.show()
+		if Plot:
+			self.pltModel()
 
 
 	def RunSetT(self):
@@ -260,3 +258,7 @@ class Model:
 			json.dump(metadata, file)
 
 
+	def pltModel(self):
+		plt.figure(dpi=200)
+		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
+		plt.show()
