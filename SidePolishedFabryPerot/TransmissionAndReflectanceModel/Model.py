@@ -26,7 +26,7 @@ class Model:
 
 		##Resonator Dimentions
 		self.Depth  = 40
-		self.Width  = 62.5
+		self.Width  = 10
 		self.GAP    = 100
 		self.Rw     = 1
 
@@ -36,6 +36,7 @@ class Model:
 		self.nfreq  = 100
 
 		##MEEP properties
+		self.dpml   = 5
 		self.res    = 2
 		self.DecayF = 1e-8
 		self.WallT  = 0
@@ -46,6 +47,9 @@ class Model:
 		self.sim    = None
 		self.Objlist = []
 		self.Notes   = ''
+
+		self.sx = self.GAP + 2*self.Width + 100 
+		self.sy = 100
 
 
 
@@ -73,10 +77,38 @@ class Model:
 
 
 
-	def buildFibre(self):
+	def buildNormal(self):
 
-		self.cell_size = mp.Vector3(400,50,0)
-		self.pml_layers = [mp.PML(thickness=4)]
+			
+			
+			self.sx = self.GAP + 2*self.Width + 100 + 2*self.dpml
+		
+			self.cell_size = mp.Vector3(self.sx,self.sy,0)
+
+			self.pml_layers = [mp.PML(thickness=self.dpml)]
+
+
+			self.Clad = mp.Block(
+				center=mp.Vector3(x=0,y=0,z=0),
+				size=mp.Vector3(x=mp.inf,y=62.5,z=mp.inf),
+				material=mp.Medium(index=self.cladN)
+				)
+
+			self.Core = mp.Block(
+				center=mp.Vector3(0,0,0),
+				size=mp.Vector3(mp.inf,8.2,mp.inf),
+				material=mp.Medium(index=self.coreN)
+				)
+
+			self.Objlist.extend([self.Clad,self.Core])
+
+	def buildPolished(self):
+
+		self.sx = self.GAP + 2*self.Width + 100 + 2*self.dpml
+		
+		self.cell_size = mp.Vector3(self.sx,self.sy,0)
+
+		self.pml_layers = [mp.PML(thickness=self.dpml)]
 
 		self.PDMS = mp.Block(
 			center=mp.Vector3(0,0,0),
@@ -134,26 +166,26 @@ class Model:
 		x=1
 
 
-	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
+	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
 		
 		kx = 0.4
 		kpoint = mp.Vector3(kx)
 
 		self.src = [
 				mp.EigenModeSource(src=mp.GaussianSource(self.fcen,fwidth=self.df),
-				center=mp.Vector3(x=-150,y=0),
+				center=mp.Vector3(x=-(self.sx/2)+5,y=0),
 				size=mp.Vector3(y=20),
 				direction=mp.X,
 				eig_kpoint=kpoint,
 				eig_band=1,
-				#eig_parity=mp.EVEN_Y+mp.ODD_Z,
+				eig_parity=mp.EVEN_Y,
 				eig_match_freq=True
 				)
 			]
 
 		
 		self.sim = mp.Simulation(
-			geometry_center=mp.Vector3(x=0,y=-5,z=0),
+			#geometry_center=mp.Vector3(x=0,y=-5,z=0),
 			cell_size=self.cell_size,
 			geometry=self.Objlist,
 			sources=self.src,
@@ -169,17 +201,71 @@ class Model:
 
 
 		# src flux
-		src_fr = mp.FluxRegion(center=mp.Vector3(-190,0,0), size=mp.Vector3(0,20,0))                            
-		self.srcE = self.sim.add_flux(self.fcen, 8e-3, 100, src_fr)
+		src_fr = mp.FluxRegion(center=mp.Vector3(-(self.sx/2) + 20,0,0), size=mp.Vector3(0,20,0))                            
+		self.refl = self.sim.add_flux(self.fcen, 8e-3, self.nfreq, src_fr)
 
 
 
 		# transmitted flux
-		tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
-		self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
+		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 5 ,0,0), size=mp.Vector3(0,20,0))
+		self.tranE = self.sim.add_flux(self.fcen, 8e-3, self.nfreq, tran_fr)
 
 		if Plot:
 			self.pltModel()
+
+
+
+	def NormRun(self):
+		pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
+		print(pt)
+
+		self.sim.run(until_after_sources=mp.stop_when_fields_decayed(1000,mp.Ez,pt,self.DecayF))
+
+		# for normalization run, save flux fields data for reflection plane
+		self.norm_refl = self.sim.get_flux_data(self.refl)
+		# save incident power for transmission plane
+		self.norm_tran = mp.get_fluxes(self.tranE)
+
+
+
+	def AutoRun(self):
+		
+		t = (1e-6/3e8)
+		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
+
+		print("Actual Simtime:", self.SimT*t)
+
+
+		pt = mp.Vector3(0,0)
+
+		self.sim.run(
+			mp.at_beginning(mp.output_epsilon),
+			mp.at_every(10500, mp.output_dpwr),
+			until_after_sources=mp.stop_when_fields_decayed(1000,mp.Ez,pt,self.DecayF)
+			)
+
+		flux_freqs = mp.get_flux_freqs(self.refl)
+
+		refl_flux = mp.get_fluxes(self.refl)
+		tran_flux = mp.get_fluxes(self.tranE)
+
+		wl = []
+		Rs = []
+		Ts = []
+		for i in range(self.nfreq):
+			wl = np.append(wl, 1/flux_freqs[i])
+			Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
+
+		plt.figure()
+		plt.plot(wl,Rs,'bo-',label='reflectance')
+		plt.plot(wl,Ts,'ro-',label='transmittance')
+		plt.plot(wl,1-Rs-Ts,'go-',label='loss')
+		#plt.axis([5.0, 10.0, 0, 1])
+		plt.xlabel("wavelength (μm)")
+		plt.legend(loc="upper right")
+		plt.show()
+
 
 
 	def RunSetT(self):
@@ -188,12 +274,16 @@ class Model:
 		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
 
 		print("Actual Simtime:", self.SimT*t)
-		
+
+
+		pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
+
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
 			mp.at_every(10500, mp.output_dpwr),
-			until=(self.SimT*tFactor)
+			until_after_sources=mp.stop_when_fields_decayed(1000,mp.Ez,pt,1e-3)
 			)
+
 
 		plt.figure(dpi=200)
 		self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
@@ -223,9 +313,10 @@ class Model:
 
 		axes.plot(wl,Tran,label='Transmission')
 		axes.plot(wl,Src,label='Reflectance')
-		#axes.plot(wl,1-Src-Tran,label='Loss')
+		axes.plot(wl,1-Src-Tran,label='Loss')
 		axes.legend()
 		plt.savefig(self.workingDir+"Spectrum.pdf")
+		plt.show()
 
 	def dumpData2File(self):
     
