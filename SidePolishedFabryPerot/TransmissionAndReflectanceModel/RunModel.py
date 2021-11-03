@@ -9,16 +9,16 @@ Model.CladLeft = 1
 Model.buildFibre()
 
 Model.res = 5
-Model.filename = 'TestRunPC'
-Model.Notes    = 'Messing'
+Model.filename = 'CPUScalling'
+Model.Notes    = 'CPUScalling'
 
 Model.addtriBubbles()
 #Model.addSQRBubbles()
 
-Model.BuildModel(Plot=True) 
+Model.BuildModel(Plot=False) 
 
 Model.SimT = 1e4  #setSimtime in fs
 
-#Model.RunSetT()
+Model.RunSetT()
 
 
