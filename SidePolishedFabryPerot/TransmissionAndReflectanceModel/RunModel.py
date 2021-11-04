@@ -10,9 +10,9 @@ Model.GAP = 100
 Model.fcen   = 1/1.55
 Model.df     = 1.3e-2
 Model.nfreq  = 1000
-Model.res = 1
+Model.res = 5
 Model.DecayF = 1e-3
-Model.filename = 'TopsyTest'
+Model.filename = 'TopsyTestRes5'
 Model.Notes    = ''
 
 Model.buildPolished()
