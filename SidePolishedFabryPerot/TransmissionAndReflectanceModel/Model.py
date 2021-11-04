@@ -26,13 +26,13 @@ class Model:
 
 		##Resonator Dimentions
 		self.Depth  = 40
-		self.Width  = 10
+		self.Width  = 62.5
 		self.GAP    = 100
 		self.Rw     = 1
 
 		##Src properties
 		self.fcen   = 1/1.55
-		self.df     = 16
+		self.df     = 500
 		self.nfreq  = 100
 
 		##MEEP properties
@@ -81,7 +81,7 @@ class Model:
 
 			
 			
-			self.sx = self.GAP + 2*self.Width + 100 + 2*self.dpml
+			self.sx = self.GAP + 2*self.Width + 1000 + 2*self.dpml
 		
 			self.cell_size = mp.Vector3(self.sx,self.sy,0)
 
@@ -104,7 +104,7 @@ class Model:
 
 	def buildPolished(self):
 
-		self.sx = self.GAP + 2*self.Width + 100 + 2*self.dpml
+		self.sx = self.GAP + 2*self.Width + 500 + 2*self.dpml
 		
 		self.cell_size = mp.Vector3(self.sx,self.sy,0)
 
@@ -174,7 +174,7 @@ class Model:
 		self.src = [
 				mp.EigenModeSource(src=mp.GaussianSource(self.fcen,fwidth=self.df),
 				center=mp.Vector3(x=-(self.sx/2)+5,y=0),
-				size=mp.Vector3(y=20),
+				size=mp.Vector3(y=40),
 				direction=mp.X,
 				eig_kpoint=kpoint,
 				eig_band=1,
@@ -201,14 +201,14 @@ class Model:
 
 
 		# src flux
-		src_fr = mp.FluxRegion(center=mp.Vector3(-(self.sx/2) + 20,0,0), size=mp.Vector3(0,20,0))                            
-		self.refl = self.sim.add_flux(self.fcen, 8e-3, self.nfreq, src_fr)
+		src_fr = mp.FluxRegion(center=mp.Vector3(-(self.sx/2) + 20,0,0), size=mp.Vector3(0,12,0))                            
+		self.refl = self.sim.add_flux(self.fcen, self.df, self.nfreq, src_fr)
 
 
 
 		# transmitted flux
-		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 5 ,0,0), size=mp.Vector3(0,20,0))
-		self.tranE = self.sim.add_flux(self.fcen, 8e-3, self.nfreq, tran_fr)
+		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 5 ,0,0), size=mp.Vector3(0,12,0))
+		self.tranE = self.sim.add_flux(self.fcen, self.df, self.nfreq, tran_fr)
 
 		if Plot:
 			self.pltModel()
@@ -219,7 +219,7 @@ class Model:
 		pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
 		print(pt)
 
-		self.sim.run(until_after_sources=mp.stop_when_fields_decayed(1000,mp.Ez,pt,self.DecayF))
+		self.sim.run(until_after_sources=mp.stop_when_fields_decayed(2000,mp.Ez,pt,self.DecayF))
 
 		# for normalization run, save flux fields data for reflection plane
 		self.norm_refl = self.sim.get_flux_data(self.refl)
@@ -236,12 +236,12 @@ class Model:
 		print("Actual Simtime:", self.SimT*t)
 
 
-		pt = mp.Vector3(0,0)
+		pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
 
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
 			mp.at_every(10500, mp.output_dpwr),
-			until_after_sources=mp.stop_when_fields_decayed(1000,mp.Ez,pt,self.DecayF)
+			until_after_sources=mp.stop_when_fields_decayed(2000,mp.Ez,pt,self.DecayF)
 			)
 
 		flux_freqs = mp.get_flux_freqs(self.refl)
@@ -264,6 +264,7 @@ class Model:
 		#plt.axis([5.0, 10.0, 0, 1])
 		plt.xlabel("wavelength (μm)")
 		plt.legend(loc="upper right")
+		plt.savefig(self.workingDir+"TransRef.pdf")
 		plt.show()
 
 

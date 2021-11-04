@@ -8,12 +8,12 @@ Model.CladLeft = 1
 Model.GAP = 100
 
 Model.fcen   = 1/1.55
-Model.df     = 50
-Model.nfreq  = 10
-Model.res = 5
-Model.DecayF = 1e-4
-Model.filename = 'No Bubbles'
-Model.Notes    = 'Only Polished'
+Model.df     = 1.3e-2
+Model.nfreq  = 1000
+Model.res = 1
+Model.DecayF = 1e-3
+Model.filename = 'TopsyTest'
+Model.Notes    = ''
 
 Model.buildPolished()
 
