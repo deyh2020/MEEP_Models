@@ -12,7 +12,7 @@ Model.df     = 1.3e-2
 Model.nfreq  = 1000
 Model.res = 5
 Model.DecayF = 1e-10
-Model.filename = 'TopsyTestRes5'
+Model.filename = 'TopsyTestRes5StopCenter'
 Model.Notes    = ''
 
 Model.buildPolished()
