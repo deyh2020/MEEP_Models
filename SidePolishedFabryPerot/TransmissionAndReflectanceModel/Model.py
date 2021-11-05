@@ -236,7 +236,10 @@ class Model:
 		print("Actual Simtime:", self.SimT*t)
 
 
-		pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
+		#pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
+		pt = mp.Vector3(0,0)
+
+
 
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
