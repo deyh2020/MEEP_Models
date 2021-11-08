@@ -3,16 +3,16 @@ import Model as M
 
 Model = M.Model() 
 
-
+Model.PDMSn = 1.000
 Model.CladLeft = 1
 Model.GAP = 100
-Model.Width = 150
+Model.Width = 100
 Model.fcen   = 1/1.55
 Model.df     = 1.3e-2
 Model.nfreq  = 1000
 Model.res = 5
 Model.DecayF = 1e-10
-Model.filename = 'LargerCavity'
+Model.filename = 'LargerCavityNoPDMS'
 Model.Notes    = ''
 
 Model.buildPolished()
