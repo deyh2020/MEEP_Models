@@ -6,7 +6,7 @@ Model = M.Model()
 
 Model.CladLeft = 1
 Model.GAP = 100
-
+Model.Width = 30
 Model.fcen   = 1/1.55
 Model.df     = 1.3e-2
 Model.nfreq  = 1000
@@ -33,7 +33,7 @@ Model.sim.reset_meep()
 
 
 #Build model with everything.
-Model.addtriBubbles()
+Model.sqrBubbles()
 Model.BuildModel(NormRun=False,Plot=False) 
 
 # for normal run, load negated fields to subtract incident from refl. fields

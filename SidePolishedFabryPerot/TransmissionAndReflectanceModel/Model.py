@@ -163,7 +163,18 @@ class Model:
 
 	def sqrBubbles(self):
 
-		x=1
+		RW = self.Rw
+		TL = self.Width
+		D  = self.Depth
+
+
+		self.LH = mp.Block(
+			center=mp.Vector3(x=0,y=-D/2+self.R1+self.CladLeft,z=0),
+			size=mp.Vector3(x=TL,y=D,z=mp.inf),
+			material=mp.Medium(index=self.PDMSn)
+			)
+
+		self.Objlist.extend([self.LH])
 
 
 	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
@@ -211,7 +222,9 @@ class Model:
 		self.tranE = self.sim.add_flux(self.fcen, self.df, self.nfreq, tran_fr)
 
 		if Plot:
-			self.pltModel()
+			self.pltModel(Plt=True)
+		else:
+			self.pltModel(Plt=False)
 
 
 
@@ -353,7 +366,9 @@ class Model:
 			json.dump(metadata, file)
 
 
-	def pltModel(self):
+	def pltModel(self,Plt):
 		plt.figure(dpi=200)
 		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-		plt.show()
+		if Plt:
+			plt.show()
+		plt.savefig(self.workingDir+"Model.pdf")
