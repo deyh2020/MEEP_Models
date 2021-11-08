@@ -12,7 +12,7 @@ Model.df     = 1.2e-2
 Model.nfreq  = 1000
 Model.res = 5
 Model.DecayF = 1e-30
-Model.filename = 'LargerCavityNoPDMSDblRes&Time'
+Model.filename = 'LargerCavityNoPDMSDblDecay'
 Model.Notes    = ''
 
 Model.buildPolished()
