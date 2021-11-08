@@ -6,13 +6,13 @@ Model = M.Model()
 
 Model.CladLeft = 1
 Model.GAP = 100
-Model.Width = 30
+Model.Width = 150
 Model.fcen   = 1/1.55
 Model.df     = 1.3e-2
 Model.nfreq  = 1000
 Model.res = 5
 Model.DecayF = 1e-10
-Model.filename = 'TopsyTestRes5StopCenter'
+Model.filename = 'LargerCavity'
 Model.Notes    = ''
 
 Model.buildPolished()
