@@ -11,7 +11,7 @@ Model.fcen   = 1/1.55
 Model.df     = 1.2e-2
 Model.nfreq  = 1000
 Model.res = 5
-Model.DecayF = 1e-30
+Model.DecayF = 1e-18
 Model.filename = 'LargerCavityNoPDMSDblDecay'
 Model.Notes    = ''
 
