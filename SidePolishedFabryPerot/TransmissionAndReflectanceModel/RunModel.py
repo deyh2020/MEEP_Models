@@ -10,9 +10,9 @@ Model.Width = 100
 Model.fcen   = 1/1.55
 Model.df     = 1.3e-2
 Model.nfreq  = 1000
-Model.res = 5
-Model.DecayF = 1e-10
-Model.filename = 'LargerCavityNoPDMS'
+Model.res = 10
+Model.DecayF = 1e-20
+Model.filename = 'LargerCavityNoPDMSDblRes&Time'
 Model.Notes    = ''
 
 Model.buildPolished()
