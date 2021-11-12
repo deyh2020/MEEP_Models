@@ -1,0 +1,1 @@
+{"PDMS_N": 1.0, "CoreN": 1.445, "CladN": 1.44, "R1": 4.1, "R2": 62.5, "CladLeft": 5, "Depth": 40, "Width": 50, "GAP": 200, "Rw": false, "fcen": 0.6451612903225806, "df": 0.012, "nfreq": 1000, "dpml": 5, "resolution": 5, "DecayF": 1e-09, "WallT": 0, "SimT": 1000000.0, "today": "2021-11-12", "WorkingDir": "notSet", "filename": "DblCavity", "notes": "", "sx": 810, "sy": 100}
