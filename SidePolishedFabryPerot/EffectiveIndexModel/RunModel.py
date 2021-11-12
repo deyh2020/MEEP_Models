@@ -4,7 +4,7 @@ import numpy as np
 
 Model = M.Model()
 
-Model.df     = Model.fcen*1000
+Model.df     = 1e-2
 Model.res = 4
 Model.filename = 'Debugging'
 Model.Notes    = 'Trying to get Bloch BC working'
@@ -16,15 +16,16 @@ Model.Pad = 0       #Cladding left over from polishing
 Model.buildFibre()
 #Model.buildPolishedFibre(WPDMS=True)
 
-Model.BuildModel(Plot=True) 
+Model.BuildModel(Plot=False) 
 
 #Model.GetEigenModes() #also sets sources up at the fundamental mode
 
-#Model.SimT = 100  #setSimtime in fs
+Model.SimT = 100  #setSimtime in fs
 #Model.RunAndPlotF()
 
 #Model.RunKpoints()
 Model.RunHarmv()
+
 
 a = 1e-6
 c = 2.99e8

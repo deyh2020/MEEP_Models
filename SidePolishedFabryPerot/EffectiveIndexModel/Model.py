@@ -45,7 +45,7 @@ class Model:
 		self.sim    = None
 		self.Objlist = []
 		self.Notes   = ''
-		self.SimSize = 40
+		self.SimSize = 140
 		self.PMLThick = 2
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
 		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
@@ -161,19 +161,31 @@ class Model:
 		self.harm = mp.Harminv(mp.Ey, self.kpoint, self.fcen, self.df)
 		self.sim.run(
 			mp.after_sources(self.harm),
-			until_after_sources=1000)
+			until_after_sources=100)
 
-		self.EigenmodeData = self.sim.get_eigenmode(
-			self.fcen,
-			mp.Z,
-			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
-			band_num=1,
-			kpoint=self.kpoint,
-			match_frequency=False,
-			parity=mp.ODD_Y
+		plt.figure(dpi=200)
+
+		self.sim.plot2D(
+			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+			fields=mp.Ey,
+			plot_sources_flag=False,
+			plot_monitors_flag=False,
+			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
-		self.k = self.EigenmodeData.k
-		self.vg = self.EigenmodeData.group_velocity
+		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
+		plt.show()
+
+		#self.EigenmodeData = self.sim.get_eigenmode(
+		#	self.fcen,
+		#	mp.Z,
+		#	mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
+		#	band_num=1,
+		#	kpoint=self.kpoint,
+		#	match_frequency=False,
+		#	parity=mp.ODD_Y
+		#	)
+		#self.k = self.EigenmodeData.k
+		#self.vg = self.EigenmodeData.group_velocity
 
 
 	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
@@ -193,7 +205,8 @@ class Model:
 				    eig_kpoint=kpoint,
 				    eig_band=1,
 				    eig_parity=mp.ODD_Y,
-				    eig_match_freq=True
+				    eig_match_freq=True,
+					eig_resolution=1
 				)
 			]
 

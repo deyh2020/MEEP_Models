@@ -28,8 +28,7 @@ class Model:
 		self.Depth  = 40
 		self.Width  = 62.5
 		self.GAP    = 100
-		self.Rw     = 1
-
+		self.Rw     = False
 		##Src properties
 		self.fcen   = 1/1.55
 		self.df     = 500
@@ -161,20 +160,43 @@ class Model:
 		self.Objlist.extend([self.LH,self.RH])
 
 
-	def sqrBubbles(self):
+	def sqrBubbles(self,Num):
 
 		RW = self.Rw
 		TL = self.Width
 		D  = self.Depth
 
+		
+		if Num == 1:
 
-		self.LH = mp.Block(
-			center=mp.Vector3(x=0,y=-D/2+self.R1+self.CladLeft,z=0),
-			size=mp.Vector3(x=TL,y=D,z=mp.inf),
-			material=mp.Medium(index=self.PDMSn)
-			)
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=0,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.PDMSn)
+				)
+				])
 
-		self.Objlist.extend([self.LH])
+		elif Num == 2:
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=-self.GAP/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.PDMSn)
+				)
+				])
+			
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=self.GAP/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.PDMSn)
+				)
+				])
+
 
 
 	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
@@ -285,55 +307,47 @@ class Model:
 
 
 
-	def RunSetT(self):
+	def SaveMeta(self):
 		
-		t = (1e-6/3e8)
-		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
+		metadata = {
+		##Material N
+		"PDMS_N": self.PDMSn,
+		"CoreN":self.coreN,
+		"CladN":self.cladN,
+		##Fibre Dimentions
+		"R1":self.R1,
+		"R2":self.R2,
+		"CladLeft":self.CladLeft,
+		##Resonator Dimentions
+		"Depth":self.Depth,
+		"Width":self.Width,
+		"GAP":self.GAP,
+		"Rw":self.Rw,
+		##Src properties
+		"fcen":self.fcen,
+		"df":self.df, 
+		"nfreq":self.nfreq,
 
-		print("Actual Simtime:", self.SimT*t)
+		##MEEP properties
+		"dpml":self.dpml,
+		"resolution":self.res,
+		"DecayF":self.DecayF,
+		"WallT":self.WallT,
+		"SimT":self.SimT,
+		"today":self.today,
+		"WorkingDir":self.workDir,
+		"filename":self.filename,
+		"notes":self.Notes,
 
-
-		pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
-
-		self.sim.run(
-			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(10500, mp.output_dpwr),
-			until_after_sources=mp.stop_when_fields_decayed(1000,mp.Ez,pt,1e-3)
-			)
-
-
-		plt.figure(dpi=200)
-		self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
-		plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
-
-		self.meta = {
-		"Notes": self.Notes,
-        "DecayFactor": self.DecayF,
-        "Walltime": self.WallT,
-        "Gap": self.GAP,
-        "fsrc": self.fcen,
-        "df": self.df,
-        "nfreq": self.nfreq,
-        "resolution": self.res,
-        "Depth": self.Depth
+		"sx":self.sx,
+		"sy":self.sy
         }
 
-		self.dumpData2File()
+		with open(self.workingDir + 'metadata.json', 'w') as file:
+			json.dump(metadata, file)
 
-		fig,axes = plt.subplots(1,1,figsize=(16,9))
 
-		wl = 1/np.array(mp.get_flux_freqs(self.tranE))
 
-		Tran = np.array(mp.get_fluxes(self.tranE))
-
-		Src = np.array(mp.get_fluxes(self.srcE))
-
-		axes.plot(wl,Tran,label='Transmission')
-		axes.plot(wl,Src,label='Reflectance')
-		axes.plot(wl,1-Src-Tran,label='Loss')
-		axes.legend()
-		plt.savefig(self.workingDir+"Spectrum.pdf")
-		plt.show()
 
 	def dumpData2File(self):
     
