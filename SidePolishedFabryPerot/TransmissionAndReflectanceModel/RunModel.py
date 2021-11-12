@@ -10,14 +10,14 @@ Model.PDMSn = 1.000
 
 
 Model.CladLeft = 5
-Model.GAP = 200
-Model.Width = 50
+Model.GAP = 1000
+Model.Width = 100
 Model.fcen   = 1/1.55
 Model.df     = 1.2e-2
 Model.nfreq  = 1000
 Model.res = 5
 Model.DecayF = 1e-9
-Model.filename = 'DblCavity'
+Model.filename = 'LargerDevice'
 Model.Notes    = ''
 
 Model.buildPolished()
