@@ -6,7 +6,7 @@ Model = M.Model()
 
 
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
-Model.PDMSn = 1.000
+Model.PDMSn = 1.41
 
 
 Model.CladLeft = 5
@@ -17,7 +17,7 @@ Model.df     = 1.2e-2
 Model.nfreq  = 1000
 Model.res = 5
 Model.DecayF = 1e-9
-Model.filename = 'LargerDevice'
+Model.filename = 'LargerDeviceWPDMS'
 Model.Notes    = ''
 
 Model.buildPolished()
