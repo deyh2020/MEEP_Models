@@ -6,7 +6,7 @@ Model = M.Model()
 
 
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
-Model.PDMSn = 1.41
+#Model.PDMSn = 1.41
 
 
 Model.CladLeft = 5
