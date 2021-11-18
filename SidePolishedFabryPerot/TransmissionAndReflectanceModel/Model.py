@@ -42,7 +42,8 @@ class Model:
 		self.SimT   = 1e6
 		self.today  = str(date.today())
 		self.workDir= 'notSet'
-		self.filename= 'test'
+		self.filename = 'test'
+		self.Datafile = 'test'
 		self.sim    = None
 		self.Objlist = []
 		self.Notes   = ''
@@ -283,9 +284,19 @@ class Model:
 			)
 
 		flux_freqs = mp.get_flux_freqs(self.refl)
-
 		refl_flux = mp.get_fluxes(self.refl)
 		tran_flux = mp.get_fluxes(self.tranE)
+
+		Data = {}
+		Data['flux_freqs'] = flux_freqs
+		Data['refl_flux'] = refl_flux
+		Data['tran_flux'] = tran_flux
+
+		with open(self.Datafile, 'wb') as file:
+			pickle.dump(Data,file)
+
+
+
 
 		wl = []
 		Rs = []

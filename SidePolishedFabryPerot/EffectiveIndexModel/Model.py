@@ -172,6 +172,7 @@ class Model:
 			plot_monitors_flag=False,
 			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
+
 		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
 		plt.show()
 
