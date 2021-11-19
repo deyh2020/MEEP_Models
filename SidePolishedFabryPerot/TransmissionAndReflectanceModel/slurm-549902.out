@@ -1,0 +1,119 @@
+Using MPI version 3.1, 16 processes
+WD: data/2021-11-04/TopsyTest/
+AlreadyDir
+Vector3<364.0, 0.0, 0.0>
+-----------
+Initializing structure...
+Splitting into 16 chunks by voxels
+time for choose_chunkdivision = 0.000980452 s
+Working in 2D dimensions.
+Computational cell is 735 x 100 x 0 with resolution 1
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-30.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.18597 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.278078 after 38 iters
+MPB solved for frequency_1(0.930727,0,0) = 0.645059 after 19 iters
+MPB solved for frequency_1(0.930875,0,0) = 0.645161 after 59 iters
+MPB solved for frequency_1(0.930875,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-04/TopsyTest/'
+field decay(t = 2000.5): 8.77107469225357e-20 / 8.77107469225357e-20 = 1.0
+on time step 4619 (time=2309.5), 0.00086611 s/step
+field decay(t = 4001.0): 7.826320918348595e-20 / 8.77107469225357e-20 = 0.8922875694195875
+on time step 9559 (time=4779.5), 0.00080974 s/step
+field decay(t = 6001.5): 6.365455603636255e-20 / 8.77107469225357e-20 = 0.7257326869258214
+on time step 14485 (time=7242.5), 0.00081211 s/step
+field decay(t = 8002.0): 1.078244831834887e-20 / 8.77107469225357e-20 = 0.12293189485516186
+on time step 19480 (time=9740), 0.000800823 s/step
+field decay(t = 10002.5): 4.989565173138086e-21 / 8.77107469225357e-20 = 0.05688658856758757
+field decay(t = 12003.0): 4.111305062803836e-21 / 8.77107469225357e-20 = 0.04687344717785672
+on time step 24460 (time=12230), 0.000803345 s/step
+field decay(t = 14003.5): 2.2791348932786883e-21 / 8.77107469225357e-20 = 0.02598467090117899
+on time step 29406 (time=14703), 0.000808768 s/step
+field decay(t = 16004.0): 1.3571259136452619e-21 / 8.77107469225357e-20 = 0.015472743777268788
+on time step 34380 (time=17190), 0.000804228 s/step
+field decay(t = 18004.5): 1.1383497984851357e-21 / 8.77107469225357e-20 = 0.012978452908290729
+on time step 39380 (time=19690), 0.000800026 s/step
+field decay(t = 20005.0): 7.753681044328288e-22 / 8.77107469225357e-20 = 0.008840058164338945
+field decay(t = 22005.5): 7.0969795119847155e-22 / 8.77107469225357e-20 = 0.008091345429144069
+on time step 44361 (time=22180.5), 0.000803132 s/step
+field decay(t = 24006.0): 3.7526247236354684e-22 / 8.77107469225357e-20 = 0.004278409266027239
+on time step 49311 (time=24655.5), 0.00080812 s/step
+field decay(t = 26006.5): 3.144497418329538e-22 / 8.77107469225357e-20 = 0.0035850765483808867
+on time step 54281 (time=27140.5), 0.000804863 s/step
+field decay(t = 28007.0): 3.3658743554729083e-22 / 8.77107469225357e-20 = 0.0038374708614049065
+on time step 59286 (time=29643), 0.000799254 s/step
+field decay(t = 30007.5): 2.8127752966684573e-22 / 8.77107469225357e-20 = 0.0032068764608202934
+field decay(t = 32008.0): 1.5249352077178522e-22 / 8.77107469225357e-20 = 0.001738595623937216
+on time step 64274 (time=32137), 0.000802083 s/step
+field decay(t = 34008.5): 1.5577778380820065e-22 / 8.77107469225357e-20 = 0.0017760398728080646
+on time step 69214 (time=34607), 0.000809781 s/step
+field decay(t = 36009.0): 1.062090049860512e-22 / 8.77107469225357e-20 = 0.0012109007015964962
+on time step 74178 (time=37089), 0.000805924 s/step
+field decay(t = 38009.5): 6.153907545025302e-23 / 8.77107469225357e-20 = 0.000701613857018035
+run 0 finished at t = 38009.5 (76019 timesteps)
+WD: data/2021-11-04/TopsyTest/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 16 chunks by voxels
+time for choose_chunkdivision = 0.00128505 s
+Working in 2D dimensions.
+Computational cell is 735 x 100 x 0 with resolution 1
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-30.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     prism, center = (-50,0,0)
+          height 1, axis (0,0,1), sidewall angle: 0 radians, 4 vertices:
+          (-81.75,20,-0.5)
+          (-18.25,20,-0.5)
+          (-49.5,-20,-0.5)
+          (-50.5,-20,-0.5)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     prism, center = (50,0,0)
+          height 1, axis (0,0,1), sidewall angle: 0 radians, 4 vertices:
+          (18.25,20,-0.5)
+          (81.75,20,-0.5)
+          (50.5,-20,-0.5)
+          (49.5,-20,-0.5)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.103199 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.278078 after 38 iters
+MPB solved for frequency_1(0.930727,0,0) = 0.645059 after 19 iters
+MPB solved for frequency_1(0.930875,0,0) = 0.645161 after 59 iters
+MPB solved for frequency_1(0.930875,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-04/TopsyTest/'
+Actual Simtime: 3.3333333333333334e-09
+creating output file "data/2021-11-04/TopsyTest//RunModel-eps-000000.00.h5"...
+field decay(t = 2000.5): 7.275674194380863e-20 / 7.275674194380863e-20 = 1.0
+on time step 4677 (time=2338.5), 0.000855268 s/step
+field decay(t = 4001.0): 4.42122921078275e-20 / 7.275674194380863e-20 = 0.6076727864198959
+on time step 9617 (time=4808.5), 0.000809733 s/step
+field decay(t = 6001.5): 1.0722004852256027e-20 / 7.275674194380863e-20 = 0.14736785300992214
+on time step 14550 (time=7275), 0.000810927 s/step
+field decay(t = 8002.0): 5.660376950985846e-22 / 7.275674194380863e-20 = 0.007779865892507197
+on time step 19539 (time=9769.5), 0.000801821 s/step
+field decay(t = 10002.5): 1.796283295640389e-23 / 7.275674194380863e-20 = 0.00024688891333640137
+run 0 finished at t = 10002.5 (20005 timesteps)
+
+Elapsed run time = 79.1446 s

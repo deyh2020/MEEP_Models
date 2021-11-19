@@ -1,0 +1,647 @@
+Using MPI version 3.1, 64 processes
+WD: data/2021-11-12/LargerDeviceWPDMS/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00579916 s
+Working in 2D dimensions.
+Computational cell is 1710 x 100 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.455318 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277852 after 53 iters
+MPB solved for frequency_1(0.93122,0,0) = 0.645165 after 34 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 6 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-12/LargerDeviceWPDMS/'
+Vector3<851.5, 0.0, 0.0>
+on time step 241 (time=24.1), 0.0166099 s/step
+on time step 795 (time=79.5), 0.00722777 s/step
+on time step 1330 (time=133), 0.00747897 s/step
+on time step 1878 (time=187.8), 0.00731229 s/step
+on time step 2404 (time=240.4), 0.00760946 s/step
+on time step 2930 (time=293), 0.00761607 s/step
+on time step 3486 (time=348.6), 0.00720201 s/step
+on time step 4052 (time=405.2), 0.00707585 s/step
+on time step 4603 (time=460.3), 0.00726501 s/step
+on time step 5114 (time=511.4), 0.00782912 s/step
+on time step 5630 (time=563), 0.00775358 s/step
+on time step 6146 (time=614.6), 0.00775663 s/step
+on time step 6659 (time=665.9), 0.00780947 s/step
+on time step 7164 (time=716.4), 0.0079315 s/step
+on time step 7674 (time=767.4), 0.00784756 s/step
+on time step 8182 (time=818.2), 0.00788122 s/step
+on time step 8680 (time=868), 0.00804529 s/step
+on time step 9186 (time=918.6), 0.00791267 s/step
+on time step 9692 (time=969.2), 0.00791836 s/step
+on time step 10197 (time=1019.7), 0.0079343 s/step
+on time step 10700 (time=1070), 0.00795367 s/step
+on time step 11196 (time=1119.6), 0.00807493 s/step
+on time step 11695 (time=1169.5), 0.00801631 s/step
+on time step 12193 (time=1219.3), 0.00803499 s/step
+on time step 12687 (time=1268.7), 0.00811083 s/step
+on time step 13184 (time=1318.4), 0.00806416 s/step
+on time step 13678 (time=1367.8), 0.00810748 s/step
+on time step 14171 (time=1417.1), 0.00812576 s/step
+on time step 14658 (time=1465.8), 0.0082231 s/step
+on time step 15150 (time=1515), 0.00813968 s/step
+on time step 15639 (time=1563.9), 0.00819128 s/step
+on time step 16130 (time=1613), 0.00814853 s/step
+on time step 16619 (time=1661.9), 0.00819521 s/step
+on time step 17101 (time=1710.1), 0.00831561 s/step
+on time step 17578 (time=1757.8), 0.00839191 s/step
+on time step 18053 (time=1805.3), 0.00843741 s/step
+on time step 18521 (time=1852.1), 0.00855244 s/step
+on time step 18995 (time=1899.5), 0.0084457 s/step
+on time step 19467 (time=1946.7), 0.00847631 s/step
+on time step 19935 (time=1993.5), 0.00855472 s/step
+run 0 finished at t = 2000.1000000000001 (20001 timesteps)
+WD: data/2021-11-12/LargerDeviceWPDMS/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00603668 s
+Working in 2D dimensions.
+Computational cell is 1710 x 100 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (-500,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (500,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.309173 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277852 after 53 iters
+MPB solved for frequency_1(0.93122,0,0) = 0.645165 after 34 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 6 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-12/LargerDeviceWPDMS/'
+Actual Simtime: 3.3333333333333334e-09
+creating output file "data/2021-11-12/LargerDeviceWPDMS//RunModel-eps-000000.00.h5"...
+on time step 262 (time=26.2), 0.0152875 s/step
+on time step 826 (time=82.6), 0.00709954 s/step
+on time step 1366 (time=136.6), 0.00741627 s/step
+on time step 1912 (time=191.2), 0.00733033 s/step
+on time step 2451 (time=245.1), 0.00743182 s/step
+on time step 2985 (time=298.5), 0.00750461 s/step
+on time step 3548 (time=354.8), 0.00711649 s/step
+on time step 4120 (time=412), 0.00700396 s/step
+on time step 4665 (time=466.5), 0.00735163 s/step
+on time step 5182 (time=518.2), 0.00774222 s/step
+on time step 5697 (time=569.7), 0.00777616 s/step
+on time step 6213 (time=621.3), 0.00776509 s/step
+on time step 6728 (time=672.8), 0.00778015 s/step
+on time step 7240 (time=724), 0.00782408 s/step
+on time step 7750 (time=775), 0.00784406 s/step
+on time step 8260 (time=826), 0.0078563 s/step
+on time step 8766 (time=876.6), 0.0079073 s/step
+on time step 9263 (time=926.3), 0.00805739 s/step
+on time step 9767 (time=976.7), 0.00794923 s/step
+on time step 10271 (time=1027.1), 0.00794498 s/step
+on time step 10774 (time=1077.4), 0.00796822 s/step
+on time step 11274 (time=1127.4), 0.00800271 s/step
+on time step 11775 (time=1177.5), 0.00798709 s/step
+on time step 12271 (time=1227.1), 0.00807631 s/step
+on time step 12760 (time=1276), 0.00818361 s/step
+on time step 13251 (time=1325.1), 0.00814675 s/step
+on time step 13743 (time=1374.3), 0.00813689 s/step
+on time step 14234 (time=1423.4), 0.00815458 s/step
+on time step 14726 (time=1472.6), 0.00813436 s/step
+on time step 15217 (time=1521.7), 0.00815583 s/step
+on time step 15703 (time=1570.3), 0.00823494 s/step
+on time step 16189 (time=1618.9), 0.00824541 s/step
+on time step 16667 (time=1666.7), 0.00837271 s/step
+on time step 17147 (time=1714.7), 0.00834199 s/step
+on time step 17624 (time=1762.4), 0.00839466 s/step
+on time step 18103 (time=1810.3), 0.008358 s/step
+on time step 18577 (time=1857.7), 0.00844125 s/step
+on time step 19053 (time=1905.3), 0.00841526 s/step
+on time step 19525 (time=1952.5), 0.0084772 s/step
+on time step 19991 (time=1999.1), 0.00859595 s/step
+field decay(t = 2000.1000000000001): 0.4245168172890421 / 0.4245168172890421 = 1.0
+on time step 20458 (time=2045.8), 0.00856644 s/step
+on time step 20922 (time=2092.2), 0.00863554 s/step
+on time step 21278 (time=2127.8), 0.0112489 s/step
+on time step 21631 (time=2163.1), 0.0113352 s/step
+on time step 22202 (time=2220.2), 0.00701383 s/step
+on time step 22772 (time=2277.2), 0.0070197 s/step
+on time step 23341 (time=2334.1), 0.00703053 s/step
+on time step 23897 (time=2389.7), 0.0071956 s/step
+on time step 24468 (time=2446.8), 0.00701272 s/step
+on time step 25039 (time=2503.9), 0.00701358 s/step
+on time step 25610 (time=2561), 0.00701043 s/step
+on time step 26181 (time=2618.1), 0.00701516 s/step
+on time step 26752 (time=2675.2), 0.00701009 s/step
+on time step 27320 (time=2732), 0.00705189 s/step
+on time step 27886 (time=2788.6), 0.00707719 s/step
+on time step 28454 (time=2845.4), 0.00704335 s/step
+on time step 29024 (time=2902.4), 0.00702325 s/step
+on time step 29595 (time=2959.5), 0.00700934 s/step
+on time step 30166 (time=3016.6), 0.00701168 s/step
+on time step 30737 (time=3073.7), 0.00701637 s/step
+on time step 31307 (time=3130.7), 0.00702026 s/step
+on time step 31877 (time=3187.7), 0.00702901 s/step
+on time step 32433 (time=3243.3), 0.00719961 s/step
+on time step 33004 (time=3300.4), 0.00701436 s/step
+on time step 33575 (time=3357.5), 0.00701142 s/step
+on time step 34146 (time=3414.6), 0.00701141 s/step
+on time step 34717 (time=3471.7), 0.00701083 s/step
+on time step 35288 (time=3528.8), 0.00701226 s/step
+on time step 35856 (time=3585.6), 0.00705113 s/step
+on time step 36422 (time=3642.2), 0.00707807 s/step
+on time step 36990 (time=3699), 0.00704644 s/step
+on time step 37560 (time=3756), 0.00702123 s/step
+on time step 38131 (time=3813.1), 0.00701485 s/step
+on time step 38702 (time=3870.2), 0.00701507 s/step
+on time step 39272 (time=3927.2), 0.00701881 s/step
+on time step 39842 (time=3984.2), 0.00702054 s/step
+field decay(t = 4000.1000000000004): 0.07239858771761196 / 0.4245168172890421 = 0.1705435091593031
+on time step 40411 (time=4041.1), 0.00703606 s/step
+on time step 40967 (time=4096.7), 0.00720417 s/step
+on time step 41531 (time=4153.1), 0.00709318 s/step
+on time step 42102 (time=4210.2), 0.00701324 s/step
+on time step 42672 (time=4267.2), 0.00701863 s/step
+on time step 43243 (time=4324.3), 0.00701741 s/step
+on time step 43814 (time=4381.4), 0.00701593 s/step
+on time step 44382 (time=4438.2), 0.00705427 s/step
+on time step 44947 (time=4494.7), 0.00708819 s/step
+on time step 45515 (time=4551.5), 0.00705199 s/step
+on time step 46085 (time=4608.5), 0.0070253 s/step
+on time step 46656 (time=4665.6), 0.00701596 s/step
+on time step 47226 (time=4722.6), 0.00701894 s/step
+on time step 47797 (time=4779.7), 0.00701732 s/step
+on time step 48367 (time=4836.7), 0.00701914 s/step
+on time step 48936 (time=4893.6), 0.00703846 s/step
+on time step 49493 (time=4949.3), 0.00719277 s/step
+on time step 50064 (time=5006.4), 0.00701136 s/step
+on time step 50634 (time=5063.4), 0.00701937 s/step
+on time step 51205 (time=5120.5), 0.00701703 s/step
+on time step 51775 (time=5177.5), 0.00701767 s/step
+on time step 52345 (time=5234.5), 0.00701837 s/step
+on time step 52913 (time=5291.3), 0.00705019 s/step
+on time step 53478 (time=5347.8), 0.00708884 s/step
+on time step 54046 (time=5404.6), 0.00704842 s/step
+on time step 54617 (time=5461.7), 0.00701737 s/step
+on time step 55188 (time=5518.8), 0.00701561 s/step
+on time step 55759 (time=5575.9), 0.00701402 s/step
+on time step 56329 (time=5632.9), 0.00701997 s/step
+on time step 56899 (time=5689.9), 0.00702178 s/step
+on time step 57468 (time=5746.8), 0.00703312 s/step
+on time step 58025 (time=5802.5), 0.00719295 s/step
+on time step 58596 (time=5859.6), 0.00701486 s/step
+on time step 59167 (time=5916.7), 0.00701687 s/step
+on time step 59738 (time=5973.8), 0.00701564 s/step
+field decay(t = 6000.200000000001): 1.2610362726702848e-08 / 0.4245168172890421 = 2.97052135819552e-08
+on time step 60309 (time=6030.9), 0.0070128 s/step
+on time step 60880 (time=6088), 0.00701574 s/step
+on time step 61448 (time=6144.8), 0.0070488 s/step
+on time step 62013 (time=6201.3), 0.00708376 s/step
+on time step 62581 (time=6258.1), 0.00705253 s/step
+on time step 63152 (time=6315.2), 0.0070152 s/step
+on time step 63723 (time=6372.3), 0.00701732 s/step
+on time step 64294 (time=6429.4), 0.00701613 s/step
+on time step 64864 (time=6486.4), 0.00702003 s/step
+on time step 65434 (time=6543.4), 0.00702503 s/step
+on time step 66003 (time=6600.3), 0.00703298 s/step
+on time step 66560 (time=6656), 0.0071882 s/step
+on time step 67130 (time=6713), 0.00701878 s/step
+on time step 67701 (time=6770.1), 0.00700958 s/step
+on time step 68272 (time=6827.2), 0.00701727 s/step
+on time step 68843 (time=6884.3), 0.00701644 s/step
+on time step 69414 (time=6941.4), 0.00700931 s/step
+on time step 69982 (time=6998.2), 0.00705326 s/step
+on time step 70548 (time=7054.8), 0.00707878 s/step
+on time step 71116 (time=7111.6), 0.00705019 s/step
+on time step 71686 (time=7168.6), 0.00701996 s/step
+on time step 72257 (time=7225.7), 0.0070099 s/step
+on time step 72827 (time=7282.7), 0.00701848 s/step
+on time step 73398 (time=7339.8), 0.0070118 s/step
+on time step 73968 (time=7396.8), 0.00701934 s/step
+on time step 74537 (time=7453.7), 0.00703456 s/step
+on time step 75094 (time=7509.4), 0.00718247 s/step
+on time step 75665 (time=7566.5), 0.00701393 s/step
+on time step 76236 (time=7623.6), 0.00701092 s/step
+on time step 76807 (time=7680.7), 0.00701398 s/step
+on time step 77378 (time=7737.8), 0.00701617 s/step
+on time step 77949 (time=7794.9), 0.00701227 s/step
+on time step 78517 (time=7851.7), 0.00705178 s/step
+on time step 79082 (time=7908.2), 0.00708145 s/step
+on time step 79650 (time=7965), 0.00704554 s/step
+field decay(t = 8000.3): 2.970206529433921e-13 / 0.4245168172890421 = 6.996675769882603e-13
+run 0 finished at t = 8000.3 (80003 timesteps)
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunModel.py", line 52, in <module>
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Model.AutoRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 295, in AutoRun
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+
+Elapsed run time = 753.6317 s
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+    Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+ZeroDivisionError: float division by zero
+ZeroDivisionError: float division by zero
+srun: error: topsy-cn-1-6: tasks 0-15: Exited with exit code 1
+srun: error: topsy-cn-1-12: tasks 40-63: Exited with exit code 1
+srun: error: topsy-cn-1-11: tasks 16-39: Exited with exit code 1
