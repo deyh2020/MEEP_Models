@@ -1,0 +1,74 @@
+Using MPI version 3.1, 32 processes
+WD: data/2021-11-19/CoatedvsUncoated/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 32 chunks by voxels
+time for choose_chunkdivision = 0.00487053 s
+Working in 2D dimensions.
+Computational cell is 1710 x 100 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.600117 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277852 after 53 iters
+MPB solved for frequency_1(0.93122,0,0) = 0.645165 after 34 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 6 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-19/CoatedvsUncoated/'
+Vector3<851.5, 0.0, 0.0>
+on time step 152 (time=15.2), 0.0263372 s/step
+on time step 393 (time=39.3), 0.0166632 s/step
+on time step 630 (time=63), 0.0169383 s/step
+on time step 868 (time=86.8), 0.0168364 s/step
+on time step 1105 (time=110.5), 0.0169333 s/step
+on time step 1342 (time=134.2), 0.0169149 s/step
+on time step 1578 (time=157.8), 0.0170162 s/step
+on time step 1815 (time=181.5), 0.0169387 s/step
+on time step 2053 (time=205.3), 0.0168282 s/step
+on time step 2290 (time=229), 0.0169284 s/step
+on time step 2527 (time=252.7), 0.0169 s/step
+on time step 2764 (time=276.4), 0.0168863 s/step
+on time step 3002 (time=300.2), 0.0169323 s/step
+on time step 3241 (time=324.1), 0.0168 s/step
+on time step 3479 (time=347.9), 0.0168653 s/step
+on time step 3715 (time=371.5), 0.0169661 s/step
+on time step 3951 (time=395.1), 0.0169599 s/step
+on time step 4188 (time=418.8), 0.0168825 s/step
+on time step 4426 (time=442.6), 0.0168399 s/step
+on time step 4663 (time=466.3), 0.0169331 s/step
+on time step 4901 (time=490.1), 0.0168691 s/step
+on time step 5138 (time=513.8), 0.0169378 s/step
+on time step 5376 (time=537.6), 0.0168658 s/step
+on time step 5613 (time=561.3), 0.0169016 s/step
+on time step 5850 (time=585), 0.0168787 s/step
+on time step 6088 (time=608.8), 0.0168643 s/step
+on time step 6325 (time=632.5), 0.0168985 s/step
+on time step 6563 (time=656.3), 0.0168669 s/step
+on time step 6799 (time=679.9), 0.0170018 s/step
+on time step 7037 (time=703.7), 0.016875 s/step
+on time step 7274 (time=727.4), 0.016893 s/step
+on time step 7510 (time=751), 0.0169607 s/step
+on time step 7748 (time=774.8), 0.0168499 s/step
+on time step 7985 (time=798.5), 0.0168844 s/step
+on time step 8221 (time=822.1), 0.0169884 s/step
+on time step 8458 (time=845.8), 0.0169011 s/step
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: got SIGCONT
+srun: error: topsy-cn-2-23: task 31: Terminated
+slurmstepd: error: *** JOB 552639 ON topsy-cn-2-20 CANCELLED AT 2021-11-19T12:21:26 ***
+srun: forcing job termination
+slurmstepd: error: *** STEP 552639.0 ON topsy-cn-2-20 CANCELLED AT 2021-11-19T12:21:26 ***
+srun: error: topsy-cn-2-22: tasks 26-30: Terminated
+srun: error: topsy-cn-2-21: tasks 16-25: Terminated
+srun: error: topsy-cn-2-20: tasks 0-15: Terminated
