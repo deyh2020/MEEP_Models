@@ -291,6 +291,61 @@ class Model:
 		Data['flux_freqs'] = flux_freqs
 		Data['refl_flux'] = refl_flux
 		Data['tran_flux'] = tran_flux
+		Data['norm_tran'] = self.norm_tran
+		Data['norm_refl'] = self.norm_refl
+
+		with open(self.workingDir + self.Datafile + ".pkl", 'wb') as file:
+			pickle.dump(Data,file)
+
+
+
+
+		wl = []
+		Rs = []
+		Ts = []
+		for i in range(self.nfreq):
+			wl = np.append(wl, 1/flux_freqs[i])
+			Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
+
+		plt.figure()
+		plt.plot(wl,Rs,'--',label='reflectance')
+		plt.plot(wl,Ts,label='transmittance')
+		plt.plot(wl,1-Rs-Ts,label='loss')
+		#plt.axis([5.0, 10.0, 0, 1])
+		plt.xlabel("wavelength (μm)")
+		plt.legend(loc="upper right")
+		plt.savefig(self.workingDir+"TransRef.pdf")
+		plt.show()
+
+
+	def TimestepFields (self):
+		
+		t = (1e-6/3e8)
+		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
+
+		print("Actual Simtime:", self.SimT*t)
+
+
+		#pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
+		pt = mp.Vector3(0,0)
+
+
+
+		self.sim.run(
+			mp.at_beginning(mp.output_epsilon),
+			mp.at_every(10500, mp.output_dpwr),
+			until_after_sources=mp.stop_when_fields_decayed(2000,mp.Ez,pt,self.DecayF)
+			)
+
+		flux_freqs = mp.get_flux_freqs(self.refl)
+		refl_flux = mp.get_fluxes(self.refl)
+		tran_flux = mp.get_fluxes(self.tranE)
+
+		Data = {}
+		Data['flux_freqs'] = flux_freqs
+		Data['refl_flux'] = refl_flux
+		Data['tran_flux'] = tran_flux
 
 		with open(self.Datafile, 'wb') as file:
 			pickle.dump(Data,file)
@@ -315,7 +370,6 @@ class Model:
 		plt.legend(loc="upper right")
 		plt.savefig(self.workingDir+"TransRef.pdf")
 		plt.show()
-
 
 
 	def SaveMeta(self):
