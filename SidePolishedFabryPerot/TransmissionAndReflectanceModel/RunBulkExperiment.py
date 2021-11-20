@@ -10,14 +10,14 @@ Model = M.Model()
 #Model.PDMSn = 1.00
 
 Model.CladLeft = 5
-Model.GAP = 1000
-Model.Width = 100
+Model.GAP = 0
+Model.Width = 10
 Model.fcen   = 1/1.55
 Model.df     = 1.2e-2
 Model.nfreq  = 1000
-Model.res = 5
-Model.DecayF = 1e-4
-Model.filename = 'CoatedvsUncoated'
+Model.res = 6
+Model.DecayF = 1e-12
+Model.filename = 'SmallModelPDMS'
 Model.Notes    = ''
 
 Model.buildPolished()
@@ -25,21 +25,17 @@ Model.buildPolished()
 #do normalisation run only needs to be done once
 #build model without defects
 
-Model.BuildModel(NormRun=False,Plot=False) 
+Model.BuildModel(Plot=False) 
 Model.NormRun()
 
-
-
-Model.filename = 'PDMSCoated'
 Model.Datafile = "Data"
 
 #resetMEEP
 Model.sim.reset_meep()
+
 #Build model with everything.
-Model.sqrBubbles(Num=2)
+Model.sqrBubbles(Num=1)
 Model.BuildModel(NormRun=False,Plot=False) 
-
-
 
 # for normal run, load negated fields to subtract incident from refl. fields
 Model.sim.load_minus_flux_data(Model.refl, Model.norm_refl)
@@ -49,30 +45,17 @@ Model.AutoRun()
 
 Model.SaveMeta()
 
-
-
-Model.sim.reset_meep()
-
-Model.filename = 'UNCoated'
-Model.Datafile = "Data"
 Model.PDMSn = 1.00
+Model.filename = 'SmallModelUncoated'
+Model.Datafile = "Data"
 
+#resetMEEP
+Model.sim.reset_meep()
 
 Model.buildPolished()
-
-#do normalisation run only needs to be done once
-#build model without defects
-
-Model.BuildModel(NormRun=False,Plot=False) 
-Model.NormRun()
-
-#resetMEEP
-Model.sim.reset_meep()
 #Build model with everything.
-Model.sqrBubbles(Num=2)
+Model.sqrBubbles(Num=1)
 Model.BuildModel(NormRun=False,Plot=False) 
-
-
 
 # for normal run, load negated fields to subtract incident from refl. fields
 Model.sim.load_minus_flux_data(Model.refl, Model.norm_refl)
@@ -81,4 +64,3 @@ Model.sim.load_minus_flux_data(Model.refl, Model.norm_refl)
 Model.AutoRun()
 
 Model.SaveMeta()
-

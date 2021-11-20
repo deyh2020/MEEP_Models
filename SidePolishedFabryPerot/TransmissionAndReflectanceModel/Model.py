@@ -225,7 +225,7 @@ class Model:
 			sources=self.src,
 			resolution=self.res,
 			force_complex_fields=False,
-			eps_averaging=True,
+			eps_averaging=False,
 			boundary_layers=self.pml_layers,
 			#k_point=mp.Vector3(mp.X)
 			)
@@ -252,10 +252,13 @@ class Model:
 
 
 	def NormRun(self):
-		pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
+		pt = mp.Vector3(0.5*self.sx - self.dpml,0)
 		print(pt)
 
-		self.sim.run(until_after_sources=mp.stop_when_fields_decayed(2000,mp.Ez,pt,self.DecayF))
+		
+		self.sim.run(
+			until_after_sources=mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)
+			)
 
 		# for normalization run, save flux fields data for reflection plane
 		self.norm_refl = self.sim.get_flux_data(self.refl)
@@ -279,8 +282,8 @@ class Model:
 
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(10500, mp.output_dpwr),
-			until_after_sources=mp.stop_when_fields_decayed(2000,mp.Ez,pt,self.DecayF)
+			mp.at_every(10000, mp.output_dpwr),
+			until_after_sources=mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)
 			)
 
 		flux_freqs = mp.get_flux_freqs(self.refl)
@@ -316,59 +319,25 @@ class Model:
 		plt.xlabel("wavelength (μm)")
 		plt.legend(loc="upper right")
 		plt.savefig(self.workingDir+"TransRef.pdf")
-		plt.show()
+		#plt.show()
 
 
-	def TimestepFields (self):
+	def TimestepFields(self):
 		
-		t = (1e-6/3e8)
-		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
-
-		print("Actual Simtime:", self.SimT*t)
-
-
-		#pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
-		pt = mp.Vector3(0,0)
-
-
+		plt.figure(dpi=150)
 
 		self.sim.run(
-			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(10500, mp.output_dpwr),
-			until_after_sources=mp.stop_when_fields_decayed(2000,mp.Ez,pt,self.DecayF)
+			until=self.SimT
+			)
+		
+		self.sim.plot2D(
+			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+			fields=mp.Ez,
+			plot_sources_flag=True,
+			plot_monitors_flag=True,
+			#eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
 
-		flux_freqs = mp.get_flux_freqs(self.refl)
-		refl_flux = mp.get_fluxes(self.refl)
-		tran_flux = mp.get_fluxes(self.tranE)
-
-		Data = {}
-		Data['flux_freqs'] = flux_freqs
-		Data['refl_flux'] = refl_flux
-		Data['tran_flux'] = tran_flux
-
-		with open(self.Datafile, 'wb') as file:
-			pickle.dump(Data,file)
-
-
-
-
-		wl = []
-		Rs = []
-		Ts = []
-		for i in range(self.nfreq):
-			wl = np.append(wl, 1/flux_freqs[i])
-			Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
-			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
-
-		plt.figure()
-		plt.plot(wl,Rs,'--',label='reflectance')
-		plt.plot(wl,Ts,label='transmittance')
-		plt.plot(wl,1-Rs-Ts,label='loss')
-		#plt.axis([5.0, 10.0, 0, 1])
-		plt.xlabel("wavelength (μm)")
-		plt.legend(loc="upper right")
-		plt.savefig(self.workingDir+"TransRef.pdf")
 		plt.show()
 
 
