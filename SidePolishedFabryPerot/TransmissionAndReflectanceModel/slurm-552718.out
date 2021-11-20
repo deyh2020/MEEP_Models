@@ -1,0 +1,250 @@
+Using MPI version 3.1, 64 processes
+WD: data/2021-11-20/SmallModelPDMS/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00314218 s
+Working in 2D dimensions.
+Computational cell is 530 x 100 x 0 with resolution 6
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.165581 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277839 after 44 iters
+MPB solved for frequency_1(0.931237,0,0) = 0.645169 after 34 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-20/SmallModelPDMS/'
+Vector3<260.0, 0.0, 0.0>
+on time step 518 (time=43.1667), 0.00772391 s/step
+on time step 1250 (time=104.167), 0.00546865 s/step
+on time step 1983 (time=165.25), 0.00546119 s/step
+on time step 2726 (time=227.167), 0.00538998 s/step
+on time step 3463 (time=288.583), 0.0054277 s/step
+on time step 4191 (time=349.25), 0.00549939 s/step
+on time step 4916 (time=409.667), 0.00551886 s/step
+on time step 5601 (time=466.75), 0.00583987 s/step
+on time step 6278 (time=523.167), 0.00590969 s/step
+on time step 6922 (time=576.833), 0.00623744 s/step
+on time step 7347 (time=612.25), 0.00941774 s/step
+on time step 8107 (time=675.583), 0.00526696 s/step
+on time step 8869 (time=739.083), 0.00525001 s/step
+on time step 9617 (time=801.417), 0.00534779 s/step
+on time step 10370 (time=864.167), 0.00531584 s/step
+on time step 11127 (time=927.25), 0.00528849 s/step
+on time step 11879 (time=989.917), 0.00532281 s/step
+field decay(t = 1000.1666666666666): 2.2833787248613063e-05 / 2.2833787248613063e-05 = 1.0
+on time step 12642 (time=1053.5), 0.00524891 s/step
+on time step 13394 (time=1116.17), 0.00532417 s/step
+on time step 14154 (time=1179.5), 0.00526551 s/step
+on time step 14917 (time=1243.08), 0.0052473 s/step
+on time step 15665 (time=1305.42), 0.00535089 s/step
+on time step 16425 (time=1368.75), 0.00526934 s/step
+on time step 17172 (time=1431), 0.00535663 s/step
+on time step 17934 (time=1494.5), 0.0052547 s/step
+field decay(t = 1500.25): 0.5445229512402658 / 0.5445229512402658 = 1.0
+on time step 18691 (time=1557.58), 0.00529017 s/step
+on time step 19454 (time=1621.17), 0.00524729 s/step
+on time step 20211 (time=1684.25), 0.00529089 s/step
+on time step 20963 (time=1746.92), 0.00532458 s/step
+on time step 21717 (time=1809.75), 0.00530988 s/step
+on time step 22476 (time=1873), 0.00527108 s/step
+on time step 23231 (time=1935.92), 0.00530242 s/step
+on time step 23994 (time=1999.5), 0.00524889 s/step
+field decay(t = 2000.3333333333333): 0.00017652358953362408 / 0.5445229512402658 = 0.0003241802556376263
+on time step 24751 (time=2062.58), 0.00528875 s/step
+on time step 25507 (time=2125.58), 0.0052914 s/step
+on time step 26265 (time=2188.75), 0.00528149 s/step
+on time step 27015 (time=2251.25), 0.00533438 s/step
+on time step 27776 (time=2314.67), 0.00526052 s/step
+on time step 28533 (time=2377.75), 0.00529088 s/step
+on time step 29291 (time=2440.92), 0.00528258 s/step
+field decay(t = 2500.4166666666665): 7.205533423192348e-15 / 0.5445229512402658 = 1.3232745115298126e-14
+run 0 finished at t = 2500.4166666666665 (30005 timesteps)
+WD: data/2021-11-20/SmallModelPDMS/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00311496 s
+Working in 2D dimensions.
+Computational cell is 530 x 100 x 0 with resolution 6
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,-10.9,0)
+          size (10,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.0380498 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277839 after 44 iters
+MPB solved for frequency_1(0.931237,0,0) = 0.645169 after 34 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-20/SmallModelPDMS/'
+Actual Simtime: 3.3333333333333334e-09
+creating output file "data/2021-11-20/SmallModelPDMS//RunBulkExperiment-eps-000000.00.h5"...
+on time step 516 (time=43), 0.00775476 s/step
+on time step 1256 (time=104.667), 0.00541147 s/step
+on time step 2009 (time=167.417), 0.00531667 s/step
+on time step 2758 (time=229.833), 0.0053459 s/step
+on time step 3505 (time=292.083), 0.00535795 s/step
+on time step 4232 (time=352.667), 0.00550475 s/step
+on time step 4959 (time=413.25), 0.00550365 s/step
+on time step 5643 (time=470.25), 0.00585249 s/step
+field decay(t = 500.0833333333333): 3.168630501768297e-08 / 3.168630501768297e-08 = 1.0
+on time step 6318 (time=526.5), 0.00592681 s/step
+on time step 6934 (time=577.833), 0.00651782 s/step
+on time step 7400 (time=616.667), 0.00859427 s/step
+on time step 8157 (time=679.75), 0.00528545 s/step
+on time step 8916 (time=743), 0.00527133 s/step
+on time step 9678 (time=806.5), 0.00525077 s/step
+on time step 10441 (time=870.083), 0.00524273 s/step
+on time step 11198 (time=933.167), 0.00528824 s/step
+on time step 11947 (time=995.583), 0.00534368 s/step
+field decay(t = 1000.1666666666666): 0.5894943574699882 / 0.5894943574699882 = 1.0
+on time step 12702 (time=1058.5), 0.00530373 s/step
+on time step 13463 (time=1121.92), 0.00525753 s/step
+on time step 14222 (time=1185.17), 0.00527545 s/step
+on time step 14981 (time=1248.42), 0.00527694 s/step
+on time step 15744 (time=1312), 0.00524582 s/step
+on time step 16500 (time=1375), 0.00529273 s/step
+on time step 17249 (time=1437.42), 0.00534694 s/step
+field decay(t = 1500.25): 0.014008036451536983 / 0.5894943574699882 = 0.023762799887783737
+on time step 18011 (time=1500.92), 0.00525433 s/step
+on time step 18761 (time=1563.42), 0.00533907 s/step
+on time step 19523 (time=1626.92), 0.00525244 s/step
+on time step 20282 (time=1690.17), 0.00527185 s/step
+on time step 21046 (time=1753.83), 0.0052414 s/step
+on time step 21803 (time=1816.92), 0.00528849 s/step
+on time step 22562 (time=1880.17), 0.00527081 s/step
+on time step 23312 (time=1942.67), 0.00533823 s/step
+field decay(t = 2000.3333333333333): 7.835144646634854e-10 / 0.5894943574699882 = 1.3291297104627078e-09
+on time step 24068 (time=2005.67), 0.00529191 s/step
+on time step 24831 (time=2069.25), 0.00524306 s/step
+on time step 25587 (time=2132.25), 0.00529332 s/step
+on time step 26330 (time=2194.17), 0.00538381 s/step
+on time step 27090 (time=2257.5), 0.00526772 s/step
+on time step 27845 (time=2320.42), 0.00530377 s/step
+on time step 28600 (time=2383.33), 0.00530196 s/step
+on time step 29362 (time=2446.83), 0.00525607 s/step
+field decay(t = 2500.4166666666665): 3.4571379280893382e-15 / 0.5894943574699882 = 5.864581881541325e-15
+run 0 finished at t = 2500.4166666666665 (30005 timesteps)
+WD: data/2021-11-20/SmallModelUncoated/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.0037012 s
+Working in 2D dimensions.
+Computational cell is 530 x 100 x 0 with resolution 6
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,-10.9,0)
+          size (10,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,-10.9,0)
+          size (10,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.513186 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.278502 after 50 iters
+MPB solved for frequency_1(0.931922,0,0) = 0.645783 after 146 iters
+MPB solved for frequency_1(0.931022,0,0) = 0.645161 after 11 iters
+MPB solved for frequency_1(0.931022,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-20/SmallModelUncoated/'
+Actual Simtime: 3.3333333333333334e-09
+creating output file "data/2021-11-20/SmallModelUncoated//RunBulkExperiment-eps-000000.00.h5"...
+on time step 531 (time=44.25), 0.0075368 s/step
+on time step 1291 (time=107.583), 0.0052661 s/step
+on time step 2061 (time=171.75), 0.00519966 s/step
+on time step 2814 (time=234.5), 0.00531735 s/step
+on time step 3554 (time=296.167), 0.0054059 s/step
+on time step 4263 (time=355.25), 0.00564642 s/step
+on time step 4962 (time=413.5), 0.00573122 s/step
+on time step 5418 (time=451.5), 0.00878118 s/step
+field decay(t = 500.0833333333333): 6.266276002039408e-08 / 6.266276002039408e-08 = 1.0
+on time step 6158 (time=513.167), 0.00541201 s/step
+on time step 6928 (time=577.333), 0.00519527 s/step
+on time step 7700 (time=641.667), 0.00518524 s/step
+on time step 8461 (time=705.083), 0.00525766 s/step
+on time step 9221 (time=768.417), 0.005269 s/step
+on time step 9983 (time=831.917), 0.00525408 s/step
+on time step 10751 (time=895.917), 0.00521271 s/step
+on time step 11522 (time=960.167), 0.0051917 s/step
+field decay(t = 1000.1666666666666): 0.9632616387886056 / 0.9632616387886056 = 1.0
+on time step 12291 (time=1024.25), 0.00520204 s/step
+on time step 13065 (time=1088.75), 0.00517148 s/step
+on time step 13835 (time=1152.92), 0.00519889 s/step
+on time step 14594 (time=1216.17), 0.00527256 s/step
+on time step 15359 (time=1279.92), 0.005233 s/step
+on time step 16126 (time=1343.83), 0.00522091 s/step
+on time step 16893 (time=1407.75), 0.00522128 s/step
+on time step 17658 (time=1471.5), 0.00523078 s/step
+field decay(t = 1500.25): 0.02258024591207331 / 0.9632616387886056 = 0.023441446231026234
+on time step 18424 (time=1535.33), 0.00522596 s/step
+on time step 19190 (time=1599.17), 0.00522608 s/step
+on time step 19950 (time=1662.5), 0.00526844 s/step
+on time step 20712 (time=1726), 0.00525095 s/step
+on time step 21478 (time=1789.83), 0.00522477 s/step
+on time step 22248 (time=1854), 0.00519909 s/step
+on time step 23017 (time=1918.08), 0.00520544 s/step
+on time step 23784 (time=1982), 0.00522101 s/step
+field decay(t = 2000.3333333333333): 1.2420079705036039e-09 / 0.9632616387886056 = 1.2893775901483513e-09
+on time step 24556 (time=2046.33), 0.00518706 s/step
+on time step 25323 (time=2110.25), 0.00521613 s/step
+on time step 26079 (time=2173.25), 0.00529563 s/step
+on time step 26844 (time=2237), 0.00523542 s/step
+on time step 27608 (time=2300.67), 0.00524098 s/step
+on time step 28377 (time=2364.75), 0.00520301 s/step
+on time step 29143 (time=2428.58), 0.00522578 s/step
+on time step 29910 (time=2492.5), 0.00521544 s/step
+field decay(t = 2500.4166666666665): 2.8797419764748044e-15 / 0.9632616387886056 = 2.9895740269449096e-15
+run 0 finished at t = 2500.4166666666665 (30005 timesteps)
+
+Elapsed run time = 499.8585 s
