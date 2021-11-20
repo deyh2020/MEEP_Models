@@ -10,14 +10,14 @@ Model = M.Model()
 #Model.PDMSn = 1.00
 
 Model.CladLeft = 5
-Model.GAP = 0
-Model.Width = 10
+Model.GAP = 1000
+Model.Width = 100
 Model.fcen   = 1/1.55
 Model.df     = 1.2e-2
 Model.nfreq  = 1000
 Model.res = 6
 Model.DecayF = 1e-12
-Model.filename = 'SmallModelPDMS'
+Model.filename = 'LargeModelPDMS'
 Model.Notes    = ''
 
 Model.buildPolished()
@@ -34,7 +34,7 @@ Model.Datafile = "Data"
 Model.sim.reset_meep()
 
 #Build model with everything.
-Model.sqrBubbles(Num=1)
+Model.sqrBubbles(Num=2)
 Model.BuildModel(NormRun=False,Plot=False) 
 
 # for normal run, load negated fields to subtract incident from refl. fields
@@ -46,7 +46,7 @@ Model.AutoRun()
 Model.SaveMeta()
 
 Model.PDMSn = 1.00
-Model.filename = 'SmallModelUncoated'
+Model.filename = 'LargeModelUncoated'
 Model.Datafile = "Data"
 
 #resetMEEP
@@ -54,7 +54,7 @@ Model.sim.reset_meep()
 
 Model.buildPolished()
 #Build model with everything.
-Model.sqrBubbles(Num=1)
+Model.sqrBubbles(Num=2)
 Model.BuildModel(NormRun=False,Plot=False) 
 
 # for normal run, load negated fields to subtract incident from refl. fields
