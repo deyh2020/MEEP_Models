@@ -257,9 +257,7 @@ class Model:
 		for xpt in pts:
 			ptlist.extend([mp.Vector3(xpt,0)])
 
-		ptlist.extend([mp.Vector3(0.5*self.sx - self.dpml,0)])
-		print(ptlist)
-
+		
 		for pt in ptlist:
 			print("")
 			print("")
@@ -270,8 +268,21 @@ class Model:
 			#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(250,mp.output_efield_z),
 			until_after_sources=[
-				mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)]
+				mp.stop_when_fields_decayed(500,mp.Ez,pt,1e-2)]
 			)
+
+		print("")
+		print("")
+		print("Final Monitor Point")
+		print("")
+		print("")
+		self.sim.run(
+			#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(250,mp.output_efield_z),
+			until_after_sources=[
+				mp.stop_when_fields_decayed(500,mp.Ez,[mp.Vector3(0.5*self.sx - self.dpml,0)],self.DecayF)]
+			)
+		
 
 	
 			
