@@ -12,14 +12,16 @@ Model.nCoating = 1.41
 
 Model.CladLeft = 5
 Model.GAP = 1000
-Model.Width = 100
+Model.Width = 5
 Model.fcen   = 1/1.55
 Model.df     = 1.2e-2
 Model.nfreq  = 1000
-Model.DecayF = 1e-4
-Model.filename = 'DebuggingRealscale'
+Model.DecayF = 1e-10
+Model.dpml = 10
+Model.filename = 'FullRunTopsy'
 Model.Notes    = ''
 
+Model.monitorPts = 4
 Model.res = 5
 
 Model.buildPolished()
@@ -27,7 +29,9 @@ Model.buildPolished()
 #do normalisation run only needs to be done once
 #build model without defects
 
-Model.BuildModel(NormRun=True,Plot=False) 
+
+
+Model.BuildModel(NormRun=True,Plot=True) 
 
 Model.NormRun()
 
@@ -49,5 +53,4 @@ Model.sim.load_minus_flux_data(Model.refl, Model.norm_refl)
 Model.AutoRun()
 
 Model.SaveMeta()
-
 

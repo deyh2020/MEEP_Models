@@ -35,6 +35,7 @@ class Model:
 		self.nfreq  = 100
 
 		##MEEP properties
+		self.monitorPts = 4
 		self.dpml   = 5
 		self.res    = 2
 		self.DecayF = 1e-8
@@ -221,6 +222,7 @@ class Model:
 			force_complex_fields=False,
 			eps_averaging=False,
 			boundary_layers=self.pml_layers,
+			progress_interval=30
 			#k_point=mp.Vector3(mp.X)
 			)
 
@@ -229,7 +231,7 @@ class Model:
 
 
 		# src flux
-		src_fr = mp.FluxRegion(center=mp.Vector3(-(self.sx/2) + 20,0,0), size=mp.Vector3(0,12,0))                            
+		src_fr = mp.FluxRegion(center=mp.Vector3(-(self.sx/2) + 2*self.dpml+10,0,0), size=mp.Vector3(0,12,0))                            
 		self.refl = self.sim.add_flux(self.fcen, self.df, self.nfreq, src_fr)
 
 
@@ -246,16 +248,46 @@ class Model:
 			plt.savefig(self.workingDir+"Model.pdf")
 
 
-	def NormRun(self):
-		pt = mp.Vector3(0.5*self.sx - 2*self.dpml,0)
-		print(pt)
+	def myRunFunction(self,points):
+		sx = self.sx
+		ptlist = [] 
 
-		
-		self.sim.run(
+		pts = np.arange(-sx/2,sx/2,sx/points)[1:]
+
+		for xpt in pts:
+			ptlist.extend([mp.Vector3(xpt,0)])
+
+		ptlist.extend([mp.Vector3(0.5*self.sx - self.dpml,0)])
+		print(ptlist)
+
+		for pt in ptlist:
+			print("")
+			print("")
+			print("Next Monitor Point: ", str(pt))
+			print("")
+			print("")
+			self.sim.run(
 			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(25, mp.output_efield_z),
-			until_after_sources=mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)
+			#mp.at_every(250,mp.output_efield_z),
+			until_after_sources=[
+				mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)]
 			)
+
+	
+			
+
+
+
+
+	def NormRun(self):
+
+		print("")
+		print("")
+		print("Normalisation Run")
+		print("")
+		print("")
+		
+		self.myRunFunction(self.monitorPts)
 
 		# for normalization run, save flux fields data for reflection plane
 		self.norm_refl = self.sim.get_flux_data(self.refl)
@@ -266,22 +298,21 @@ class Model:
 
 	def AutoRun(self):
 		
-		t = (1e-6/3e8)
-		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
+		print("")
+		print("")
+		print("Actual Run")
+		print("")
+		print("")
 
-		print("Actual Simtime:", self.SimT*t)
+		#self.myRunFunction(self.monitorPts)
 
-
-		#pt = mp.Vector3(0.5*self.sx - 0.5*self.dpml - 1,0)
-		pt = mp.Vector3(0,0)
-
-
-
+		pt = mp.Vector3()
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(10000, mp.output_dpwr),
+			mp.at_every(250, mp.output_dpwr),
 			until_after_sources=mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)
 			)
+		
 
 		flux_freqs = mp.get_flux_freqs(self.refl)
 		refl_flux = mp.get_fluxes(self.refl)
