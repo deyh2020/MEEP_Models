@@ -116,4 +116,4 @@ dmypy.json
 #Data Files
 *.h5
 *.pk1
-
+*.png
