@@ -21,7 +21,7 @@ Model.dpml = 10
 Model.filename = 'FullRunTopsy'
 Model.Notes    = ''
 
-Model.monitorPts = 4
+Model.monitorPts = 2
 Model.res = 5
 
 Model.buildPolished()
