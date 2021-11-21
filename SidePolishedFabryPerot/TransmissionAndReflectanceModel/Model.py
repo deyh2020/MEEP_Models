@@ -15,7 +15,7 @@ class Model:
 		#init constants
 		
 		##Material N
-		self.PDMSn  = 1.41
+		self.nCoating  = 1.41
 		self.coreN  = 1.445
 		self.cladN  = 1.440
 
@@ -48,18 +48,10 @@ class Model:
 		self.Objlist = []
 		self.Notes   = ''
 
-		self.sx = self.GAP + 2*self.Width + 100 
-		self.sy = 100
-
-
 
 		#init Data arrays
 		self.srcE  = np.array([])
 		self.tranE = np.array([])
-
-	def pltModel(self):
-		plt.figure(dpi=200)
-		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
 		
 
 	def mkALLDIRS(self):
@@ -77,11 +69,11 @@ class Model:
 
 
 
-	def buildNormal(self):
+	def buildNormalfibre(self):
 
-			
-			
-			self.sx = self.GAP + 2*self.Width + 1000 + 2*self.dpml
+			self.sx = self.GAP + 2*self.Width + 50 + 2*self.dpml
+			self.sy = 2*self.Depth + 2*self.dpml
+
 		
 			self.cell_size = mp.Vector3(self.sx,self.sy,0)
 
@@ -104,16 +96,18 @@ class Model:
 
 	def buildPolished(self):
 
-		self.sx = self.GAP + 2*self.Width + 500 + 2*self.dpml
+		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 100
+		self.sy = 2*self.Depth + 2*self.dpml
+
 		
 		self.cell_size = mp.Vector3(self.sx,self.sy,0)
 
 		self.pml_layers = [mp.PML(thickness=self.dpml)]
 
-		self.PDMS = mp.Block(
+		self.Coating = mp.Block(
 			center=mp.Vector3(0,0,0),
 			size=mp.Vector3(mp.inf,mp.inf,mp.inf),
-			material=mp.Medium(index=self.PDMSn)
+			material=mp.Medium(index=self.nCoating)
 			)
 
 		self.Clad = mp.Block(
@@ -128,7 +122,7 @@ class Model:
 			material=mp.Medium(index=self.coreN)
 			)
 
-		self.Objlist.extend([self.PDMS,self.Clad,self.Core])
+		self.Objlist.extend([self.Coating,self.Clad,self.Core])
 
 
 	def addtriBubbles(self):
@@ -175,7 +169,7 @@ class Model:
 				mp.Block(
 					center=mp.Vector3(x=0,y=-D/2+self.R1+self.CladLeft,z=0),
 					size=mp.Vector3(x=TL,y=D,z=mp.inf),
-					material=mp.Medium(index=self.PDMSn)
+					material=mp.Medium(index=self.nCoating)
 				)
 				])
 
@@ -183,18 +177,18 @@ class Model:
 			self.Objlist.extend([
 				
 				mp.Block(
-					center=mp.Vector3(x=-self.GAP/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					center=mp.Vector3(x=-self.GAP/2-self.Width/2,y=-D/2+self.R1+self.CladLeft,z=0),
 					size=mp.Vector3(x=TL,y=D,z=mp.inf),
-					material=mp.Medium(index=self.PDMSn)
+					material=mp.Medium(index=self.nCoating)
 				)
 				])
 			
 			self.Objlist.extend([
 				
 				mp.Block(
-					center=mp.Vector3(x=self.GAP/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					center=mp.Vector3(x=self.GAP/2+self.Width/2,y=-D/2+self.R1+self.CladLeft,z=0),
 					size=mp.Vector3(x=TL,y=D,z=mp.inf),
-					material=mp.Medium(index=self.PDMSn)
+					material=mp.Medium(index=self.nCoating)
 				)
 				])
 
@@ -207,7 +201,7 @@ class Model:
 
 		self.src = [
 				mp.EigenModeSource(src=mp.GaussianSource(self.fcen,fwidth=self.df),
-				center=mp.Vector3(x=-(self.sx/2)+5,y=0),
+				center=mp.Vector3(x=-(self.sx/2)+2*self.dpml,y=0),
 				size=mp.Vector3(y=40),
 				direction=mp.X,
 				eig_kpoint=kpoint,
@@ -241,22 +235,26 @@ class Model:
 
 
 		# transmitted flux
-		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 5 ,0,0), size=mp.Vector3(0,12,0))
+		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 2*self.dpml ,0,0), size=mp.Vector3(0,12,0))
 		self.tranE = self.sim.add_flux(self.fcen, self.df, self.nfreq, tran_fr)
 
-		if Plot:
-			self.pltModel(Plt=True)
+		if NormRun:
+			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
+			plt.savefig(self.workingDir+"NormModel.pdf")
 		else:
-			self.pltModel(Plt=False)
-
+			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
+			plt.savefig(self.workingDir+"Model.pdf")
+)
 
 
 	def NormRun(self):
-		pt = mp.Vector3(0.5*self.sx - self.dpml,0)
+		pt = mp.Vector3(0.5*self.sx - 2*self.dpml,0)
 		print(pt)
 
 		
 		self.sim.run(
+			#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(25, mp.output_efield_z),
 			until_after_sources=mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)
 			)
 
@@ -324,20 +322,24 @@ class Model:
 
 	def TimestepFields(self):
 		
-		plt.figure(dpi=150)
+		fig,axes = plt.subplots(1, 1,dpi=150)
 
 		self.sim.run(
 			until=self.SimT
 			)
 		
+		self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
+		"""
 		self.sim.plot2D(
+			ax = axes,
 			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
 			fields=mp.Ez,
 			plot_sources_flag=True,
 			plot_monitors_flag=True,
-			#eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
+			plot_eps_flag=True,
+			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
-
+		"""
 		plt.show()
 
 
@@ -345,7 +347,7 @@ class Model:
 		
 		metadata = {
 		##Material N
-		"PDMS_N": self.PDMSn,
+		"nCoating": self.nCoating,
 		"CoreN":self.coreN,
 		"CladN":self.cladN,
 		##Fibre Dimentions
