@@ -1,0 +1,84 @@
+Using MPI version 3.1, 32 processes
+WD: data/2021-11-20/LargeModelPDMS/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 32 chunks by voxels
+time for choose_chunkdivision = 0.00449272 s
+Working in 2D dimensions.
+Computational cell is 1710 x 100 x 0 with resolution 6
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.29541 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277839 after 44 iters
+MPB solved for frequency_1(0.931237,0,0) = 0.645169 after 53 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 7 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-20/LargeModelPDMS/'
+Vector3<850.0, 0.0, 0.0>
+on time step 113 (time=9.41667), 0.0354227 s/step
+on time step 317 (time=26.4167), 0.0196099 s/step
+on time step 520 (time=43.3333), 0.0197698 s/step
+on time step 725 (time=60.4167), 0.0195709 s/step
+on time step 929 (time=77.4167), 0.0197009 s/step
+on time step 1134 (time=94.5), 0.0195265 s/step
+on time step 1339 (time=111.583), 0.019541 s/step
+on time step 1542 (time=128.5), 0.019705 s/step
+on time step 1748 (time=145.667), 0.0194888 s/step
+on time step 1953 (time=162.75), 0.0195861 s/step
+on time step 2158 (time=179.833), 0.0195468 s/step
+on time step 2363 (time=196.917), 0.0195422 s/step
+on time step 2569 (time=214.083), 0.0194754 s/step
+on time step 2773 (time=231.083), 0.0196548 s/step
+on time step 2979 (time=248.25), 0.0195039 s/step
+on time step 3185 (time=265.417), 0.0194951 s/step
+on time step 3390 (time=282.5), 0.0195163 s/step
+on time step 3595 (time=299.583), 0.0195796 s/step
+on time step 3800 (time=316.667), 0.019529 s/step
+on time step 4006 (time=333.833), 0.0194995 s/step
+on time step 4212 (time=351), 0.0194971 s/step
+on time step 4417 (time=368.083), 0.0195389 s/step
+on time step 4622 (time=385.167), 0.0195128 s/step
+on time step 4827 (time=402.25), 0.0195218 s/step
+on time step 5030 (time=419.167), 0.019709 s/step
+on time step 5235 (time=436.25), 0.0195593 s/step
+on time step 5441 (time=453.417), 0.0194944 s/step
+on time step 5647 (time=470.583), 0.019498 s/step
+on time step 5853 (time=487.75), 0.0194657 s/step
+on time step 6058 (time=504.833), 0.0195268 s/step
+on time step 6264 (time=522), 0.0194953 s/step
+on time step 6469 (time=539.083), 0.019519 s/step
+on time step 6675 (time=556.25), 0.0195029 s/step
+on time step 6881 (time=573.417), 0.0195031 s/step
+on time step 7086 (time=590.5), 0.0195363 s/step
+on time step 7292 (time=607.667), 0.0194972 s/step
+on time step 7497 (time=624.75), 0.0195349 s/step
+on time step 7702 (time=641.833), 0.0195216 s/step
+on time step 7907 (time=658.917), 0.0196149 s/step
+on time step 8111 (time=675.917), 0.0196903 s/step
+on time step 8316 (time=693), 0.0195341 s/step
+on time step 8521 (time=710.083), 0.0195238 s/step
+on time step 8727 (time=727.25), 0.0194999 s/step
+on time step 8933 (time=744.417), 0.0194958 s/step
+on time step 9138 (time=761.5), 0.0195955 s/step
+on time step 9343 (time=778.583), 0.0195479 s/step
+on time step 9549 (time=795.75), 0.0195033 s/step
+on time step 9753 (time=812.75), 0.019622 s/step
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: got SIGCONT
+slurmstepd: error: *** STEP 552723.0 ON topsy-cn-1-10 CANCELLED AT 2021-11-20T17:59:57 ***
+slurmstepd: error: *** JOB 552723 ON topsy-cn-1-10 CANCELLED AT 2021-11-20T17:59:57 ***
+srun: forcing job termination
+srun: error: topsy-cn-1-10: tasks 0-10: Terminated
+srun: error: topsy-cn-2-22: tasks 11-31: Terminated
