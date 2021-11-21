@@ -244,7 +244,6 @@ class Model:
 		else:
 			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
 			plt.savefig(self.workingDir+"Model.pdf")
-)
 
 
 	def NormRun(self):
