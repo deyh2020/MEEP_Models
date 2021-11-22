@@ -15,7 +15,7 @@ class Model:
 		#init constants
 		
 		##Material N
-		self.PDMSn  = 1.41
+		self.S  = 1.41
 		self.coreN  = 1.445
 		self.cladN  = 1.440
 
@@ -30,7 +30,8 @@ class Model:
 		self.GAP    = 100
 
 		##Src properties / c=1
-		self.fcen   = 1/1.55
+		self.wl     = 1.55
+		self.fcen   = 1/self.wl
 		self.df     = 0.1*self.fcen
 		self.nfreq  = 100
 
@@ -50,7 +51,9 @@ class Model:
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
 		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
 
-
+		#LoadTempDependanceData
+		self.PDMSindex()
+		self.Silicaindex()
 
 		#init Data arrays
 		self.srcE  = np.array([])
@@ -94,8 +97,8 @@ class Model:
 
 		self.PolishedZone = mp.Block(
 			center=mp.Vector3(y=self.R2/2+self.R1+self.Pad), 
-			size=mp.Vector3(125,62.5,mp.inf), 
-			material=mp.Medium(index=self.PDMSn if WPDMS else 1.0))
+			size=mp.Vector3(250,62.5,mp.inf), 
+			material=mp.Medium(index=self.nCoating))
 		
 
 		self.Core = mp.Cylinder(
@@ -116,83 +119,14 @@ class Model:
 		print(self.Objlist)
 
 
-	def GetEigenModes(self):
-		self.sim.init_sim()
-
-
-		self.EigenmodeData = self.sim.get_eigenmode(
-			0.22,
-			mp.Z,
-			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
-			band_num=1,
-			kpoint=self.kpoint,
-			match_frequency=False,
-			parity=mp.ODD_Y
-			)
-
-		fcen = self.EigenmodeData.freq
-		k = self.EigenmodeData.k
-		vg = self.EigenmodeData.group_velocity
-		
-		print("vg",vg)
-
-		self.sim.reset_meep()
-		self.SrcSize  = self.SimSize - 2*self.PMLThick
-
-		eig_sources = [mp.EigenModeSource(src=mp.GaussianSource(fcen, fwidth=0.1*fcen),
-                                      size=mp.Vector3(self.SrcSize,self.SrcSize),
-                                      center=mp.Vector3(),
-                                      eig_band=1,
-                                      eig_kpoint=k,
-                                      eig_match_freq=False,
-                                      eig_parity=mp.ODD_Y)]
-
-		self.sim.change_sources(eig_sources)
-
-		
-		wi = self.sim.run_k_points(100, [k])
-		print(wi)
-
-
-
-
-
-	def RunHarmv(self):
-		self.harm = mp.Harminv(mp.Ey, self.kpoint, self.fcen, self.df)
-		self.sim.run(
-			mp.after_sources(self.harm),
-			until_after_sources=100)
-
-		plt.figure(dpi=200)
-
-		self.sim.plot2D(
-			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
-			fields=mp.Ey,
-			plot_sources_flag=False,
-			plot_monitors_flag=False,
-			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
-			)
-
-		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
-		plt.show()
-
-		#self.EigenmodeData = self.sim.get_eigenmode(
-		#	self.fcen,
-		#	mp.Z,
-		#	mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
-		#	band_num=1,
-		#	kpoint=self.kpoint,
-		#	match_frequency=False,
-		#	parity=mp.ODD_Y
-		#	)
-		#self.k = self.EigenmodeData.k
-		#self.vg = self.EigenmodeData.group_velocity
 
 
 	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
 		
-		
-		kpoint = mp.Vector3(z=self.fcen*self.coreN)
+		self.fcen   = 1/self.wl
+		self.df     = 0.1*self.fcen
+		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
+
 
 		self.src = [
 				mp.EigenModeSource(
@@ -203,7 +137,7 @@ class Model:
 				    center=mp.Vector3(0,0,0),
 				    size=mp.Vector3(self.SrcSize,self.SrcSize,0),
 				    direction=mp.Z,
-				    eig_kpoint=kpoint,
+				    eig_kpoint=self.kpoint,
 				    eig_band=1,
 				    eig_parity=mp.ODD_Y,
 				    eig_match_freq=True,
@@ -215,12 +149,12 @@ class Model:
 		self.sim = mp.Simulation(
 			cell_size=self.cell_size,
 			geometry=self.Objlist,
-			sources=self.src,
+			#sources=self.src,
 			resolution=self.res,
 			force_complex_fields=True,
 			eps_averaging=False,
 			boundary_layers=self.pml_layers,
-			k_point=kpoint,   
+			k_point=self.kpoint,   
 			ensure_periodicity=False
 			)
 
@@ -239,6 +173,22 @@ class Model:
 		#self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
 		if Plot:
 			self.pltModel()
+
+
+	def RunMPB(self):
+
+		self.sim.init_sim()
+		self.EigenmodeData = self.sim.get_eigenmode(
+			self.fcen,
+			mp.Z,
+			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
+			band_num=1,
+			kpoint=self.kpoint,
+			match_frequency=True
+			)
+		self.k = self.EigenmodeData.k
+		self.vg = self.EigenmodeData.group_velocity
+		self.neff = self.k.norm() * self.wl
 
 
 	def RunAndPlotF(self):
@@ -370,3 +320,13 @@ class Model:
 			json.dump(metadata, file)
 
 
+	def PDMSindex(self):
+
+		self.PDMStemp = np.array([27.04200613, 30.04708872, 40.09978324, 50.0485836, 60.10202556, 70.05194708, 80.00074744])
+		self.nPDMS    = np.array([1.410413147,1.409271947,1.405629718,1.4019877,1.398453453,1.394973372,1.391331424])
+
+
+	def Silicaindex(self):
+		
+		self.Silicatemp = np.array([22.83686643,40.36719542,70.32692845,103.3346833])
+		self.nSilica    = np.array([1.445300107,1.44555516,1.445847903,1.445958546])
