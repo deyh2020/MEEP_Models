@@ -281,14 +281,8 @@ class Model:
 			#mp.at_every(250,mp.output_efield_z),
 			until_after_sources=[
 				mp.stop_when_fields_decayed(500,mp.Ez,[mp.Vector3(0.5*self.sx - self.dpml,0)],self.DecayF)]
-			)
+		)
 		
-
-	
-			
-
-
-
 
 	def NormRun(self):
 
@@ -298,7 +292,17 @@ class Model:
 		print("")
 		print("")
 		
-		self.myRunFunction(self.monitorPts)
+		pt1 = mp.stop_when_fields_decayed(500,mp.Ez,mp.Vector3(-self.sx/4,0),self.DecayF)
+		
+		pt2 = mp.stop_when_fields_decayed(500,mp.Ez,mp.Vector3(0.5*self.sx - self.dpml,0),self.DecayF)
+
+
+
+		self.sim.run(
+			#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(250,mp.output_efield_z),
+			until=[pt2]
+		)
 
 		# for normalization run, save flux fields data for reflection plane
 		self.norm_refl = self.sim.get_flux_data(self.refl)
@@ -463,3 +467,8 @@ class Model:
 		if Plt:
 			plt.show()
 		plt.savefig(self.workingDir+"Model.pdf")
+
+
+
+
+		
