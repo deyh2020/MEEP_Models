@@ -20,10 +20,10 @@ Model.df     = 1.2e-2
 Model.nfreq  = 1000
 Model.DecayF = 1e-4
 Model.dpml = 10
-Model.filename = 'PossiblyWorkingNow'
+Model.filename = 'PossiblyWorkingNowTopsy'
 Model.Notes    = ''
 
-Model.res = 4
+Model.res = 6
 
 Model.buildPolished()
 
