@@ -7,14 +7,12 @@ Model = M.Model()
 
 #Model.nCoating = 1.000
 Model.df     = 2e-2
-Model.res = 2
+Model.res = 3
 Model.filename = 'Debugging'
 Model.Notes    = 'Trying to get Bloch BC working'
 Model.Pad = 0    #Cladding left over from polishing
-Model.SimSize = 130
+Model.SimSize = 50
 Model.wl = 1.55
-
-
 
 PDMSneff = []
 

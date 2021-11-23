@@ -247,41 +247,6 @@ class Model:
 			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
 			plt.savefig(self.workingDir+"Model.pdf")
 
-
-	def myRunFunction(self,points):
-		sx = self.sx
-		ptlist = [] 
-
-		pts = np.arange(-sx/2,sx/2,sx/points)[1:]
-
-		for xpt in pts:
-			ptlist.extend([mp.Vector3(xpt,0)])
-
-		
-		for pt in ptlist:
-			print("")
-			print("")
-			print("Next Monitor Point: ", str(pt))
-			print("")
-			print("")
-			self.sim.run(
-			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(250,mp.output_efield_z),
-			until_after_sources=[
-				mp.stop_when_fields_decayed(500,mp.Ez,pt,1e-2)]
-			)
-
-		print("")
-		print("")
-		print("Final Monitor Point")
-		print("")
-		print("")
-		self.sim.run(
-			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(250,mp.output_efield_z),
-			until_after_sources=[
-				mp.stop_when_fields_decayed(500,mp.Ez,[mp.Vector3(0.5*self.sx - self.dpml,0)],self.DecayF)]
-		)
 		
 
 	def NormRun(self):
@@ -291,19 +256,31 @@ class Model:
 		print("Normalisation Run")
 		print("")
 		print("")
-		
-		pt1 = mp.stop_when_fields_decayed(500,mp.Ez,mp.Vector3(-self.sx/4,0),self.DecayF)
-		
-		pt2 = mp.stop_when_fields_decayed(500,mp.Ez,mp.Vector3(0.5*self.sx - self.dpml,0),self.DecayF)
 
-
+		#while sum(mp.get_fluxes(self.tranE)) == 0.0:
+		#	print(sum(mp.get_fluxes(self.tranE)))
+		#	print("looped")
+		
+		self.sim.run(
+		#	#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(100,mp.output_efield_z),
+			until=self.sx*self.coreN/0.69
+			
+			)
+		#
 
 		self.sim.run(
-			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(250,mp.output_efield_z),
-			until=[pt2]
+		#	#mp.at_beginning(mp.output_epsilon),
+		#	#mp.at_every(250,mp.output_efield_z),
+			until=mp.stop_when_fields_decayed(
+				50,
+				mp.Ez,mp.Vector3(0.5*self.sx - 0.5*self.dpml,0),self.DecayF
+				)
 		)
 
+		
+
+		
 		# for normalization run, save flux fields data for reflection plane
 		self.norm_refl = self.sim.get_flux_data(self.refl)
 		# save incident power for transmission plane

@@ -13,18 +13,17 @@ Model = M.Model()
 Model.nCoating = 1.41
 
 Model.CladLeft = 5
-Model.GAP = 800
-Model.Width = 1
+Model.GAP = 1000
+Model.Width = 100
 Model.fcen   = 1/1.55
 Model.df     = 1.2e-2
 Model.nfreq  = 1000
-Model.DecayF = 1e-8
+Model.DecayF = 1e-4
 Model.dpml = 10
-Model.filename = 'FullRunTopsy'
+Model.filename = 'PossiblyWorkingNow'
 Model.Notes    = ''
 
-Model.monitorPts = 2
-Model.res = 3
+Model.res = 4
 
 Model.buildPolished()
 
@@ -37,7 +36,6 @@ Model.BuildModel(NormRun=True,Plot=True)
 
 Model.NormRun()
 
-"""
 
 Model.Datafile = "Data"
 
@@ -55,5 +53,3 @@ Model.sim.load_minus_flux_data(Model.refl, Model.norm_refl)
 Model.AutoRun()
 
 Model.SaveMeta()
-
-"""
