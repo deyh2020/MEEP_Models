@@ -12,7 +12,7 @@ class Model:
 
 	def __init__(self):
 
-		#init constants
+		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
 		
 		##Material N
 		self.S  = 1.41
@@ -146,11 +146,14 @@ class Model:
 			]
 
 		
+
+		
 		self.sim = mp.Simulation(
 			cell_size=self.cell_size,
 			geometry=self.Objlist,
-			#sources=self.src,
+			sources=self.src,
 			resolution=self.res,
+			#symmetries=[mp.Mirror(mp.X)],
 			force_complex_fields=True,
 			eps_averaging=True,
 			boundary_layers=self.pml_layers,
@@ -213,7 +216,6 @@ class Model:
 			)
 		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
 		plt.show()
-		self.kpoint = self.sim.k_point
 
 
 	def calcNEFF(self):
@@ -318,6 +320,28 @@ class Model:
 
 		with open(self.workingDir + 'metadata.json', 'w') as file:
 			json.dump(metadata, file)
+
+
+	def TicTocGenerator(self):
+		# Generator that returns time differences
+		ti = 0           # initial time
+		tf = time.time() # final time
+		while True:
+			ti = tf
+			tf = time.time()
+			yield tf-ti # returns the time difference
+
+
+	# This will be the main function through which we define both tic() and toc()
+	def toc(self,tempBool=True):
+		# Prints the time difference yielded by generator instance TicToc
+		tempTimeInterval = next(self.TicToc)
+		if tempBool:
+			print( "Elapsed time: %f seconds.\n" %tempTimeInterval )
+
+	def tic(self):
+		# Records a time in TicToc, marks the beginning of a time interval
+		self.toc(False)
 
 
 	def PDMSindex(self):
