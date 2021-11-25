@@ -55,3 +55,5 @@ for r in Resolutions:
     #Run until fields decayed by 1e3
     Model.AutoRun()
     Model.SaveMeta()
+
+    Model.sim.reset_meep()
