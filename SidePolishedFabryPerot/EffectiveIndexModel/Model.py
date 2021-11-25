@@ -152,7 +152,7 @@ class Model:
 			#sources=self.src,
 			resolution=self.res,
 			force_complex_fields=True,
-			eps_averaging=False,
+			eps_averaging=True,
 			boundary_layers=self.pml_layers,
 			k_point=self.kpoint,   
 			ensure_periodicity=False
