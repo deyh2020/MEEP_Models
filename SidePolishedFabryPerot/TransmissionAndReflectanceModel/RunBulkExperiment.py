@@ -28,7 +28,7 @@ Model.Datafile = "Data"
 
 
 
-Resolutions = [5,6,7,8,10,12,15,20]
+Resolutions = [20,16,14,10,8,6,5,4]
 
 for r in Resolutions:  
 
