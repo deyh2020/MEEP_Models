@@ -1,0 +1,2722 @@
+Using MPI version 3.1, 64 processes
+WD: data/2021-11-21/FullRunTopsy/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00480727 s
+Working in 2D dimensions.
+Computational cell is 1130 x 100 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.166899 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277835 after 56 iters
+MPB solved for frequency_1(0.931246,0,0) = 0.645171 after 40 iters
+MPB solved for frequency_1(0.931231,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-21/FullRunTopsy/'
+
+
+Normalisation Run
+
+
+
+
+Next Monitor Point:  Vector3<0.0, 0.0, 0.0>
+
+
+on time step 336 (time=33.6), 0.0119118 s/step
+on time step 934 (time=93.4), 0.00669276 s/step
+on time step 1516 (time=151.6), 0.00687378 s/step
+on time step 2127 (time=212.7), 0.00654867 s/step
+on time step 2701 (time=270.1), 0.00697757 s/step
+on time step 3246 (time=324.6), 0.00735165 s/step
+on time step 3791 (time=379.1), 0.00734901 s/step
+on time step 4323 (time=432.3), 0.00752199 s/step
+on time step 4847 (time=484.7), 0.00763787 s/step
+on time step 5366 (time=536.6), 0.00772174 s/step
+on time step 5891 (time=589.1), 0.00762415 s/step
+on time step 6418 (time=641.8), 0.00759076 s/step
+on time step 6942 (time=694.2), 0.00764314 s/step
+on time step 7461 (time=746.1), 0.00771654 s/step
+on time step 7984 (time=798.4), 0.00764874 s/step
+on time step 8514 (time=851.4), 0.00755229 s/step
+on time step 9036 (time=903.6), 0.00767492 s/step
+on time step 9560 (time=956), 0.0076413 s/step
+field decay(t = 1000.2): 2.8744682470332933e-09 / 2.8744682470332933e-09 = 1.0
+on time step 10082 (time=1008.2), 0.00766905 s/step
+on time step 10598 (time=1059.8), 0.00775214 s/step
+on time step 11111 (time=1111.1), 0.0078111 s/step
+on time step 11612 (time=1161.2), 0.00799221 s/step
+on time step 12121 (time=1212.1), 0.00786215 s/step
+on time step 12627 (time=1262.7), 0.00791859 s/step
+on time step 13068 (time=1306.8), 0.00911422 s/step
+on time step 13354 (time=1335.4), 0.0140226 s/step
+on time step 13906 (time=1390.6), 0.00725609 s/step
+on time step 14531 (time=1453.1), 0.00640096 s/step
+field decay(t = 1500.3000000000002): 0.6219002367338313 / 0.6219002367338313 = 1.0
+on time step 15148 (time=1514.8), 0.0064891 s/step
+on time step 15769 (time=1576.9), 0.00644188 s/step
+on time step 16394 (time=1639.4), 0.0064063 s/step
+on time step 17019 (time=1701.9), 0.00640256 s/step
+on time step 17644 (time=1764.4), 0.00640046 s/step
+on time step 18269 (time=1826.9), 0.00640045 s/step
+on time step 18888 (time=1888.8), 0.00647121 s/step
+on time step 19506 (time=1950.6), 0.00647799 s/step
+field decay(t = 2000.4): 0.043913361671390344 / 0.6219002367338313 = 0.07061158539192668
+on time step 20129 (time=2012.9), 0.00642847 s/step
+on time step 20754 (time=2075.4), 0.00640586 s/step
+on time step 21379 (time=2137.9), 0.00640279 s/step
+on time step 22004 (time=2200.4), 0.00640166 s/step
+on time step 22629 (time=2262.9), 0.00640216 s/step
+on time step 23254 (time=2325.4), 0.00640432 s/step
+on time step 23879 (time=2387.9), 0.00640428 s/step
+on time step 24495 (time=2449.5), 0.00649797 s/step
+field decay(t = 2500.5): 1.5590439406126606e-14 / 0.6219002367338313 = 2.5069035972724993e-14
+run 0 finished at t = 2500.5 (25005 timesteps)
+
+
+Final Monitor Point
+
+
+Expected an iterable with three or fewer floating point values
+    or something of the form vec(x, [y, [z]])
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+Traceback (most recent call last):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 76, in vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+    val = _meep.new__vec(*args)
+    val = _meep.new__vec(*args)
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    return mp._vec(*args)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/__init__.py", line 1170, in _vec
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    val = _meep.new__vec(*args)
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    val = _meep.new__vec(*args)
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    val = _meep.new__vec(*args)
+    Model.NormRun()
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+NotImplementedError: Wrong number or type of arguments for overloaded function 'new__vec'.
+  Possible C/C++ prototypes are:
+    meep::vec::vec()
+    meep::vec::vec(double)
+    meep::vec::vec(double,double)
+    meep::vec::vec(double,double,double)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 36, in <module>
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+    Model.NormRun()
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_sources_until(until_after_sources, step_funcs)
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    self.sim.run(
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_sources_until(until_after_sources, step_funcs)
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_until(new_conds, step_funcs)
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    self._run_until(new_conds, step_funcs)
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self._run_sources_until(until_after_sources, step_funcs)
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    Model.NormRun()
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+
+Elapsed run time = 181.1610 s
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    Model.NormRun()
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 301, in NormRun
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    raise TypeError
+TypeError
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    raise TypeError
+TypeError
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    return cond[i](sim) and sim.round_time() >= ts
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    v = mp.vec(v3.x, v3.y)
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.myRunFunction(self.monitorPts)
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.myRunFunction(self.monitorPts)
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self.sim.run(
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 279, in myRunFunction
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    raise TypeError
+TypeError
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self.sim.run(
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 3645, in run
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    raise TypeError
+TypeError
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_sources_until(until_after_sources, step_funcs)
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+    v = mp.vec(v3.x, v3.y)
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    return cond[i](sim) and sim.round_time() >= ts
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    self._run_until(new_conds, step_funcs)
+    raise TypeError
+TypeError
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    raise TypeError
+TypeError
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    self._run_sources_until(until_after_sources, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2232, in _run_sources_until
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+    self._run_until(new_conds, step_funcs)
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    raise TypeError
+TypeError
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    raise TypeError
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+    raise TypeError
+TypeError
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    v = mp.vec(v3.x, v3.y)
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    raise TypeError
+TypeError
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    raise TypeError
+TypeError
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    self._run_until(new_conds, step_funcs)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in _run_until
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    raise TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    while not any([x(self) for x in cond]):
+    raise TypeError
+TypeError
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2193, in <listcomp>
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    while not any([x(self) for x in cond]):
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2229, in f
+    return cond[i](sim) and sim.round_time() >= ts
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 4253, in _stop
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    fabs = abs(sim.get_field_point(c, pt)) * abs(sim.get_field_point(c, pt))
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 2064, in get_field_point
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+    v3 = py_v3_to_vec(self.dimensions, pt, self.is_cylindrical)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 98, in py_v3_to_vec
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    v = mp.vec(v3.x, v3.y)
+  File "/share/apps/meep/1.18.0/lib/python3.9/site-packages/meep/simulation.py", line 81, in vec
+    raise TypeError
+TypeError
+    raise TypeError
+TypeError
+srun: error: topsy-cn-2-13: tasks 0-16: Exited with exit code 1
+srun: error: topsy-cn-2-17: tasks 40-63: Exited with exit code 1
+srun: error: topsy-cn-2-16: tasks 17-39: Exited with exit code 1

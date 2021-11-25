@@ -1,0 +1,122 @@
+Using MPI version 3.1, 64 processes
+WD: data/2021-11-21/DebuggingRealscale/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00515027 s
+Working in 2D dimensions.
+Computational cell is 1310 x 90 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.146787 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277835 after 56 iters
+MPB solved for frequency_1(0.931246,0,0) = 0.645171 after 40 iters
+MPB solved for frequency_1(0.931231,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-21/DebuggingRealscale/'
+Vector3<645.0, 0.0, 0.0>
+on time step 297 (time=29.7), 0.0134743 s/step
+on time step 898 (time=89.8), 0.00665705 s/step
+on time step 1491 (time=149.1), 0.00675049 s/step
+on time step 2089 (time=208.9), 0.00669299 s/step
+on time step 2702 (time=270.2), 0.00652811 s/step
+on time step 3297 (time=329.7), 0.00673247 s/step
+on time step 3862 (time=386.2), 0.00708511 s/step
+on time step 4420 (time=442), 0.00717413 s/step
+on time step 4977 (time=497.7), 0.00718377 s/step
+on time step 5529 (time=552.9), 0.00725199 s/step
+on time step 6083 (time=608.3), 0.00722523 s/step
+on time step 6635 (time=663.5), 0.00725379 s/step
+on time step 7189 (time=718.9), 0.00722994 s/step
+on time step 7748 (time=774.8), 0.00716131 s/step
+on time step 8307 (time=830.7), 0.00716831 s/step
+on time step 8862 (time=886.2), 0.00720736 s/step
+on time step 9407 (time=940.7), 0.00734952 s/step
+on time step 9968 (time=996.8), 0.00713737 s/step
+run 0 finished at t = 1000.2 (10002 timesteps)
+WD: data/2021-11-21/DebuggingRealscale/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00535896 s
+Working in 2D dimensions.
+Computational cell is 1310 x 90 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (-550,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (550,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.0467162 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277835 after 56 iters
+MPB solved for frequency_1(0.931246,0,0) = 0.645171 after 40 iters
+MPB solved for frequency_1(0.931231,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-21/DebuggingRealscale/'
+Actual Simtime: 3.3333333333333334e-09
+creating output file "data/2021-11-21/DebuggingRealscale//RunBulkExperiment-eps-000000.00.h5"...
+on time step 307 (time=30.7), 0.0130463 s/step
+on time step 930 (time=93), 0.0064287 s/step
+on time step 1537 (time=153.7), 0.006594 s/step
+on time step 2128 (time=212.8), 0.00677758 s/step
+on time step 2753 (time=275.3), 0.00640859 s/step
+on time step 3353 (time=335.3), 0.00667015 s/step
+on time step 3921 (time=392.1), 0.00704685 s/step
+on time step 4487 (time=448.7), 0.00707078 s/step
+on time step 5049 (time=504.9), 0.0071285 s/step
+on time step 5604 (time=560.4), 0.00721898 s/step
+on time step 6154 (time=615.4), 0.0072764 s/step
+on time step 6704 (time=670.4), 0.00727768 s/step
+on time step 7264 (time=726.4), 0.00715228 s/step
+on time step 7827 (time=782.7), 0.00711264 s/step
+on time step 8387 (time=838.7), 0.00715291 s/step
+on time step 8944 (time=894.4), 0.00719133 s/step
+on time step 9485 (time=948.5), 0.00739506 s/step
+field decay(t = 1000.2): 6.876649636227397e-15 / 6.876649636227397e-15 = 1.0
+on time step 10045 (time=1004.5), 0.00715176 s/step
+on time step 10602 (time=1060.2), 0.00718753 s/step
+on time step 11159 (time=1115.9), 0.00718911 s/step
+on time step 11714 (time=1171.4), 0.00721859 s/step
+on time step 12265 (time=1226.5), 0.00726066 s/step
+on time step 12813 (time=1281.3), 0.00731042 s/step
+on time step 13353 (time=1335.3), 0.00741903 s/step
+on time step 13885 (time=1388.5), 0.00752564 s/step
+on time step 14418 (time=1441.8), 0.00751184 s/step
+on time step 14950 (time=1495), 0.00752406 s/step
+field decay(t = 1500.3000000000002): 0.34717298928752527 / 0.34717298928752527 = 1.0
+on time step 15478 (time=1547.8), 0.00758986 s/step
+on time step 15812 (time=1581.2), 0.0120125 s/step
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: got SIGCONT
+slurmstepd: error: *** STEP 552756.0 ON topsy-cn-2-13 CANCELLED AT 2021-11-21T13:04:57 ***
+slurmstepd: error: *** JOB 552756 ON topsy-cn-2-13 CANCELLED AT 2021-11-21T13:04:57 ***
+srun: forcing job termination
+srun: error: topsy-cn-2-13: tasks 0-16: Terminated
+srun: error: topsy-cn-2-16: tasks 17-39: Terminated
+srun: error: topsy-cn-2-17: tasks 40-63: Terminated

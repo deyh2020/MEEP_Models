@@ -1,0 +1,120 @@
+Using MPI version 3.1, 64 processes
+WD: data/2021-11-21/FullRunTopsy/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00486264 s
+Working in 2D dimensions.
+Computational cell is 1130 x 100 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.159369 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277835 after 56 iters
+MPB solved for frequency_1(0.931246,0,0) = 0.645171 after 40 iters
+MPB solved for frequency_1(0.931231,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-21/FullRunTopsy/'
+
+
+Normalisation Run
+
+
+
+
+Next Monitor Point:  Vector3<-282.5, 0.0, 0.0>
+
+
+on time step 298 (time=29.8), 0.0134405 s/step
+on time step 899 (time=89.9), 0.0066576 s/step
+on time step 1482 (time=148.2), 0.00686881 s/step
+on time step 2095 (time=209.5), 0.00652885 s/step
+on time step 2675 (time=267.5), 0.00690881 s/step
+on time step 3222 (time=322.2), 0.00732453 s/step
+on time step 3770 (time=377), 0.00730831 s/step
+on time step 4307 (time=430.7), 0.00745078 s/step
+on time step 4832 (time=483.2), 0.00763317 s/step
+field decay(t = 500.1): 8.128935617292608e-10 / 8.128935617292608e-10 = 1.0
+on time step 5351 (time=535.1), 0.00772178 s/step
+on time step 5877 (time=587.7), 0.0076139 s/step
+on time step 6406 (time=640.6), 0.00756342 s/step
+on time step 6928 (time=692.8), 0.00766534 s/step
+on time step 7450 (time=745), 0.00766809 s/step
+on time step 7975 (time=797.5), 0.00762506 s/step
+on time step 8504 (time=850.4), 0.0075644 s/step
+on time step 9025 (time=902.5), 0.00768685 s/step
+on time step 9548 (time=954.8), 0.00765526 s/step
+field decay(t = 1000.2): 0.4388649674499321 / 0.4388649674499321 = 1.0
+on time step 10069 (time=1006.9), 0.00768574 s/step
+on time step 10586 (time=1058.6), 0.00775045 s/step
+on time step 11098 (time=1109.8), 0.00781514 s/step
+on time step 11600 (time=1160), 0.00798001 s/step
+on time step 12110 (time=1211), 0.00785697 s/step
+on time step 12617 (time=1261.7), 0.00790481 s/step
+on time step 13064 (time=1306.4), 0.0089685 s/step
+on time step 13347 (time=1334.7), 0.0141745 s/step
+on time step 13893 (time=1389.3), 0.00732607 s/step
+on time step 14519 (time=1451.9), 0.00639804 s/step
+field decay(t = 1500.3000000000002): 0.04258821605630099 / 0.4388649674499321 = 0.09704173086260222
+on time step 15137 (time=1513.7), 0.00648141 s/step
+on time step 15763 (time=1576.3), 0.00639972 s/step
+on time step 16390 (time=1639), 0.00638836 s/step
+on time step 17016 (time=1701.6), 0.00639221 s/step
+on time step 17643 (time=1764.3), 0.00638856 s/step
+on time step 18269 (time=1826.9), 0.0063914 s/step
+on time step 18888 (time=1888.8), 0.00646775 s/step
+on time step 19509 (time=1950.9), 0.00644845 s/step
+field decay(t = 2000.4): 3.3385446249224234e-15 / 0.4388649674499321 = 7.607225166140201e-15
+run 0 finished at t = 2000.4 (20004 timesteps)
+
+
+Next Monitor Point:  Vector3<0.0, 0.0, 0.0>
+
+
+field decay(t = 2000.4): 5.0274090654133406e-15 / 5.0274090654133406e-15 = 1.0
+on time step 20134 (time=2013.4), 0.00640981 s/step
+on time step 20760 (time=2076), 0.00639209 s/step
+on time step 21386 (time=2138.6), 0.00639585 s/step
+on time step 22012 (time=2201.2), 0.0063951 s/step
+on time step 22638 (time=2263.8), 0.00639294 s/step
+on time step 23264 (time=2326.4), 0.00639288 s/step
+on time step 23889 (time=2388.9), 0.00640306 s/step
+on time step 24505 (time=2450.5), 0.00649929 s/step
+field decay(t = 2500.5): 1.5590439406126606e-14 / 1.5590439406126606e-14 = 1.0
+on time step 25129 (time=2512.9), 0.00641283 s/step
+on time step 25755 (time=2575.5), 0.00639593 s/step
+on time step 26381 (time=2638.1), 0.00639463 s/step
+on time step 27007 (time=2700.7), 0.00639463 s/step
+on time step 27633 (time=2763.3), 0.00639439 s/step
+on time step 28251 (time=2825.1), 0.00647291 s/step
+on time step 28871 (time=2887.1), 0.00645693 s/step
+on time step 29496 (time=2949.6), 0.00640748 s/step
+field decay(t = 3000.6000000000004): 4.9885495557764405e-15 / 1.5590439406126606e-14 = 0.3199749170517978
+on time step 30122 (time=3012.2), 0.00639722 s/step
+on time step 30748 (time=3074.8), 0.00639412 s/step
+on time step 31374 (time=3137.4), 0.00639722 s/step
+on time step 32000 (time=3200), 0.00639933 s/step
+on time step 32626 (time=3262.6), 0.00639436 s/step
+on time step 33251 (time=3325.1), 0.00640586 s/step
+on time step 33869 (time=3386.9), 0.00647356 s/step
+on time step 34493 (time=3449.3), 0.00641156 s/step
+field decay(t = 3500.7000000000003): 9.572914338973e-11 / 9.572914338973e-11 = 1.0
+on time step 35119 (time=3511.9), 0.00639772 s/step
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: got SIGCONT
+slurmstepd: error: *** STEP 552762.0 ON topsy-cn-2-13 CANCELLED AT 2021-11-21T16:44:41 ***
+slurmstepd: error: *** JOB 552762 ON topsy-cn-2-13 CANCELLED AT 2021-11-21T16:44:41 ***
+srun: forcing job termination
+srun: error: topsy-cn-2-13: tasks 0-16: Terminated
+srun: error: topsy-cn-2-16: tasks 17-39: Terminated
+srun: error: topsy-cn-2-17: tasks 40-63: Terminated

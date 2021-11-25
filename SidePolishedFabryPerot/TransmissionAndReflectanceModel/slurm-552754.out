@@ -1,0 +1,226 @@
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    import Model as M
+    import Model as M
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+SyntaxError: unmatched ')'
+    ^
+SyntaxError: unmatched ')'
+    ^
+SyntaxError: unmatched ')'
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/RunBulkExperiment.py", line 1, in <module>
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+    import Model as M
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+  File "/share/nobackup/b5025250/MEEP_Models/SidePolishedFabryPerot/TransmissionAndReflectanceModel/Model.py", line 247
+    )
+    ^
+SyntaxError: unmatched ')'
+srun: error: topsy-cn-1-2: tasks 0-7: Exited with exit code 1
+srun: error: topsy-cn-2-17: tasks 8-31: Exited with exit code 1
