@@ -51,7 +51,7 @@ for g in GAPS:
 
     Model.tic()
     Model.AutoRun()
-    Model.toc
+    Model.toc()
     Model.SaveMeta()
 
     Model.sim.reset_meep()
