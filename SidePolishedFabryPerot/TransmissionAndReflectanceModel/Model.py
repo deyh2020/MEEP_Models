@@ -24,7 +24,7 @@ class Model:
 		##Fibre Dimentions
 		self.R1     = 4.1
 		self.R2     = 62.5
-		self.CladLeft = 5
+		self.CladLeft = 10
 
 		##Resonator Dimentions
 		self.Depth  = 40
