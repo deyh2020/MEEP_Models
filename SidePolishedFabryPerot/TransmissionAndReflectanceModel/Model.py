@@ -24,7 +24,7 @@ class Model:
 		##Fibre Dimentions
 		self.R1     = 4.1
 		self.R2     = 62.5
-		self.CladLeft = 10
+		self.CladLeft = 5
 
 		##Resonator Dimentions
 		self.Depth  = 40
@@ -39,7 +39,7 @@ class Model:
 		##MEEP properties
 		self.monitorPts = 4
 		self.dpml   = 10
-		self.res    = 2
+		self.res    = 10
 		self.DecayF = 1e-6
 		self.WallT  = 0
 		self.SimT   = 1e6
