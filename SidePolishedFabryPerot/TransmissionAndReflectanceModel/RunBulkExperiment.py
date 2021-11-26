@@ -24,7 +24,7 @@ GAPS = [2000]
 
 for g in GAPS:  
 
-    Model.filename = 'RuntimeTest_' + str(g)
+    Model.filename = 'RuntimeTest2_' + str(g)
 
     Model.GAP = g
     Model.Objlist = []
