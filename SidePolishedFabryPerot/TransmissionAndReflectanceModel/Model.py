@@ -266,7 +266,7 @@ class Model:
 		self.sim.run(
 		#	#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(100,mp.output_efield_z),
-			until=self.sx*self.coreN/0.69
+			until=self.sx*self.coreN
 			
 			)
 		#

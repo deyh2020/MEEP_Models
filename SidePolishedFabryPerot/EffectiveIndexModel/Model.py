@@ -60,6 +60,7 @@ class Model:
 
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
 		self.cell_size = mp.Vector3(self.SimSize,self.SimSize,0)
+
 		self.pml_layers = [
 			mp.PML(thickness=self.PMLThick,direction=mp.X),
 			mp.PML(thickness=self.PMLThick,direction=mp.Y)
@@ -211,7 +212,7 @@ class Model:
 			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
 		plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
-		plt.show()
+		#plt.show()
 
 
 	def calcNEFF(self):
@@ -382,8 +383,6 @@ class Model:
 		"notes":self.Notes,
 
 		"neff":self.neff,
-		"k":self.k,
-		"vg":self.vg,
 
         }
 

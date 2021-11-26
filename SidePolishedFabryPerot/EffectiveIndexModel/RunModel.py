@@ -12,6 +12,30 @@ Model.Notes    = 'Trying to get Bloch BC working'
 
 
 
+Model.Datafile = "Uncoated"
+Model.nCoating = 1.00
+
+Model.buildPolishedFibre()
+Model.BuildModel(Plot=False) 
+
+Model.tic()
+Model.RunMPB()
+Model.toc()
+
+Model.RunAndPlotF()
+
+Model.SaveMeta()
+print("Neff",Model.neff)
+
+
+
+
+Model.sim.reset_meep()  
+Model.Objlist = []
+
+Model.Datafile = "PDMSCoated"
+
+
 Model.nCoating = 1.41
 
 Model.buildPolishedFibre()
@@ -24,10 +48,28 @@ Model.toc()
 Model.RunAndPlotF()
 
 Model.SaveMeta()
-
 print("Neff",Model.neff)
 
 
+Model.sim.reset_meep()  
+Model.Objlist = []
+
+
+Model.Datafile = "StandardFibre"
+
+
+
+Model.buildFibre()
+Model.BuildModel(Plot=False) 
+
+Model.tic()
+Model.RunMPB()
+Model.toc()
+
+Model.RunAndPlotF()
+
+Model.SaveMeta()
+print("Neff",Model.neff)
 
 
 
