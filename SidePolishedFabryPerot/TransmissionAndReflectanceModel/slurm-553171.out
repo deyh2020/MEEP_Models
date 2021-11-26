@@ -1904,3 +1904,767 @@ on time step 9377 (time=468.85), 0.0125088 s/step
 on time step 9845 (time=492.25), 0.00855903 s/step
 Meep progress: 504.15000000000003/879.5652173913044 = 57.3% done in 90.0s, 67.0s to go
 on time step 10344 (time=517.2), 0.00802943 s/step
+on time step 10841 (time=542.05), 0.00805584 s/step
+on time step 11341 (time=567.05), 0.00801351 s/step
+on time step 11840 (time=592), 0.00801671 s/step
+on time step 12338 (time=616.9), 0.00803366 s/step
+on time step 12837 (time=641.85), 0.00801813 s/step
+on time step 13336 (time=666.8), 0.00801741 s/step
+Meep progress: 691.0/879.5652173913044 = 78.6% done in 120.0s, 32.8s to go
+on time step 13834 (time=691.7), 0.00803706 s/step
+on time step 14331 (time=716.55), 0.00805449 s/step
+on time step 14831 (time=741.55), 0.00800651 s/step
+on time step 15331 (time=766.55), 0.0080066 s/step
+on time step 15831 (time=791.55), 0.00800382 s/step
+on time step 16331 (time=816.55), 0.00801028 s/step
+on time step 16829 (time=841.45), 0.00803241 s/step
+on time step 17327 (time=866.35), 0.00803612 s/step
+Meep progress: 878.0/879.5652173913044 = 99.8% done in 150.0s, 0.3s to go
+run 0 finished at t = 879.6 (17592 timesteps)
+field decay(t = 879.6): 0.0016892367890124996 / 0.0016892367890124996 = 1.0
+on time step 17816 (time=890.8), 0.00818597 s/step
+on time step 18293 (time=914.65), 0.00840202 s/step
+field decay(t = 929.6500000000001): 0.007804508673281537 / 0.007804508673281537 = 1.0
+on time step 18773 (time=938.65), 0.00833444 s/step
+on time step 19253 (time=962.65), 0.00833641 s/step
+field decay(t = 979.7): 0.017716823594479493 / 0.017716823594479493 = 1.0
+on time step 19733 (time=986.65), 0.00834272 s/step
+on time step 20213 (time=1010.65), 0.00833492 s/step
+field decay(t = 1029.75): 0.020358104086932425 / 0.020358104086932425 = 1.0
+on time step 20692 (time=1034.6), 0.00835274 s/step
+on time step 21172 (time=1058.6), 0.00834966 s/step
+field decay(t = 1079.8): 0.019249083911780897 / 0.020358104086932425 = 0.9455243882035463
+on time step 21650 (time=1082.5), 0.00837303 s/step
+on time step 22130 (time=1106.5), 0.00833523 s/step
+field decay(t = 1129.8500000000001): 0.010116441531729302 / 0.020358104086932425 = 0.4969245411326343
+on time step 22610 (time=1130.5), 0.00833929 s/step
+on time step 23090 (time=1154.5), 0.00833414 s/step
+on time step 23570 (time=1178.5), 0.0083364 s/step
+field decay(t = 1179.9): 0.002623119433783754 / 0.020358104086932425 = 0.12884890570274157
+on time step 24048 (time=1202.4), 0.00837159 s/step
+on time step 24526 (time=1226.3), 0.00837089 s/step
+field decay(t = 1229.95): 0.0003226687824327296 / 0.020358104086932425 = 0.01584964793651124
+on time step 25005 (time=1250.25), 0.00836285 s/step
+on time step 25483 (time=1274.15), 0.00838064 s/step
+field decay(t = 1280.0): 1.9083867076945566e-05 / 0.020358104086932425 = 0.0009374088567115259
+on time step 25963 (time=1298.15), 0.00835105 s/step
+on time step 26443 (time=1322.15), 0.00834049 s/step
+field decay(t = 1330.0500000000002): 5.77567893921344e-07 / 0.020358104086932425 = 2.8370416589631082e-05
+run 1 finished at t = 1330.0500000000002 (26601 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_10/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.0041384 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 10
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (-100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.0684474 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277848 after 53 iters
+MPB solved for frequency_1(0.931221,0,0) = 0.645167 after 30 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 6 iters
+MPB solved for frequency_1(0.931214,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_10/'
+
+
+Actual Run
+
+
+creating output file "data/2021-11-25/ConvergenceTesting_10//RunBulkExperiment-eps-000000.00.h5"...
+on time step 283 (time=14.15), 0.0141385 s/step
+on time step 759 (time=37.95), 0.0084108 s/step
+on time step 1226 (time=61.3), 0.00856869 s/step
+on time step 1689 (time=84.45), 0.00864443 s/step
+on time step 2152 (time=107.6), 0.00864539 s/step
+on time step 2608 (time=130.4), 0.00877639 s/step
+on time step 3072 (time=153.6), 0.00862092 s/step
+on time step 3533 (time=176.65), 0.00869168 s/step
+on time step 3985 (time=199.25), 0.00885231 s/step
+on time step 4431 (time=221.55), 0.00897494 s/step
+on time step 4873 (time=243.65), 0.0090505 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_10//RunBulkExperiment-denergy-000250.00.h5"...
+on time step 5261 (time=263.05), 0.0103179 s/step
+on time step 5699 (time=284.95), 0.00914967 s/step
+on time step 6134 (time=306.7), 0.0092079 s/step
+on time step 6563 (time=328.15), 0.00933553 s/step
+on time step 6997 (time=349.85), 0.00923693 s/step
+on time step 7428 (time=371.4), 0.00929112 s/step
+on time step 7854 (time=392.7), 0.00940318 s/step
+on time step 8281 (time=414.05), 0.00938793 s/step
+on time step 8684 (time=434.2), 0.00998366 s/step
+on time step 8862 (time=443.1), 0.0225029 s/step
+on time step 9191 (time=459.55), 0.0121807 s/step
+on time step 9561 (time=478.05), 0.010819 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_10//RunBulkExperiment-denergy-000500.00.h5"...
+on time step 10000 (time=500), 0.0802246 s/step
+field decay(t = 500.05): 0.0014112992325698477 / 0.0014112992325698477 = 1.0
+on time step 10476 (time=523.8), 0.00841277 s/step
+on time step 10955 (time=547.75), 0.00836584 s/step
+on time step 11434 (time=571.7), 0.00835508 s/step
+on time step 11915 (time=595.75), 0.00832713 s/step
+on time step 12397 (time=619.85), 0.00831507 s/step
+on time step 12877 (time=643.85), 0.00833688 s/step
+on time step 13357 (time=667.85), 0.00833886 s/step
+on time step 13836 (time=691.8), 0.00835793 s/step
+on time step 14316 (time=715.8), 0.00834293 s/step
+on time step 14795 (time=739.75), 0.008363 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_10//RunBulkExperiment-denergy-000750.00.h5"...
+on time step 15219 (time=760.95), 0.00944783 s/step
+on time step 15700 (time=785), 0.0083277 s/step
+on time step 16181 (time=809.05), 0.00832935 s/step
+on time step 16662 (time=833.1), 0.00833132 s/step
+on time step 17143 (time=857.15), 0.00833112 s/step
+on time step 17621 (time=881.05), 0.00838219 s/step
+on time step 18100 (time=905), 0.00835554 s/step
+on time step 18580 (time=929), 0.008348 s/step
+on time step 19060 (time=953), 0.00833423 s/step
+on time step 19541 (time=977.05), 0.0083221 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_10//RunBulkExperiment-denergy-001000.00.h5"...
+on time step 20000 (time=1000), 0.0584896 s/step
+field decay(t = 1000.1): 0.42099398541016136 / 0.42099398541016136 = 1.0
+on time step 20479 (time=1023.95), 0.00835386 s/step
+on time step 20959 (time=1047.95), 0.00833653 s/step
+on time step 21439 (time=1071.95), 0.00833687 s/step
+on time step 21918 (time=1095.9), 0.00835969 s/step
+on time step 22398 (time=1119.9), 0.00834583 s/step
+on time step 22876 (time=1143.8), 0.00837376 s/step
+on time step 23355 (time=1167.75), 0.00836281 s/step
+on time step 23835 (time=1191.75), 0.00834445 s/step
+on time step 24315 (time=1215.75), 0.00833917 s/step
+on time step 24795 (time=1239.75), 0.00834609 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_10//RunBulkExperiment-denergy-001250.00.h5"...
+on time step 25222 (time=1261.1), 0.00937825 s/step
+on time step 25701 (time=1285.05), 0.00836171 s/step
+on time step 26180 (time=1309), 0.00836788 s/step
+on time step 26661 (time=1333.05), 0.00832383 s/step
+on time step 27140 (time=1357), 0.00835272 s/step
+on time step 27620 (time=1381), 0.00834201 s/step
+on time step 28098 (time=1404.9), 0.00837501 s/step
+on time step 28577 (time=1428.85), 0.00835372 s/step
+on time step 29056 (time=1452.8), 0.00836584 s/step
+on time step 29535 (time=1476.75), 0.00835129 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_10//RunBulkExperiment-denergy-001500.00.h5"...
+on time step 30000 (time=1500), 0.0707527 s/step
+field decay(t = 1500.15): 3.9401405042517116e-05 / 0.42099398541016136 = 9.35913728176652e-05
+run 0 finished at t = 1500.15 (30003 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_8/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00311622 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 8
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 1.50164 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277845 after 43 iters
+MPB solved for frequency_1(0.931228,0,0) = 0.645168 after 38 iters
+MPB solved for frequency_1(0.931218,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931218,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_8/'
+
+
+Normalisation Run
+
+
+on time step 409 (time=25.5625), 0.00978971 s/step
+on time step 1073 (time=67.0625), 0.00603062 s/step
+on time step 1728 (time=108), 0.00611495 s/step
+on time step 2379 (time=148.688), 0.00614778 s/step
+on time step 3023 (time=188.938), 0.00621138 s/step
+on time step 3663 (time=228.938), 0.00625717 s/step
+on time step 4295 (time=268.438), 0.00633258 s/step
+Meep progress: 288.0625/879.5652173913044 = 32.8% done in 30.0s, 61.6s to go
+on time step 4928 (time=308), 0.00632513 s/step
+on time step 5557 (time=347.312), 0.00636354 s/step
+on time step 6181 (time=386.312), 0.00641188 s/step
+on time step 6729 (time=420.562), 0.00731141 s/step
+on time step 7043 (time=440.188), 0.0127704 s/step
+on time step 7558 (time=472.375), 0.00777221 s/step
+on time step 8229 (time=514.312), 0.00596592 s/step
+Meep progress: 555.75/879.5652173913044 = 63.2% done in 60.0s, 35.0s to go
+on time step 8901 (time=556.312), 0.00595265 s/step
+on time step 9574 (time=598.375), 0.00595001 s/step
+on time step 10246 (time=640.375), 0.00595241 s/step
+on time step 10917 (time=682.312), 0.00596978 s/step
+on time step 11589 (time=724.312), 0.0059559 s/step
+on time step 12260 (time=766.25), 0.00596401 s/step
+on time step 12933 (time=808.312), 0.00594622 s/step
+on time step 13605 (time=850.312), 0.00595954 s/step
+Meep progress: 870.5/879.5652173913044 = 99.0% done in 90.0s, 0.9s to go
+run 0 finished at t = 879.625 (14074 timesteps)
+field decay(t = 879.625): 0.0002499198282261721 / 0.0002499198282261721 = 1.0
+on time step 14268 (time=891.75), 0.00604085 s/step
+field decay(t = 929.6875): 0.00517949061794131 / 0.00517949061794131 = 1.0
+on time step 14910 (time=931.875), 0.00623527 s/step
+on time step 15552 (time=972), 0.00623928 s/step
+field decay(t = 979.75): 0.01449380904743849 / 0.01449380904743849 = 1.0
+on time step 16195 (time=1012.19), 0.0062256 s/step
+field decay(t = 1029.8125): 0.019775986090142625 / 0.019775986090142625 = 1.0
+on time step 16836 (time=1052.25), 0.00624669 s/step
+field decay(t = 1079.875): 0.019697052226749175 / 0.019775986090142625 = 0.9960086003785776
+on time step 17476 (time=1092.25), 0.00625577 s/step
+field decay(t = 1129.9375): 0.01261555870277662 / 0.019775986090142625 = 0.637923117728368
+on time step 18116 (time=1132.25), 0.00625599 s/step
+on time step 18758 (time=1172.38), 0.00624004 s/step
+field decay(t = 1180.0): 0.003925391290411291 / 0.019775986090142625 = 0.1984928221793152
+on time step 19399 (time=1212.44), 0.00624409 s/step
+field decay(t = 1230.0625): 0.0006198053792041 / 0.019775986090142625 = 0.03134131346871462
+on time step 20040 (time=1252.5), 0.00624328 s/step
+field decay(t = 1280.125): 4.534781800615906e-05 / 0.019775986090142625 = 0.0022930749343903897
+on time step 20681 (time=1292.56), 0.00624141 s/step
+field decay(t = 1330.1875): 1.5974891439538341e-06 / 0.019775986090142625 = 8.077924087689895e-05
+run 1 finished at t = 1330.1875 (21283 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_8/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00354774 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 8
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (-100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.0430512 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277845 after 43 iters
+MPB solved for frequency_1(0.931228,0,0) = 0.645168 after 38 iters
+MPB solved for frequency_1(0.931218,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931218,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_8/'
+
+
+Actual Run
+
+
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-eps-000000.00.h5"...
+on time step 397 (time=24.8125), 0.0100892 s/step
+on time step 1022 (time=63.875), 0.00640875 s/step
+on time step 1637 (time=102.312), 0.00651369 s/step
+on time step 2239 (time=139.938), 0.00665429 s/step
+on time step 2833 (time=177.062), 0.00673669 s/step
+on time step 3414 (time=213.375), 0.00689512 s/step
+on time step 3984 (time=249), 0.00702818 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-000250.00.h5"...
+on time step 4531 (time=283.188), 0.0073233 s/step
+on time step 5098 (time=318.625), 0.00706629 s/step
+on time step 5662 (time=353.875), 0.00709906 s/step
+on time step 6222 (time=388.875), 0.00715148 s/step
+on time step 6723 (time=420.188), 0.00802094 s/step
+on time step 7039 (time=439.938), 0.0126606 s/step
+on time step 7536 (time=471), 0.0080532 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-000500.00.h5"...
+on time step 8000 (time=500), 0.031275 s/step
+field decay(t = 500.0625): 0.0010482098986638825 / 0.0010482098986638825 = 1.0
+on time step 8639 (time=539.938), 0.00626861 s/step
+on time step 9279 (time=579.938), 0.00625281 s/step
+on time step 9917 (time=619.812), 0.00627748 s/step
+on time step 10556 (time=659.75), 0.00626146 s/step
+on time step 11192 (time=699.5), 0.00629922 s/step
+on time step 11830 (time=739.375), 0.00627532 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-000750.00.h5"...
+on time step 12423 (time=776.438), 0.00674698 s/step
+on time step 13063 (time=816.438), 0.00625757 s/step
+on time step 13703 (time=856.438), 0.00625474 s/step
+on time step 14341 (time=896.312), 0.00627473 s/step
+on time step 14977 (time=936.062), 0.00629017 s/step
+on time step 15615 (time=975.938), 0.0062777 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-001000.00.h5"...
+on time step 16000 (time=1000), 0.043264 s/step
+field decay(t = 1000.125): 0.4464435073078752 / 0.4464435073078752 = 1.0
+on time step 16638 (time=1039.88), 0.00627022 s/step
+on time step 17275 (time=1079.69), 0.00628598 s/step
+on time step 17914 (time=1119.62), 0.00626198 s/step
+on time step 18550 (time=1159.38), 0.00629272 s/step
+on time step 19182 (time=1198.88), 0.006333 s/step
+on time step 19820 (time=1238.75), 0.00627554 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-001250.00.h5"...
+on time step 20409 (time=1275.56), 0.00679943 s/step
+on time step 21048 (time=1315.5), 0.00626089 s/step
+on time step 21688 (time=1355.5), 0.00625787 s/step
+on time step 22326 (time=1395.38), 0.00627634 s/step
+on time step 22961 (time=1435.06), 0.00630619 s/step
+on time step 23601 (time=1475.06), 0.0062574 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-001500.00.h5"...
+field decay(t = 1500.1875): 4.468516369103305e-05 / 0.4464435073078752 = 0.00010009141797243652
+on time step 24182 (time=1511.38), 0.00688497 s/step
+on time step 24821 (time=1551.31), 0.00626322 s/step
+on time step 25461 (time=1591.31), 0.00625224 s/step
+on time step 26101 (time=1631.31), 0.00625851 s/step
+on time step 26739 (time=1671.19), 0.00627575 s/step
+on time step 27379 (time=1711.19), 0.00625766 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-001750.00.h5"...
+on time step 28000 (time=1750), 0.0236787 s/step
+on time step 28637 (time=1789.81), 0.00628139 s/step
+on time step 29276 (time=1829.75), 0.00626637 s/step
+on time step 29912 (time=1869.5), 0.00629072 s/step
+on time step 30550 (time=1909.38), 0.00627797 s/step
+on time step 31185 (time=1949.06), 0.00630009 s/step
+on time step 31823 (time=1988.94), 0.00627459 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_8//RunBulkExperiment-denergy-002000.00.h5"...
+field decay(t = 2000.25): 5.426751545905005e-09 / 0.4464435073078752 = 1.2155516783364537e-08
+run 0 finished at t = 2000.25 (32004 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_6/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00277389 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 6
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 6.29725 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277839 after 44 iters
+MPB solved for frequency_1(0.931237,0,0) = 0.645169 after 34 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_6/'
+
+
+Normalisation Run
+
+
+on time step 708 (time=59), 0.00565496 s/step
+on time step 1624 (time=135.333), 0.00436739 s/step
+on time step 2505 (time=208.75), 0.00454244 s/step
+on time step 3373 (time=281.083), 0.00461149 s/step
+on time step 4224 (time=352), 0.00470413 s/step
+on time step 4833 (time=402.75), 0.00656838 s/step
+on time step 5534 (time=461.167), 0.00570751 s/step
+Meep progress: 500.5/879.5652173913044 = 56.9% done in 30.0s, 22.7s to go
+on time step 6487 (time=540.583), 0.00419996 s/step
+on time step 7440 (time=620), 0.00420144 s/step
+on time step 8391 (time=699.25), 0.00420933 s/step
+on time step 9345 (time=778.75), 0.00419319 s/step
+on time step 10298 (time=858.167), 0.00419773 s/step
+run 0 finished at t = 879.5833333333333 (10555 timesteps)
+field decay(t = 879.5833333333333): 0.00012906666382000596 / 0.00012906666382000596 = 1.0
+field decay(t = 929.6666666666666): 0.0015109711793764719 / 0.0015109711793764719 = 1.0
+on time step 11220 (time=935), 0.00434165 s/step
+field decay(t = 979.75): 0.007101121740620429 / 0.007101121740620429 = 1.0
+on time step 12130 (time=1010.83), 0.00439793 s/step
+field decay(t = 1029.8333333333333): 0.01571540866890401 / 0.01571540866890401 = 1.0
+field decay(t = 1079.9166666666665): 0.018195651670544686 / 0.018195651670544686 = 1.0
+on time step 13040 (time=1086.67), 0.00439751 s/step
+field decay(t = 1130.0): 0.017141138373635827 / 0.018195651670544686 = 0.9420458626048598
+on time step 13949 (time=1162.42), 0.00440175 s/step
+field decay(t = 1180.0833333333333): 0.008779456389298635 / 0.018195651670544686 = 0.48250299292720095
+field decay(t = 1230.1666666666665): 0.00228006643740209 / 0.018195651670544686 = 0.12530831424373143
+on time step 14863 (time=1238.58), 0.00437907 s/step
+field decay(t = 1280.25): 0.0002762886561286801 / 0.018195651670544686 = 0.015184323218054296
+on time step 15772 (time=1314.33), 0.00440425 s/step
+field decay(t = 1330.3333333333333): 1.678255010779455e-05 / 0.018195651670544686 = 0.0009223385021687527
+field decay(t = 1380.4166666666665): 4.892400240089625e-07 / 0.018195651670544686 = 2.6887743998801066e-05
+run 1 finished at t = 1380.4166666666665 (16565 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_6/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00309818 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 6
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (-100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.0253527 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277839 after 44 iters
+MPB solved for frequency_1(0.931237,0,0) = 0.645169 after 34 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.931226,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_6/'
+
+
+Actual Run
+
+
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-eps-000000.00.h5"...
+on time step 672 (time=56), 0.00595359 s/step
+on time step 1526 (time=127.167), 0.00468691 s/step
+on time step 2335 (time=194.583), 0.00494971 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-000250.00.h5"...
+on time step 3083 (time=256.917), 0.00535373 s/step
+on time step 3848 (time=320.667), 0.00523478 s/step
+on time step 4597 (time=383.083), 0.005347 s/step
+on time step 5071 (time=422.583), 0.00844753 s/step
+on time step 5904 (time=492), 0.00480237 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-000500.00.h5"...
+on time step 6000 (time=500), 0.065092 s/step
+field decay(t = 500.0833333333333): 0.0004222510774864224 / 0.0004222510774864224 = 1.0
+on time step 6907 (time=575.583), 0.00441086 s/step
+on time step 7811 (time=650.917), 0.00442893 s/step
+on time step 8719 (time=726.583), 0.00440666 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-000750.00.h5"...
+on time step 9595 (time=799.583), 0.00456752 s/step
+on time step 10504 (time=875.333), 0.00440135 s/step
+on time step 11413 (time=951.083), 0.00440445 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-001000.00.h5"...
+on time step 12000 (time=1000), 0.0152325 s/step
+field decay(t = 1000.1666666666666): 0.491732049668633 / 0.491732049668633 = 1.0
+on time step 12905 (time=1075.42), 0.0044234 s/step
+on time step 13809 (time=1150.75), 0.00442933 s/step
+on time step 14712 (time=1226), 0.00443041 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-001250.00.h5"...
+on time step 15579 (time=1298.25), 0.00461555 s/step
+on time step 16486 (time=1373.83), 0.00441242 s/step
+on time step 17395 (time=1449.58), 0.00440484 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-001500.00.h5"...
+on time step 18000 (time=1500), 0.0150296 s/step
+field decay(t = 1500.25): 5.7092734395239935e-05 / 0.491732049668633 = 0.00011610537575029618
+on time step 18903 (time=1575.25), 0.00443298 s/step
+on time step 19806 (time=1650.5), 0.00443044 s/step
+on time step 20717 (time=1726.42), 0.0043956 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-001750.00.h5"...
+on time step 21598 (time=1799.83), 0.00454176 s/step
+on time step 22504 (time=1875.33), 0.00441614 s/step
+on time step 23411 (time=1950.92), 0.00441026 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_6//RunBulkExperiment-denergy-002000.00.h5"...
+on time step 24000 (time=2000), 0.0134942 s/step
+field decay(t = 2000.3333333333333): 9.81998178629771e-09 / 0.491732049668633 = 1.9970188627963486e-08
+run 0 finished at t = 2000.3333333333333 (24004 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_5/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00252377 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 3.82791 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277835 after 56 iters
+MPB solved for frequency_1(0.931246,0,0) = 0.645171 after 40 iters
+MPB solved for frequency_1(0.931231,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_5/'
+
+
+Normalisation Run
+
+
+on time step 831 (time=83.1), 0.00481512 s/step
+on time step 1870 (time=187), 0.00385215 s/step
+on time step 2872 (time=287.2), 0.00399514 s/step
+on time step 3820 (time=382), 0.00422008 s/step
+on time step 4522 (time=452.2), 0.0056992 s/step
+on time step 5619 (time=561.9), 0.00364641 s/step
+on time step 6716 (time=671.6), 0.00364825 s/step
+Meep progress: 726.3000000000001/879.5652173913044 = 82.6% done in 30.0s, 6.3s to go
+on time step 7819 (time=781.9), 0.00362971 s/step
+run 0 finished at t = 879.6 (8796 timesteps)
+field decay(t = 879.6): 3.904919834388138e-06 / 3.904919834388138e-06 = 1.0
+on time step 8916 (time=891.6), 0.00364973 s/step
+field decay(t = 929.7): 0.00019586199994702877 / 0.00019586199994702877 = 1.0
+field decay(t = 979.8000000000001): 0.0017441243644854224 / 0.0017441243644854224 = 1.0
+on time step 9967 (time=996.7), 0.00380699 s/step
+field decay(t = 1029.8): 0.007199482660532962 / 0.007199482660532962 = 1.0
+field decay(t = 1079.9): 0.014789128444240135 / 0.014789128444240135 = 1.0
+on time step 11017 (time=1101.7), 0.00381106 s/step
+field decay(t = 1130.0): 0.016081495349870776 / 0.016081495349870776 = 1.0
+field decay(t = 1180.1000000000001): 0.014332963768468517 / 0.016081495349870776 = 0.8912705850195511
+on time step 12068 (time=1206.8), 0.00380818 s/step
+field decay(t = 1230.2): 0.006769721450771254 / 0.016081495349870776 = 0.4209634305447629
+field decay(t = 1280.3000000000002): 0.0015750511073696271 / 0.016081495349870776 = 0.09794183147167863
+on time step 13115 (time=1311.5), 0.00382084 s/step
+field decay(t = 1330.4): 0.00018046565080968255 / 0.016081495349870776 = 0.011221944656479518
+field decay(t = 1380.5): 9.611445168273584e-06 / 0.016081495349870776 = 0.0005976711095060459
+on time step 14167 (time=1416.7), 0.00380344 s/step
+field decay(t = 1430.6000000000001): 2.402422523008452e-07 / 0.016081495349870776 = 1.4939049328069836e-05
+run 1 finished at t = 1430.6000000000001 (14306 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_5/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00281794 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (-100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.0164972 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277835 after 56 iters
+MPB solved for frequency_1(0.931246,0,0) = 0.645171 after 40 iters
+MPB solved for frequency_1(0.931231,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_5/'
+
+
+Actual Run
+
+
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-eps-000000.00.h5"...
+on time step 811 (time=81.1), 0.00493537 s/step
+on time step 1769 (time=176.9), 0.00417962 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-000250.00.h5"...
+on time step 2500 (time=250), 0.0116214 s/step
+on time step 3381 (time=338.1), 0.00454493 s/step
+on time step 4032 (time=403.2), 0.00615313 s/step
+on time step 4999 (time=499.9), 0.00413758 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-000500.00.h5"...
+field decay(t = 500.1): 0.00012345998149210894 / 0.00012345998149210894 = 1.0
+on time step 5993 (time=599.3), 0.00402716 s/step
+on time step 7044 (time=704.4), 0.00380885 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-000750.00.h5"...
+on time step 7500 (time=750), 0.0173285 s/step
+on time step 8549 (time=854.9), 0.00381408 s/step
+on time step 9597 (time=959.7), 0.00382015 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-001000.00.h5"...
+field decay(t = 1000.2): 0.5297252130460361 / 0.5297252130460361 = 1.0
+on time step 10586 (time=1058.6), 0.00404759 s/step
+on time step 11629 (time=1162.9), 0.00383663 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-001250.00.h5"...
+on time step 12500 (time=1250), 0.0112313 s/step
+on time step 13547 (time=1354.7), 0.00382392 s/step
+on time step 14595 (time=1459.5), 0.00381964 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-001500.00.h5"...
+on time step 15000 (time=1500), 0.021925 s/step
+field decay(t = 1500.3000000000002): 7.72917346946207e-05 / 0.5297252130460361 = 0.00014590911059372892
+on time step 16043 (time=1604.3), 0.00383847 s/step
+on time step 17092 (time=1709.2), 0.00381339 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-001750.00.h5"...
+on time step 18106 (time=1810.6), 0.00394739 s/step
+on time step 19157 (time=1915.7), 0.00380789 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_5//RunBulkExperiment-denergy-002000.00.h5"...
+on time step 20000 (time=2000), 0.00791032 s/step
+field decay(t = 2000.4): 1.8913590454549704e-08 / 0.5297252130460361 = 3.570453130934133e-08
+run 0 finished at t = 2000.4 (20004 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_4/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00217035 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 4
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.917015 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277828 after 49 iters
+MPB solved for frequency_1(0.931258,0,0) = 0.645174 after 27 iters
+MPB solved for frequency_1(0.93124,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.93124,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_4/'
+
+
+Normalisation Run
+
+
+on time step 1026 (time=128.25), 0.0039005 s/step
+on time step 2195 (time=274.375), 0.00342231 s/step
+on time step 3095 (time=386.875), 0.00444624 s/step
+on time step 4314 (time=539.25), 0.00328245 s/step
+on time step 5570 (time=696.25), 0.00318688 s/step
+on time step 6828 (time=853.5), 0.00318187 s/step
+run 0 finished at t = 879.625 (7037 timesteps)
+field decay(t = 879.625): 3.663575990222732e-10 / 3.663575990222732e-10 = 1.0
+field decay(t = 929.75): 6.879431951190761e-08 / 6.879431951190761e-08 = 1.0
+field decay(t = 979.875): 3.1673743247138836e-06 / 3.1673743247138836e-06 = 1.0
+on time step 8038 (time=1004.75), 0.00330684 s/step
+field decay(t = 1030.0): 6.467469720632155e-05 / 6.467469720632155e-05 = 1.0
+field decay(t = 1080.125): 0.0006949134820473526 / 0.0006949134820473526 = 1.0
+field decay(t = 1130.25): 0.003578554720436562 / 0.003578554720436562 = 1.0
+on time step 9240 (time=1155), 0.00332823 s/step
+field decay(t = 1180.375): 0.008780660918744677 / 0.008780660918744677 = 1.0
+field decay(t = 1230.5): 0.010979388199260883 / 0.010979388199260883 = 1.0
+field decay(t = 1280.625): 0.010669342120836646 / 0.010979388199260883 = 0.9717610787780407
+on time step 10444 (time=1305.5), 0.00332399 s/step
+field decay(t = 1330.75): 0.006026312085432876 / 0.010979388199260883 = 0.5488750352991943
+field decay(t = 1380.875): 0.0016409291791161078 / 0.010979388199260883 = 0.14945542951351085
+field decay(t = 1431.0): 0.00022317202284566072 / 0.010979388199260883 = 0.020326453423031743
+on time step 11642 (time=1455.25), 0.0033417 s/step
+field decay(t = 1481.125): 1.4645629413817391e-05 / 0.010979388199260883 = 0.0013339203558540096
+field decay(t = 1531.25): 4.964167545035394e-07 / 0.010979388199260883 = 4.521351695506654e-05
+run 1 finished at t = 1531.25 (12250 timesteps)
+WD: data/2021-11-25/ConvergenceTesting_4/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 64 chunks by voxels
+time for choose_chunkdivision = 0.00252753 s
+Working in 2D dimensions.
+Computational cell is 420 x 100 x 0 with resolution 4
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (0,-26.25,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (-100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+     block, center = (100,-10.9,0)
+          size (100,40,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.9881,1.9881,1.9881)
+time for set_epsilon = 0.0104327 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277828 after 49 iters
+MPB solved for frequency_1(0.931258,0,0) = 0.645174 after 27 iters
+MPB solved for frequency_1(0.93124,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.93124,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-11-25/ConvergenceTesting_4/'
+
+
+Actual Run
+
+
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-eps-000000.00.h5"...
+on time step 967 (time=120.875), 0.00413737 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-000250.00.h5"...
+on time step 2009 (time=251.125), 0.00384192 s/step
+on time step 2917 (time=364.625), 0.00441196 s/step
+on time step 3952 (time=494), 0.00386591 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-000500.00.h5"...
+field decay(t = 500.125): 2.443115528116639e-06 / 2.443115528116639e-06 = 1.0
+on time step 4166 (time=520.75), 0.0186929 s/step
+on time step 5364 (time=670.5), 0.00334023 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-000750.00.h5"...
+on time step 6000 (time=750), 0.006759 s/step
+on time step 7191 (time=898.875), 0.00336028 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-001000.00.h5"...
+field decay(t = 1000.25): 0.5476669934576532 / 0.5476669934576532 = 1.0
+on time step 8349 (time=1043.62), 0.00345479 s/step
+on time step 9546 (time=1193.25), 0.00334384 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-001250.00.h5"...
+on time step 10000 (time=1250), 0.0128006 s/step
+on time step 11191 (time=1398.88), 0.00335898 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-001500.00.h5"...
+field decay(t = 1500.375): 0.0015198989766792962 / 0.5476669934576532 = 0.0027752247165445036
+on time step 12366 (time=1545.75), 0.0034057 s/step
+on time step 13546 (time=1693.25), 0.00339191 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-001750.00.h5"...
+on time step 14000 (time=1750), 0.0119333 s/step
+on time step 15199 (time=1899.88), 0.00333857 s/step
+creating output file "data/2021-11-25/ConvergenceTesting_4//RunBulkExperiment-denergy-002000.00.h5"...
+field decay(t = 2000.5): 1.943038061806623e-05 / 0.5476669934576532 = 3.547845835184265e-05
+run 0 finished at t = 2000.5 (16004 timesteps)
+
+Elapsed run time = 8360.7112 s
