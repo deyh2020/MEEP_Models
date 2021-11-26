@@ -300,6 +300,13 @@ class Model:
 
 		#self.myRunFunction(self.monitorPts)
 
+		self.sim.run(
+		#	#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(100,mp.output_efield_z),
+			until=self.sx*self.coreN
+			
+			)
+
 		pt = mp.Vector3()
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
