@@ -26,6 +26,7 @@ Model.res = 10
 
 for s in Sizes:  
     
+    Model.Datafile = str(s)
     Model.SimSize = s
     Model.Objlist = []
     #Model.buildFibre()

@@ -15,38 +15,34 @@ class Model:
 		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
 		
 		##Material N
-		self.S  = 1.41
+		self.S      = 1.41
 		self.coreN  = 1.445
 		self.cladN  = 1.440
 
 		##Fibre Dimentions
 		self.R1     = 4.1
 		self.R2     = 62.5
-		self.Pad    = 1
-
-		##Resonator Dimentions / um
-		self.Depth  = 40
-		self.Width  = 62.5
-		self.GAP    = 100
+		self.Pad    = 0
 
 		##Src properties / c=1
 		self.wl     = 1.55
 		self.fcen   = 1/self.wl
-		self.df     = 0.1*self.fcen
-		self.nfreq  = 100
+		self.df     = 2e-2
+		self.nfreq  = 1000
 
 		##MEEP properties
-		self.res    = 2
+		self.res    = 12
 		self.DecayF = 1e-8
 		self.WallT  = 0
-		self.SimT   = 1e6
+		self.SimT   = 10
 		self.today  = str(date.today())
 		self.workDir= 'notSet'
 		self.filename= 'test'
+		self.Datafile = 'Default'
 		self.sim    = None
 		self.Objlist = []
 		self.Notes   = ''
-		self.SimSize = 140
+		self.SimSize = 40
 		self.PMLThick = 2
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
 		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
@@ -153,7 +149,7 @@ class Model:
 			geometry=self.Objlist,
 			sources=self.src,
 			resolution=self.res,
-			#symmetries=[mp.Mirror(mp.X)],
+			symmetries=[mp.Mirror(mp.X)],
 			force_complex_fields=True,
 			eps_averaging=True,
 			boundary_layers=self.pml_layers,
@@ -214,7 +210,7 @@ class Model:
 			plot_monitors_flag=False,
 			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
-		#plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
+		plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
 		plt.show()
 
 
@@ -354,3 +350,42 @@ class Model:
 		
 		self.Silicatemp = np.array([22.83686643,40.36719542,70.32692845,103.3346833])
 		self.nSilica    = np.array([1.445300107,1.44555516,1.445847903,1.445958546])
+
+	
+	def SaveMeta(self):
+		
+		metadata = {
+		##Material N
+		"nCoating": self.nCoating,
+		"CoreN":self.coreN,
+		"CladN":self.cladN,
+		
+		##Fibre Dimentions
+		"R1":self.R1,
+		"R2":self.R2,
+		"CladLeft":self.Pad,
+
+		##Src properties
+		"fcen":self.fcen,
+		"df":self.df, 
+		"nfreq":self.nfreq,
+
+		##MEEP properties
+		#"dpml":self.dpml,
+		"resolution":self.res,
+		"DecayF":self.DecayF,
+		"WallT":self.WallT,
+		"SimT":self.SimT,
+		"today":self.today,
+		"WorkingDir":self.workDir,
+		"filename":self.filename,
+		"notes":self.Notes,
+
+		"neff":self.neff,
+		"k":self.k,
+		"vg":self.vg,
+
+        }
+
+		with open(self.workingDir + 'metadata_' + str(self.Datafile) + '.json' , 'w') as file:
+			json.dump(metadata, file)

@@ -12,14 +12,6 @@ Model = M.Model()
 
 Model.nCoating = 1.41
 
-Model.CladLeft = 5
-Model.GAP = 100
-Model.Width = 100
-Model.fcen   = 1/1.55
-Model.df     = 1.2e-2
-Model.nfreq  = 1000
-Model.DecayF = 1e-4
-Model.dpml = 10
 Model.Notes    = ''
 Model.Datafile = "Data"
 
@@ -28,13 +20,13 @@ Model.Datafile = "Data"
 
 
 
-Resolutions = [20,16,14,10,8,6,5,4]
+GAPS = [2000]
 
-for r in Resolutions:  
+for g in GAPS:  
 
-    Model.filename = 'ConvergenceTesting_' + str(r)
+    Model.filename = 'RuntimeTest_' + str(g)
 
-    Model.res = r
+    Model.GAP = g
     Model.Objlist = []
     
     Model.buildPolished()
@@ -44,7 +36,10 @@ for r in Resolutions:
 
     Model.BuildModel(NormRun=True,Plot=False) 
 
+    Model.tic()
     Model.NormRun()
+    Model.toc()
+
     #resetMEEP
     Model.sim.reset_meep()
     #Build model with everything.
@@ -53,7 +48,10 @@ for r in Resolutions:
     # for normal run, load negated fields to subtract incident from refl. fields
     Model.sim.load_minus_flux_data(Model.refl, Model.norm_refl)
     #Run until fields decayed by 1e3
+
+    Model.tic()
     Model.AutoRun()
+    Model.toc
     Model.SaveMeta()
 
     Model.sim.reset_meep()

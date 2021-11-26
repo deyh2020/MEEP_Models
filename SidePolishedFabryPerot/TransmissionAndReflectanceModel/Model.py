@@ -13,6 +13,8 @@ class Model:
 	def __init__(self):
 
 		#init constants
+		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
+
 		
 		##Material N
 		self.nCoating  = 1.41
@@ -26,19 +28,19 @@ class Model:
 
 		##Resonator Dimentions
 		self.Depth  = 40
-		self.Width  = 62.5
+		self.Width  = 100
 		self.GAP    = 100
 		self.Rw     = False
 		##Src properties
 		self.fcen   = 1/1.55
-		self.df     = 500
-		self.nfreq  = 100
+		self.df     = 1.2e-2
+		self.nfreq  = 1000
 
 		##MEEP properties
 		self.monitorPts = 4
-		self.dpml   = 5
+		self.dpml   = 10
 		self.res    = 2
-		self.DecayF = 1e-8
+		self.DecayF = 1e-6
 		self.WallT  = 0
 		self.SimT   = 1e6
 		self.today  = str(date.today())
@@ -445,6 +447,27 @@ class Model:
 			plt.show()
 		plt.savefig(self.workingDir+"Model.pdf")
 
+
+	def TicTocGenerator(self):
+		# Generator that returns time differences
+		ti = 0           # initial time
+		tf = time.time() # final time
+		while True:
+			ti = tf
+			tf = time.time()
+			yield tf-ti # returns the time difference
+
+
+	# This will be the main function through which we define both tic() and toc()
+	def toc(self,tempBool=True):
+		# Prints the time difference yielded by generator instance TicToc
+		tempTimeInterval = next(self.TicToc)
+		if tempBool:
+			print( "Elapsed time: %f seconds.\n" %tempTimeInterval )
+
+	def tic(self):
+		# Records a time in TicToc, marks the beginning of a time interval
+		self.toc(False)
 
 
 

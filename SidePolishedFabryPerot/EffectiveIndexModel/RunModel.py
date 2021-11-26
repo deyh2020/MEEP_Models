@@ -5,14 +5,33 @@ import matplotlib.pyplot as plt
 
 Model = M.Model()
 
-#Model.nCoating = 1.000
-Model.df     = 2e-2
-Model.res = 3
+
 Model.filename = 'Debugging'
 Model.Notes    = 'Trying to get Bloch BC working'
-Model.Pad = 0    #Cladding left over from polishing
-Model.SimSize = 50
-Model.wl = 1.55
+
+
+
+
+Model.nCoating = 1.41
+
+Model.buildPolishedFibre()
+Model.BuildModel(Plot=False) 
+
+Model.tic()
+Model.RunMPB()
+Model.toc()
+
+Model.RunAndPlotF()
+
+Model.SaveMeta()
+
+print("Neff",Model.neff)
+
+
+
+
+
+"""
 
 PDMSneff = []
 
@@ -65,3 +84,5 @@ ax.set_ylabel("$\Delta n_{eff}$ / $1e-3$")
 ax.set_xlabel("Temp / C")
 
 plt.show()
+
+"""
