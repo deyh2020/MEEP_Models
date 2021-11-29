@@ -342,14 +342,14 @@ class Model:
 		Rs = []
 		Ts = []
 		for i in range(self.nfreq):
-			self.wl = np.append(wl, 1/flux_freqs[i])
-			self.Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
-			self.Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
+			wl = np.append(wl, 1/flux_freqs[i])
+			Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
 
 		plt.figure()
-		plt.plot(self.wl,self.Rs,'--',label='reflectance')
-		plt.plot(self.wl,self.Ts,label='transmittance')
-		plt.plot(self.wl,1-self.Rs-self.Ts,label='loss')
+		plt.plot(wl,Rs,'--',label='reflectance')
+		plt.plot(wl,Ts,label='transmittance')
+		plt.plot(wl,1-Rs-Ts,label='loss')
 		#plt.axis([5.0, 10.0, 0, 1])
 		plt.xlabel("wavelength (μm)")
 		plt.legend(loc="upper right")
@@ -416,17 +416,6 @@ class Model:
 		"sy":self.sy
         }
 
-		with open(self.workingDir + 'metadata.json', 'w') as file:
-			json.dump(metadata, file)
-
-		Data = {}
-		Data['wl'] =  self.wl      # sensor just after source.
-		Data['Rs'] =  self.Rs      # sensor at the end of the WG (for transmission)
-		Data['Ts'] =  self.Ts
-
-
-		with open(self.workingDir + str(self.Datafile), 'wb') as file:
-			pickle.dump(Data,file)
 
 
 
