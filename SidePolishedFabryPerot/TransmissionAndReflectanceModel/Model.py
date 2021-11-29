@@ -55,6 +55,9 @@ class Model:
 		#init Data arrays
 		self.srcE  = np.array([])
 		self.tranE = np.array([])
+
+		self.PDMSindex()
+		self.Silicaindex()
 		
 
 	def mkALLDIRS(self):
@@ -244,10 +247,10 @@ class Model:
 
 		if NormRun:
 			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-			plt.savefig(self.workingDir+"NormModel.pdf")
+			plt.savefig(self.workingDir+"NormModel_" + str(self.Datafile) +".pdf")
 		else:
 			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-			plt.savefig(self.workingDir+"Model.pdf")
+			plt.savefig(self.workingDir+"Model_" + str(self.Datafile) +".pdf")
 
 		
 
@@ -339,18 +342,18 @@ class Model:
 		Rs = []
 		Ts = []
 		for i in range(self.nfreq):
-			wl = np.append(wl, 1/flux_freqs[i])
-			Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
-			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
+			self.wl = np.append(wl, 1/flux_freqs[i])
+			self.Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+			self.Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
 
 		plt.figure()
-		plt.plot(wl,Rs,'--',label='reflectance')
-		plt.plot(wl,Ts,label='transmittance')
-		plt.plot(wl,1-Rs-Ts,label='loss')
+		plt.plot(self.wl,self.Rs,'--',label='reflectance')
+		plt.plot(self.wl,self.Ts,label='transmittance')
+		plt.plot(self.wl,1-self.Rs-self.Ts,label='loss')
 		#plt.axis([5.0, 10.0, 0, 1])
 		plt.xlabel("wavelength (μm)")
 		plt.legend(loc="upper right")
-		plt.savefig(self.workingDir+"TransRef.pdf")
+		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
 		#plt.show()
 
 
@@ -416,15 +419,22 @@ class Model:
 		with open(self.workingDir + 'metadata.json', 'w') as file:
 			json.dump(metadata, file)
 
+		Data = {}
+		Data['wl'] =  self.wl      # sensor just after source.
+		Data['Rs'] =  self.Rs      # sensor at the end of the WG (for transmission)
+		Data['Ts'] =  self.Ts
+
+
+		with open(self.workingDir + str(self.Datafile), 'wb') as file:
+			pickle.dump(Data,file)
+
 
 
 
 	def dumpData2File(self):
     
 		# initialise main data dictionary
-		Data = {}
-		Data['Src'] = {}       # sensor just after source.
-		Data['Out'] = {}       # sensor at the end of the WG (for transmission)
+		
 		
 		
 		Data['Src']['lambda'] = 1/np.array(mp.get_flux_freqs(self.srcE))
@@ -441,6 +451,9 @@ class Model:
 
 		metadata = {**metadata,**self.meta}
 		
+		Data = {}
+		Data['Src'] = {}       # sensor just after source.
+		Data['Out'] = {}       # sensor at the end of the WG (for transmission)
 
 		with open(metadata['Data'], 'wb') as file:
 			pickle.dump(Data,file)
@@ -479,6 +492,19 @@ class Model:
 		# Records a time in TicToc, marks the beginning of a time interval
 		self.toc(False)
 
+	def PDMSindex(self):
 
+		self.PDMStemp = np.array([27.04200613, 30.04708872, 40.09978324, 50.0485836, 60.10202556, 70.05194708, 80.00074744])
+		self.nPDMS    = np.array([1.410413147,1.409271947,1.405629718,1.4019877,1.398453453,1.394973372,1.391331424])
+		self.PDMSfit = np.polyfit(self.PDMStemp,self.nPDMS,deg=1)
+
+
+
+
+	def Silicaindex(self):
+		
+		self.Silicatemp = np.array([22.83686643,40.36719542,70.32692845,103.3346833])
+		self.nSilica    = np.array([1.445300107,1.44555516,1.445847903,1.445958546])
+		self.SilicaFIT = np.polyfit(self.Silicatemp,self.nSilica,deg=1)
 
 		

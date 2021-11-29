@@ -117,7 +117,7 @@ class Model:
 
 
 
-	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
+	def BuildModel(self,Plot=True,axes=plt.axes()):   # builds sim and plots structure to file 
 
 		
 		self.fcen   = 1/self.wl
@@ -161,7 +161,16 @@ class Model:
 		self.mkALLDIRS()
 
 		if Plot:
-			self.pltModel()
+			self.sim.plot2D(
+				ax = axes,
+				#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+				#fields=mp.Ez,
+				plot_sources_flag=False,
+				plot_monitors_flag=False,
+				plot_eps_flag=True,
+				eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
+			)
+			
 
 
 	def RunMPB(self):
@@ -180,7 +189,7 @@ class Model:
 		self.neff = self.k.norm() * self.wl
 
 
-	def RunAndPlotF(self):
+	def RunAndPlotF(self,axes=plt.axes()):
 
 		t = (1e-6/3e8)
 		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
@@ -194,20 +203,18 @@ class Model:
 		plt.figure(dpi=200)
 
 		self.sim.plot2D(
+			ax = axes,
 			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
 			fields=mp.Ey,
 			plot_sources_flag=False,
 			plot_monitors_flag=False,
 			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
 			)
-		plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
+		#plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
 		#plt.show()
 		
 
-	def pltModel(self):
-		plt.figure(dpi=200)
-		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-		plt.show()
+		
 		
 
 	def mkALLDIRS(self):
