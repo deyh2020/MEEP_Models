@@ -99,7 +99,7 @@ class Model:
 
 	def buildPolished(self):
 
-		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 100
+		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 200
 		self.sy = 2*self.Depth + 2*self.dpml
 
 		
@@ -308,9 +308,12 @@ class Model:
 			)
 
 		pt = mp.Vector3()
+
+		dt = self.GAP
+
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(250, mp.output_dpwr),
+			mp.at_every(dt, mp.output_dpwr),
 			until_after_sources=mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)
 			)
 		

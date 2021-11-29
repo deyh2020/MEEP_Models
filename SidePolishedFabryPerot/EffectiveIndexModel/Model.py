@@ -36,7 +36,6 @@ class Model:
 		self.WallT  = 0
 		self.SimT   = 10
 		self.today  = str(date.today())
-		self.workDir= 'notSet'
 		self.filename= 'test'
 		self.Datafile = 'Default'
 		self.sim    = None
@@ -119,6 +118,7 @@ class Model:
 
 
 	def BuildModel(self,Plot=True):   # builds sim and plots structure to file 
+
 		
 		self.fcen   = 1/self.wl
 		self.df     = 0.1*self.fcen
@@ -158,19 +158,8 @@ class Model:
 			ensure_periodicity=False
 			)
 
-
 		self.mkALLDIRS()
 
-
-		# src flux
-		#src_fr = mp.FluxRegion(center=mp.Vector3(-190,0,0), size=mp.Vector3(0,20,0))                            
-		#self.srcE = self.sim.add_flux(self.fcen, 8e-3, 100, src_fr)
-
-
-
-		# transmitted flux
-		#tran_fr = mp.FluxRegion(center=mp.Vector3(190,0,0), size=mp.Vector3(0,20,0))
-		#self.tranE = self.sim.add_flux(self.fcen, 8e-3, 100, tran_fr)
 		if Plot:
 			self.pltModel()
 
@@ -213,61 +202,7 @@ class Model:
 			)
 		plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
 		#plt.show()
-
-
-	def calcNEFF(self):
-
-		NEFF = (self.wi * self.wl ) / (2 * np.pi * self.gv)
 		
-		return NEFF
-
-
-	def RunSetT(self):
-		
-		t = (1e-6/3e8)
-		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
-
-		print("Actual Simtime:", self.SimT*t)
-		
-		self.sim.run(
-			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(10500, mp.output_dpwr),
-			until=(self.SimT*tFactor)
-			)
-
-		plt.figure(dpi=200)
-		self.sim.plot3D(
-			fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True
-			)
-		plt.savefig(self.workingDir+"FieldsAtEnd.pdf")
-
-		self.meta = {
-		"Notes": self.Notes,
-        "DecayFactor": self.DecayF,
-        "Walltime": self.WallT,
-        "Gap": self.GAP,
-        "fsrc": self.fcen,
-        "df": self.df,
-        "nfreq": self.nfreq,
-        "resolution": self.res,
-        "Depth": self.Depth
-        }
-
-		self.dumpData2File()
-
-		fig,axes = plt.subplots(1,1,figsize=(16,9))
-
-		wl = 1/np.array(mp.get_flux_freqs(self.tranE))
-
-		Tran = np.array(mp.get_fluxes(self.tranE))
-
-		Src = np.array(mp.get_fluxes(self.srcE))
-
-		axes.plot(wl,Tran,label='Transmission')
-		axes.plot(wl,Src,label='Reflectance')
-		#axes.plot(wl,1-Src-Tran,label='Loss')
-		axes.legend()
-		plt.savefig(self.workingDir+"Spectrum.pdf")
 
 	def pltModel(self):
 		plt.figure(dpi=200)
@@ -345,17 +280,21 @@ class Model:
 
 		self.PDMStemp = np.array([27.04200613, 30.04708872, 40.09978324, 50.0485836, 60.10202556, 70.05194708, 80.00074744])
 		self.nPDMS    = np.array([1.410413147,1.409271947,1.405629718,1.4019877,1.398453453,1.394973372,1.391331424])
+		self.PDMSfit = np.polyfit(self.PDMStemp,self.nPDMS,deg=1)
+
+
 
 
 	def Silicaindex(self):
 		
 		self.Silicatemp = np.array([22.83686643,40.36719542,70.32692845,103.3346833])
 		self.nSilica    = np.array([1.445300107,1.44555516,1.445847903,1.445958546])
+		self.SilicaFIT = np.polyfit(self.Silicatemp,self.nSilica,deg=1)
 
 	
 	def SaveMeta(self):
 		
-		metadata = {
+		self.metadata = {
 		##Material N
 		"nCoating": self.nCoating,
 		"CoreN":self.coreN,
@@ -378,7 +317,6 @@ class Model:
 		"WallT":self.WallT,
 		"SimT":self.SimT,
 		"today":self.today,
-		"WorkingDir":self.workDir,
 		"filename":self.filename,
 		"notes":self.Notes,
 
@@ -386,5 +324,7 @@ class Model:
 
         }
 
-		with open(self.workingDir + 'metadata_' + str(self.Datafile) + '.json' , 'w') as file:
-			json.dump(metadata, file)
+		
+		with open(self.workingDir + 'metadata' + str(self.Datafile) + '.json' , 'w') as file:
+			json.dump(self.metadata, file)
+		

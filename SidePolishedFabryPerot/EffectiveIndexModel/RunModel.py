@@ -6,92 +6,67 @@ import matplotlib.pyplot as plt
 Model = M.Model()
 
 
-Model.filename = 'Debugging'
-Model.Notes    = 'Trying to get Bloch BC working'
+Model.filename = 'ModelTrio'
+Model.Notes    = ''
+
+Model.res = 4
 
 
-
-
-Model.Datafile = "Uncoated"
-Model.nCoating = 1.00
-
-Model.buildPolishedFibre()
-Model.BuildModel(Plot=False) 
-
-Model.tic()
-Model.RunMPB()
-Model.toc()
-
-Model.RunAndPlotF()
-
-Model.SaveMeta()
-print("Neff",Model.neff)
-
-
-
-
-Model.sim.reset_meep()  
-Model.Objlist = []
-
-Model.Datafile = "PDMSCoated"
-
-
-Model.nCoating = 1.41
-
-Model.buildPolishedFibre()
-Model.BuildModel(Plot=False) 
-
-Model.tic()
-Model.RunMPB()
-Model.toc()
-
-Model.RunAndPlotF()
-
-Model.SaveMeta()
-print("Neff",Model.neff)
-
-
-Model.sim.reset_meep()  
-Model.Objlist = []
-
-
-Model.Datafile = "StandardFibre"
-
-
-
-Model.buildFibre()
-Model.BuildModel(Plot=False) 
-
-Model.tic()
-Model.RunMPB()
-Model.toc()
-
-Model.RunAndPlotF()
-
-Model.SaveMeta()
-print("Neff",Model.neff)
+temps = [23,30,40,50,60,70,80]
 
 
 
 """
+Polished and PDMS coated
+"""
+
 
 PDMSneff = []
+Model.nCoating = 1.41
 
-for n in Model.nPDMS:  
-    Model.nCoating = n
+Model.tic()
+for t in temps:  
+
+    Model.Datafile = "PDMSCoated_temp_" + str(t)
+
+    Model.nCoating = np.polyval(Model.PDMSfit,t)
+    Model.coreN = np.polyval(Model.SilicaFIT,t)
+    Model.cladN = Model.coreN - 0.005
+    
+    print(Model.nCoating)
+    print(Model.coreN)
+
+
     Model.Objlist = []
-    #Model.buildFibre()
     Model.buildPolishedFibre()
     Model.BuildModel(Plot=False) 
     Model.RunMPB()
     PDMSneff.append(Model.neff)
     Model.sim.reset_meep()  
 
+Model.toc()
 
-neff = []
-Model.nCoating = 1.000
+fig,ax = plt.subplots(dpi=150)
 
-for n in Model.nSilica:  
+ax.plot(temps,PDMSneff)
+
+
+ax.set_ylabel("$\Delta n_{eff}$ / $1e-3$")
+ax.set_xlabel("Temp / C")
+
+plt.show()
+
+print(PDMSneff)
+
+"""
+
+"""
+#Polished and Un-Coated Model
+"""
+
+python
+    Model.Datafile = "Uncoated_" + str(n)
+
     Model.coreN = n
     Model.cladN = n - 0.005
     Model.Objlist = []
@@ -99,14 +74,33 @@ for n in Model.nSilica:
     Model.buildPolishedFibre()
     Model.BuildModel(Plot=False) 
     Model.RunMPB()
-    neff.append(Model.neff)
+    Uncoatedneff.append(Model.neff)
     Model.sim.reset_meep()  
 
 
-neff = np.array([neff])[0,:]
-neff = neff - neff[0]
-PDMSneff = np.array([PDMSneff])[0,:]
-PDMSneff = PDMSneff - PDMSneff[0]
+"""
+#Standard SMF-28 Fibre
+"""
+
+NormalFibre = []
+
+for n in Model.nSilica: 
+    Model.Datafile = "NormalFibre_" + str(n)
+    
+    Model.coreN = n
+    Model.cladN = n - 0.005
+    Model.Objlist = []
+    Model.buildFibre()
+    Model.BuildModel(Plot=False) 
+    Model.RunMPB()
+    Model.RunAndPlotF()
+    #Model.SaveMeta()
+    NormalFibre.append(Model.neff)
+
+
+
+
+
 
 
 
