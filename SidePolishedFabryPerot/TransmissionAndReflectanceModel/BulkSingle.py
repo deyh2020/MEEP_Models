@@ -54,6 +54,6 @@ for T in temps:
     #Model.toc()
     Model.SaveMeta()
 
-plt.show()
+#plt.show()
 
 
