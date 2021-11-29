@@ -315,9 +315,9 @@ class Model:
 		dt = self.GAP
 
 		self.sim.run(
-			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(dt, mp.output_dpwr),
-			until_after_sources=mp.stop_when_fields_decayed(500,mp.Ez,pt,self.DecayF)
+			#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(500, mp.output_dpwr),
+			until_after_sources=mp.stop_when_fields_decayed(dt,mp.Ez,pt,self.DecayF)
 			)
 		
 
