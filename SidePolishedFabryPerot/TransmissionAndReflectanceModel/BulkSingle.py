@@ -14,7 +14,7 @@ Model = M.Model()
 
 Model.buildPolished()
 
-temps = [20,30,40,50,60,70,80]
+temps = [20,40,80]
 
 Model.filename = 'SingleBubble'
 

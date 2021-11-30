@@ -5,6 +5,6 @@
 module load meep
 
  
-srun python3 RunBulkExperiment.py
+srun python3 BulkSingle.py
 
 

@@ -33,14 +33,14 @@ class Model:
 		self.Rw     = False
 		##Src properties
 		self.fcen   = 1/1.55
-		self.df     = 1.2e-2
-		self.nfreq  = 1000
+		self.df     = 1.3e-2
+		self.nfreq  = 2000
 
 		##MEEP properties
 		self.monitorPts = 4
 		self.dpml   = 10
 		self.res    = 10
-		self.DecayF = 1e-6
+		self.DecayF = 1e-9
 		self.WallT  = 0
 		self.SimT   = 1e6
 		self.today  = str(date.today())
