@@ -13,7 +13,7 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'KindaWorks'
+Model.filename = 'WorksLargerDF'
 
 Model.GAP = 0
 Model.Width = 100
