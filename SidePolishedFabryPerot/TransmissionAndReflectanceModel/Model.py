@@ -307,7 +307,7 @@ class Model:
 		#	#mp.at_beginning(mp.output_epsilon),
 		#	#mp.at_every(250,mp.output_efield_z),
 			until=mp.stop_when_fields_decayed(
-				50,
+				500,
 				mp.Ez,mp.Vector3(0.5*self.sx - 0.5*self.dpml,0),self.DecayF
 				)
 		)
@@ -341,7 +341,10 @@ class Model:
 
 		pt = mp.Vector3()
 
-		dt = self.GAP
+		if self.BubblesNum == 1:
+			dt = self.Width
+		else:
+			dt = self.GAP
 
 		self.sim.run(
 			#mp.at_beginning(mp.output_epsilon),
