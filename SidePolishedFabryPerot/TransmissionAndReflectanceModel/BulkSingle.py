@@ -11,9 +11,9 @@ Model = M.Model()
 
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
 
-temps = [20]
+temps = [20,40,60,80]
 
-Model.filename = 'WorksLargerDF'
+Model.filename = 'NowChangeTemp'
 
 Model.GAP = 0
 Model.Width = 100
