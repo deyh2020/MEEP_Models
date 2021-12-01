@@ -12,7 +12,6 @@ Model = M.Model()
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
 
 
-Model.buildPolished()
 
 temps = [20,40,80]
 
@@ -23,12 +22,16 @@ Model.Width = 300
 
 for T in temps:  
 
+
+
     Model.Datafile = "temp_" + str(T)
 
     Model.nCoating = np.polyval(Model.PDMSfit,T)
     Model.coreN = np.polyval(Model.SilicaFIT,T)
     Model.cladN = Model.coreN - 0.005
 
+    Model.Objlist = []
+    Model.buildPolished()
     Model.BuildModel(NormRun=True,Plot=False) 
 
     Model.tic()
@@ -39,8 +42,6 @@ for T in temps:
     Model.sim.reset_meep()
 
     #Model.filename = 'SingleBubble_Temp_' + str(T)
-
-    Model.Objlist = []
 
     #Build model with everything.
     Model.sqrBubbles(Num=1)
