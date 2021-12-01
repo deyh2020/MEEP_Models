@@ -15,11 +15,10 @@ class Model:
 		#init constants
 		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
 
-		
 		##Material N
 		self.nCoating  = 1.41
-		self.coreN  = 1.445
-		self.cladN  = 1.440
+		self.coreN     = 1.445
+		self.cladN     = 1.440
 
 		##Fibre Dimentions
 		self.R1     = 4.1
@@ -31,6 +30,7 @@ class Model:
 		self.Width  = 100
 		self.GAP    = 100
 		self.Rw     = False
+		self.BubblesNum = 2 
 		##Src properties
 		self.fcen   = 1/1.55
 		self.df     = 1.3e-2
@@ -39,7 +39,7 @@ class Model:
 		##MEEP properties
 		self.monitorPts = 4
 		self.dpml   = 10
-		self.res    = 10
+		self.res    = 12
 		self.DecayF = 1e-9
 		self.WallT  = 0
 		self.SimT   = 1e6
@@ -58,6 +58,34 @@ class Model:
 
 		self.PDMSindex()
 		self.Silicaindex()
+
+
+	def RunTRspectrum(self):
+		
+		
+		self.Objlist = []							#Reset Model and build structure
+
+		self.buildPolished()  						#builds base polished fibre structure list		
+		self.BuildModel(NormRun=True,Plot=True) 
+
+		#Run normal model
+		self.NormRun()
+
+		#Reset sources
+		self.sim.reset_meep()
+		
+
+		self.Objlist = []	
+		self.buildPolished()  						#builds base polished fibre structure list
+		self.ADDsqrBubbles(Num=1)  					#add sqr bubbles to the structure list
+		self.BuildModel(NormRun=False,Plot=True) 
+
+		#load data from the normal run
+		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
+
+		self.AutoRun()
+		self.SaveMeta()
+
 		
 
 	def mkALLDIRS(self):
@@ -161,14 +189,14 @@ class Model:
 		self.Objlist.extend([self.LH,self.RH])
 
 
-	def sqrBubbles(self,Num):
+	def ADDsqrBubbles(self,Num):
 
 		RW = self.Rw
 		TL = self.Width
 		D  = self.Depth
 
 		
-		if Num == 1:
+		if self.BubblesNum == 1:
 
 			self.Objlist.extend([
 				
@@ -179,7 +207,7 @@ class Model:
 				)
 				])
 
-		elif Num == 2:
+		elif self.BubblesNum == 2:
 			self.Objlist.extend([
 				
 				mp.Block(
@@ -245,11 +273,12 @@ class Model:
 		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 2*self.dpml ,0,0), size=mp.Vector3(0,12,0))
 		self.tranE = self.sim.add_flux(self.fcen, self.df, self.nfreq, tran_fr)
 
+		fig,ax = plt.subplots(dpi=150)
 		if NormRun:
-			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
+			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'})
 			plt.savefig(self.workingDir+"NormModel_" + str(self.Datafile) +".pdf")
 		else:
-			self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
+			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'})
 			plt.savefig(self.workingDir+"Model_" + str(self.Datafile) +".pdf")
 
 		
