@@ -13,7 +13,7 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'Debugging'
+Model.filename = 'KindaWorks'
 
 Model.GAP = 0
 Model.Width = 100
@@ -21,14 +21,22 @@ Model.BubblesNum = 1
 
 for T in temps:  
 
-    Model.Datafile = "temp_" + str(T)
+    Model.Datafile = "Coated_temp_" + str(T)
 
     Model.nCoating = np.polyval(Model.PDMSfit,T)
     Model.coreN = np.polyval(Model.SilicaFIT,T)
     Model.cladN = Model.coreN - 0.005
     
-
     Model.RunTRspectrum()
+
+    Model.Datafile = "Uncoated_temp_" + str(T)
+
+    Model.nCoating = 1.00
+    Model.coreN = np.polyval(Model.SilicaFIT,T)
+    Model.cladN = Model.coreN - 0.005
+    
+    Model.RunTRspectrum()
+
 
 
 

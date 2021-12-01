@@ -33,7 +33,7 @@ class Model:
 		self.BubblesNum = 2 
 		##Src properties
 		self.fcen   = 1/1.55
-		self.df     = 1.3e-2
+		self.df     = 1.5e-2
 		self.nfreq  = 2000
 
 		##MEEP properties
