@@ -11,13 +11,13 @@ Model = M.Model()
 
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
 
-temps = [20,40,60,80]
+temps = [20,80]
 
-Model.filename = 'NowChangeTemp'
+Model.filename = 'NowChangeTempDblBubbles'
 
-Model.GAP = 0
+Model.GAP = 1000
 Model.Width = 100
-Model.BubblesNum = 1
+Model.BubblesNum = 2
 
 for T in temps:  
 
