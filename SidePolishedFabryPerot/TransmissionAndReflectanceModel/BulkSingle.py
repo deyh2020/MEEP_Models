@@ -11,13 +11,20 @@ Model = M.Model()
 
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
 
-temps = [20,80]
 
-Model.filename = 'NowChangeTempDblBubbles'
+temps = [20]
 
-Model.GAP = 1000
-Model.Width = 100
+Model.filename = 'DebuggingTopsy'
+
+Model.GAP = 10
+Model.Width = 10
 Model.BubblesNum = 2
+
+#Model.TestSpectrum()
+
+#plt.show()
+
+
 
 for T in temps:  
 
@@ -41,5 +48,3 @@ for T in temps:
 
 
 #plt.show()
-
-
