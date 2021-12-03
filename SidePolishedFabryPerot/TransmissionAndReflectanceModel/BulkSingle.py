@@ -16,8 +16,8 @@ temps = [20]
 
 Model.filename = 'DebuggingTopsy'
 
-Model.GAP = 10
-Model.Width = 10
+Model.GAP = 1000
+Model.Width = 100
 Model.BubblesNum = 2
 
 #Model.TestSpectrum()
