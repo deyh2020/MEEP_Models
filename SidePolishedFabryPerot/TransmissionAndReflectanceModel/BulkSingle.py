@@ -14,17 +14,15 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'DebuggingTopsy'
+Model.filename = 'UnfilledBubbles'
 
-Model.GAP = 1000
+Model.GAP = 0
 Model.Width = 100
-Model.BubblesNum = 2
+Model.BubblesNum = 1
 
 #Model.TestSpectrum()
 
 #plt.show()
-
-
 
 for T in temps:  
 
@@ -36,6 +34,8 @@ for T in temps:
     
     Model.RunTRspectrum()
 
+
+ 
     Model.Datafile = "Uncoated_temp_" + str(T)
 
     Model.nCoating = 1.00

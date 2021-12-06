@@ -23,7 +23,7 @@ class Model:
 		##Fibre Dimentions
 		self.R1     = 4.1
 		self.R2     = 62.5
-		self.CladLeft = 5
+		self.CladLeft = 1
 
 		##Resonator Dimentions
 		self.Depth  = 40
@@ -38,7 +38,7 @@ class Model:
 
 		##MEEP properties
 		self.dpml   = 10
-		self.res    = 12
+		self.res    = 10
 		self.DecayF = 1e-9
 		self.WallT  = 0
 		self.SimT   = 1e6
@@ -76,7 +76,7 @@ class Model:
 
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDsqrBubbles(Num=1)  					#add sqr bubbles to the structure list
+		self.ADDsqrEmptyBubbles(Num=1)  					#add sqr bubbles to the structure list
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
@@ -91,11 +91,12 @@ class Model:
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
 		self.ADDsqrBubbles(Num=1)  					#add sqr bubbles to the structure list
+		self.ADDsqrEmptyBubbles(Num=1)
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
 		
-		self.QuickRun()
+		#self.QuickRun()
 
 		
 
@@ -156,8 +157,8 @@ class Model:
 			)
 
 		self.Clad = mp.Block(
-			center=mp.Vector3(x=0,y=(-62.5/2 + self.CladLeft),z=0),
-			size=mp.Vector3(x=mp.inf,y=62.5,z=mp.inf),
+			center=mp.Vector3(x=0,y=(-self.R2 + self.R1 + self.CladLeft),z=0),
+			size=mp.Vector3(x=mp.inf,y=self.R2*2,z=mp.inf),
 			material=mp.Medium(index=self.cladN)
 			)
 
@@ -237,6 +238,43 @@ class Model:
 				)
 				])
 
+
+	def ADDsqrEmptyBubbles(self,Num):
+
+		RW = self.Rw
+		TL = self.Width
+		D  = self.Depth
+
+		
+		if self.BubblesNum == 1:
+
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=0,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=1.00)
+				)
+				])
+
+		elif self.BubblesNum == 2:
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=-self.GAP/2-self.Width/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=1.000)
+				)
+				])
+			
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=self.GAP/2+self.Width/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=1.000)
+				)
+				])
 
 
 	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
