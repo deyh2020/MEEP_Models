@@ -17,7 +17,7 @@ temps = [20]
 Model.filename = 'UnfilledBubbles'
 
 Model.GAP = 0
-Model.Width = 100
+Model.Width = 300
 Model.BubblesNum = 1
 
 #Model.TestSpectrum()

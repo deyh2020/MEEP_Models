@@ -34,7 +34,7 @@ class Model:
 		##Src properties
 		self.fcen   = 1/1.55
 		self.df     = 0.8e-2
-		self.nfreq  = 2000
+		self.nfreq  = 1000
 
 		##MEEP properties
 		self.dpml   = 10
@@ -537,6 +537,11 @@ class Model:
 		"sy":self.sy
         }
 
+		try:
+			with open(self.workingDir + 'metadata.json', 'w') as file:
+				json.dump(metadata, file)
+		except:
+			print("Failed to save metadata")
 
 
 
