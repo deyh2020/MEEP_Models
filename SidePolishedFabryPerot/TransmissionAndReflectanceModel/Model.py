@@ -90,14 +90,14 @@ class Model:
 		
 		self.Objlist = []							#Reset Model and build structure
 
-		#self.buildNormalfibre()  						#builds base polished fibre structure list		
-		#self.BuildModel(NormRun=True,Plot=True) 
+		self.buildNormalfibre()  						#builds base polished fibre structure list		
+		self.BuildModel(NormRun=True,Plot=True) 
 
 		#Run normal model
-		#self.NormRun()
+		self.NormRun()
 
 		#Reset sources
-		#self.sim.reset_meep()
+		self.sim.reset_meep()
 		
 
 		self.Objlist = []	
@@ -106,10 +106,10 @@ class Model:
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
-		#self.sim.load_minus_flux_data(self.refl,self.norm_refl)
+		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
 
-		#self.AutoRun()
-		#self.SaveMeta()
+		self.AutoRun()
+		self.SaveMeta()
 
 
 	def TestSpectrum(self):	
