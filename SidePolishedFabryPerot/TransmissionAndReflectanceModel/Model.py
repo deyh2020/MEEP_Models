@@ -85,6 +85,32 @@ class Model:
 		self.AutoRun()
 		self.SaveMeta()
 
+	def RunTRspectrumUnPolished(self):
+		
+		
+		self.Objlist = []							#Reset Model and build structure
+
+		#self.buildNormalfibre()  						#builds base polished fibre structure list		
+		#self.BuildModel(NormRun=True,Plot=True) 
+
+		#Run normal model
+		#self.NormRun()
+
+		#Reset sources
+		#self.sim.reset_meep()
+		
+
+		self.Objlist = []	
+		self.buildNormalfibre()  						#builds base polished fibre structure list
+		self.ADDsqrBubblesNF(Num=1)  					#add sqr bubbles to the structure list
+		self.BuildModel(NormRun=False,Plot=True) 
+
+		#load data from the normal run
+		#self.sim.load_minus_flux_data(self.refl,self.norm_refl)
+
+		#self.AutoRun()
+		#self.SaveMeta()
+
 
 	def TestSpectrum(self):	
 
@@ -117,28 +143,35 @@ class Model:
 
 	def buildNormalfibre(self):
 
-			self.sx = self.GAP + 2*self.Width + 50 + 2*self.dpml
-			self.sy = 2*self.Depth + 2*self.dpml
+		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 200
+		self.sy = self.Depth
 
 		
-			self.cell_size = mp.Vector3(self.sx,self.sy,0)
+		self.cell_size = mp.Vector3(self.sx,self.sy,0)
 
-			self.pml_layers = [mp.PML(thickness=self.dpml)]
+		self.pml_layers = [mp.PML(thickness=self.dpml)]
 
 
-			self.Clad = mp.Block(
-				center=mp.Vector3(x=0,y=0,z=0),
-				size=mp.Vector3(x=mp.inf,y=62.5,z=mp.inf),
-				material=mp.Medium(index=self.cladN)
-				)
+		self.Coating = mp.Block(
+			center=mp.Vector3(0,0,0),
+			size=mp.Vector3(mp.inf,mp.inf,mp.inf),
+			material=mp.Medium(index=self.nCoating)
+			)
 
-			self.Core = mp.Block(
-				center=mp.Vector3(0,0,0),
-				size=mp.Vector3(mp.inf,8.2,mp.inf),
-				material=mp.Medium(index=self.coreN)
-				)
 
-			self.Objlist.extend([self.Clad,self.Core])
+		self.Clad = mp.Block(
+			center=mp.Vector3(x=0,y=0,z=0),
+			size=mp.Vector3(x=mp.inf,y=62.5,z=mp.inf),
+			material=mp.Medium(index=self.cladN)
+			)
+
+		self.Core = mp.Block(
+			center=mp.Vector3(0,0,0),
+			size=mp.Vector3(mp.inf,8.2,mp.inf),
+			material=mp.Medium(index=self.coreN)
+			)
+
+		self.Objlist.extend([self.Coating,self.Clad,self.Core])
 
 	def buildPolished(self):
 
@@ -170,35 +203,6 @@ class Model:
 
 		self.Objlist.extend([self.Coating,self.Clad,self.Core])
 
-
-	def addtriBubbles(self):
-
-		RW = self.Rw
-		TL = self.Width
-
-		verts = [
-	            
-	            mp.Vector3(x=-(RW/2+TL/2) ,y=self.R2 ,z=0)   ,
-	            mp.Vector3(x=(RW/2+TL/2)  ,y=self.R2 ,z=0)  ,
-	            mp.Vector3(x=(RW/2)       ,y=self.R2-self.Depth ,z=0)   ,
-	             mp.Vector3(x=-(RW/2)     ,y=self.R2-self.Depth ,z=0)
-	        
-	            ]
-
-
-		self.LH = mp.Prism(center=mp.Vector3(x=-self.GAP/2,y=0,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.PDMSn),
-	                     height=1
-	                     )
-
-		self.RH = mp.Prism(center=mp.Vector3(x=self.GAP/2,y=0,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.PDMSn),
-	                     height=1
-	                     )
-
-		self.Objlist.extend([self.LH,self.RH])
 
 
 	def ADDsqrBubbles(self,Num):
@@ -238,6 +242,43 @@ class Model:
 				)
 				])
 
+
+	def ADDsqrBubblesNF(self,Num):
+
+		RW = self.Rw
+		TL = self.Width
+		D  = self.Depth
+
+		
+		if self.BubblesNum == 1:
+
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=0,y=-D/2+self.R2,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.nCoating)
+				)
+				])
+
+		elif self.BubblesNum == 2:
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=-self.GAP/2-self.Width/2,y=-D/2+self.R2,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.nCoating)
+				)
+				])
+			
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=self.GAP/2+self.Width/2,y=-D/2+self.R2,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.nCoating)
+				)
+				])
 
 	def ADDsqrEmptyBubbles(self,Num):
 
@@ -622,4 +663,34 @@ class Model:
 		self.nSilica    = np.array([1.445300107,1.44555516,1.445847903,1.445958546])
 		self.SilicaFIT = np.polyfit(self.Silicatemp,self.nSilica,deg=1)
 
+
+
+	def addtriBubbles(self):
+
+		RW = self.Rw
+		TL = self.Width
+
+		verts = [
+	            
+	            mp.Vector3(x=-(RW/2+TL/2) ,y=self.R2 ,z=0)   ,
+	            mp.Vector3(x=(RW/2+TL/2)  ,y=self.R2 ,z=0)  ,
+	            mp.Vector3(x=(RW/2)       ,y=self.R2-self.Depth ,z=0)   ,
+	             mp.Vector3(x=-(RW/2)     ,y=self.R2-self.Depth ,z=0)
+	        
+	            ]
+
+
+		self.LH = mp.Prism(center=mp.Vector3(x=-self.GAP/2,y=0,z=0),
+	                     vertices = verts,
+	                     material=mp.Medium(index=self.PDMSn),
+	                     height=1
+	                     )
+
+		self.RH = mp.Prism(center=mp.Vector3(x=self.GAP/2,y=0,z=0),
+	                     vertices = verts,
+	                     material=mp.Medium(index=self.PDMSn),
+	                     height=1
+	                     )
+
+		self.Objlist.extend([self.LH,self.RH])
 		

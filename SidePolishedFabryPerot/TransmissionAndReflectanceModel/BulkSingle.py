@@ -18,6 +18,7 @@ Model.filename = '300umFilledBubble'
 
 Model.GAP = 0
 Model.Width = 300
+Model.Depth = 62.5 + 8 + 10
 Model.BubblesNum = 1
 
 #Model.TestSpectrum()
@@ -32,7 +33,7 @@ for T in temps:
     Model.coreN = np.polyval(Model.SilicaFIT,T)
     Model.cladN = Model.coreN - 0.005
     
-    Model.RunTRspectrum()
+    Model.RunTRspectrumUnPolished()
 
 
  
@@ -42,9 +43,9 @@ for T in temps:
     Model.coreN = np.polyval(Model.SilicaFIT,T)
     Model.cladN = Model.coreN - 0.005
     
-    Model.RunTRspectrum()
+    Model.RunTRspectrumUnPolished()
 
 
 
 
-#plt.show()
+plt.show()
