@@ -1,0 +1,65 @@
+Using MPI version 3.1, 24 processes
+WD: data/2021-12-10/300umFilledBubbleFullFibre/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 24 chunks by voxels
+time for choose_chunkdivision = 0.00392178 s
+Working in 2D dimensions.
+Computational cell is 820 x 80.5 x 0 with resolution 10
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.99622,1.99622,1.99622)
+     block, center = (0,0,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0746,2.0746,2.0746)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08903,2.08903,2.08903)
+     block, center = (0,22.25,0)
+          size (300,80.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1.99622,1.99622,1.99622)
+time for set_epsilon = 0.650633 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277333 after 75 iters
+MPB solved for frequency_1(0.931194,0,0) = 0.644871 after 63 iters
+MPB solved for frequency_1(0.931613,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931613,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-12-10/300umFilledBubbleFullFibre/'
+WD: data/2021-12-10/300umFilledBubbleFullFibre/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 24 chunks by voxels
+time for choose_chunkdivision = 0.00383206 s
+Working in 2D dimensions.
+Computational cell is 820 x 80.5 x 0 with resolution 10
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,0,0)
+          size (1e+20,62.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0746,2.0746,2.0746)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08903,2.08903,2.08903)
+     block, center = (0,22.25,0)
+          size (300,80.5,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.225319 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277333 after 75 iters
+MPB solved for frequency_1(0.931194,0,0) = 0.644871 after 63 iters
+MPB solved for frequency_1(0.931613,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931613,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-12-10/300umFilledBubbleFullFibre/'
+
+Elapsed run time = 6.5018 s

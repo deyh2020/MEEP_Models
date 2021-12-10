@@ -14,7 +14,7 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = '300umFilledBubble'
+Model.filename = '300umFilledBubbleFullFibre'
 
 Model.GAP = 0
 Model.Width = 300
