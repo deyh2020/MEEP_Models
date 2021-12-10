@@ -14,7 +14,7 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'UnfilledBubbles'
+Model.filename = '300umFilledBubble'
 
 Model.GAP = 0
 Model.Width = 300

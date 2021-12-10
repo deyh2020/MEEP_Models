@@ -76,7 +76,7 @@ class Model:
 
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDsqrEmptyBubbles(Num=1)  					#add sqr bubbles to the structure list
+		self.ADDsqrBubbles(Num=1)  					#add sqr bubbles to the structure list
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
