@@ -14,7 +14,7 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'HugeDF_wholeFibre'
+Model.filename = 'HugeDF_polishedFibre'
 
 Model.GAP = 0
 Model.Width = 300
@@ -35,7 +35,7 @@ for T in temps:
     Model.coreN = np.polyval(Model.SilicaFIT,T)
     Model.cladN = Model.coreN - 0.005
     
-    Model.RunTRspectrumUnPolished()
+    Model.RunTRspectrum()
 
 
  
@@ -45,7 +45,7 @@ for T in temps:
     Model.coreN = np.polyval(Model.SilicaFIT,T)
     Model.cladN = Model.coreN - 0.005
     
-    Model.RunTRspectrumUnPolished()
+    Model.RunTRspectrum()
 
 
 
