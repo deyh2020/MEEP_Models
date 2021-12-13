@@ -39,7 +39,7 @@ class Model:
 		##MEEP properties
 		self.dpml   = 10
 		self.res    = 10
-		self.DecayF = 1e-9
+		self.DecayF = 1e-5
 		self.WallT  = 0
 		self.SimT   = 1e6
 		self.today  = str(date.today())
