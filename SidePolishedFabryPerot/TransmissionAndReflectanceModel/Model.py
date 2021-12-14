@@ -39,7 +39,7 @@ class Model:
 		##MEEP properties
 		self.dpml   = 10
 		self.res    = 10
-		self.DecayF = 1e-5
+		self.DecayF = 1e-2
 		self.WallT  = 0
 		self.SimT   = 1e6
 		self.today  = str(date.today())
@@ -388,7 +388,7 @@ class Model:
 		self.sim.run(
 		#	#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(100,mp.output_efield_z),
-			until=self.sx*self.coreN
+			until=2*self.sx*self.coreN
 			
 			)
 		#

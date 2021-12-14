@@ -21,7 +21,7 @@ Model.Width = 300
 Model.Depth = 62.5 + 8 + 10
 Model.BubblesNum = 1
 
-Model.df = 3.0
+Model.df = 2.5
 
 #Model.TestSpectrum()
 
