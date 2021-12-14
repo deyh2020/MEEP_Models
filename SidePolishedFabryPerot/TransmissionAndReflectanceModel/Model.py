@@ -28,6 +28,7 @@ class Model:
 		##Resonator Dimentions
 		self.Depth  = 40
 		self.Width  = 100
+		self.EllipseOffset = 0
 		self.GAP    = 100
 		self.Rw     = False
 		self.BubblesNum = 2 
@@ -76,7 +77,7 @@ class Model:
 
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDsqrBubbles(Num=1)  					#add sqr bubbles to the structure list
+		self.ADDsqrBubbles()  					#add sqr bubbles to the structure list
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
@@ -102,7 +103,7 @@ class Model:
 
 		self.Objlist = []	
 		self.buildNormalfibre()  						#builds base polished fibre structure list
-		self.ADDsqrBubblesNF(Num=1)  					#add sqr bubbles to the structure list
+		self.ADDsqrBubblesNF()  					#add sqr bubbles to the structure list
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
@@ -116,13 +117,13 @@ class Model:
 
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDsqrBubbles(Num=1)  					#add sqr bubbles to the structure list
-		self.ADDsqrEmptyBubbles(Num=1)
+		self.ADDsqrBubbles()  					#add sqr bubbles to the structure list
+		self.ADDsqrEmptyBubbles()
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
 		
-		#self.QuickRun()
+		self.QuickRun()
 
 		
 
@@ -205,7 +206,7 @@ class Model:
 
 
 
-	def ADDsqrBubbles(self,Num):
+	def ADDsqrBubbles(self):
 
 		RW = self.Rw
 		TL = self.Width
@@ -243,7 +244,8 @@ class Model:
 				])
 
 
-	def ADDsqrBubblesNF(self,Num):
+
+	def ADDsqrBubblesNF(self):
 
 		RW = self.Rw
 		TL = self.Width
@@ -280,7 +282,7 @@ class Model:
 				)
 				])
 
-	def ADDsqrEmptyBubbles(self,Num):
+	def ADDsqrEmptyBubbles(self):
 
 		RW = self.Rw
 		TL = self.Width
@@ -314,6 +316,44 @@ class Model:
 					center=mp.Vector3(x=self.GAP/2+self.Width/2,y=-D/2+self.R1+self.CladLeft,z=0),
 					size=mp.Vector3(x=TL,y=D,z=mp.inf),
 					material=mp.Medium(index=1.000)
+				)
+				])
+
+	def ADDellipseBubbles(self):
+
+		RW = self.Rw
+		TL = self.Width
+		D  = self.Depth
+
+		
+		if self.BubblesNum == 1:
+
+			self.Objlist.extend([
+				
+				mp.Ellipsoid(
+					center=mp.Vector3(x=0,y=self.R1+self.CladLeft + self.EllipseOffset,z=0),
+					size=mp.Vector3(x=TL,y= 2*D + 2*self.EllipseOffset,z=mp.inf),
+					material=mp.Medium(index=self.nCoating)
+				)
+
+				])
+
+		elif self.BubblesNum == 2:
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=-self.GAP/2-self.Width/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.nCoating)
+				)
+				])
+			
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=self.GAP/2+self.Width/2,y=-D/2+self.R1+self.CladLeft,z=0),
+					size=mp.Vector3(x=TL,y=D,z=mp.inf),
+					material=mp.Medium(index=self.nCoating)
 				)
 				])
 

@@ -17,11 +17,11 @@ temps = [20]
 Model.filename = 'HugeDF_wholeFibre'
 
 Model.GAP = 0
-Model.Width = 300
+Model.Width = 50
 Model.Depth = 62.5 + 8 + 10
 Model.BubblesNum = 1
 
-Model.df = 2.5
+Model.df = 0.042
 
 #Model.TestSpectrum()
 
@@ -50,4 +50,4 @@ for T in temps:
 
 
 
-plt.show()
+#plt.show()
