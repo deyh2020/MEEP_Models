@@ -17,7 +17,7 @@ temps = [20]
 Model.filename = 'HugeDF_wholeFibre'
 
 Model.GAP = 0
-Model.Width = 50
+Model.Width = 300
 Model.Depth = 62.5 + 8 + 10
 Model.BubblesNum = 1
 
