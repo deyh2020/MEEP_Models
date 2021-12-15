@@ -34,7 +34,6 @@ Model.buildPolished()
 Model.ADDellipseBubbles()
 Model.BuildModel()
 
-plt.show()
 
 
 fig,ax = plt.subplots(dpi=150)
@@ -54,3 +53,5 @@ ax.set_xlim(-220,220)
 
 plt.savefig(Model.workingDir+"Model_" + str(Model.Datafile) +".pdf")
 plt.show()
+
+

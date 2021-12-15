@@ -117,7 +117,7 @@ class Model:
 
 
 
-	def BuildModel(self,Plot=True,axes=plt.axes()):   # builds sim and plots structure to file 
+	def BuildModel(self,Plot=False,axes=None):   # builds sim and plots structure to file 
 
 		
 		self.fcen   = 1/self.wl
@@ -161,14 +161,75 @@ class Model:
 		self.mkALLDIRS()
 
 		if Plot:
-			self.sim.plot2D(
+			if axes == None:
+					ax = plt.axes()
+			else:
 				ax = axes,
+			self.sim.plot2D(
+				ax = ax,
 				#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
 				#fields=mp.Ez,
 				plot_sources_flag=False,
 				plot_monitors_flag=False,
 				plot_eps_flag=True,
-				eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
+				eps_parameters={'alpha':0.8, 'interpolation':'none'}
+			)
+
+	def BuildModel_CW(self,Plot=False,axes=None):   # builds sim and plots structure to file 
+
+		
+		self.fcen   = 1/self.wl
+		self.df     = 0.1*self.fcen
+		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
+
+
+		self.src = [
+				mp.EigenModeSource(
+					src=mp.ContinuousSource(
+						self.fcen
+						),
+				    center=mp.Vector3(0,0,0),
+				    size=mp.Vector3(self.SrcSize,self.SrcSize,0),
+				    direction=mp.Z,
+				    eig_kpoint=self.kpoint,
+				    eig_band=1,
+				    eig_parity=mp.ODD_Y,
+				    eig_match_freq=True,
+					eig_resolution=1
+				)
+			]
+
+		
+
+		
+		self.sim = mp.Simulation(
+			cell_size=self.cell_size,
+			geometry=self.Objlist,
+			sources=self.src,
+			resolution=self.res,
+			symmetries=[mp.Mirror(mp.X)],
+			force_complex_fields=True,
+			eps_averaging=True,
+			boundary_layers=self.pml_layers,
+			k_point=self.kpoint,   
+			ensure_periodicity=False
+			)
+
+		self.mkALLDIRS()
+
+		if Plot:
+			if axes == None:
+					ax = plt.axes()
+			else:
+				ax = axes,
+			self.sim.plot2D(
+				ax = ax,
+				#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+				#fields=mp.Ez,
+				plot_sources_flag=False,
+				plot_monitors_flag=False,
+				plot_eps_flag=True,
+				eps_parameters={'alpha':0.8, 'interpolation':'none'}
 			)
 			
 
@@ -189,7 +250,7 @@ class Model:
 		self.neff = self.k.norm() * self.wl
 
 
-	def RunAndPlotF(self,axes=plt.axes()):
+	def RunAndPlotF(self,axes=None):
 
 		t = (1e-6/3e8)
 		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
@@ -200,7 +261,8 @@ class Model:
 			until_after_sources=self.SimT
 			)
 
-		plt.figure(dpi=200)
+		if axes == None:
+			fig,axes = plt.subplots(dpi=200)
 
 		self.sim.plot2D(
 			ax = axes,
@@ -208,10 +270,34 @@ class Model:
 			fields=mp.Ey,
 			plot_sources_flag=False,
 			plot_monitors_flag=False,
-			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
+			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True},
+			field_parameters={'alpha':0.7,'cmap':'Greys'}
 			)
 		#plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
 		#plt.show()
+
+	def RunAndPlotF_FDS(self,axes=None):
+
+		t = (1e-6/3e8)
+		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
+
+		self.sim.init_sim()
+
+		self.sim.solve_cw()
+
+		if axes == None:
+			fig,axes = plt.subplots(dpi=200)
+
+		self.sim.plot2D(
+			ax = axes,
+			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+			fields=mp.Ey,
+			plot_sources_flag=False,
+			plot_monitors_flag=False,
+			plot_boundaries_flag=False,
+			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True},
+			field_parameters={'alpha':1.0}
+			)
 		
 
 		

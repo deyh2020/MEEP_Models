@@ -32,6 +32,7 @@ class Model:
 		self.GAP    = 100
 		self.Rw     = False
 		self.BubblesNum = 2 
+		self.BubblesType = 'sqr'
 		##Src properties
 		self.fcen   = 1/1.55
 		self.df     = 0.8e-2
@@ -44,7 +45,7 @@ class Model:
 		self.WallT  = 0
 		self.SimT   = 1e6
 		self.today  = str(date.today())
-		self.workDir= 'notSet'
+		self.workingDir= ''
 		self.filename = 'test'
 		self.Datafile = 'test'
 		self.sim    = None
@@ -77,7 +78,15 @@ class Model:
 
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDsqrBubbles()  					#add sqr bubbles to the structure list
+		
+		if self.BubblesType == "sqr":
+			self.ADDsqrBubbles()  					#add sqr bubbles to the structure list
+		elif self.BubblesType == "tri":
+			print("TriBubbles function doesn't exist")
+		elif self.BubblesType == "ellipse":
+			self.ADDellipseBubbles()
+		else:
+			print(self.BubblesType + "<-- doesn't exist")
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run

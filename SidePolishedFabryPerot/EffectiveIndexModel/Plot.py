@@ -9,14 +9,14 @@ Model = M.Model()
 Model.filename = 'ModelTrio'
 Model.Notes    = ''
 
-Model.res = 10
-Model.SimT=1
+Model.res = 3
+Model.SimT=10
 
-fig,ax = plt.subplots(2,3,dpi=150)
+fig,ax = plt.subplots(2,1,dpi=150)
 
-ax[0,0].set_title("Standard Fibre")
-ax[0,1].set_title("Side Polished Fibre")
-ax[0,2].set_title("SP and PDMS Coated")
+ax[0].set_title("Standard Fibre")
+#ax[0,1].set_title("Side Polished Fibre")
+#ax[0,2].set_title("SP and PDMS Coated")
 
 
 """
@@ -29,6 +29,7 @@ Model.nCoating = 1.41
 
 Model.tic()
 
+"""
 
 Model.Datafile = "PDMSCoated"
 
@@ -66,6 +67,8 @@ Model.sim.reset_meep()
 #Standard SMF-28 Fibre
 """
 
+"""
+
 NormalFibre = []
 Model.nCoating = 1.00
 
@@ -73,7 +76,7 @@ Model.Datafile = "NormalFibre"
 
 Model.Objlist = []
 Model.buildFibre()
-Model.BuildModel(Plot=True,axes=ax[0,0]) 
+Model.BuildModel(Plot=True,axes=ax[0]) 
 #Model.RunMPB()
 #Model.SaveMeta()
 
@@ -81,13 +84,14 @@ Model.BuildModel(Plot=True,axes=ax[0,0])
 
 Model = M.Model()
 
+"""
 
 Model.filename = 'ModelTrio'
 Model.Notes    = ''
 
 Model.res = 10
 """
-Polished and PDMS coated
+#Polished and PDMS coated
 """
 
 
@@ -132,6 +136,8 @@ Model.sim.reset_meep()
 
 
 """
+
+"""
 #Standard SMF-28 Fibre
 """
 
@@ -142,8 +148,8 @@ Model.Datafile = "NormalFibre"
 
 Model.Objlist = []
 Model.buildFibre()
-Model.BuildModel(Plot=False,axes=ax[1,0]) 
-Model.RunAndPlotF(axes=ax[1,0])
+Model.BuildModel(Plot=False) 
+Model.RunAndPlotF(axes=ax[1])
 #Model.RunMPB()
 #Model.SaveMeta()
 plt.show()

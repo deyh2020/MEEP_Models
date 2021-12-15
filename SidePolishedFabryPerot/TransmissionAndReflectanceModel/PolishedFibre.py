@@ -14,12 +14,13 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'HugeDF_polishedFibre'
+Model.filename = 'EllipseTopsy'
 
 Model.GAP = 0
 Model.Width = 300
 Model.Depth = 50
 Model.BubblesNum = 1
+Model.BubblesType = 'ellipse'  # cand be sqr, tri, ellipse
 
 Model.df = 0.042
 
