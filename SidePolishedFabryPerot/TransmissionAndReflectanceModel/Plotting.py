@@ -22,11 +22,11 @@ Model.GAP = 0
 Model.Width = 300
 
 Model.EllipseOffset = 20
-Model.Depth = 55
+Model.Depth = 50
 Model.BubblesNum = 1
 
-Model.res = 4
-Model.nCoating = 1.41
+Model.res = 5
+Model.nCoating = 1.00
 Model.CladLeft = 2
 
 
@@ -34,24 +34,4 @@ Model.buildPolished()
 Model.ADDellipseBubbles()
 Model.BuildModel()
 
-
-
-fig,ax = plt.subplots(dpi=150)
-
-Model.sim.plot2D(ax=ax,
-                 plot_sources_flag=False,
-                 plot_monitors_flag=False,
-                 plot_boundaries_flag=False,
-                 eps_parameters={'alpha':0.8, 
-                                 'interpolation':'none',
-                                 'cmap':'binary'},
-                 )
-
-fig_format(ax,"","X / um","Y / um")
-
-ax.set_xlim(-220,220)
-
-plt.savefig(Model.workingDir+"Model_" + str(Model.Datafile) +".pdf")
 plt.show()
-
-

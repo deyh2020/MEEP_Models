@@ -87,6 +87,7 @@ class Model:
 			self.ADDellipseBubbles()
 		else:
 			print(self.BubblesType + "<-- doesn't exist")
+		
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
@@ -186,7 +187,7 @@ class Model:
 	def buildPolished(self):
 
 		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 200
-		self.sy = 2*self.Depth + 2*self.dpml
+		self.sy = 100 + 2*self.dpml
 
 		
 		self.cell_size = mp.Vector3(self.sx,self.sy,0)
@@ -200,8 +201,8 @@ class Model:
 			)
 
 		self.Clad = mp.Block(
-			center=mp.Vector3(x=0,y=(-self.R2 + self.R1 + self.CladLeft),z=0),
-			size=mp.Vector3(x=mp.inf,y=self.R2*2,z=mp.inf),
+			center=mp.Vector3(x=0,  y=(-self.R2/2 + self.CladLeft/2 + self.R1/2)  ,z=0),
+			size=mp.Vector3(x=mp.inf,  y= self.R2 + self.R1 + self.CladLeft   ,z=mp.inf),
 			material=mp.Medium(index=self.cladN)
 			)
 
@@ -386,7 +387,6 @@ class Model:
 
 		
 		self.sim = mp.Simulation(
-			#geometry_center=mp.Vector3(x=0,y=-5,z=0),
 			cell_size=self.cell_size,
 			geometry=self.Objlist,
 			sources=self.src,
@@ -394,7 +394,8 @@ class Model:
 			force_complex_fields=False,
 			eps_averaging=False,
 			boundary_layers=self.pml_layers,
-			progress_interval=30
+			progress_interval=30,
+			geometry_center=mp.Vector3(x=0,y=-25,z=0)
 			#k_point=mp.Vector3(mp.X)
 			)
 
@@ -414,10 +415,10 @@ class Model:
 
 		fig,ax = plt.subplots(dpi=150)
 		if NormRun:
-			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'})
+			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
 			plt.savefig(self.workingDir+"NormModel_" + str(self.Datafile) +".pdf")
 		else:
-			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'})
+			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
 			plt.savefig(self.workingDir+"Model_" + str(self.Datafile) +".pdf")
 
 		
@@ -619,7 +620,7 @@ class Model:
 		"WallT":self.WallT,
 		"SimT":self.SimT,
 		"today":self.today,
-		"WorkingDir":self.workDir,
+		"WorkingDir":self.workingDir,
 		"filename":self.filename,
 		"notes":self.Notes,
 

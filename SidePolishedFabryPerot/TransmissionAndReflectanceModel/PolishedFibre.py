@@ -14,7 +14,7 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'EllipseTopsy'
+Model.filename = 'EllipseAndCladVisible'
 
 Model.GAP = 0
 Model.Width = 300

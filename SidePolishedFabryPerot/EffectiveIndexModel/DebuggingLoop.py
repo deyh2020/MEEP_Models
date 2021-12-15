@@ -7,41 +7,18 @@ Model = M.Model()
 
 
 Model.filename = 'ModelTrio'
+Model.Datafile = "NormalFibre"
 Model.Notes    = ''
 
 Model.res = 3
 Model.SimT=19
 
 
+Types = ['Standard','Polished','Polished']
+ncoating = [1.00,1.00,1.41]
 
 Model.nCoating = 1.00
-
-Model.Datafile = "NormalFibre"
-
-Model.Objlist = []
-Model.buildFibre()
-Model.BuildModel_CW(Plot=False) 
-Model.RunAndPlotF_FDS()
-
-"""
-
-Model.sim.reset_meep() 
-
-
-PDMSneff = []
-Model.nCoating = 1.00
-
-
-Model.Datafile = "PDMSCoated"
-
-#Change indexes 
-Model.nCoating = 1.41
-
-Model.Objlist = []
-Model.buildPolishedFibre()
-Model.BuildModel_CW(Plot=False) 
-Model.RunAndPlotF_FDS()
-
-"""
+Model.FibreType = 'Polished'
+Model.BuildAndSolve()
 
 plt.show()

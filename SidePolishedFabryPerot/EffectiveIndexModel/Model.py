@@ -1,4 +1,5 @@
 import meep as mp
+from meep.visualization import plot2D
 import numpy as np
 import matplotlib.pyplot as plt
 import sys, getopt,os
@@ -45,6 +46,7 @@ class Model:
 		self.PMLThick = 2
 		self.SrcSize  = self.SimSize - 2*self.PMLThick
 		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
+		self.FibreType = ''
 
 		#LoadTempDependanceData
 		self.PDMSindex()
@@ -53,6 +55,7 @@ class Model:
 		#init Data arrays
 		self.srcE  = np.array([])
 		self.tranE = np.array([])
+
 
 
 	def buildFibre(self):
@@ -237,6 +240,7 @@ class Model:
 	def RunMPB(self):
 
 		self.sim.init_sim()
+
 		self.EigenmodeData = self.sim.get_eigenmode(
 			self.fcen,
 			mp.Z,
@@ -245,6 +249,7 @@ class Model:
 			kpoint=self.kpoint,
 			match_frequency=True
 			)
+
 		self.k = self.EigenmodeData.k
 		self.vg = self.EigenmodeData.group_velocity
 		self.neff = self.k.norm() * self.wl
@@ -295,12 +300,25 @@ class Model:
 			plot_sources_flag=False,
 			plot_monitors_flag=False,
 			plot_boundaries_flag=False,
+			plot_eps_flag=False,
 			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True},
 			field_parameters={'alpha':1.0}
 			)
 		
 
-		
+	def BuildAndSolve(self,axes=None):
+
+		self.Objlist = []
+
+		if self.FibreType == "Standard":
+			self.buildFibre()
+		elif self.FibreType == "Polished":
+			self.buildPolishedFibre()
+		else:
+			print("Fibre Type not selected")
+
+		self.BuildModel_CW(Plot=False)
+		self.RunAndPlotF_FDS(axes=axes)
 		
 
 	def mkALLDIRS(self):
