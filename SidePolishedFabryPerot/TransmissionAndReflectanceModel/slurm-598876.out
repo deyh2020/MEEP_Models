@@ -1336,3 +1336,41 @@ on time step 5042 (time=252.1), 0.0188449 s/step
 on time step 5255 (time=262.75), 0.0188053 s/step
 on time step 5468 (time=273.4), 0.0187826 s/step
 on time step 5680 (time=284), 0.0189239 s/step
+on time step 5892 (time=294.6), 0.0188772 s/step
+on time step 6105 (time=305.25), 0.0188037 s/step
+Meep progress: 315.3/1185.1854849182191 = 26.6% done in 120.0s, 331.2s to go
+on time step 6318 (time=315.9), 0.0188546 s/step
+on time step 6528 (time=326.4), 0.0190997 s/step
+on time step 6728 (time=336.4), 0.0200417 s/step
+on time step 6925 (time=346.25), 0.0203278 s/step
+on time step 7121 (time=356.05), 0.0204835 s/step
+on time step 7317 (time=365.85), 0.0205014 s/step
+on time step 7518 (time=375.9), 0.0199532 s/step
+on time step 7718 (time=385.9), 0.020086 s/step
+Meep progress: 390.1/1185.1854849182191 = 32.9% done in 150.0s, 305.8s to go
+on time step 7916 (time=395.8), 0.0202492 s/step
+on time step 8112 (time=405.6), 0.0204431 s/step
+on time step 8307 (time=415.35), 0.0205184 s/step
+on time step 8508 (time=425.4), 0.0199313 s/step
+on time step 8707 (time=435.35), 0.0201185 s/step
+on time step 8905 (time=445.25), 0.0202961 s/step
+on time step 9103 (time=455.15), 0.0202099 s/step
+Meep progress: 464.20000000000005/1185.1854849182191 = 39.2% done in 180.1s, 279.7s to go
+on time step 9301 (time=465.05), 0.0202031 s/step
+on time step 9506 (time=475.3), 0.0195938 s/step
+on time step 9709 (time=485.45), 0.0198017 s/step
+on time step 9908 (time=495.4), 0.0201245 s/step
+on time step 10107 (time=505.35), 0.0201719 s/step
+on time step 10304 (time=515.2), 0.0203791 s/step
+on time step 10504 (time=525.2), 0.0200336 s/step
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: got SIGCONT
+slurmstepd: error: *** JOB 598876 ON topsy-cn-1-5 CANCELLED AT 2021-12-17T12:49:05 ***
+srun: forcing job termination
+slurmstepd: error: *** STEP 598876.0 ON topsy-cn-1-5 CANCELLED AT 2021-12-17T12:49:05 ***
+srun: error: topsy-cn-2-14: task 23: Terminated
+srun: error: topsy-cn-1-10: tasks 20-22: Terminated
+srun: error: topsy-cn-1-8: tasks 8-11: Terminated
+srun: error: topsy-cn-1-5: tasks 0-5: Terminated
+srun: error: topsy-cn-1-9: tasks 12-19: Terminated
+srun: error: topsy-cn-1-7: tasks 6-7: Terminated
