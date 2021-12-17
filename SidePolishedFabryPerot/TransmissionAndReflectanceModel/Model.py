@@ -33,6 +33,8 @@ class Model:
 		self.Rw     = False
 		self.BubblesNum = 2 
 		self.BubblesType = 'sqr'
+		self.FibreType = 'polished'
+
 		##Src properties
 		self.fcen   = 1/1.55
 		self.df     = 0.8e-2
@@ -79,15 +81,9 @@ class Model:
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
 		
-		if self.BubblesType == "sqr":
-			self.ADDsqrBubbles()  					#add sqr bubbles to the structure list
-		elif self.BubblesType == "tri":
-			print("TriBubbles function doesn't exist")
-		elif self.BubblesType == "ellipse":
-			self.ADDellipseBubbles()
-		else:
-			print(self.BubblesType + "<-- doesn't exist")
 		
+
+
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
@@ -113,7 +109,7 @@ class Model:
 
 		self.Objlist = []	
 		self.buildNormalfibre()  						#builds base polished fibre structure list
-		self.ADDsqrBubblesNF()  					#add sqr bubbles to the structure list
+		self.ADDcircElongated()  					#add sqr bubbles to the structure list
 		self.BuildModel(NormRun=False,Plot=True) 
 
 		#load data from the normal run
@@ -155,7 +151,7 @@ class Model:
 	def buildNormalfibre(self):
 
 		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 200
-		self.sy = self.Depth
+		self.sy = 150 + 2*self.dpml
 
 		
 		self.cell_size = mp.Vector3(self.sx,self.sy,0)
@@ -172,13 +168,13 @@ class Model:
 
 		self.Clad = mp.Block(
 			center=mp.Vector3(x=0,y=0,z=0),
-			size=mp.Vector3(x=mp.inf,y=62.5,z=mp.inf),
+			size=mp.Vector3(x=mp.inf,y=2*self.R2,z=mp.inf),
 			material=mp.Medium(index=self.cladN)
 			)
 
 		self.Core = mp.Block(
 			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,8.2,mp.inf),
+			size=mp.Vector3(mp.inf,2*self.R1,mp.inf),
 			material=mp.Medium(index=self.coreN)
 			)
 
@@ -208,7 +204,7 @@ class Model:
 
 		self.Core = mp.Block(
 			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,8.2,mp.inf),
+			size=mp.Vector3(mp.inf,2*self.R1,mp.inf),
 			material=mp.Medium(index=self.coreN)
 			)
 
@@ -367,6 +363,50 @@ class Model:
 				)
 				])
 
+	def ADDcircElongated(self):
+
+		RW = self.Rw
+		TL = self.Width
+		D  = self.Depth
+
+		bh = 2*D
+		r3 = bh/2 
+		bw = TL- bh
+
+		ypos = self.R2  # technically the center of the cutout is where the co2 laser is focused
+
+
+		
+		
+		if self.BubblesNum == 1:
+
+			self.Objlist.extend([
+				
+				mp.Block(
+					center=mp.Vector3(x=0,y=ypos,z=0),
+					size=mp.Vector3(x=bw,y=bh,z=mp.inf),
+					material=mp.Medium(index=self.nCoating)
+					),
+
+				mp.Cylinder(
+					center=mp.Vector3(x=-bw/2,y=ypos,z=0),
+					radius=r3,
+					height=mp.inf,
+					axis=mp.Vector3(0,0,1),
+					material=mp.Medium(index=self.nCoating)
+					),
+
+				mp.Cylinder(
+					center=mp.Vector3(x=bw/2,y=ypos,z=0),
+					radius=r3,
+					height=mp.inf,
+					axis=mp.Vector3(0,0,1),
+					material=mp.Medium(index=self.nCoating)
+					)			
+
+				])
+
+
 
 	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
 		
@@ -395,7 +435,7 @@ class Model:
 			eps_averaging=False,
 			boundary_layers=self.pml_layers,
 			progress_interval=30,
-			geometry_center=mp.Vector3(x=0,y=-25,z=0)
+			#geometry_center=mp.Vector3(x=0,y=-25,z=0)
 			#k_point=mp.Vector3(mp.X)
 			)
 
@@ -571,14 +611,13 @@ class Model:
 
 	def TimestepFields(self):
 		
-		fig,axes = plt.subplots(1, 1,dpi=150)
+		fig,axes = plt.subplots(1, 1,dpi=200)
 
 		self.sim.run(
 			until=self.SimT
 			)
 		
-		self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
-		"""
+		#self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
 		self.sim.plot2D(
 			ax = axes,
 			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
@@ -586,9 +625,8 @@ class Model:
 			plot_sources_flag=True,
 			plot_monitors_flag=True,
 			plot_eps_flag=True,
-			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary'}
+			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True}
 			)
-		"""
 		plt.show()
 
 
@@ -640,7 +678,7 @@ class Model:
 	def dumpData2File(self):
     
 		# initialise main data dictionary
-		
+		Data = {}
 		
 		
 		Data['Src']['lambda'] = 1/np.array(mp.get_flux_freqs(self.srcE))

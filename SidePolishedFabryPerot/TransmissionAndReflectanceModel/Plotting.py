@@ -21,17 +21,18 @@ Model.filename = 'Figures'
 Model.GAP = 0
 Model.Width = 300
 
-Model.EllipseOffset = 20
-Model.Depth = 50
+Model.Depth = Model.R1 + Model.R2 + 4
 Model.BubblesNum = 1
 
 Model.res = 5
-Model.nCoating = 1.00
-Model.CladLeft = 2
+Model.nCoating = 1.41
+#Model.CladLeft = 2
+
+Model.FibreType = 'normal'
 
 
-Model.buildPolished()
-Model.ADDellipseBubbles()
+Model.buildNormalfibre()
+Model.ADDcircElongated()
 Model.BuildModel()
 
 plt.show()

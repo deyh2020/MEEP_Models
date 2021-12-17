@@ -14,11 +14,10 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'HugeDF_wholeFibre'
+Model.filename = 'ElongatedCirc_Close2Paper'
 
-Model.GAP = 0
 Model.Width = 300
-Model.Depth = 62.5 + 8 + 10
+Model.Depth = Model.R1 + Model.R2 + 4
 Model.BubblesNum = 1
 
 Model.df = 0.042
