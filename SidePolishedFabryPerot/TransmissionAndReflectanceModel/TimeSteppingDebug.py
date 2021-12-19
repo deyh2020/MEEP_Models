@@ -32,11 +32,11 @@ Model.ADDcircElongated()
 Model.BuildModel(NormRun=False,Plot=False) 
 
 
-Model.SimT = 38000
+Model.SimT = 5000
 
 Model.sim.run(
     mp.at_beginning(mp.output_epsilon),
-    mp.at_every(500, mp.output_dpwr),
+    mp.at_every(50, mp.output_dpwr),
     until=Model.SimT
 
 )
