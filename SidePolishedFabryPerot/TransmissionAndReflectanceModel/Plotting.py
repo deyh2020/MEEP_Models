@@ -31,7 +31,7 @@ Model.nCoating = 1.41
 Model.FibreType = 'normal'
 
 
-Model.buildNormalfibre()
+Model.buildPolished()
 Model.ADDcircElongated()
 Model.BuildModel()
 

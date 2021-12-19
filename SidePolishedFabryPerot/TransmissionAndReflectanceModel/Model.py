@@ -29,7 +29,7 @@ class Model:
 		self.Depth  = 40
 		self.Width  = 100
 		self.EllipseOffset = 0
-		self.GAP    = 100
+		self.GAP    = 0
 		self.Rw     = False
 		self.BubblesNum = 2 
 		self.BubblesType = 'sqr'
@@ -150,7 +150,7 @@ class Model:
 
 	def buildNormalfibre(self):
 
-		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 200
+		self.sx = self.GAP + self.Width + 2*self.dpml + 200
 		self.sy = 150 + 2*self.dpml
 
 		
@@ -182,8 +182,8 @@ class Model:
 
 	def buildPolished(self):
 
-		self.sx = self.GAP + 2*self.Width + 2*self.dpml + 200
-		self.sy = 100 + 2*self.dpml
+		self.sx = self.GAP + self.Width + 2*self.dpml + 200
+		self.sy = 150 + 2*self.dpml
 
 		
 		self.cell_size = mp.Vector3(self.sx,self.sy,0)
@@ -519,12 +519,14 @@ class Model:
 			
 			)
 
-		pt = mp.Vector3()
+		pt = mp.Vector3(y=-40)
 
 		if self.BubblesNum == 1:
 			dt = self.Width
 		else:
 			dt = self.GAP
+
+		
 
 		self.sim.run(
 			#mp.at_beginning(mp.output_epsilon),
