@@ -117,3 +117,4 @@ dmypy.json
 *.h5
 *.pk1
 *.png
+*.gif
