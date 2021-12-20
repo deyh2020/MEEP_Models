@@ -15,11 +15,11 @@ Model.Width = 300
 Model.Depth = Model.R1 + Model.R2 + 4
 Model.BubblesNum = 1
 
-Model.filename = 'ElongatedCircTest'
+Model.filename = 'ElongatedCircTest2_PDMS'
 
-
+#Model.nCoating = 1.00
 Model.df = 0.042
-#Model.res = 4
+Model.res = 3
 
 
 

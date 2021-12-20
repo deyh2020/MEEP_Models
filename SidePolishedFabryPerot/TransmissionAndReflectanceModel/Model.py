@@ -150,7 +150,7 @@ class Model:
 
 	def buildNormalfibre(self):
 
-		self.sx = self.GAP + self.Width + 2*self.dpml + 200
+		self.sx = self.GAP + self.Width + 2*self.dpml + 400
 		self.sy = 150 + 2*self.dpml
 
 		
