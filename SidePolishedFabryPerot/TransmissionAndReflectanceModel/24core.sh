@@ -5,6 +5,6 @@
 module load meep
 
  
-srun python3 TimeSteppingDebug.py
+srun python3 WholeFibre.py
 
 
