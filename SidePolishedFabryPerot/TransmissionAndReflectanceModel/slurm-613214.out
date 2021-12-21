@@ -1,0 +1,1116 @@
+Using MPI version 3.1, 16 processes
+
+
+
+Depth + 0
+
+
+
+WD: data/2021-12-20/Topsy_batch_0/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 16 chunks by voxels
+time for choose_chunkdivision = 0.00275804 s
+Working in 2D dimensions.
+Computational cell is 720 x 170 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,0,0)
+          size (1e+20,125,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,62.5,0)
+          size (166.8,133.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-83.4,62.5,0)
+          radius 66.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (83.4,62.5,0)
+          radius 66.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.179722 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277395 after 89 iters
+MPB solved for frequency_1(0.93099,0,0) = 0.644876 after 62 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-12-20/Topsy_batch_0/'
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-eps-000000.00.h5"...
+on time step 324 (time=32.4), 0.012351 s/step
+on time step 698 (time=69.8), 0.010702 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000100.00.h5"...
+on time step 1056 (time=105.6), 0.0111938 s/step
+on time step 1435 (time=143.5), 0.0105632 s/step
+on time step 1808 (time=180.8), 0.0107477 s/step
+Meep progress: 198.8/4000.0 = 5.0% done in 30.0s, 573.7s to go
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000200.00.h5"...
+on time step 2000 (time=200), 0.0356734 s/step
+on time step 2373 (time=237.3), 0.0107356 s/step
+on time step 2733 (time=273.3), 0.0111226 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000300.00.h5"...
+on time step 3082 (time=308.2), 0.0114787 s/step
+on time step 3446 (time=344.6), 0.0110093 s/step
+on time step 3811 (time=381.1), 0.0109615 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000400.00.h5"...
+Meep progress: 400.0/4000.0 = 10.0% done in 63.0s, 566.9s to go
+on time step 4000 (time=400), 0.0425186 s/step
+on time step 4362 (time=436.2), 0.0110753 s/step
+on time step 4728 (time=472.8), 0.0109441 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000500.00.h5"...
+on time step 5000 (time=500), 0.0367778 s/step
+on time step 5363 (time=536.3), 0.0110405 s/step
+on time step 5715 (time=571.5), 0.0113975 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000600.00.h5"...
+Meep progress: 602.9/4000.0 = 15.1% done in 93.0s, 524.0s to go
+on time step 6033 (time=603.3), 0.01262 s/step
+on time step 6372 (time=637.2), 0.0118297 s/step
+on time step 6686 (time=668.6), 0.0127447 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000700.00.h5"...
+on time step 7000 (time=700), 0.025787 s/step
+on time step 7378 (time=737.8), 0.0106065 s/step
+on time step 7758 (time=775.8), 0.0105458 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000800.00.h5"...
+on time step 8120 (time=812), 0.0110687 s/step
+Meep progress: 829.3000000000001/4000.0 = 20.7% done in 123.0s, 470.3s to go
+on time step 8501 (time=850.1), 0.01052 s/step
+on time step 8880 (time=888), 0.0105629 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-000900.00.h5"...
+on time step 9000 (time=900), 0.0466312 s/step
+on time step 9379 (time=937.9), 0.0105675 s/step
+on time step 9759 (time=975.9), 0.0105465 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001000.00.h5"...
+on time step 10121 (time=1012.1), 0.0110751 s/step
+on time step 10496 (time=1049.6), 0.0106935 s/step
+Meep progress: 1070.3/4000.0 = 26.8% done in 153.0s, 418.8s to go
+on time step 10876 (time=1087.6), 0.0105357 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001100.00.h5"...
+on time step 11000 (time=1100), 0.0544754 s/step
+on time step 11377 (time=1137.7), 0.010631 s/step
+on time step 11756 (time=1175.6), 0.0105826 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001200.00.h5"...
+on time step 12117 (time=1211.7), 0.0110862 s/step
+on time step 12494 (time=1249.4), 0.0106338 s/step
+on time step 12873 (time=1287.3), 0.0105796 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001300.00.h5"...
+Meep progress: 1300.0/4000.0 = 32.5% done in 187.8s, 390.1s to go
+on time step 13000 (time=1300), 0.0488183 s/step
+on time step 13380 (time=1338), 0.0105456 s/step
+on time step 13759 (time=1375.9), 0.010576 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001400.00.h5"...
+on time step 14125 (time=1412.5), 0.0109524 s/step
+on time step 14505 (time=1450.5), 0.0105378 s/step
+on time step 14883 (time=1488.3), 0.0105967 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001500.00.h5"...
+on time step 15000 (time=1500), 0.0699698 s/step
+Meep progress: 1516.8000000000002/4000.0 = 37.9% done in 217.8s, 356.6s to go
+on time step 15379 (time=1537.9), 0.010572 s/step
+on time step 15760 (time=1576), 0.010527 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001600.00.h5"...
+on time step 16120 (time=1612), 0.0111312 s/step
+on time step 16500 (time=1650), 0.0105522 s/step
+on time step 16880 (time=1688), 0.0105495 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001700.00.h5"...
+on time step 17000 (time=1700), 0.0704086 s/step
+Meep progress: 1731.0/4000.0 = 43.3% done in 247.8s, 324.8s to go
+on time step 17378 (time=1737.8), 0.0105869 s/step
+on time step 17756 (time=1775.6), 0.0105831 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001800.00.h5"...
+on time step 18118 (time=1811.8), 0.011074 s/step
+on time step 18498 (time=1849.8), 0.0105454 s/step
+on time step 18877 (time=1887.7), 0.0105634 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-001900.00.h5"...
+on time step 19000 (time=1900), 0.0534752 s/step
+on time step 19378 (time=1937.8), 0.0105886 s/step
+Meep progress: 1963.2/4000.0 = 49.1% done in 277.8s, 288.2s to go
+on time step 19756 (time=1975.6), 0.0105867 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002000.00.h5"...
+on time step 20116 (time=2011.6), 0.0111274 s/step
+on time step 20495 (time=2049.5), 0.010558 s/step
+on time step 20874 (time=2087.4), 0.0105693 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002100.00.h5"...
+on time step 21000 (time=2100), 0.0511149 s/step
+on time step 21376 (time=2137.6), 0.0106593 s/step
+on time step 21755 (time=2175.5), 0.0105572 s/step
+Meep progress: 2196.5/4000.0 = 54.9% done in 307.8s, 252.8s to go
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002200.00.h5"...
+on time step 22117 (time=2211.7), 0.011078 s/step
+on time step 22495 (time=2249.5), 0.0106031 s/step
+on time step 22874 (time=2287.4), 0.0105786 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002300.00.h5"...
+on time step 23000 (time=2300), 0.0549639 s/step
+on time step 23378 (time=2337.8), 0.0105919 s/step
+on time step 23754 (time=2375.4), 0.010651 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002400.00.h5"...
+on time step 24117 (time=2411.7), 0.0110259 s/step
+Meep progress: 2423.6/4000.0 = 60.6% done in 337.8s, 219.7s to go
+on time step 24495 (time=2449.5), 0.0105868 s/step
+on time step 24875 (time=2487.5), 0.0105488 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002500.00.h5"...
+on time step 25000 (time=2500), 0.058223 s/step
+on time step 25380 (time=2538), 0.0105497 s/step
+on time step 25756 (time=2575.6), 0.0106496 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002600.00.h5"...
+on time step 26113 (time=2611.3), 0.0112176 s/step
+Meep progress: 2648.9/4000.0 = 66.2% done in 367.8s, 187.6s to go
+on time step 26493 (time=2649.3), 0.0105299 s/step
+on time step 26871 (time=2687.1), 0.0105934 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002700.00.h5"...
+on time step 27000 (time=2700), 0.0539112 s/step
+on time step 27380 (time=2738), 0.0105411 s/step
+on time step 27759 (time=2775.9), 0.0105751 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002800.00.h5"...
+on time step 28116 (time=2811.6), 0.0112336 s/step
+on time step 28494 (time=2849.4), 0.0105906 s/step
+Meep progress: 2877.7000000000003/4000.0 = 71.9% done in 397.8s, 155.2s to go
+on time step 28874 (time=2887.4), 0.0105417 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-002900.00.h5"...
+on time step 29000 (time=2900), 0.0436427 s/step
+on time step 29379 (time=2937.9), 0.0105802 s/step
+on time step 29760 (time=2976), 0.0105069 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003000.00.h5"...
+on time step 30124 (time=3012.4), 0.0109985 s/step
+on time step 30499 (time=3049.9), 0.0106717 s/step
+on time step 30878 (time=3087.8), 0.0105675 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003100.00.h5"...
+Meep progress: 3100.0/4000.0 = 77.5% done in 432.9s, 125.7s to go
+on time step 31000 (time=3100), 0.0693277 s/step
+on time step 31377 (time=3137.7), 0.010621 s/step
+on time step 31757 (time=3175.7), 0.0105365 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003200.00.h5"...
+on time step 32122 (time=3212.2), 0.0109646 s/step
+on time step 32499 (time=3249.9), 0.0106201 s/step
+on time step 32876 (time=3287.6), 0.0106283 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003300.00.h5"...
+on time step 33000 (time=3300), 0.0414587 s/step
+on time step 33377 (time=3337.7), 0.0106144 s/step
+Meep progress: 3345.7000000000003/4000.0 = 83.6% done in 462.9s, 90.5s to go
+on time step 33755 (time=3375.5), 0.0105983 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003400.00.h5"...
+on time step 34119 (time=3411.9), 0.0110093 s/step
+on time step 34499 (time=3449.9), 0.0105348 s/step
+on time step 34876 (time=3487.6), 0.0106313 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003500.00.h5"...
+on time step 35000 (time=3500), 0.04494 s/step
+on time step 35379 (time=3537.9), 0.0105668 s/step
+on time step 35759 (time=3575.9), 0.0105462 s/step
+Meep progress: 3587.6000000000004/4000.0 = 89.7% done in 492.9s, 56.7s to go
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003600.00.h5"...
+on time step 36121 (time=3612.1), 0.0110772 s/step
+on time step 36499 (time=3649.9), 0.0105821 s/step
+on time step 36878 (time=3687.8), 0.0105675 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003700.00.h5"...
+on time step 37000 (time=3700), 0.0572485 s/step
+on time step 37378 (time=3737.8), 0.0105965 s/step
+on time step 37757 (time=3775.7), 0.0105681 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003800.00.h5"...
+on time step 38116 (time=3811.6), 0.0111435 s/step
+Meep progress: 3813.8/4000.0 = 95.3% done in 522.9s, 25.5s to go
+on time step 38494 (time=3849.4), 0.0105973 s/step
+on time step 38872 (time=3887.2), 0.0105919 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-003900.00.h5"...
+on time step 39000 (time=3900), 0.0432684 s/step
+on time step 39375 (time=3937.5), 0.0106768 s/step
+on time step 39754 (time=3975.4), 0.01058 s/step
+creating output file "data/2021-12-20/Topsy_batch_0//TimeSteppingDebug-denergy-004000.00.h5"...
+run 0 finished at t = 4000.0 (40000 timesteps)
+
+
+
+Depth + 5
+
+
+
+WD: data/2021-12-20/Topsy_batch_5/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 16 chunks by voxels
+time for choose_chunkdivision = 0.00233339 s
+Working in 2D dimensions.
+Computational cell is 720 x 170 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,0,0)
+          size (1e+20,125,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,62.5,0)
+          size (156.8,143.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-78.4,62.5,0)
+          radius 71.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (78.4,62.5,0)
+          radius 71.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.197126 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277395 after 89 iters
+MPB solved for frequency_1(0.93099,0,0) = 0.644876 after 62 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-12-20/Topsy_batch_5/'
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-eps-000000.00.h5"...
+on time step 331 (time=33.1), 0.0121008 s/step
+on time step 709 (time=70.9), 0.0105877 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000100.00.h5"...
+on time step 1000 (time=100), 0.02487 s/step
+on time step 1376 (time=137.6), 0.0106559 s/step
+on time step 1753 (time=175.3), 0.0106261 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000200.00.h5"...
+on time step 2112 (time=211.2), 0.0111616 s/step
+Meep progress: 234.5/4000.0 = 5.9% done in 30.0s, 481.8s to go
+on time step 2479 (time=247.9), 0.0109017 s/step
+on time step 2840 (time=284), 0.0110871 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000300.00.h5"...
+on time step 3000 (time=300), 0.0449638 s/step
+on time step 3365 (time=336.5), 0.0109647 s/step
+on time step 3726 (time=372.6), 0.0110901 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000400.00.h5"...
+on time step 4069 (time=406.9), 0.0116927 s/step
+on time step 4428 (time=442.8), 0.011143 s/step
+Meep progress: 455.0/4000.0 = 11.4% done in 60.0s, 467.5s to go
+on time step 4798 (time=479.8), 0.0108383 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000500.00.h5"...
+on time step 5000 (time=500), 0.0405042 s/step
+on time step 5362 (time=536.2), 0.0110654 s/step
+on time step 5718 (time=571.8), 0.0112833 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000600.00.h5"...
+on time step 6032 (time=603.2), 0.0127422 s/step
+on time step 6368 (time=636.8), 0.0119364 s/step
+Meep progress: 659.9000000000001/4000.0 = 16.5% done in 90.0s, 455.6s to go
+on time step 6684 (time=668.4), 0.0126763 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000700.00.h5"...
+on time step 7000 (time=700), 0.0378017 s/step
+on time step 7379 (time=737.9), 0.0105738 s/step
+on time step 7756 (time=775.6), 0.0106382 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000800.00.h5"...
+on time step 8117 (time=811.7), 0.0110996 s/step
+on time step 8496 (time=849.6), 0.0105731 s/step
+Meep progress: 860.1/4000.0 = 21.5% done in 120.0s, 438.1s to go
+on time step 8875 (time=887.5), 0.010578 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-000900.00.h5"...
+on time step 9000 (time=900), 0.063187 s/step
+on time step 9379 (time=937.9), 0.0105682 s/step
+on time step 9757 (time=975.7), 0.0105927 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001000.00.h5"...
+on time step 10113 (time=1011.3), 0.0112462 s/step
+on time step 10490 (time=1049), 0.0106167 s/step
+Meep progress: 1079.2/4000.0 = 27.0% done in 150.0s, 406.0s to go
+on time step 10869 (time=1086.9), 0.0105554 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001100.00.h5"...
+on time step 11000 (time=1100), 0.0461933 s/step
+on time step 11379 (time=1137.9), 0.0105595 s/step
+on time step 11758 (time=1175.8), 0.0105584 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001200.00.h5"...
+on time step 12122 (time=1212.2), 0.0109979 s/step
+on time step 12496 (time=1249.6), 0.0107196 s/step
+on time step 12874 (time=1287.4), 0.0105896 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001300.00.h5"...
+Meep progress: 1300.0/4000.0 = 32.5% done in 185.6s, 385.4s to go
+on time step 13000 (time=1300), 0.0687259 s/step
+on time step 13378 (time=1337.8), 0.0105938 s/step
+on time step 13756 (time=1375.6), 0.0105859 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001400.00.h5"...
+on time step 14112 (time=1411.2), 0.0112363 s/step
+on time step 14486 (time=1448.6), 0.0107005 s/step
+on time step 14864 (time=1486.4), 0.0106082 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001500.00.h5"...
+on time step 15000 (time=1500), 0.0569726 s/step
+Meep progress: 1521.0/4000.0 = 38.0% done in 215.6s, 351.3s to go
+on time step 15376 (time=1537.6), 0.0106465 s/step
+on time step 15755 (time=1575.5), 0.0105659 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001600.00.h5"...
+on time step 16000 (time=1600), 0.0350461 s/step
+on time step 16378 (time=1637.8), 0.0106058 s/step
+on time step 16756 (time=1675.6), 0.0105849 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001700.00.h5"...
+on time step 17117 (time=1711.7), 0.0110998 s/step
+Meep progress: 1746.0/4000.0 = 43.6% done in 245.6s, 317.0s to go
+on time step 17496 (time=1749.6), 0.0105748 s/step
+on time step 17874 (time=1787.4), 0.0105872 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001800.00.h5"...
+on time step 18000 (time=1800), 0.0553685 s/step
+on time step 18375 (time=1837.5), 0.0106684 s/step
+on time step 18752 (time=1875.2), 0.0106195 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-001900.00.h5"...
+on time step 19112 (time=1911.2), 0.0111195 s/step
+on time step 19489 (time=1948.9), 0.010632 s/step
+Meep progress: 1973.7/4000.0 = 49.3% done in 275.6s, 282.9s to go
+on time step 19866 (time=1986.6), 0.0106137 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002000.00.h5"...
+on time step 20000 (time=2000), 0.0674316 s/step
+on time step 20378 (time=2037.8), 0.0106061 s/step
+on time step 20753 (time=2075.3), 0.0106716 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002100.00.h5"...
+on time step 21116 (time=2111.6), 0.0110316 s/step
+on time step 21495 (time=2149.5), 0.0105765 s/step
+Meep progress: 2183.2000000000003/4000.0 = 54.6% done in 305.6s, 254.3s to go
+on time step 21874 (time=2187.4), 0.0105697 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002200.00.h5"...
+on time step 22000 (time=2200), 0.0827015 s/step
+on time step 22377 (time=2237.7), 0.0106207 s/step
+on time step 22754 (time=2275.4), 0.0106266 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002300.00.h5"...
+on time step 23113 (time=2311.3), 0.0111567 s/step
+on time step 23492 (time=2349.2), 0.0105631 s/step
+Meep progress: 2378.8/4000.0 = 59.5% done in 335.6s, 228.7s to go
+on time step 23871 (time=2387.1), 0.010557 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002400.00.h5"...
+on time step 24000 (time=2400), 0.0483989 s/step
+on time step 24380 (time=2438), 0.0105274 s/step
+on time step 24756 (time=2475.6), 0.0106402 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002500.00.h5"...
+on time step 25115 (time=2511.5), 0.0111687 s/step
+on time step 25493 (time=2549.3), 0.0105837 s/step
+on time step 25871 (time=2587.1), 0.0106037 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002600.00.h5"...
+Meep progress: 2600.0/4000.0 = 65.0% done in 368.4s, 198.4s to go
+on time step 26000 (time=2600), 0.0437893 s/step
+on time step 26380 (time=2638), 0.0105498 s/step
+on time step 26760 (time=2676), 0.0105507 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002700.00.h5"...
+on time step 27117 (time=2711.7), 0.0112047 s/step
+on time step 27493 (time=2749.3), 0.010642 s/step
+on time step 27872 (time=2787.2), 0.010579 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002800.00.h5"...
+on time step 28000 (time=2800), 0.047558 s/step
+Meep progress: 2836.7000000000003/4000.0 = 70.9% done in 398.4s, 163.4s to go
+on time step 28378 (time=2837.8), 0.0105928 s/step
+on time step 28758 (time=2875.8), 0.01055 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-002900.00.h5"...
+on time step 29122 (time=2912.2), 0.0109925 s/step
+on time step 29498 (time=2949.8), 0.0106554 s/step
+on time step 29874 (time=2987.4), 0.0106383 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003000.00.h5"...
+on time step 30000 (time=3000), 0.0590837 s/step
+on time step 30379 (time=3037.9), 0.0105725 s/step
+Meep progress: 3060.7000000000003/4000.0 = 76.5% done in 428.4s, 131.5s to go
+on time step 30758 (time=3075.8), 0.0105671 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003100.00.h5"...
+on time step 31122 (time=3112.2), 0.0109939 s/step
+on time step 31501 (time=3150.1), 0.0105564 s/step
+on time step 31876 (time=3187.6), 0.0106871 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003200.00.h5"...
+on time step 32000 (time=3200), 0.0595994 s/step
+on time step 32380 (time=3238), 0.0105343 s/step
+on time step 32758 (time=3275.8), 0.0105823 s/step
+Meep progress: 3285.4/4000.0 = 82.1% done in 458.4s, 99.7s to go
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003300.00.h5"...
+on time step 33119 (time=3311.9), 0.0110992 s/step
+on time step 33499 (time=3349.9), 0.0105452 s/step
+on time step 33877 (time=3387.7), 0.0105977 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003400.00.h5"...
+on time step 34000 (time=3400), 0.0574051 s/step
+on time step 34378 (time=3437.8), 0.0105955 s/step
+on time step 34756 (time=3475.6), 0.0105883 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003500.00.h5"...
+Meep progress: 3510.5/4000.0 = 87.8% done in 488.4s, 68.1s to go
+on time step 35113 (time=3511.3), 0.0112345 s/step
+on time step 35493 (time=3549.3), 0.0105469 s/step
+on time step 35873 (time=3587.3), 0.0105394 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003600.00.h5"...
+on time step 36000 (time=3600), 0.0801909 s/step
+on time step 36378 (time=3637.8), 0.0105887 s/step
+on time step 36756 (time=3675.6), 0.0105901 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003700.00.h5"...
+Meep progress: 3709.2000000000003/4000.0 = 92.7% done in 518.4s, 40.6s to go
+on time step 37119 (time=3711.9), 0.01104 s/step
+on time step 37500 (time=3750), 0.0105148 s/step
+on time step 37881 (time=3788.1), 0.0105185 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003800.00.h5"...
+on time step 38000 (time=3800), 0.0589226 s/step
+on time step 38379 (time=3837.9), 0.0105767 s/step
+on time step 38758 (time=3875.8), 0.0105781 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-003900.00.h5"...
+on time step 39121 (time=3912.1), 0.0110271 s/step
+Meep progress: 3937.3/4000.0 = 98.4% done in 548.4s, 8.7s to go
+on time step 39500 (time=3950), 0.0105666 s/step
+on time step 39880 (time=3988), 0.0105406 s/step
+creating output file "data/2021-12-20/Topsy_batch_5//TimeSteppingDebug-denergy-004000.00.h5"...
+run 0 finished at t = 4000.0 (40000 timesteps)
+
+
+
+Depth + 10
+
+
+
+WD: data/2021-12-20/Topsy_batch_10/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 16 chunks by voxels
+time for choose_chunkdivision = 0.00236675 s
+Working in 2D dimensions.
+Computational cell is 720 x 170 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,0,0)
+          size (1e+20,125,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,62.5,0)
+          size (146.8,153.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-73.4,62.5,0)
+          radius 76.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (73.4,62.5,0)
+          radius 76.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.208135 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277395 after 89 iters
+MPB solved for frequency_1(0.93099,0,0) = 0.644876 after 62 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-12-20/Topsy_batch_10/'
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-eps-000000.00.h5"...
+on time step 331 (time=33.1), 0.0121078 s/step
+on time step 708 (time=70.8), 0.0106189 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000100.00.h5"...
+on time step 1000 (time=100), 0.0352817 s/step
+on time step 1376 (time=137.6), 0.0106654 s/step
+Meep progress: 159.60000000000002/4000.0 = 4.0% done in 30.0s, 722.0s to go
+on time step 1751 (time=175.1), 0.0106837 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000200.00.h5"...
+on time step 2108 (time=210.8), 0.0112146 s/step
+on time step 2475 (time=247.5), 0.0109221 s/step
+on time step 2835 (time=283.5), 0.0111118 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000300.00.h5"...
+on time step 3000 (time=300), 0.0382703 s/step
+on time step 3366 (time=336.6), 0.0109365 s/step
+on time step 3727 (time=372.7), 0.0110999 s/step
+Meep progress: 391.0/4000.0 = 9.8% done in 60.0s, 553.9s to go
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000400.00.h5"...
+on time step 4071 (time=407.1), 0.0116563 s/step
+on time step 4432 (time=443.2), 0.0110985 s/step
+on time step 4800 (time=480), 0.0108814 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000500.00.h5"...
+on time step 5000 (time=500), 0.0526146 s/step
+on time step 5361 (time=536.1), 0.0110871 s/step
+on time step 5710 (time=571), 0.0114794 s/step
+Meep progress: 583.2/4000.0 = 14.6% done in 90.0s, 527.4s to go
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000600.00.h5"...
+on time step 6024 (time=602.4), 0.0127582 s/step
+on time step 6358 (time=635.8), 0.0120088 s/step
+on time step 6671 (time=667.1), 0.0127856 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000700.00.h5"...
+on time step 7000 (time=700), 0.0288391 s/step
+on time step 7379 (time=737.9), 0.0105553 s/step
+on time step 7753 (time=775.3), 0.010721 s/step
+Meep progress: 793.7/4000.0 = 19.8% done in 120.0s, 484.9s to go
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000800.00.h5"...
+on time step 8113 (time=811.3), 0.0111224 s/step
+on time step 8492 (time=849.2), 0.0105579 s/step
+on time step 8870 (time=887), 0.010592 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-000900.00.h5"...
+on time step 9000 (time=900), 0.0541113 s/step
+on time step 9380 (time=938), 0.0105391 s/step
+on time step 9759 (time=975.9), 0.010555 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001000.00.h5"...
+on time step 10108 (time=1010.8), 0.0114645 s/step
+Meep progress: 1019.4000000000001/4000.0 = 25.5% done in 150.0s, 438.7s to go
+on time step 10483 (time=1048.3), 0.010669 s/step
+on time step 10861 (time=1086.1), 0.0105939 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001100.00.h5"...
+on time step 11000 (time=1100), 0.0483395 s/step
+on time step 11378 (time=1137.8), 0.0105875 s/step
+on time step 11758 (time=1175.8), 0.0105354 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001200.00.h5"...
+on time step 12119 (time=1211.9), 0.0110931 s/step
+on time step 12494 (time=1249.4), 0.0106924 s/step
+Meep progress: 1251.1000000000001/4000.0 = 31.3% done in 180.0s, 395.6s to go
+on time step 12872 (time=1287.2), 0.0105857 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001300.00.h5"...
+on time step 13000 (time=1300), 0.0536905 s/step
+on time step 13379 (time=1337.9), 0.0105795 s/step
+on time step 13759 (time=1375.9), 0.0105404 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001400.00.h5"...
+on time step 14122 (time=1412.2), 0.0110443 s/step
+on time step 14501 (time=1450.1), 0.0105795 s/step
+Meep progress: 1480.7/4000.0 = 37.0% done in 210.0s, 357.4s to go
+on time step 14876 (time=1487.6), 0.0106902 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001500.00.h5"...
+on time step 15238 (time=1523.8), 0.0110532 s/step
+on time step 15618 (time=1561.8), 0.0105502 s/step
+on time step 15997 (time=1599.7), 0.0105766 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001600.00.h5"...
+on time step 16000 (time=1600), 3.21391 s/step
+on time step 16378 (time=1637.8), 0.0105937 s/step
+Meep progress: 1671.5/4000.0 = 41.8% done in 240.1s, 334.4s to go
+on time step 16751 (time=1675.1), 0.0107289 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001700.00.h5"...
+on time step 17112 (time=1711.2), 0.0110929 s/step
+on time step 17490 (time=1749), 0.0105987 s/step
+on time step 17869 (time=1786.9), 0.010568 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001800.00.h5"...
+on time step 18000 (time=1800), 0.0680004 s/step
+on time step 18380 (time=1838), 0.0105445 s/step
+on time step 18755 (time=1875.5), 0.010674 s/step
+Meep progress: 1881.8000000000002/4000.0 = 47.0% done in 270.1s, 304.0s to go
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-001900.00.h5"...
+on time step 19115 (time=1911.5), 0.0111223 s/step
+on time step 19493 (time=1949.3), 0.0105822 s/step
+on time step 19871 (time=1987.1), 0.010585 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002000.00.h5"...
+on time step 20235 (time=2023.5), 0.0110055 s/step
+on time step 20613 (time=2061.3), 0.0106019 s/step
+on time step 20993 (time=2099.3), 0.0105521 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002100.00.h5"...
+on time step 21000 (time=2100), 0.813461 s/step
+Meep progress: 2109.0/4000.0 = 52.7% done in 300.1s, 269.1s to go
+on time step 21377 (time=2137.7), 0.0106369 s/step
+on time step 21756 (time=2175.6), 0.0105704 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002200.00.h5"...
+on time step 22116 (time=2211.6), 0.0111236 s/step
+on time step 22495 (time=2249.5), 0.0105713 s/step
+on time step 22873 (time=2287.3), 0.0105888 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002300.00.h5"...
+on time step 23000 (time=2300), 0.0466527 s/step
+on time step 23376 (time=2337.6), 0.0106532 s/step
+Meep progress: 2347.1/4000.0 = 58.7% done in 330.1s, 232.5s to go
+on time step 23752 (time=2375.2), 0.0106522 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002400.00.h5"...
+on time step 24111 (time=2411.1), 0.0111509 s/step
+on time step 24488 (time=2448.8), 0.010625 s/step
+on time step 24868 (time=2486.8), 0.0105479 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002500.00.h5"...
+on time step 25000 (time=2500), 0.0652372 s/step
+on time step 25375 (time=2537.5), 0.0106945 s/step
+Meep progress: 2559.8/4000.0 = 64.0% done in 360.1s, 202.6s to go
+on time step 25753 (time=2575.3), 0.010592 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002600.00.h5"...
+on time step 26114 (time=2611.4), 0.0111062 s/step
+on time step 26492 (time=2649.2), 0.0105948 s/step
+on time step 26870 (time=2687), 0.0106023 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002700.00.h5"...
+on time step 27000 (time=2700), 0.0640097 s/step
+on time step 27379 (time=2737.9), 0.0105617 s/step
+on time step 27753 (time=2775.3), 0.0107108 s/step
+Meep progress: 2775.5/4000.0 = 69.4% done in 390.1s, 172.1s to go
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002800.00.h5"...
+on time step 28000 (time=2800), 0.0481652 s/step
+on time step 28380 (time=2838), 0.0105451 s/step
+on time step 28759 (time=2875.9), 0.0105774 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-002900.00.h5"...
+on time step 29123 (time=2912.3), 0.0109958 s/step
+on time step 29497 (time=2949.7), 0.0106982 s/step
+Meep progress: 2969.6000000000004/4000.0 = 74.2% done in 420.1s, 145.8s to go
+on time step 29875 (time=2987.5), 0.0105861 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003000.00.h5"...
+on time step 30000 (time=3000), 0.0538722 s/step
+on time step 30379 (time=3037.9), 0.010558 s/step
+on time step 30759 (time=3075.9), 0.0105413 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003100.00.h5"...
+on time step 31121 (time=3112.1), 0.0110514 s/step
+on time step 31499 (time=3149.9), 0.0105908 s/step
+on time step 31874 (time=3187.4), 0.0106696 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003200.00.h5"...
+Meep progress: 3200.0/4000.0 = 80.0% done in 455.0s, 113.7s to go
+on time step 32000 (time=3200), 0.0495527 s/step
+on time step 32378 (time=3237.8), 0.0105981 s/step
+on time step 32757 (time=3275.7), 0.0105765 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003300.00.h5"...
+on time step 33121 (time=3312.1), 0.0110113 s/step
+on time step 33500 (time=3350), 0.0105586 s/step
+on time step 33879 (time=3387.9), 0.0105595 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003400.00.h5"...
+on time step 34000 (time=3400), 0.0442496 s/step
+on time step 34379 (time=3437.9), 0.0105664 s/step
+Meep progress: 3443.7000000000003/4000.0 = 86.1% done in 485.0s, 78.3s to go
+on time step 34759 (time=3475.9), 0.0105533 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003500.00.h5"...
+on time step 35120 (time=3512), 0.011083 s/step
+on time step 35499 (time=3549.9), 0.0105642 s/step
+on time step 35878 (time=3587.8), 0.0105675 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003600.00.h5"...
+on time step 36000 (time=3600), 0.0631044 s/step
+on time step 36376 (time=3637.6), 0.0106433 s/step
+Meep progress: 3665.0/4000.0 = 91.6% done in 515.0s, 47.1s to go
+on time step 36756 (time=3675.6), 0.0105342 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003700.00.h5"...
+on time step 37000 (time=3700), 0.0368493 s/step
+on time step 37379 (time=3737.9), 0.0105809 s/step
+on time step 37760 (time=3776), 0.0105209 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003800.00.h5"...
+on time step 38120 (time=3812), 0.0111293 s/step
+on time step 38495 (time=3849.5), 0.0106888 s/step
+Meep progress: 3886.1000000000004/4000.0 = 97.2% done in 545.0s, 16.0s to go
+on time step 38874 (time=3887.4), 0.0105544 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-003900.00.h5"...
+on time step 39000 (time=3900), 0.0449602 s/step
+on time step 39379 (time=3937.9), 0.0105736 s/step
+on time step 39757 (time=3975.7), 0.0106 s/step
+creating output file "data/2021-12-20/Topsy_batch_10//TimeSteppingDebug-denergy-004000.00.h5"...
+run 0 finished at t = 4000.0 (40000 timesteps)
+
+
+
+Depth + 15
+
+
+
+WD: data/2021-12-20/Topsy_batch_15/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 16 chunks by voxels
+time for choose_chunkdivision = 0.00275326 s
+Working in 2D dimensions.
+Computational cell is 720 x 170 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,0,0)
+          size (1e+20,125,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,62.5,0)
+          size (136.8,163.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-68.4,62.5,0)
+          radius 81.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (68.4,62.5,0)
+          radius 81.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.211767 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277395 after 89 iters
+MPB solved for frequency_1(0.93099,0,0) = 0.644876 after 62 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-12-20/Topsy_batch_15/'
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-eps-000000.00.h5"...
+on time step 330 (time=33), 0.0121215 s/step
+on time step 703 (time=70.3), 0.0107245 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000100.00.h5"...
+on time step 1000 (time=100), 0.0218111 s/step
+on time step 1378 (time=137.8), 0.0105991 s/step
+on time step 1757 (time=175.7), 0.0105736 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000200.00.h5"...
+on time step 2116 (time=211.6), 0.0111605 s/step
+Meep progress: 242.10000000000002/4000.0 = 6.1% done in 30.0s, 465.8s to go
+on time step 2485 (time=248.5), 0.0108519 s/step
+on time step 2844 (time=284.4), 0.0111445 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000300.00.h5"...
+on time step 3000 (time=300), 0.0518351 s/step
+on time step 3366 (time=336.6), 0.0109467 s/step
+on time step 3729 (time=372.9), 0.0110355 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000400.00.h5"...
+on time step 4075 (time=407.5), 0.0115731 s/step
+on time step 4436 (time=443.6), 0.0111042 s/step
+Meep progress: 454.70000000000005/4000.0 = 11.4% done in 60.0s, 467.9s to go
+on time step 4806 (time=480.6), 0.0108278 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000500.00.h5"...
+on time step 5000 (time=500), 0.0464486 s/step
+on time step 5362 (time=536.2), 0.0110711 s/step
+on time step 5714 (time=571.4), 0.0113688 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000600.00.h5"...
+on time step 6033 (time=603.3), 0.0125619 s/step
+on time step 6369 (time=636.9), 0.0119241 s/step
+Meep progress: 652.7/4000.0 = 16.3% done in 90.0s, 461.7s to go
+on time step 6684 (time=668.4), 0.0127273 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000700.00.h5"...
+on time step 7043 (time=704.3), 0.0111626 s/step
+on time step 7421 (time=742.1), 0.0105953 s/step
+on time step 7802 (time=780.2), 0.0105127 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000800.00.h5"...
+on time step 8000 (time=800), 0.0381931 s/step
+on time step 8379 (time=837.9), 0.0105564 s/step
+on time step 8759 (time=875.9), 0.0105542 s/step
+Meep progress: 881.2/4000.0 = 22.0% done in 120.0s, 424.8s to go
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-000900.00.h5"...
+on time step 9122 (time=912.2), 0.0110411 s/step
+on time step 9496 (time=949.6), 0.0107086 s/step
+on time step 9876 (time=987.6), 0.0105466 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001000.00.h5"...
+on time step 10000 (time=1000), 0.081517 s/step
+on time step 10380 (time=1038), 0.0105434 s/step
+on time step 10759 (time=1075.9), 0.010559 s/step
+Meep progress: 1080.0/4000.0 = 27.0% done in 150.0s, 405.7s to go
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001100.00.h5"...
+on time step 11120 (time=1112), 0.0110935 s/step
+on time step 11495 (time=1149.5), 0.0106944 s/step
+on time step 11874 (time=1187.4), 0.0105735 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001200.00.h5"...
+on time step 12000 (time=1200), 0.0720899 s/step
+on time step 12380 (time=1238), 0.0105454 s/step
+on time step 12759 (time=1275.9), 0.0105745 s/step
+Meep progress: 1288.3000000000002/4000.0 = 32.2% done in 180.0s, 379.0s to go
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001300.00.h5"...
+on time step 13000 (time=1300), 0.037315 s/step
+on time step 13378 (time=1337.8), 0.0105902 s/step
+on time step 13757 (time=1375.7), 0.0105779 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001400.00.h5"...
+on time step 14122 (time=1412.2), 0.010979 s/step
+on time step 14502 (time=1450.2), 0.0105534 s/step
+on time step 14880 (time=1488), 0.0105882 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001500.00.h5"...
+Meep progress: 1500.0/4000.0 = 37.5% done in 213.5s, 355.9s to go
+on time step 15000 (time=1500), 0.0481598 s/step
+on time step 15373 (time=1537.3), 0.0107518 s/step
+on time step 15751 (time=1575.1), 0.0105847 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001600.00.h5"...
+on time step 16116 (time=1611.6), 0.0109815 s/step
+on time step 16493 (time=1649.3), 0.0106167 s/step
+on time step 16873 (time=1687.3), 0.0105289 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001700.00.h5"...
+on time step 17000 (time=1700), 0.0594284 s/step
+Meep progress: 1722.8000000000002/4000.0 = 43.1% done in 243.5s, 321.9s to go
+on time step 17374 (time=1737.4), 0.0107174 s/step
+on time step 17752 (time=1775.2), 0.0105965 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001800.00.h5"...
+on time step 18110 (time=1811), 0.011195 s/step
+on time step 18487 (time=1848.7), 0.0106122 s/step
+on time step 18867 (time=1886.7), 0.0105381 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-001900.00.h5"...
+on time step 19000 (time=1900), 0.0485127 s/step
+on time step 19379 (time=1937.9), 0.0105694 s/step
+Meep progress: 1956.2/4000.0 = 48.9% done in 273.5s, 285.8s to go
+on time step 19753 (time=1975.3), 0.0107137 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002000.00.h5"...
+on time step 20000 (time=2000), 0.0304522 s/step
+on time step 20377 (time=2037.7), 0.0106262 s/step
+on time step 20757 (time=2075.7), 0.0105378 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002100.00.h5"...
+on time step 21119 (time=2111.9), 0.0110505 s/step
+on time step 21497 (time=2149.7), 0.0106077 s/step
+on time step 21875 (time=2187.5), 0.0106095 s/step
+Meep progress: 2191.2000000000003/4000.0 = 54.8% done in 303.5s, 250.6s to go
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002200.00.h5"...
+on time step 22000 (time=2200), 0.0689936 s/step
+on time step 22379 (time=2237.9), 0.0105729 s/step
+on time step 22756 (time=2275.6), 0.0106158 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002300.00.h5"...
+on time step 23117 (time=2311.7), 0.0110831 s/step
+on time step 23496 (time=2349.6), 0.0105795 s/step
+on time step 23875 (time=2387.5), 0.0105695 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002400.00.h5"...
+Meep progress: 2400.0/4000.0 = 60.0% done in 340.0s, 226.7s to go
+on time step 24000 (time=2400), 0.0658702 s/step
+on time step 24379 (time=2437.9), 0.0105708 s/step
+on time step 24757 (time=2475.7), 0.010607 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002500.00.h5"...
+on time step 25120 (time=2512), 0.0110251 s/step
+on time step 25498 (time=2549.8), 0.0105848 s/step
+on time step 25877 (time=2587.7), 0.0105634 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002600.00.h5"...
+on time step 26000 (time=2600), 0.0793397 s/step
+Meep progress: 2602.1000000000004/4000.0 = 65.1% done in 370.0s, 198.8s to go
+on time step 26379 (time=2637.9), 0.0105677 s/step
+on time step 26757 (time=2675.7), 0.0105973 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002700.00.h5"...
+on time step 27118 (time=2711.8), 0.0110874 s/step
+on time step 27496 (time=2749.6), 0.0105826 s/step
+on time step 27875 (time=2787.5), 0.0105669 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002800.00.h5"...
+on time step 28000 (time=2800), 0.0546911 s/step
+Meep progress: 2831.8/4000.0 = 70.8% done in 400.1s, 165.0s to go
+on time step 28378 (time=2837.8), 0.0105977 s/step
+on time step 28757 (time=2875.7), 0.0105541 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-002900.00.h5"...
+on time step 29117 (time=2911.7), 0.0111321 s/step
+on time step 29496 (time=2949.6), 0.0105576 s/step
+on time step 29875 (time=2987.5), 0.0105792 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003000.00.h5"...
+on time step 30000 (time=3000), 0.0490255 s/step
+on time step 30376 (time=3037.6), 0.0106558 s/step
+Meep progress: 3068.0/4000.0 = 76.7% done in 430.1s, 130.6s to go
+on time step 30755 (time=3075.5), 0.0105811 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003100.00.h5"...
+on time step 31116 (time=3111.6), 0.011083 s/step
+on time step 31494 (time=3149.4), 0.0105986 s/step
+on time step 31873 (time=3187.3), 0.0105795 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003200.00.h5"...
+on time step 32000 (time=3200), 0.0482645 s/step
+on time step 32379 (time=3237.9), 0.0105664 s/step
+on time step 32754 (time=3275.4), 0.0106858 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003300.00.h5"...
+Meep progress: 3302.5/4000.0 = 82.6% done in 460.1s, 97.2s to go
+on time step 33116 (time=3311.6), 0.0110762 s/step
+on time step 33496 (time=3349.6), 0.010536 s/step
+on time step 33874 (time=3387.4), 0.0106039 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003400.00.h5"...
+on time step 34000 (time=3400), 0.0561371 s/step
+on time step 34379 (time=3437.9), 0.0105793 s/step
+on time step 34756 (time=3475.6), 0.0106132 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003500.00.h5"...
+on time step 35113 (time=3511.3), 0.0112307 s/step
+Meep progress: 3529.6000000000004/4000.0 = 88.2% done in 490.1s, 65.3s to go
+on time step 35492 (time=3549.2), 0.0105551 s/step
+on time step 35871 (time=3587.1), 0.0105767 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003600.00.h5"...
+on time step 36000 (time=3600), 0.0702962 s/step
+on time step 36378 (time=3637.8), 0.0105832 s/step
+on time step 36757 (time=3675.7), 0.0105627 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003700.00.h5"...
+on time step 37114 (time=3711.4), 0.0112224 s/step
+Meep progress: 3738.4/4000.0 = 93.5% done in 520.1s, 36.4s to go
+on time step 37493 (time=3749.3), 0.0105722 s/step
+on time step 37873 (time=3787.3), 0.0105286 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003800.00.h5"...
+on time step 38000 (time=3800), 0.0666227 s/step
+on time step 38377 (time=3837.7), 0.0106148 s/step
+on time step 38756 (time=3875.6), 0.0105561 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-003900.00.h5"...
+on time step 39111 (time=3911.1), 0.0112787 s/step
+on time step 39487 (time=3948.7), 0.0106565 s/step
+Meep progress: 3952.3/4000.0 = 98.8% done in 550.1s, 6.6s to go
+on time step 39866 (time=3986.6), 0.0105732 s/step
+creating output file "data/2021-12-20/Topsy_batch_15//TimeSteppingDebug-denergy-004000.00.h5"...
+run 0 finished at t = 4000.0 (40000 timesteps)
+
+
+
+Depth + 20
+
+
+
+WD: data/2021-12-20/Topsy_batch_20/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 16 chunks by voxels
+time for choose_chunkdivision = 0.00222579 s
+Working in 2D dimensions.
+Computational cell is 720 x 170 x 0 with resolution 5
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,0,0)
+          size (1e+20,125,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+     block, center = (0,62.5,0)
+          size (126.8,173.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (-63.4,62.5,0)
+          radius 86.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     cylinder, center = (63.4,62.5,0)
+          radius 86.6, height 1e+20, axis (0, 0, 1)
+          dielectric constant epsilon diagonal = (1,1,1)
+time for set_epsilon = 0.210743 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.277395 after 89 iters
+MPB solved for frequency_1(0.93099,0,0) = 0.644876 after 62 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 16 iters
+MPB solved for frequency_1(0.931401,0,0) = 0.645161 after 1 iters
+Meep: using output directory 'data/2021-12-20/Topsy_batch_20/'
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-eps-000000.00.h5"...
+on time step 332 (time=33.2), 0.0120535 s/step
+on time step 708 (time=70.8), 0.0106616 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000100.00.h5"...
+on time step 1071 (time=107.1), 0.0110427 s/step
+on time step 1452 (time=145.2), 0.0105219 s/step
+on time step 1830 (time=183), 0.0105916 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000200.00.h5"...
+Meep progress: 200.0/4000.0 = 5.0% done in 31.8s, 603.6s to go
+on time step 2000 (time=200), 0.0419985 s/step
+on time step 2372 (time=237.2), 0.0107796 s/step
+on time step 2735 (time=273.5), 0.0110357 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000300.00.h5"...
+on time step 3082 (time=308.2), 0.0115319 s/step
+on time step 3444 (time=344.4), 0.0110623 s/step
+on time step 3809 (time=380.9), 0.0109707 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000400.00.h5"...
+on time step 4000 (time=400), 0.0446908 s/step
+Meep progress: 413.0/4000.0 = 10.3% done in 61.8s, 536.5s to go
+on time step 4363 (time=436.3), 0.0110435 s/step
+on time step 4734 (time=473.4), 0.0108094 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000500.00.h5"...
+on time step 5078 (time=507.8), 0.0116464 s/step
+on time step 5437 (time=543.7), 0.011143 s/step
+on time step 5786 (time=578.6), 0.0114684 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000600.00.h5"...
+on time step 6000 (time=600), 0.0334395 s/step
+on time step 6332 (time=633.2), 0.0120578 s/step
+Meep progress: 635.4000000000001/4000.0 = 15.9% done in 91.8s, 485.9s to go
+on time step 6644 (time=664.4), 0.0128321 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000700.00.h5"...
+on time step 7004 (time=700.4), 0.0111341 s/step
+on time step 7380 (time=738), 0.0106522 s/step
+on time step 7760 (time=776), 0.0105508 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000800.00.h5"...
+on time step 8000 (time=800), 0.0310315 s/step
+on time step 8380 (time=838), 0.0105322 s/step
+Meep progress: 864.3000000000001/4000.0 = 21.6% done in 121.8s, 441.8s to go
+on time step 8759 (time=875.9), 0.010556 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-000900.00.h5"...
+on time step 9117 (time=911.7), 0.01118 s/step
+on time step 9496 (time=949.6), 0.0105752 s/step
+on time step 9874 (time=987.4), 0.0105939 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001000.00.h5"...
+on time step 10000 (time=1000), 0.0562915 s/step
+on time step 10380 (time=1038), 0.0105499 s/step
+on time step 10760 (time=1076), 0.0105274 s/step
+Meep progress: 1091.8/4000.0 = 27.3% done in 151.8s, 404.3s to go
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001100.00.h5"...
+on time step 11121 (time=1112.1), 0.0110887 s/step
+on time step 11501 (time=1150.1), 0.0105494 s/step
+on time step 11879 (time=1187.9), 0.0105878 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001200.00.h5"...
+on time step 12000 (time=1200), 0.0695632 s/step
+on time step 12381 (time=1238.1), 0.0105253 s/step
+on time step 12760 (time=1276), 0.0105621 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001300.00.h5"...
+Meep progress: 1304.8000000000002/4000.0 = 32.6% done in 181.8s, 375.5s to go
+on time step 13122 (time=1312.2), 0.0110738 s/step
+on time step 13502 (time=1350.2), 0.0105376 s/step
+on time step 13881 (time=1388.1), 0.0105799 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001400.00.h5"...
+on time step 14000 (time=1400), 0.0598274 s/step
+on time step 14379 (time=1437.9), 0.0105742 s/step
+on time step 14759 (time=1475.9), 0.0105505 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001500.00.h5"...
+on time step 15125 (time=1512.5), 0.0109542 s/step
+Meep progress: 1532.0/4000.0 = 38.3% done in 211.8s, 341.2s to go
+on time step 15505 (time=1550.5), 0.0105269 s/step
+on time step 15886 (time=1588.6), 0.0105062 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001600.00.h5"...
+on time step 16000 (time=1600), 0.0647589 s/step
+on time step 16380 (time=1638), 0.0105407 s/step
+on time step 16760 (time=1676), 0.0105325 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001700.00.h5"...
+on time step 17124 (time=1712.4), 0.0110121 s/step
+on time step 17505 (time=1750.5), 0.0105148 s/step
+Meep progress: 1756.6000000000001/4000.0 = 43.9% done in 241.8s, 308.8s to go
+on time step 17885 (time=1788.5), 0.0105345 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001800.00.h5"...
+on time step 18000 (time=1800), 0.0804512 s/step
+on time step 18379 (time=1837.9), 0.0105602 s/step
+on time step 18760 (time=1876), 0.0105037 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-001900.00.h5"...
+on time step 19122 (time=1912.2), 0.0110649 s/step
+on time step 19501 (time=1950.1), 0.0105612 s/step
+Meep progress: 1963.1000000000001/4000.0 = 49.1% done in 271.8s, 282.0s to go
+on time step 19880 (time=1988), 0.0105555 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002000.00.h5"...
+on time step 20000 (time=2000), 0.0621876 s/step
+on time step 20375 (time=2037.5), 0.0106686 s/step
+on time step 20755 (time=2075.5), 0.0105474 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002100.00.h5"...
+on time step 21116 (time=2111.6), 0.0111057 s/step
+on time step 21496 (time=2149.6), 0.0105422 s/step
+Meep progress: 2186.7000000000003/4000.0 = 54.7% done in 301.8s, 250.3s to go
+on time step 21878 (time=2187.8), 0.0104908 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002200.00.h5"...
+on time step 22243 (time=2224.3), 0.0109678 s/step
+on time step 22623 (time=2262.3), 0.01053 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002300.00.h5"...
+on time step 23000 (time=2300), 0.0297831 s/step
+on time step 23381 (time=2338.1), 0.0105125 s/step
+on time step 23763 (time=2376.3), 0.010483 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002400.00.h5"...
+Meep progress: 2400.0/4000.0 = 60.0% done in 331.8s, 221.2s to go
+on time step 24128 (time=2412.8), 0.0109691 s/step
+on time step 24509 (time=2450.9), 0.0105045 s/step
+on time step 24888 (time=2488.8), 0.0105635 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002500.00.h5"...
+on time step 25000 (time=2500), 0.0744112 s/step
+on time step 25380 (time=2538), 0.0105476 s/step
+on time step 25761 (time=2576.1), 0.010522 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002600.00.h5"...
+on time step 26123 (time=2612.3), 0.0110646 s/step
+Meep progress: 2615.1000000000004/4000.0 = 65.4% done in 361.8s, 191.6s to go
+on time step 26503 (time=2650.3), 0.0105273 s/step
+on time step 26882 (time=2688.2), 0.0105557 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002700.00.h5"...
+on time step 27000 (time=2700), 0.0761877 s/step
+on time step 27381 (time=2738.1), 0.0105122 s/step
+on time step 27762 (time=2776.2), 0.0105164 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002800.00.h5"...
+on time step 28126 (time=2812.6), 0.0109948 s/step
+Meep progress: 2824.9/4000.0 = 70.6% done in 391.8s, 163.0s to go
+on time step 28508 (time=2850.8), 0.010492 s/step
+on time step 28889 (time=2888.9), 0.0105047 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-002900.00.h5"...
+on time step 29000 (time=2900), 0.069919 s/step
+on time step 29378 (time=2937.8), 0.0106034 s/step
+on time step 29758 (time=2975.8), 0.0105418 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003000.00.h5"...
+on time step 30120 (time=3012), 0.0110546 s/step
+Meep progress: 3045.3/4000.0 = 76.1% done in 421.8s, 132.2s to go
+on time step 30500 (time=3050), 0.010534 s/step
+on time step 30881 (time=3088.1), 0.010517 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003100.00.h5"...
+on time step 31000 (time=3100), 0.0516095 s/step
+on time step 31377 (time=3137.7), 0.0106345 s/step
+on time step 31758 (time=3175.8), 0.0105188 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003200.00.h5"...
+on time step 32125 (time=3212.5), 0.0109208 s/step
+on time step 32507 (time=3250.7), 0.0104776 s/step
+Meep progress: 3282.3/4000.0 = 82.1% done in 451.8s, 98.8s to go
+on time step 32887 (time=3288.7), 0.010531 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003300.00.h5"...
+on time step 33000 (time=3300), 0.059719 s/step
+on time step 33378 (time=3337.8), 0.0106078 s/step
+on time step 33755 (time=3375.5), 0.0106227 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003400.00.h5"...
+on time step 34116 (time=3411.6), 0.0110815 s/step
+on time step 34496 (time=3449.6), 0.0105419 s/step
+on time step 34877 (time=3487.7), 0.0105175 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003500.00.h5"...
+Meep progress: 3500.0/4000.0 = 87.5% done in 486.8s, 69.5s to go
+on time step 35000 (time=3500), 0.0615101 s/step
+on time step 35381 (time=3538.1), 0.0105137 s/step
+on time step 35756 (time=3575.6), 0.0106922 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003600.00.h5"...
+on time step 36116 (time=3611.6), 0.0111224 s/step
+on time step 36497 (time=3649.7), 0.0105175 s/step
+on time step 36876 (time=3687.6), 0.0105727 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003700.00.h5"...
+on time step 37000 (time=3700), 0.0663185 s/step
+Meep progress: 3716.6000000000004/4000.0 = 92.9% done in 516.8s, 39.4s to go
+on time step 37380 (time=3738), 0.0105311 s/step
+on time step 37758 (time=3775.8), 0.0105867 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003800.00.h5"...
+on time step 38120 (time=3812), 0.0110764 s/step
+on time step 38501 (time=3850.1), 0.010519 s/step
+on time step 38882 (time=3888.2), 0.0105171 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-003900.00.h5"...
+on time step 39000 (time=3900), 0.0661925 s/step
+Meep progress: 3937.3/4000.0 = 98.4% done in 546.9s, 8.7s to go
+on time step 39382 (time=3938.2), 0.0104956 s/step
+on time step 39762 (time=3976.2), 0.0105364 s/step
+creating output file "data/2021-12-20/Topsy_batch_20//TimeSteppingDebug-denergy-004000.00.h5"...
+run 0 finished at t = 4000.0 (40000 timesteps)
+
+Elapsed run time = 2797.4142 s
