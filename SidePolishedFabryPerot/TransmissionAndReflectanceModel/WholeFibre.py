@@ -14,10 +14,8 @@ Model = M.Model()
 
 temps = [20]
 
-Model.filename = 'ElongatedCirc_Close2Paper'
 
 Model.Width = 300
-Model.Depth = Model.R1 + Model.R2 + 4
 Model.BubblesNum = 1
 
 Model.df = 0.042
@@ -26,25 +24,34 @@ Model.df = 0.042
 
 #plt.show()
 
-for T in temps:  
+depths = [0,5,10,15]
 
-    Model.Datafile = "Coated_temp_" + str(T)
+for D in depths:
 
-    Model.nCoating = np.polyval(Model.PDMSfit,T)
-    Model.coreN = np.polyval(Model.SilicaFIT,T)
-    Model.cladN = Model.coreN - 0.005
+    Model.filename = 'ElongatedCirc_Close2Paper_Depth_' + str(D)
+
+    Model.Depth = Model.R1 + Model.R2 + D
+
+
+    for T in temps:  
+
+        Model.Datafile = "Coated_temp_" + str(T)
+
+        Model.nCoating = np.polyval(Model.PDMSfit,T)
+        Model.coreN = np.polyval(Model.SilicaFIT,T)
+        Model.cladN = Model.coreN - 0.005
+        
+        Model.RunTRspectrumUnPolished()
+
+
     
-    Model.RunTRspectrumUnPolished()
+        Model.Datafile = "Uncoated_temp_" + str(T)
 
-
- 
-    Model.Datafile = "Uncoated_temp_" + str(T)
-
-    Model.nCoating = 1.00
-    Model.coreN = np.polyval(Model.SilicaFIT,T)
-    Model.cladN = Model.coreN - 0.005
-    
-    Model.RunTRspectrumUnPolished()
+        Model.nCoating = 1.00
+        Model.coreN = np.polyval(Model.SilicaFIT,T)
+        Model.cladN = Model.coreN - 0.005
+        
+        Model.RunTRspectrumUnPolished()
 
 
 
