@@ -28,7 +28,7 @@ depths = [0,5,10,15]
 
 for D in depths:
 
-    Model.filename = 'ElongatedCirc_Close2Paper_Depth_' + str(D)
+    Model.filename = 'TR_Desktop_Depth_' + str(D)
 
     Model.Depth = Model.R1 + Model.R2 + D
 
