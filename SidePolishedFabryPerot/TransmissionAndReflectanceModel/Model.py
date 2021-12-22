@@ -94,7 +94,7 @@ class Model:
 
 	def RunTRspectrumUnPolished(self):
 		
-		
+		self.tic()
 		self.Objlist = []							#Reset Model and build structure
 
 		self.buildNormalfibre()  						#builds base polished fibre structure list		
@@ -116,6 +116,9 @@ class Model:
 		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
 
 		self.AutoRun()
+
+		self.toc()
+
 		self.SaveMeta()
 
 
@@ -635,6 +638,7 @@ class Model:
 	def SaveMeta(self):
 		
 		metadata = {
+		"Runtime":self.Runtime,
 		##Material N
 		"nCoating": self.nCoating,
 		"CoreN":self.coreN,
@@ -730,11 +734,11 @@ class Model:
 	# This will be the main function through which we define both tic() and toc()
 	def toc(self,tempBool=True):
 		# Prints the time difference yielded by generator instance TicToc
-		tempTimeInterval = next(self.TicToc)
-		if tempBool:
-			print( "Elapsed time: %f seconds.\n" %tempTimeInterval )
+		self.Runtime = next(self.TicToc)
+		 
 
 	def tic(self):
+		self.Runtime = 0
 		# Records a time in TicToc, marks the beginning of a time interval
 		self.toc(False)
 
