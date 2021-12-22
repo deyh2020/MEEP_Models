@@ -19,7 +19,7 @@ Model.Depth = Model.R1 + Model.R2 + 4
 Model.BubblesNum = 1
 
 
-Model.res = 4
+Model.res = 8
 Model.df = 0.042
 
 #Model.TestSpectrum()

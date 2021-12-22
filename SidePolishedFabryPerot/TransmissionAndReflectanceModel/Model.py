@@ -65,7 +65,7 @@ class Model:
 
 	def RunTRspectrum(self):
 		
-		
+		self.tic()
 		self.Objlist = []							#Reset Model and build structure
 
 		self.buildPolished()  						#builds base polished fibre structure list		
@@ -90,6 +90,8 @@ class Model:
 		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
 
 		self.AutoRun()
+		self.toc()
+		
 		self.SaveMeta()
 
 	def RunTRspectrumUnPolished(self):
