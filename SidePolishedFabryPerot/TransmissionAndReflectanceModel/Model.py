@@ -673,11 +673,9 @@ class Model:
 		"sy":self.sy
         }
 
-		try:
-			with open(self.workingDir + str(self.sim.num_chunk) + '_metadata.json', 'w') as file:
-				json.dump(metadata, file)
-		except:
-			print("Failed to save metadata")
+		
+		with open(self.workingDir + str(self.sim.num_chunk) + '_metadata.json', 'w') as file:
+			json.dump(metadata, file)
 
 
 
