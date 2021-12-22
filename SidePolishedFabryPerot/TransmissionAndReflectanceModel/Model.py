@@ -639,6 +639,7 @@ class Model:
 		
 		metadata = {
 		"Runtime":self.Runtime,
+		"Chunks":self.sim.num_chunks,
 		##Material N
 		"nCoating": self.nCoating,
 		"CoreN":self.coreN,
@@ -673,7 +674,7 @@ class Model:
         }
 
 		try:
-			with open(self.workingDir + 'metadata.json', 'w') as file:
+			with open(self.workingDir + str(self.sim.num_chunk) + '_metadata.json', 'w') as file:
 				json.dump(metadata, file)
 		except:
 			print("Failed to save metadata")

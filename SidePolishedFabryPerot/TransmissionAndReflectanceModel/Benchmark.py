@@ -27,7 +27,7 @@ Model.df = 0.042
 #plt.show()
 
  
-Model.Datafile = "Uncoated_temp_" + str(T)
+Model.Datafile = "Bench"
 
 Model.nCoating = 1.00
 
