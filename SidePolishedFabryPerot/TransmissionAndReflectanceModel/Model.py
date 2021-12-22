@@ -53,6 +53,8 @@ class Model:
 		self.sim    = None
 		self.Objlist = []
 		self.Notes   = ''
+		self.NormComplete = False
+		self.SingleNorm = False
 
 
 		#init Data arrays
@@ -91,19 +93,28 @@ class Model:
 
 		self.AutoRun()
 		self.toc()
-		
+
 		self.SaveMeta()
 
 	def RunTRspectrumUnPolished(self):
 		
 		self.tic()
 		self.Objlist = []							#Reset Model and build structure
-
 		self.buildNormalfibre()  						#builds base polished fibre structure list		
 		self.BuildModel(NormRun=True,Plot=True) 
 
 		#Run normal model
-		self.NormRun()
+		if self.SingleNorm == True and self.NormComplete == False:
+			print("First Normrun")
+			self.NormRun()
+			self.NormComplete = True
+
+		elif self.SingleNorm == False:
+			print("New Normrun")
+			self.NormRun()
+
+		else:
+			print("Using already saved normrun")
 
 		#Reset sources
 		self.sim.reset_meep()
