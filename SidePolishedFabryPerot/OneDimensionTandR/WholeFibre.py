@@ -24,11 +24,26 @@ Model.df = 0.042
 
 #plt.show()
 
-depths = [5,10,15]
+
+Model.Objlist = []	
+Model.buildNormal()
+
+Model.BuildModel(NormRun=False,Plot=False) 
 
 
+Model.SimT = 100
 
-Model.SingleNorm = True
+Model.sim.run(
+    mp.at_beginning(mp.output_epsilon),
+    mp.at_every(10, mp.output_dpwr),
+    until=Model.SimT
+)
+
+
+"""
+
+depths = [0,5,10,15]
+
 for D in depths:
 
     Model.filename = 'TR_Desktop_Depth_' + str(D)
@@ -60,3 +75,5 @@ for D in depths:
 
 
 #plt.show()
+
+"""

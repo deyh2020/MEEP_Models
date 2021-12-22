@@ -100,6 +100,7 @@ class Model:
 		
 		self.tic()
 		self.Objlist = []							#Reset Model and build structure
+
 		self.buildNormalfibre()  						#builds base polished fibre structure list		
 		self.BuildModel(NormRun=True,Plot=True) 
 
@@ -112,7 +113,7 @@ class Model:
 		elif self.SingleNorm == False:
 			print("New Normrun")
 			self.NormRun()
-
+			
 		else:
 			print("Using already saved normrun")
 

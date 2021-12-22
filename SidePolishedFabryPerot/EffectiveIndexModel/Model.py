@@ -16,7 +16,7 @@ class Model:
 		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
 		
 		##Material N
-		self.S      = 1.41
+		self.nCoating = 1.41
 		self.coreN  = 1.445
 		self.cladN  = 1.440
 
@@ -24,6 +24,7 @@ class Model:
 		self.R1     = 4.1
 		self.R2     = 62.5
 		self.Pad    = 0
+		self.height = 40
 
 		##Src properties / c=1
 		self.wl     = 1.55
@@ -116,6 +117,30 @@ class Model:
 
 		self.Objlist.extend([self.Clad,self.Core,self.PolishedZone])
 		print(self.Objlist)
+
+	def buildParallelBlocks(self):
+
+		self.SrcSize  = self.SimSize - 2*self.PMLThick
+		self.cell_size = mp.Vector3(self.SimSize,self.SimSize,0)
+
+		self.pml_layers = [
+			mp.PML(thickness=self.PMLThick,direction=mp.X),
+			mp.PML(thickness=self.PMLThick,direction=mp.Y)
+			]
+
+		self.Coating = mp.Block(
+			center=mp.Vector3(),
+			size=mp.Vector3(x=mp.inf,y=mp.inf),
+			material=mp.Medium(index=self.nCoating)
+			)
+
+		self.Clad = mp.Block(
+			center=mp.Vector3(),
+			size=mp.Vector3(x=mp.inf,y=self.height),
+			material=mp.Medium(index=self.cladN)
+			)
+
+		self.Objlist.extend([self.Coating,self.Clad])
 
 
 
@@ -300,9 +325,9 @@ class Model:
 			plot_sources_flag=False,
 			plot_monitors_flag=False,
 			plot_boundaries_flag=False,
-			plot_eps_flag=False,
-			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True},
-			field_parameters={'alpha':1.0}
+			plot_eps_flag=True,
+			eps_parameters={'alpha':1, 'interpolation':'none','cmap':'binary','contour':False},
+			field_parameters={'alpha':0.8,'cmap':'gnuplot'}
 			)
 		
 
@@ -318,6 +343,18 @@ class Model:
 			print("Fibre Type not selected")
 
 		self.BuildModel_CW(Plot=False)
+		self.RunAndPlotF_FDS(axes=axes)
+
+		
+
+	def BuildAndSolveParallel(self,axes=None):
+
+		self.Objlist = []
+
+		self.buildParallelBlocks()
+
+		self.BuildModel_CW(Plot=False)
+		
 		self.RunAndPlotF_FDS(axes=axes)
 		
 
