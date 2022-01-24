@@ -55,6 +55,7 @@ class Model:
 		self.Notes   = ''
 		self.NormComplete = False
 		self.SingleNorm = False
+		self.Courant = 0.5
 
 
 		#init Data arrays
@@ -452,6 +453,7 @@ class Model:
 			eps_averaging=False,
 			boundary_layers=self.pml_layers,
 			progress_interval=30,
+			Courant=self.Courant
 			#geometry_center=mp.Vector3(x=0,y=-25,z=0)
 			#k_point=mp.Vector3(mp.X)
 			)

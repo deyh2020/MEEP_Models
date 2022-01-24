@@ -24,17 +24,24 @@ Model.R1 = 8
 
 Model.Courant = 1/np.sqrt(2)
 
-Model.filename = 'MinResCideal'
+Model.filename = 'CapillaryAnimationQuater3'
 
 
-Model.Objlist = []	
-Model.buildNormalfibre()
+Model.WallThick = 3
 
-
-Model.BuildModel(NormRun=False,Plot=False) 
+Model.buildFilledCapillary()
+Model.BuildModel()
 
 
 Model.SimT = 1000
 
 
-Model.sim.run(mp.at_every(100, mp.output_efield_z), until=Model.SimT)
+Model.sim.run(
+    mp.at_beginning(mp.output_epsilon),
+    until_after_sources=5000
+    )
+
+Model.sim.run(
+    mp.at_every(100, mp.output_efield_z), 
+    until=Model.SimT
+)

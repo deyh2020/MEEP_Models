@@ -16,17 +16,15 @@ class Model:
 		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
 
 		##Material N
-		self.BackgroundN  = 1.41
-		self.N1 = 1.00
-		self.N2 = 1.00
+		self.nCoating  = 1.41
+		self.capN      = 1.440
+		self.fillN     = 2.50
 
 		##Capillary Dimentions
 		self.OD     = 62
 		self.WallThick  = 8.2
 
 		##Resonator Dimention
-		self.Mthick = 5
-		self.GAP    = 10
 
 		##Src properties
 		self.fcen   = 1/1.55
@@ -34,7 +32,7 @@ class Model:
 		self.nfreq  = 1000
 
 		##MEEP properties
-		self.dpml   = 10
+		self.dpml   = 5
 		self.res    = 10/1.55
 		self.DecayF = 1e-2
 		self.WallT  = 0
@@ -57,6 +55,20 @@ class Model:
 
 		self.PDMSindex()
 		self.Silicaindex()
+
+
+	def TestSpectrum(self):	
+
+		self.Objlist = []	
+		self.buildPolished()  						#builds base polished fibre structure list
+		self.ADDsqrBubbles()  					#add sqr bubbles to the structure list
+		self.ADDsqrEmptyBubbles()
+		self.BuildModel(NormRun=False,Plot=True) 
+
+		#load data from the normal run
+		
+		self.QuickRun()
+
 		
 
 	def mkALLDIRS(self):
@@ -74,43 +86,32 @@ class Model:
 
 
 
-	def buildFaboryPeriot(self,NormRun=False):
+	def buildFilledCapillary(self):
 
-		self.sx = self.GAP + 2*self.Mthick + 2*self.dpml + 200
-		self.sy = 0
-
-		if NormRun:
-			N1 = self.BackgroundN
-			N2 = self.BackgroundN
-		elif NormRun == False:
-			N1 = self.N1
-			N2 = self.N2
+		self.sx = self.OD + 10 + 2*self.dpml
+		self.sy = self.OD + 10 + 2*self.dpml
 
 		
 		self.cell_size = mp.Vector3(self.sx,self.sy,0)
 
-		self.pml_layers = [mp.PML(thickness=self.dpml,direction=mp.X)]
+		self.pml_layers = [mp.PML(thickness=self.dpml)]
 
-		Background = mp.Block(
-			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,mp.inf,mp.inf),
-			material=mp.Medium(index=self.BackgroundN)
+
+		OD = mp.Cylinder(
+			radius=self.OD/2,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
+			material=mp.Medium(index=self.capN)
 			)
 
-
-		M1 = mp.Block(
-			center=mp.Vector3(self.GAP/2 + self.Mthick/2,0,0),
-			size=mp.Vector3(self.Mthick,mp.inf,mp.inf),
-			material=mp.Medium(index=N1)
+		ID = mp.Cylinder(
+			radius=(self.OD - (self.WallThick*2))/2,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
+			material=mp.Medium(index=self.fillN)
 			)
 
-		M2 = mp.Block(
-			center=mp.Vector3(-self.GAP/2 - self.Mthick/2,0,0),
-			size=mp.Vector3(self.Mthick,mp.inf,mp.inf),
-			material=mp.Medium(index=N2)
-			)
-
-		self.Objlist.extend([Background,M1,M2])
+		self.Objlist.extend([OD,ID])
 
 
 	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
@@ -119,11 +120,15 @@ class Model:
 		kpoint = mp.Vector3(kx)
 
 		self.src = [
-				mp.Source(mp.GaussianSource(self.fcen,fwidth=self.df),
-                     component=mp.Ez,
-                     center=mp.Vector3(x=-(self.sx/2)+2*self.dpml),
-                     size=mp.Vector3()
-					 )
+				mp.EigenModeSource(src=mp.GaussianSource(self.fcen,fwidth=self.df),
+				center=mp.Vector3(x=0,y=-self.OD/2),
+				size=mp.Vector3(y=4),
+				direction=mp.X,
+				eig_kpoint=kpoint,
+				eig_band=1,
+				eig_parity=mp.EVEN_Y,
+				eig_match_freq=True
+				)
 			]
 
 		
@@ -133,31 +138,26 @@ class Model:
 			sources=self.src,
 			resolution=self.res,
 			force_complex_fields=False,
-			eps_averaging=False,
+			eps_averaging=True,
 			boundary_layers=self.pml_layers,
 			progress_interval=30,
 			Courant=self.Courant
+			#k_point=mp.Vector3(mp.X)
 			)
 
 
 		self.mkALLDIRS()
 
-		# src flux
-		src_fr = mp.FluxRegion(center=mp.Vector3(-(self.sx/2) + 2*self.dpml+5,0,0), size=mp.Vector3())                            
-		self.refl = self.sim.add_flux(self.fcen, self.df, self.nfreq, src_fr)
+		#Stored_flux = mp.FluxRegion(center=mp.Vector3(0,self.OD/2 - 5,0), size=mp.Vector3(0,12,0))
+		#self.Stored = self.sim.add_flux(self.fcen, self.df, self.nfreq, Stored_flux)
 
-		# transmitted flux
-		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 2*self.dpml ,0,0), size=mp.Vector3())
-		self.tranE = self.sim.add_flux(self.fcen, self.df, self.nfreq, tran_fr)
-
-
-		#fig,ax = plt.subplots(dpi=150)
-		#if NormRun:
-		#	self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
-		#	plt.savefig(self.workingDir+"NormModel_" + str(self.Datafile) +".pdf")
-		#else:
-		#	self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
-		#	plt.savefig(self.workingDir+"Model_" + str(self.Datafile) +".pdf")
+		fig,ax = plt.subplots(dpi=150)
+		if NormRun:
+			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
+			plt.savefig(self.workingDir+"NormModel_" + str(self.Datafile) +".pdf")
+		else:
+			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
+			plt.savefig(self.workingDir+"Model_" + str(self.Datafile) +".pdf")
 
 		
 
@@ -176,8 +176,20 @@ class Model:
 		self.sim.run(
 		#	#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(100,mp.output_efield_z),
-			until=10*self.sx*self.BackgroundN
+			until=2*self.sx*self.coreN
+			
 			)
+		#
+
+		self.sim.run(
+		#	#mp.at_beginning(mp.output_epsilon),
+		#	#mp.at_every(250,mp.output_efield_z),
+			until=mp.stop_when_fields_decayed(
+				500,
+				mp.Ez,mp.Vector3(0.5*self.sx - 0.5*self.dpml,0),self.DecayF
+				)
+		)
+
 		
 
 		
@@ -185,12 +197,6 @@ class Model:
 		self.norm_refl = self.sim.get_flux_data(self.refl)
 		# save incident power for transmission plane
 		self.norm_tran = mp.get_fluxes(self.tranE)
-
-		print("")
-		print("")
-		print("Completed")
-		print("")
-		print("")
 
 
 
@@ -207,17 +213,24 @@ class Model:
 		self.sim.run(
 		#	#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(100,mp.output_efield_z),
-			until=self.sx*self.BackgroundN*10
+			until=self.sx*self.coreN
 			
 			)
 
-		#pt = mp.Vector3()
+		pt = mp.Vector3(y=-40)
 
-		#self.sim.run(
+		if self.BubblesNum == 1:
+			dt = self.Width
+		else:
+			dt = self.GAP
+
+		
+
+		self.sim.run(
 			#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(500, mp.output_dpwr),
-		#	until_after_sources=mp.stop_when_fields_decayed(dt,mp.Ez,pt,self.DecayF)
-		#	)
+			until_after_sources=mp.stop_when_fields_decayed(dt,mp.Ez,pt,self.DecayF)
+			)
 		
 
 		flux_freqs = mp.get_flux_freqs(self.refl)
@@ -241,7 +254,7 @@ class Model:
 		Rs = []
 		Ts = []
 		for i in range(self.nfreq):
-			wl = np.append(wl, 1000/flux_freqs[i])
+			wl = np.append(wl, 1/flux_freqs[i])
 			Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
 			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
 
@@ -250,48 +263,71 @@ class Model:
 		plt.plot(wl,Ts,label='transmittance')
 		plt.plot(wl,1-Rs-Ts,label='loss')
 		#plt.axis([5.0, 10.0, 0, 1])
-		plt.xlabel("wavelength (nm)")
+		plt.xlabel("wavelength (μm)")
 		plt.legend(loc="upper right")
 		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
 		#plt.show()
 
 
-	def RunTRspectrum(self):
+	def QuickRun(self):
 		
-		self.tic()
-		self.Objlist = []							#Reset Model and build structure
+		print("")
+		print("")
+		print("Quick Run")
+		print("")
+		print("")
 
-		self.buildFaboryPeriot(NormRun=True)  						#builds base polished fibre structure list		
-		self.BuildModel(NormRun=True,Plot=False) 
+		#self.myRunFunction(self.monitorPts)
 
-		#Run normal model
-		self.NormRun()
+		self.sim.run(
+		#	#mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(100,mp.output_efield_z),
+			until=2*self.sx*self.coreN
+			
+			)
 
-		#Reset sources
-		self.sim.reset_meep()
+		flux_freqs = mp.get_flux_freqs(self.refl)
+		refl_flux = mp.get_fluxes(self.refl)
+		tran_flux = mp.get_fluxes(self.tranE)
 		
+		wl = []
+		Rs = []
+		Ts = []
+		for i in range(self.nfreq):
+			wl = np.append(wl, 1/flux_freqs[i])
+			Rs = np.append(Rs,-refl_flux[i])
+			Ts = np.append(Ts,tran_flux[i])
 
-		self.Objlist = []	
-		self.buildFaboryPeriot(NormRun=False) 						#builds base polished fibre structure list
+		plt.figure()
+		plt.plot(wl,Rs,'--',label='reflectance')
+		plt.plot(wl,Ts,label='transmittance')
+		plt.plot(wl,1-Rs-Ts,label='loss')
+		#plt.axis([5.0, 10.0, 0, 1])
+		plt.xlabel("wavelength (μm)")
+		plt.legend(loc="upper right")
+		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
+		#plt.show()
+
+
+	def TimestepFields(self):
 		
+		fig,axes = plt.subplots(1, 1,dpi=200)
+
+		self.sim.run(
+			until=self.SimT
+			)
 		
-
-
-		self.BuildModel(NormRun=False,Plot=True) 
-
-		#load data from the normal run
-		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
-
-		self.AutoRun()
-		self.toc()
-		#self.SaveMeta()
-
-		self.sim = None
-		self.Objlist = []
-
-
-		
-
+		#self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
+		self.sim.plot2D(
+			ax = axes,
+			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
+			fields=mp.Ez,
+			plot_sources_flag=True,
+			plot_monitors_flag=True,
+			plot_eps_flag=True,
+			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True}
+			)
+		plt.show()
 
 
 	def SaveMeta(self):
