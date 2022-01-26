@@ -19,10 +19,9 @@ Model = M.Model()
 Model.filename = 'Figures'
 
 Model.GAP = 0
-Model.Width = 300
+Model.Width = 322.4
 
-Model.Depth = Model.R1 + Model.R2 + 4
-Model.BubblesNum = 1
+Model.Depth = 55.7
 
 Model.res = 5
 Model.nCoating = 1.41

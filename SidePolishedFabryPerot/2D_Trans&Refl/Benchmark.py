@@ -12,6 +12,11 @@ Model = M.Model()
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
 
 
+Model.GAP = 0
+Model.Width = 322.4
+Model.Depth = 55.7
+
+
 Model.filename = 'Benchmarks'
 
 Model.df = 0.5e-2

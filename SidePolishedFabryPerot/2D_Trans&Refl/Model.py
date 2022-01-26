@@ -26,6 +26,7 @@ class Model:
 		self.CladLeft = 1
 
 		##Resonator Dimentions
+		self.angle = 121.4
 		self.CladLeft = 0 
 		self.Depth  = 40
 		self.Width  = 100
@@ -230,13 +231,11 @@ class Model:
 	def ADDtrapazoidBubbles(self):
 
 		  
-		TL = 322.4 # top length of dips
-		D  = 55.7  # depth of dips
-		angle = 121.4
-		BL = TL - 2*(D/np.tan((180-angle)*(np.pi/180)))
-		
-		print(BL)
-		
+		TL    = self.Width
+		D     = self.Depth
+		angle = self.angle
+		BL    = TL - 2*(D/np.tan((180-angle)*(np.pi/180)))
+				
 		verts = [
 	            
 				mp.Vector3(x=-TL/2,		y=D 	,z=0),
@@ -358,7 +357,7 @@ class Model:
 
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(100,mp.output_efield_z),
+			mp.at_every(1000,mp.output_efield_z),
 			until_after_sources=10*self.sx*self.coreN
 			
 			)
