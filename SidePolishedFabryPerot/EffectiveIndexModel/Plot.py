@@ -76,7 +76,7 @@ Model.Datafile = "NormalFibre"
 
 Model.Objlist = []
 Model.buildFibre()
-Model.BuildModel(Plot=True,axes=ax[0]) 
+Model.BuildModel(Plot=False,axes=ax[0]) 
 #Model.RunMPB()
 #Model.SaveMeta()
 

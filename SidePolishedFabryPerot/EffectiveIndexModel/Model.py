@@ -259,25 +259,8 @@ class Model:
 				plot_eps_flag=True,
 				eps_parameters={'alpha':0.8, 'interpolation':'none'}
 			)
+			plt.savefig(self.workingDir+"EPS_"+ str(self.Datafile) +".pdf")
 			
-
-
-	def RunMPB(self):
-
-		self.sim.init_sim()
-
-		self.EigenmodeData = self.sim.get_eigenmode(
-			self.fcen,
-			mp.Z,
-			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
-			band_num=1,
-			kpoint=self.kpoint,
-			match_frequency=True
-			)
-
-		self.k = self.EigenmodeData.k
-		self.vg = self.EigenmodeData.group_velocity
-		self.neff = self.k.norm() * self.wl
 
 
 	def RunAndPlotF(self,axes=None):
@@ -288,6 +271,8 @@ class Model:
 		print("Actual Simtime:", self.SimT*t)
 
 		self.sim.run(
+			mp.at_beginning(mp.output_epsilon),
+			mp.at_end(mp.output_efield_z),
 			until_after_sources=self.SimT
 			)
 
@@ -303,8 +288,45 @@ class Model:
 			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True},
 			field_parameters={'alpha':0.7,'cmap':'Greys'}
 			)
-		#plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
-		#plt.show()
+		plt.savefig(self.workingDir+"FieldsAtEnd_"+ str(self.Datafile) +".pdf")
+		plt.show()
+		
+
+	def BuildAndSolveNEFF(self):
+
+		self.Objlist = []
+
+		if self.FibreType == "Standard":
+			self.buildFibre()
+		elif self.FibreType == "Polished":
+			self.buildPolishedFibre()
+		else:
+			print("Fibre Type not selected")
+
+		self.BuildModel_CW(Plot=False)
+		self.RunMPB()
+		self.sim.reset_meep()
+
+
+	def BuildAndSolve(self,axes=None):
+
+		self.Objlist = []
+
+		if self.FibreType == "Standard":
+			self.buildFibre()
+		elif self.FibreType == "Polished":
+			self.buildPolishedFibre()
+		else:
+			print("Fibre Type not selected")
+
+		self.BuildModel_CW(Plot=False)
+		#self.RunAndPlotF_FDS(axes=axes)
+
+		self.sim.init_sim()
+		mp.output_epsilon(self.sim)
+		self.sim.solve_cw()
+		mp.output_efield_y(self.sim)
+
 
 	def RunAndPlotF_FDS(self,axes=None):
 
@@ -312,8 +334,11 @@ class Model:
 		tFactor = 1e-15/t # converts femptoseconds into unitless MEEP
 
 		self.sim.init_sim()
-
+		mp.output_epsilon(self.sim)
 		self.sim.solve_cw()
+		mp.output_efield_y(self.sim)
+
+
 
 		if axes == None:
 			fig,axes = plt.subplots(dpi=200)
@@ -329,33 +354,26 @@ class Model:
 			eps_parameters={'alpha':1, 'interpolation':'none','cmap':'binary','contour':False},
 			field_parameters={'alpha':0.8,'cmap':'gnuplot'}
 			)
-		
 
-	def BuildAndSolve(self,axes=None):
 
-		self.Objlist = []
+	def RunMPB(self):
 
-		if self.FibreType == "Standard":
-			self.buildFibre()
-		elif self.FibreType == "Polished":
-			self.buildPolishedFibre()
-		else:
-			print("Fibre Type not selected")
+		self.sim.init_sim()
 
-		self.BuildModel_CW(Plot=False)
-		self.RunAndPlotF_FDS(axes=axes)
+		self.EigenmodeData = self.sim.get_eigenmode(
+			self.fcen,
+			mp.Z,
+			mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SrcSize,self.SrcSize,0)),
+			band_num=1,
+			kpoint=self.kpoint,
+			match_frequency=True,
+			resolution=1
+			)
 
-		
+		self.k = self.EigenmodeData.k
+		self.vg = self.EigenmodeData.group_velocity
+		self.neff = self.k.norm() * self.wl
 
-	def BuildAndSolveParallel(self,axes=None):
-
-		self.Objlist = []
-
-		self.buildParallelBlocks()
-
-		self.BuildModel_CW(Plot=False)
-		
-		self.RunAndPlotF_FDS(axes=axes)
 		
 
 	def mkALLDIRS(self):
@@ -439,6 +457,13 @@ class Model:
 		self.nSilica    = np.array([1.445300107,1.44555516,1.445847903,1.445958546])
 		self.SilicaFIT = np.polyfit(self.Silicatemp,self.nSilica,deg=1)
 
+
+	def AirN(self,T):
+		p = 1013.25
+		e = 20
+		N = (77.6/T)*(p + 4810*(e/T))
+		n = (N/1e6) + 1
+		return n
 	
 	def SaveMeta(self):
 		
@@ -475,4 +500,4 @@ class Model:
 		
 		with open(self.workingDir + 'metadata' + str(self.Datafile) + '.json' , 'w') as file:
 			json.dump(self.metadata, file)
-		
+	
