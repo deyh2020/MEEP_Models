@@ -404,12 +404,12 @@ class Model:
 			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
 
 		plt.figure()
-		plt.plot(wl,Rs,'--',label='reflectance')
+		#plt.plot(wl,Rs,'--',label='reflectance')
 		plt.plot(wl,Ts,label='transmittance')
-		plt.plot(wl,1-Rs-Ts,label='loss')
+		#plt.plot(wl,1-Rs-Ts,label='loss')
 		#plt.axis([5.0, 10.0, 0, 1])
 		plt.xlabel("wavelength (μm)")
-		plt.legend(loc="upper right")
+		#plt.legend(loc="upper right")
 		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
 		#plt.show()
 
