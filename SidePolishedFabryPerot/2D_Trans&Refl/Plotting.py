@@ -18,7 +18,7 @@ Model = M.Model()
 
 Model.filename = 'Figures'
 
-Model.GAP = 0
+Model.GAP = 1000
 Model.Width = 322.4
 
 Model.Depth = 55.7
