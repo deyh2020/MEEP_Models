@@ -18,12 +18,13 @@ Model.Depth = 55.7
 Model.angle = 121.4
 
 
-Model.filename = 'DoubleDip_PDMS'
+Model.filename = 'DoubleDip_PDMS_Desktop'
 
-Model.df = 0.5e-2
+Model.df = 10e-2
 Model.res = 10/1.55  # at least 10 px per wavelength
 Model.Courant = 1/np.sqrt(2)
-Model.fcen = 1/1.60
+Model.fcen = 1/1.55
+
 
 #Model.TestSpectrum()
 
