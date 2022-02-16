@@ -19,7 +19,6 @@ Model = M.Model()
 Model.filename = 'Figures'
 
 
-Model.WallThick = 8
 
 Model.buildFilledCapillary()
 Model.BuildModel()
