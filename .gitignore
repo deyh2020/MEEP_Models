@@ -114,5 +114,4 @@ dmypy.json
 .pyre/
 
 #Data Files
-*.h5
 *.gif

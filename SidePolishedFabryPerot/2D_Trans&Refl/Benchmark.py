@@ -12,13 +12,13 @@ Model = M.Model()
 #Set the PDMSn = 1 for effectively a uncoated side-polished fibre.
 
 
-Model.GAP = 1000
+Model.GAP = 0
 Model.Width = 322.4
 Model.Depth = 55.7
 Model.angle = 121.4
 
 
-Model.filename = 'DoubleDip_PDMS'
+Model.filename = 'SingleDip_PDMS'
 
 Model.df = 0.5e-2
 Model.res = 10/1.55  # at least 10 px per wavelength

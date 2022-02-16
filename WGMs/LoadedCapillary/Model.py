@@ -151,6 +151,9 @@ class Model:
 		#Stored_flux = mp.FluxRegion(center=mp.Vector3(0,self.OD/2 - 5,0), size=mp.Vector3(0,12,0))
 		#self.Stored = self.sim.add_flux(self.fcen, self.df, self.nfreq, Stored_flux)
 
+		storedFlux = mp.FluxRegion(center=mp.Vector3(0,self.OD/2 - 4,0), size=mp.Vector3(0,12,0))
+		self.storedFlux = self.sim.add_flux(self.fcen, self.df, self.nfreq, storedFlux)
+
 		fig,ax = plt.subplots(dpi=150)
 		if NormRun:
 			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
@@ -209,47 +212,33 @@ class Model:
 		print("")
 
 		#self.myRunFunction(self.monitorPts)
-
-		self.sim.run(
-		#	#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(100,mp.output_efield_z),
-			until=self.sx*self.coreN
-			
-			)
-
-		pt = mp.Vector3(y=-40)
-
-		if self.BubblesNum == 1:
-			dt = self.Width
-		else:
-			dt = self.GAP
-
 		
 
 		self.sim.run(
-			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(500, mp.output_dpwr),
-			until_after_sources=mp.stop_when_fields_decayed(dt,mp.Ez,pt,self.DecayF)
-			)
+			mp.at_beginning(mp.output_epsilon),
+			until_after_sources=100
+		)
+
+		self.sim.run(
+			#mp.at_every(100, mp.output_efield_z), 
+			until=self.SimT
+		)
+
+
+
+		# initialize wl vs y-pos matrix.
+		matrix = np.zeros([len(self.sim.get_dft_array(self.storedFlux,mp.Ez,0)),self.nfreq],dtype=np.complex128)
 		
+		# fill matrix
+		for i in range(0,self.nfreq):
+			matrix[:,i] = self.sim.get_dft_array(self.storedFlux,mp.Ez,i)
 
-		flux_freqs = mp.get_flux_freqs(self.refl)
-		refl_flux = mp.get_fluxes(self.refl)
-		tran_flux = mp.get_fluxes(self.tranE)
-
-		Data = {}
-		Data['flux_freqs'] = flux_freqs
-		Data['refl_flux'] = refl_flux
-		Data['tran_flux'] = tran_flux
-		Data['norm_tran'] = self.norm_tran
-		Data['norm_refl'] = self.norm_refl
 
 		with open(self.workingDir + self.Datafile + ".pkl", 'wb') as file:
-			pickle.dump(Data,file)
+			pickle.dump(matrix,file)
 
 
-
-
+		"""
 		wl = []
 		Rs = []
 		Ts = []
@@ -267,6 +256,7 @@ class Model:
 		plt.legend(loc="upper right")
 		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
 		#plt.show()
+		"""
 
 
 	def QuickRun(self):
