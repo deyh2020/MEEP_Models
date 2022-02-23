@@ -3,15 +3,15 @@ import matplotlib.pyplot as plt
 import h5py
 
 
-wD = "data/2022-01-25/FieldProfiles/"
+wD = "data/2022-02-23/"
 
 
 #f = h5py.File(wD + "CWsolve-Air.h5",'r')
 
 fig,axes = plt.subplots(1,2,dpi=200)
 
-eps    = ['AirEPS.h5','PDMSeps.h5']
-fields = ['AirFields.h5','PDMSFields.h5']
+eps    = ['Air/CWsolve-FieldProfiles-eps-000000.00.h5','PDMS/CWsolve-FieldProfiles-eps-000000.00.h5']
+fields = ['Air/CWsolve-FieldProfiles-ey-000000.00.h5','PDMS/CWsolve-FieldProfiles-ey-000000.00.h5']
 
 
 for i in [0,1]:
