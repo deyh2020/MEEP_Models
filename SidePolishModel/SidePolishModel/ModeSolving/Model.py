@@ -322,10 +322,16 @@ class Model:
 		self.BuildModel_CW(Plot=False)
 		#self.RunAndPlotF_FDS(axes=axes)
 
-		self.sim.init_sim()
-		mp.output_epsilon(self.sim)
-		self.sim.solve_cw()
-		mp.output_efield_y(self.sim)
+		print(self.workingDir)
+		
+		if os.path.isfile(self.workingDir + "runner-ey-000000.00.h5"): #Check if the sim has already ran before?			
+			print("AlreadyRan")
+		else:
+			print("FirstRun")
+			self.sim.init_sim()
+			mp.output_epsilon(self.sim)
+			self.sim.solve_cw()
+			mp.output_efield_y(self.sim)
 
 
 	def RunAndPlotF_FDS(self,axes=None):
