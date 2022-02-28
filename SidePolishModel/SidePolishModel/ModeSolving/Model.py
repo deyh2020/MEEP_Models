@@ -16,6 +16,7 @@ class Model:
 		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
 		
 		##Material N
+		self.Coating = 'Air'
 		self.nCoating = 1.41
 		self.coreN  = 1.445
 		self.cladN  = 1.440
@@ -373,7 +374,7 @@ class Model:
 			band_num=1,
 			kpoint=self.kpoint,
 			match_frequency=True,
-			resolution=1
+			resolution=self.res
 			)
 
 		self.k = self.EigenmodeData.k
