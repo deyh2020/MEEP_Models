@@ -15,7 +15,9 @@ Model.res = 10/1.55
 
 
 Model.FibreType = "Polished"
+
 ncoating = [1.00,1.41]
+
 temps = [23,30,40,50,60,70,80]
 
 

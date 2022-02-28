@@ -1,3 +1,4 @@
+from re import S
 import ModeSolving.Model as M
 import time as time
 import numpy as np
@@ -14,6 +15,11 @@ class CWsolve:
         self.M.res = 10
         self.M.FibreType = "Polished"
         self.M.SimSize = 20
+        
+        self.temps = np.array([23,30,40,50,60,70,80])
+        self.neffPDMS = np.array([])
+        self.neff     = np.array([])
+        self.neffPDMS = np.array([])
            
     def run(self):
 
@@ -33,9 +39,10 @@ class CWsolve:
         self.M.BuildAndSolve() #Runs CW sim and saves eps and ey fields. 
         
         self.plotFieldProfile()
-        plt.show()
-    
-    
+
+        self.runNEFFexp()
+
+        #plt.show()
     
     
     def importh5(self):
@@ -66,8 +73,8 @@ class CWsolve:
                 )
 
         axes.autoscale(False)
-        axes.set_xlim(-self.M.R1*1.75,self.M.R1*1.75)
-        axes.set_ylim(-self.M.R1*1.75,self.M.R1*1.75)
+        axes.set_xlim(-self.M.R1*1.8,self.M.R1*1.8)
+        axes.set_ylim(-self.M.R1*1.8,self.M.R1*1.8)
         
 
         from matplotlib.patches import Circle, Rectangle
@@ -96,6 +103,53 @@ class CWsolve:
         axes.set_ylabel("Y / um",fontsize=16)
         axes.ticklabel_format(style='sci',scilimits=(-1,5),axis='both',useOffset=False)
 
+        plt.savefig(self.M.workingDir+"FieldProfile"+ self.M.filename +".pdf")
 
 
-    
+    def runNEFFexp(self):
+        
+        for t in self.temps:  
+
+            print("")
+            print("Working at "+ str(t))
+            print("")
+
+            self.M.Datafile = "temp_" + str(t)
+
+            self.M.nCoating = 1
+            self.M.coreN = np.polyval(self.M.SilicaFIT,t)
+            self.M.cladN = self.M.coreN - 0.005
+
+            self.M.BuildAndSolveNEFF()
+
+            self.neff =  np.append(self.neff,self.M.neff)
+
+
+        for t in self.temps:  
+
+            print("")
+            print("Working at "+ str(t))
+            print("")
+
+            self.M.Datafile = "PDMSCoated_temp_" + str(t)
+
+            self.M.nCoating = np.polyval(self.M.PDMSfit,t)
+            self.M.coreN = np.polyval(self.M.SilicaFIT,t)
+            self.M.cladN = self.M.coreN - 0.005
+
+
+            self.M.BuildAndSolveNEFF()
+
+            self.neffPDMS = np.append(self.neffPDMS,self.M.neff)
+
+
+        fig,ax = plt.subplots(dpi=150)
+
+        ax.plot(self.temps,self.neff,label="Uncoated")
+        ax.plot(self.temps,self.neffPDMS,label="PDMS Coated")
+
+
+        ax.set_ylabel("$n_{eff}$")
+        ax.set_xlabel("Temp / C")
+        plt.legend()
+        plt.savefig(self.M.workingDir+"NEFF" +".pdf")
