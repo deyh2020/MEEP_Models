@@ -11,7 +11,7 @@ class TwoDsolve:
 
         self.M = M.Model()
 
-        self.M.filename = '2DMode2Exp'
+        self.M.filename = '2DMode2Exp_1mm'
         self.M.Datafile = 'Test'
 
         self.Air  = 1.000
@@ -24,7 +24,7 @@ class TwoDsolve:
         self.M.BackgroundN   = self.Core  
         self.M.N1            = self.Air
 
-        self.M.GAP           = 500
+        self.M.GAP           = 1000
         self.M.Width         = 322
         self.M.Depth         = 55.7
         self.M.angle         = 121.4
