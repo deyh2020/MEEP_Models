@@ -35,10 +35,11 @@ class OneDsolve:
 
     def run(self):
 
-        #self.mode_1()
+        self.mode_1()
         #self.mode_2(    
-        self.plotEXP()
-        self.full1D()
+        #self.plotEXP()
+        #self.full1D()
+        plt.show()
 
 
     def full1D(self):
@@ -66,7 +67,7 @@ class OneDsolve:
         self.M.N1          = self.Core
 
         #Layer width is in um
-        self.M.Width         = 2000
+        self.M.Width         = 1682.8
 
         self.M.RunTRspectrumSingleFP()
 
