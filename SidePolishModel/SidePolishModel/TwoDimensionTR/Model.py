@@ -94,7 +94,7 @@ class Model:
 		self.AutoRun()
 		self.toc()
 
-		self.SaveMeta()
+		#self.SaveMeta()
 
 	def RunTRspectrumUnPolished(self):
 		
@@ -358,7 +358,7 @@ class Model:
 
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(1000,mp.output_efield_z),
+			#mp.at_every(1000,mp.output_efield_z),
 			until_after_sources=10*self.sx*self.coreN
 			
 			)
