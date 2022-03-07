@@ -385,7 +385,7 @@ class Model:
 
 	def mkALLDIRS(self):
 		
-		self.workingDir = '../data/'+self.today+'/'+self.filename+'/'
+		self.workingDir = '../data/'+self.today+'/'+self.filename+'_ModeSolving/'
 
 		print('WD:',self.workingDir)
 

@@ -27,6 +27,8 @@ class Model:
 		##Resonator Dimention
 		self.Mthick = 5
 		self.GAP    = 10
+		self.Width  = 10
+		self.Pad    = 5
 
 		##Src properties
 		self.fcen   = 1/1.55
@@ -58,13 +60,16 @@ class Model:
 		self.PDMSindex()
 		self.Silicaindex()
 
-		#Plotting 
 		self.fig,self.axes = plt.subplots(1,1,dpi=200)
+
+		#Plotting 
+		
 		
 
 	def mkALLDIRS(self):
 		
-		self.workingDir = 'data/'+self.today+'/'+self.filename+'/'
+		self.workingDir = '../data/'+self.today+'/'+self.filename + '_1Dmodel/'  # diffirentiate from other packages
+		
 
 		print('WD:',self.workingDir)
 
@@ -116,7 +121,7 @@ class Model:
 
 	def buildFaboryPeriotSingle(self,NormRun=False):
 
-		self.sx = self.GAP + 2*self.Mthick + 2*self.dpml + 200
+		self.sx = self.Width + 2*self.Pad + 2*self.dpml
 		self.sy = 0
 
 		if NormRun:
@@ -139,7 +144,7 @@ class Model:
 
 		M1 = mp.Block(
 			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(self.GAP,mp.inf,mp.inf),
+			size=mp.Vector3(self.Width,mp.inf,mp.inf),
 			material=mp.Medium(index=N1)
 			)
 
@@ -279,17 +284,34 @@ class Model:
 			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
 
 
-		#self.axes.plot(wl,Rs,'--',label='refl @ '+ self.Datafile)
+
+
+		
+
 		self.axes.plot(wl,Ts,label=self.Datafile + 'C')
-		#self.axes.plot(wl,1-Rs-Ts,label='loss')
-		#plt.axis([5.0, 10.0, 0, 1])
-		#self.axes.xlabel("wavelength (nm)")
+		
+		from scipy.signal import find_peaks
+
+		peaks, _ = find_peaks(-Ts+1.0, height=0)
+
+
+		self.axes.plot(wl[peaks],Ts[peaks],'x')
+
+		print(wl[peaks])
+
+		FSR = np.diff(wl[peaks])
+
+		print(FSR)
+
+		print(np.average(FSR))
+
 		plt.legend(loc="upper right")
-		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
+		plt.xlim((1530,1570))
+		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) + "_" + str(self.Mthick) +".pdf")
 		#plt.show()
 
 
-	def RunTRspectrum(self):
+	def RunTRspectrumSingleFP(self):
 		
 		self.tic()
 		self.Objlist = []							#Reset Model and build structure
@@ -320,7 +342,40 @@ class Model:
 		#self.SaveMeta()
 
 		self.sim = None
-		self.Objlist = []
+
+
+	def RunTRspectrumDoubleFP(self):
+		
+		self.tic()
+		self.Objlist = []							#Reset Model and build structure
+
+		self.buildFaboryPeriot(NormRun=True)  						#builds base polished fibre structure list		
+		self.BuildModel(NormRun=True,Plot=False) 
+
+		#Run normal model
+		self.NormRun()
+
+		#Reset sources
+		self.sim.reset_meep()
+		
+
+		self.Objlist = []	
+		self.buildFaboryPeriot(NormRun=False) 						#builds base polished fibre structure list
+		
+		
+
+
+		self.BuildModel(NormRun=False,Plot=True) 
+
+		#load data from the normal run
+		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
+
+		self.AutoRun()
+		self.toc()
+		#self.SaveMeta()
+
+		self.sim = None
+
 
 
 		
