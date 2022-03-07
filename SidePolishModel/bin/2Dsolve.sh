@@ -4,4 +4,4 @@
 
 module load meep
 
-srun python3 ../twoDsolve.py
+srun python3 ../SidePolishModel/twoDsolve.py
