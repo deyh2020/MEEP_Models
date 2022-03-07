@@ -11,7 +11,7 @@ class TwoDsolve:
 
         self.M = M.Model()
 
-        self.M.filename = '2DMode2Exp'
+        self.M.filename = '2DMode2Exp_1mm'
         self.M.Datafile = 'Test'
 
         self.Air  = 1.000
