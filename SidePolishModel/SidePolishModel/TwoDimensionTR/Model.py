@@ -32,6 +32,7 @@ class Model:
 		self.Width  = 100
 		self.EllipseOffset = 0
 		self.GAP    = 0
+		self.Pad    = 50
 		self.BubblesNum = 2 
 		self.BubblesType = 'sqr'
 		self.FibreType = 'polished'
@@ -151,7 +152,7 @@ class Model:
 
 	def mkALLDIRS(self):
 		
-		self.workingDir = 'data/'+self.today+'/'+self.filename+'/'
+		self.workingDir = '../data/'+self.today+'/'+self.filename+'_2Dmodel/'
 
 		print('WD:',self.workingDir)
 
@@ -198,7 +199,7 @@ class Model:
 
 	def buildPolished(self):
 
-		self.sx = self.GAP + self.Width + 2*self.dpml + 200
+		self.sx = self.GAP + 2*self.Width + 2*self.dpml + self.Pad
 		self.sy = 150 + 2*self.dpml
 
 		
