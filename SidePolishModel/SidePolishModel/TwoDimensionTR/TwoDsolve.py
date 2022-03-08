@@ -43,11 +43,7 @@ class TwoDsolve:
         #self.mode_1()
         #self.mode_2(    
         #self.plotEXP()
-        #self.full2D()
-        self.M.buildPolished()
-        self.M.ADDtrapazoidBubbles()
-        self.M.BuildModel(NormRun=False,Plot=True) 
-        plt.show()
+        self.full2D()
 
 
     def full2D(self):
