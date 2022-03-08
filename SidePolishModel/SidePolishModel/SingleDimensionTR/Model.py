@@ -306,7 +306,7 @@ class Model:
 		print(np.average(FSR))
 
 		plt.legend(loc="upper right")
-		plt.xlim((1530,1570))
+		#plt.xlim((1530,1570))
 		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) + "_" + str(self.Mthick) +".pdf")
 		#plt.show()
 

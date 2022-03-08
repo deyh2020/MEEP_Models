@@ -358,11 +358,17 @@ class Model:
 
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(1000,mp.output_efield_z),
-			until_after_sources=10*self.sx*self.coreN
+			mp.at_every(50,mp.output_efield_z),
+			until_after_sources=3*self.sx*self.coreN
 			
 			)
 
+		self.sim.run(
+			mp.at_beginning(mp.output_epsilon),
+			#mp.at_every(500,mp.output_efield_z),
+			until_after_sources=7*self.sx*self.coreN
+			
+			)
 		#pt = mp.Vector3(y=-40)
 
 		#if self.BubblesNum == 1:

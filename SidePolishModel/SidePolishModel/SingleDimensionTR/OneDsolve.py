@@ -26,7 +26,7 @@ class OneDsolve:
 
         #self.M.N2          = self.M.N1     
 
-        self.M.res     = 10  # at least 10 px per wavelength
+        self.M.res     = 10/1.55  # at least 10 px per wavelength
         self.M.df      = 1.85e-2
         self.M.Courant = 1
 
