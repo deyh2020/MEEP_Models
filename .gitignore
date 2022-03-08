@@ -115,3 +115,6 @@ dmypy.json
 
 #Data Files
 *.gif
+
+#MEEP Data
+*.h5
