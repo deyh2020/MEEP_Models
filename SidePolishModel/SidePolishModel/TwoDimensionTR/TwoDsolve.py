@@ -35,7 +35,7 @@ class TwoDsolve:
         self.M.df            = 7e-2#1.85e-2
         self.M.Courant       = 1/np.sqrt(2)
 
-        
+
 
 
     def run(self):
@@ -45,6 +45,12 @@ class TwoDsolve:
         #self.plotEXP()
         self.full2D()
 
+    def sqrBubbles(self):
+        self.M.angle = 90
+        self.full2D()
+
+
+    
     def pltStructure(self):
         self.M.PlotStructure()
 

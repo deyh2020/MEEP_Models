@@ -96,45 +96,6 @@ class Model:
 
 		#self.SaveMeta()
 
-	def RunTRspectrumUnPolished(self):
-		
-		self.tic()
-		self.Objlist = []							#Reset Model and build structure
-
-		self.buildNormalfibre()  						#builds base polished fibre structure list		
-		self.BuildModel(NormRun=True,Plot=True) 
-
-		#Run normal model
-		if self.SingleNorm == True and self.NormComplete == False:
-			print("First Normrun")
-			self.NormRun()
-			self.NormComplete = True
-
-		elif self.SingleNorm == False:
-			print("New Normrun")
-			self.NormRun()
-			
-		else:
-			print("Using already saved normrun")
-
-		#Reset sources
-		self.sim.reset_meep()
-		
-
-		self.Objlist = []	
-		self.buildNormalfibre()  						#builds base polished fibre structure list
-		self.ADDcircElongated()  					#add sqr bubbles to the structure list
-		self.BuildModel(NormRun=False,Plot=True) 
-
-		#load data from the normal run
-		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
-
-		self.AutoRun()
-
-		self.toc()
-
-		self.SaveMeta()
-
 
 	def PlotStructure(self):	
 
