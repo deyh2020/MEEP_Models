@@ -11,8 +11,7 @@ class TwoDsolve:
 
         self.M = M.Model()
 
-        self.M.filename = '2mm'
-        self.M.Datafile = 'Test'
+        self.M.Datafile = 'data'
 
         self.Air  = 1.000
         self.Core = 1.445
@@ -23,6 +22,7 @@ class TwoDsolve:
         self.M.Pad           = 50
         self.M.BackgroundN   = self.Core  
         self.M.N1            = self.Air
+        self.M.nCoating      = self.Air
 
         self.M.GAP           = 10
         self.M.Width         = 322
@@ -46,11 +46,7 @@ class TwoDsolve:
         self.full2D()
 
 
-    def full2D(self):
-
-        self.M.Datafile    = 'All'
-        self.M.nCoating    = self.Air
-        
+    def full2D(self):      
         
         self.M.RunTRspectrum()
 

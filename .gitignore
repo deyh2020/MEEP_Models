@@ -118,3 +118,4 @@ dmypy.json
 
 #MEEP Data
 *.h5
+*.png
