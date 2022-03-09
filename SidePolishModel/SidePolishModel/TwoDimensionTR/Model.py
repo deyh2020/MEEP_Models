@@ -136,17 +136,13 @@ class Model:
 		self.SaveMeta()
 
 
-	def TestSpectrum(self):	
+	def PlotStructure(self):	
 
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDsqrBubbles()  					#add sqr bubbles to the structure list
-		self.ADDsqrEmptyBubbles()
+		self.ADDtrapazoidBubbles()
 		self.BuildModel(NormRun=False,Plot=True) 
-
-		#load data from the normal run
-		
-		self.QuickRun()
+		plt.show()
 
 		
 
@@ -583,7 +579,7 @@ class Model:
 	def toc(self,tempBool=True):
 		# Prints the time difference yielded by generator instance TicToc
 		self.Runtime = next(self.TicToc)
-		print("Whole Sim Walltime: "+ str(self.TicToc) + "s")
+		print("Whole Sim Walltime: "+ str(self.Runtime) + " s")
 		 
 
 	def tic(self):

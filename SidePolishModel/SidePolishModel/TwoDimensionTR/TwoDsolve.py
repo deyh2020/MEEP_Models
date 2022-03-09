@@ -19,7 +19,7 @@ class TwoDsolve:
         self.PDMS = 1.410 
 
         
-        self.M.Pad           = 50
+        self.M.Pad           = 500
         self.M.BackgroundN   = self.Core  
         self.M.N1            = self.Air
         self.M.nCoating      = self.Air
@@ -44,6 +44,9 @@ class TwoDsolve:
         #self.mode_2(    
         #self.plotEXP()
         self.full2D()
+
+    def pltStructure(self):
+        self.M.PlotStructure()
 
 
     def full2D(self):      
