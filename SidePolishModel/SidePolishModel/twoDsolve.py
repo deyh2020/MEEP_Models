@@ -12,4 +12,7 @@ except:
     print("That didn't work")
 
 
-Solver.run()
+if Solver.M.filename == "justplot":
+    Solver.pltStructure()
+else:
+    Solver.run()
