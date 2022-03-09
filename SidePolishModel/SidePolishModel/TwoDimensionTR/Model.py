@@ -152,7 +152,7 @@ class Model:
 
 	def mkALLDIRS(self):
 		
-		self.workingDir = '../data/'+self.today+'/'+self.filename+'_2Dmodel/'
+		self.workingDir = '../data/'+self.today+'/'+self.filename+'/'
 
 		print('WD:',self.workingDir)
 
@@ -356,17 +356,19 @@ class Model:
 
 		#self.myRunFunction(self.monitorPts)
 
+		"""
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
 			mp.at_every(50,mp.output_efield_z),
 			until_after_sources=3*self.sx*self.coreN
 			
 			)
+		"""
 
 		self.sim.run(
-			mp.at_beginning(mp.output_epsilon),
+			#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(500,mp.output_efield_z),
-			until_after_sources=7*self.sx*self.coreN
+			until_after_sources=10*self.sx*self.coreN
 			
 			)
 		#pt = mp.Vector3(y=-40)
@@ -581,6 +583,7 @@ class Model:
 	def toc(self,tempBool=True):
 		# Prints the time difference yielded by generator instance TicToc
 		self.Runtime = next(self.TicToc)
+		print("Whole Sim Walltime: "+ str(self.TicToc) + "s")
 		 
 
 	def tic(self):
