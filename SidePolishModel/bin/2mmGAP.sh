@@ -4,4 +4,4 @@
 
 module load meep
 
-srun python3 ../SidePolishModel/twoDsolve.py 2000 2D_2mm
+srun python3 ../SidePolishModel/twoDsolve.py 2000 2D_2mm_PAD-1000
