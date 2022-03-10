@@ -19,7 +19,7 @@ class TwoDsolve:
         self.PDMS = 1.410 
 
         
-        self.M.Pad           = 500
+        self.M.Pad           = 1000
         self.M.BackgroundN   = self.Core  
         self.M.N1            = self.Air
         self.M.nCoating      = self.Air
