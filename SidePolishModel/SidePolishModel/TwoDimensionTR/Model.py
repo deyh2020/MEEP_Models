@@ -188,10 +188,11 @@ class Model:
 
 	def ADDtrapazoidBubbles(self):
 
-		  
+		Center = -self.Pad/2 
 		TL    = self.Width
 		D     = self.Depth
 		angle = self.angle
+		
 		BL    = TL - 2*(D/np.tan((180-angle)*(np.pi/180)))
 				
 		verts = [
@@ -204,13 +205,13 @@ class Model:
 	            ]
 
 
-		self.LH = mp.Prism(center=mp.Vector3(x=-self.GAP/2,y=-D/2+self.R1+self.CladLeft,z=0),
+		self.LH = mp.Prism(center=mp.Vector3(x=-self.GAP/2 + Center,y=-D/2+self.R1+self.CladLeft,z=0),
 	                     vertices = verts,
 	                     material=mp.Medium(index=self.nCoating),
 	                     height=1
 	                     )
 
-		self.RH = mp.Prism(center=mp.Vector3(x=self.GAP/2,y=-D/2+self.R1+self.CladLeft,z=0),
+		self.RH = mp.Prism(center=mp.Vector3(x=self.GAP/2 + Center,y=-D/2+self.R1+self.CladLeft,z=0),
 	                     vertices = verts,
 	                     material=mp.Medium(index=self.nCoating),
 	                     height=1
