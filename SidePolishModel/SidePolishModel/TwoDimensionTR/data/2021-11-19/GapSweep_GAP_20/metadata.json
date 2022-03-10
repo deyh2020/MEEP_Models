@@ -1,1 +1,0 @@
-{"PDMS_N": 1.41, "CoreN": 1.445, "CladN": 1.44, "R1": 4.1, "R2": 62.5, "CladLeft": 5, "Depth": 40, "Width": 10, "GAP": 20, "Rw": false, "fcen": 0.6451612903225806, "df": 0.012, "nfreq": 100, "dpml": 5, "resolution": 3, "DecayF": 0.1, "WallT": 0, "SimT": 1000000.0, "today": "2021-11-19", "WorkingDir": "notSet", "filename": "GapSweep_GAP_20", "notes": "", "sx": 550, "sy": 100}
