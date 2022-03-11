@@ -4,4 +4,4 @@
 
 module load meep
 
-srun python3 ../SidePolishModel/twoDsolve.py 500 2D_GAP-500um_PAD-1000_allRHS
+srun python3 ../SidePolishModel/twoDsolve.py 500 1000 2D_GAP-500um_PAD-1000_allRHS
