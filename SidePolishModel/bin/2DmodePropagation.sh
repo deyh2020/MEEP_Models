@@ -1,7 +1,9 @@
 #!/bin/bash
-#SBATCH -t 05:00:00         
+#SBATCH -t 10:00:00         
 #SBATCH --ntasks=32
 
 module load meep
 
-srun python3 ../SidePolishModel/2DModeSolve.py 500 ContinousSRC_SqrBubbles
+srun python3 ../SidePolishModel/2DModeSolve.py 500 50 121.4 Continous_atMode justplot
+
+srun python3 ../SidePolishModel/2DModeSolve.py 500 50 90 Continous_atMode_Sqr justplot
