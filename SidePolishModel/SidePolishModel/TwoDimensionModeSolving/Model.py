@@ -224,7 +224,7 @@ class Model:
 		#self.sim.solve_cw(L=2)
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
-			mp.at_every(50,mp.output_efield_z),
+			#mp.at_every(50,mp.output_efield_z),
 			until=10*self.sx*self.coreN
 			)
 		mp.output_efield_z(self.sim)
