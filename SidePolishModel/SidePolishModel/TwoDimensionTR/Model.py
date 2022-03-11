@@ -59,6 +59,10 @@ class Model:
 		self.SingleNorm = False
 		self.Courant = 0.5
 
+		#Flags
+		self.FluxRegion = False
+		self.normal     = True
+
 
 		#init Data arrays
 		self.srcE  = np.array([])
@@ -71,25 +75,28 @@ class Model:
 	def RunTRspectrum(self):
 		
 		self.tic()
-		self.Objlist = []							#Reset Model and build structure
+		self.Objlist = []							#Reset Model and build structur
 
-		self.buildPolished()  						#builds base polished fibre structure list		
-		self.BuildModel(NormRun=True,Plot=True) 
 
-		#Run normal model
-		self.NormRun()
+		if self.normal == True:
+			self.buildPolished()  						#builds base polished fibre structure list		
+			self.BuildModel(NormRun=True,Plot=True) 
 
-		#Reset sources
-		self.sim.reset_meep()
-		
+			#Run normal model
+			self.NormRun()
+
+			#Reset sources
+			self.sim.reset_meep()
+			
 
 		self.Objlist = []	
 		self.buildPolished()  						#builds base polished fibre structure list
 		self.ADDtrapazoidBubbles()
 		self.BuildModel(NormRun=False,Plot=True) 
 
-		#load data from the normal run
-		self.sim.load_minus_flux_data(self.refl,self.norm_refl)
+		if self.normal == True:
+			#load data from the normal run
+			self.sim.load_minus_flux_data(self.refl,self.norm_refl)
 
 		self.AutoRun()
 		self.toc()
@@ -266,6 +273,16 @@ class Model:
 		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 2*self.dpml ,0,0), size=mp.Vector3(0,12,0))
 		self.tranE = self.sim.add_flux(self.fcen, self.df, self.nfreq, tran_fr)
 
+
+		if self.FluxRegion == True:
+			print("Adding flux") 
+			self.dft_fields = self.sim.add_dft_fields([mp.Dz,mp.Ez],
+                                self.fcen,0,1,
+                                center=mp.Vector3(-self.Pad/2,-self.Depth/2,0),
+                                size=mp.Vector3(1.2*self.GAP+self.Width,1.2*self.Depth,0),
+                                yee_grid=True)
+
+		
 		fig,ax = plt.subplots(dpi=150)
 		if NormRun:
 			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
@@ -314,14 +331,14 @@ class Model:
 
 		#self.myRunFunction(self.monitorPts)
 
-		
+		"""
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
 			mp.at_every(50,mp.output_efield_z),
 			until_after_sources=3*self.sx*self.coreN
 			
 			)
-		
+		"""
 
 		self.sim.run(
 			#mp.at_beginning(mp.output_epsilon),
@@ -353,11 +370,18 @@ class Model:
 		Data['flux_freqs'] = flux_freqs
 		Data['refl_flux'] = refl_flux
 		Data['tran_flux'] = tran_flux
-		Data['norm_tran'] = self.norm_tran
-		Data['norm_refl'] = self.norm_refl
+
+		if self.normal == True:
+			Data['norm_tran'] = self.norm_tran
+			Data['norm_refl'] = self.norm_refl
 
 		with open(self.workingDir + self.Datafile + ".pkl", 'wb') as file:
 			pickle.dump(Data,file)
+
+		
+		#if self.FluxRegion == True:
+		#	with open(self.workingDir + "ResonantFlux.pkl", 'wb') as file:
+		#		pickle.dump(Data,file)
 
 
 
@@ -367,8 +391,12 @@ class Model:
 		Ts = []
 		for i in range(self.nfreq):
 			wl = np.append(wl, 1/flux_freqs[i])
-			Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
-			Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
+			if self.normal == True:
+				Rs = np.append(Rs,-refl_flux[i]/self.norm_tran[i])
+				Ts = np.append(Ts,tran_flux[i]/self.norm_tran[i])
+			elif self.normal == False:
+				Rs = np.append(Rs,-refl_flux[i])
+				Ts = np.append(Ts,tran_flux[i])
 
 		plt.figure()
 		#plt.plot(wl,Rs,'--',label='reflectance')
@@ -379,6 +407,31 @@ class Model:
 		#plt.legend(loc="upper right")
 		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
 		#plt.show()
+
+		if self.FluxRegion == True:
+			Dz = self.sim.get_dft_array(self.dft_fields,mp.Dz,0)
+			Ez = self.sim.get_dft_array(self.dft_fields,mp.Ez,0)
+			absorbed_power_density = 2*np.pi*self.fcen * np.imag(np.conj(Ez)*Dz)
+			
+
+			rx = (1.2*self.GAP+self.Width)/2.0
+			ry = 1.2*self.Depth/2.0
+
+			x = np.linspace(-rx,rx,Dz.shape[0])
+			y = np.linspace(-ry,ry,Dz.shape[1])
+			plt.pcolormesh(x,
+						y,
+						np.transpose(absorbed_power_density),
+						cmap='inferno_r',
+						shading='gouraud',
+						vmin=0,
+						vmax=np.amax(absorbed_power_density))
+			plt.xlabel("x (μm)")
+			plt.xticks(np.linspace(-rx,rx,5))
+			plt.ylabel("y (μm)")
+			plt.yticks(np.linspace(-ry,ry,5))
+			plt.gca().set_aspect('equal')
+			plt.savefig(self.workingDir+"FieldMap_" + str(self.Datafile) +".pdf")
 
 
 	def QuickRun(self):

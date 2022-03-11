@@ -43,22 +43,16 @@ class TwoDsolve:
         #self.mode_1()
         #self.mode_2(    
         #self.plotEXP()
-        self.full2D()
+        self.M.RunTRspectrum()
 
     def sqrBubbles(self):
         self.M.angle = 90
-        self.full2D()
+        self.M.AutoRun()
 
 
     
     def pltStructure(self):
         self.M.PlotStructure()
-
-
-    def full2D(self):      
-        
-        self.M.RunTRspectrum()
-
 
 
     def plotEXP(self):
