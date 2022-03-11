@@ -160,7 +160,7 @@ class Model:
 
 	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
 		
-		self.fcen   = 1/1.55
+		self.fcen   = 1/1.5071358
 		self.df     = 0.1*self.fcen
 		self.kpoint = mp.Vector3(x=0,y=0,z=self.fcen*self.coreN)
 		
