@@ -5,7 +5,7 @@ print ('Argument List:', str(sys.argv))
 
 Solver = TwoDsolve.TwoDsolve()
 
-arg3 = ""
+Solver.M.angle = 90
 
 try:
     Solver.M.GAP = float(sys.argv[1])

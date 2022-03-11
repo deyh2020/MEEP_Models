@@ -4,4 +4,4 @@
 
 module load meep
 
-srun python3 ../SidePolishModel/2DModeSolve.py 500 ContinousSRC
+srun python3 ../SidePolishModel/2DModeSolve.py 500 ContinousSRC_SqrBubbles
