@@ -4,6 +4,5 @@
 
 module load meep
 
-srun python3 ../SidePolishModel/2DModeSolve.py 500 50 121.4 Continous_atMode justplot
 
-srun python3 ../SidePolishModel/2DModeSolve.py 500 50 90 Continous_atMode_Sqr justplot
+srun python3 ../SidePolishModel/2DModeSolve.py 500 50 90 Continous_atMode_Sqr
