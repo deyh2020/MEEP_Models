@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -t 06:00:00         
+#SBATCH -t 07:00:00         
 #SBATCH --ntasks=32
 
 module load meep

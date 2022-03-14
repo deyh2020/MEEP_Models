@@ -23,6 +23,10 @@ if "nonormal" in args:
     print("not normalising")
     Solver.M.normal = False
 
+if "squaredips" in args:
+    print("Using square dips")
+    Solver.M.angle = 90
+
 
 
 if "justplot" in args:
