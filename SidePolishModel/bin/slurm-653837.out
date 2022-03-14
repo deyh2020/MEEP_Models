@@ -1,0 +1,32 @@
+Warning: grid volume is not an integer number of pixels; cell size will be rounded to nearest pixel.
+Using MPI version 3.1, 48 processes
+Argument List: ['../SidePolishModel/twoDsolve.py', '500', '1000', '500um_SquareDips', 'squaredips']
+Using square dips
+Standard run
+Whole Sim Walltime: 2.384185791015625e-07 s
+WD: ../data/2022-03-14/500um_SquareDips/
+AlreadyDir
+-----------
+Initializing structure...
+Splitting into 48 chunks by voxels
+time for choose_chunkdivision = 0.00627284 s
+Working in 2D dimensions.
+Computational cell is 2163.95 x 170.035 x 0 with resolution 6.45161
+     block, center = (0,0,0)
+          size (1e+20,1e+20,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (1,1,1)
+     block, center = (0,-29.2,0)
+          size (1e+20,66.6,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.0736,2.0736,2.0736)
+     block, center = (0,0,0)
+          size (1e+20,8.2,1e+20)
+          axes (1,0,0), (0,1,0), (0,0,1)
+          dielectric constant epsilon diagonal = (2.08803,2.08803,2.08803)
+time for set_epsilon = 0.826467 s
+-----------
+MPB solved for frequency_1(0.4,0,0) = 0.279228 after 17 iters
+MPB solved for frequency_1(0.931295,0,0) = 0.645713 after 107 iters
+MPB solved for frequency_1(0.930496,0,0) = 0.645161 after 3 iters
+MPB solved for frequency_1(0.930496,0,0) = 0.645161 after 1 iters
