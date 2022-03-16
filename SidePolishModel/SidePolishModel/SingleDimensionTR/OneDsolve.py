@@ -19,7 +19,7 @@ class OneDsolve:
         self.Clad = 1.440
         self.PDMS = 1.410 
 
-        self.M.Width         = 500
+        self.M.Width         = 50
         self.M.Pad           = 50
         self.M.BackgroundN = self.Core  
         self.M.N1          = self.Air
@@ -27,7 +27,8 @@ class OneDsolve:
         #self.M.N2          = self.M.N1     
 
         self.M.res     = 10/1.55  # at least 10 px per wavelength
-        self.M.df      = 1.85e-2
+        self.M.df      = 10e-2
+        self.M.nfreq   = 1000
         self.M.Courant = 1
 
         
@@ -35,10 +36,10 @@ class OneDsolve:
 
     def run(self):
 
-        self.mode_1()
+        #self.mode_1()
         #self.mode_2(    
         #self.plotEXP()
-        #self.full1D()
+        self.full1D()
         plt.show()
 
 
