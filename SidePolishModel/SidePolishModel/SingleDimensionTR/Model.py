@@ -6,8 +6,6 @@ from datetime import date
 import pickle,json, os
 import time
 
-
-
 class Model:
 
 	def __init__(self):
