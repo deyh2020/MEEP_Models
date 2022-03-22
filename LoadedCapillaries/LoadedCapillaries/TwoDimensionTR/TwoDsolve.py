@@ -11,30 +11,6 @@ class TwoDsolve:
 
         self.M = M.Model()
 
-        self.M.Datafile = 'data'
-
-        self.Air  = 1.000
-        self.Core = 1.445
-        self.Clad = 1.440
-        self.PDMS = 1.410 
-
-        
-        self.M.Pad           = 1000
-        self.M.BackgroundN   = self.Core  
-        self.M.N1            = self.Air
-        self.M.nCoating      = self.Air
-
-        self.M.GAP           = 10
-        self.M.Width         = 322
-        self.M.Depth         = 55.7
-        self.M.angle         = 121.4
-
-        #self.M.N2          = self.M.N1     
-
-        self.M.res           = 10/1.55  # at least 10 px per wavelength
-        self.M.df            = 7e-2#1.85e-2
-        self.M.Courant       = 1/np.sqrt(2)
-
 
 
 

@@ -21,7 +21,7 @@ if "enablefluxregion" in args:
 
 if "nonormal" in args:
     print("not normalising")
-    Solver.M.normal = False
+    Solver.M.Variables['normal'] = False
 
 if "squaredips" in args:
     print("Using square dips")
@@ -32,9 +32,6 @@ if "squaredips" in args:
 if "justplot" in args:
     print("Just plotting")
     Solver.pltStructure()
-elif "square" in args:
-    print("Sqr bubbles")
-    Solver.sqrBubbles()
 else:
     print("Standard run")
     Solver.run()
