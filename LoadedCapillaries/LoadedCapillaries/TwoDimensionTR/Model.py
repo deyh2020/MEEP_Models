@@ -1,3 +1,6 @@
+from cgitb import reset
+from curses.ascii import STX
+from xml.etree.ElementPath import get_parent_map
 import meep as mp
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,59 +18,40 @@ class Model:
 		#init constants
 		self.TicToc = self.TicTocGenerator() # create an instance of the TicTocGen generator
 
-		##Material N
-		self.nCoating  = 1.41
-		self.coreN     = 1.445
-		self.cladN     = 1.440
+		#Huge Dictionary of variables
 
-		##Fibre Dimentions
-		self.R1     = 4.1
-		self.R2     = 62.5
-		self.CladLeft = 1
+		self.Variables = {
+			#refractive indexes
+			"nAir":1.000,
+			"nCore":1.445,
+			"nClad":1.440,
+			"nPDMS":1.410,
+			#Device Dimentions
+			"taperD":1.000,
+			"capD":80,
+			"WallThick":10.000,
+			"GAP":0.667,
+			#Simulation area Properties
+			"PAD":10.000,
+			"res":10.000/1.0,    # would usually be 10px per wl but our smallest wg is 1um
+			"dpml":5,
+			#Simulation source Properties
+			"fcen":1.000/1.550,
+			"df":1.00e-2,
+			"nfreq":int(1e3),
+			"Courant":1.000/np.sqrt(2.000),
+			#Simulation Properties
+			"today":str(date.today()),
+			"WallT":0,
+			"workingDir":'',
+			"filename":'test',
+			"dataFile":'test',
+			"Objlist":[],
+			#Flags
+			"normal":True,
+		}
 
-		##Resonator Dimentions
-		self.angle = 121.4
-		self.CladLeft = 0 
-		self.Depth  = 40
-		self.Width  = 100
-		self.EllipseOffset = 0
-		self.GAP    = 0
-		self.Pad    = 50
-		self.BubblesNum = 2 
-		self.BubblesType = 'sqr'
-		self.FibreType = 'polished'
-
-		##Src properties
-		self.fcen   = 1/1.55
-		self.df     = 0.8e-2
-		self.nfreq  = 1000
-
-		##MEEP properties
-		self.dpml   = 10
-		self.res    = 10
-		self.DecayF = 1e-2
-		self.WallT  = 0
-		self.SimT   = 1e6
-		self.today  = str(date.today())
-		self.workingDir= ''
-		self.filename = 'test'
-		self.Datafile = 'test'
-		self.sim    = None
-		self.Objlist = []
-		self.Notes   = ''
-		self.NormComplete = False
-		self.SingleNorm = False
-		self.Courant = 0.5
-
-		#Flags
-		self.FluxRegion = False
-		self.normal     = True
-
-
-		#init Data arrays
-		self.srcE  = np.array([])
-		self.tranE = np.array([])
-
+		self.sim = None
 		self.PDMSindex()
 		self.Silicaindex()
 
@@ -75,11 +59,11 @@ class Model:
 	def RunTRspectrum(self):
 		
 		self.tic()
-		self.Objlist = []							#Reset Model and build structur
+		self.Variables['Objlist'] = []						#Reset Model and build structur
 
 
-		if self.normal == True:
-			self.buildPolished()  						#builds base polished fibre structure list		
+		if self.Variables["normal"] == True:
+			self.buildFilledCapillary()  						#builds base polished fibre structure list		
 			self.BuildModel(NormRun=True,Plot=True) 
 
 			#Run normal model
@@ -89,12 +73,12 @@ class Model:
 			self.sim.reset_meep()
 			
 
-		self.Objlist = []	
-		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDtrapazoidBubbles()
+		self.Variables['Objlist'] = []
+		
+		self.buildFilledCapillary()  						#builds base polished fibre structure list
 		self.BuildModel(NormRun=False,Plot=True) 
 
-		if self.normal == True:
+		if self.Variables["normal"] == True:
 			#load data from the normal run
 			self.sim.load_minus_flux_data(self.refl,self.norm_refl)
 
@@ -106,125 +90,48 @@ class Model:
 
 	def PlotStructure(self):	
 
-		self.Objlist = []	
-		self.buildPolished()  						#builds base polished fibre structure list
-		self.ADDtrapazoidBubbles()
+		self.Variables['Objlist'] = []			
+		self.buildFilledCapillary()  						#builds base polished fibre structure list
 		self.BuildModel(NormRun=False,Plot=True) 
 		plt.show()
 
-		
 
-	def mkALLDIRS(self):
-		
-		self.workingDir = '../data/'+self.today+'/'+self.filename+'/'
-
-		print('WD:',self.workingDir)
-
-		try:
-			os.makedirs(self.workingDir)
-		except:
-			print('AlreadyDir')
-
-		self.sim.use_output_directory(self.workingDir)
+	def buildFilledCapillary(self):
 
 
 
-	def buildNormalfibre(self):
-
-		self.sx = self.GAP + self.Width + 2*self.dpml + 400
-		self.sy = 150 + 2*self.dpml
+		self.Variables["sx"] = self.Variables['capD']+2*self.Variables['PAD']+2*self.Variables['dpml']
+		self.Variables["sy"] = self.Variables['capD']+2*self.Variables['PAD']+2*self.Variables['dpml']+self.Variables['taperD']+self.Variables['GAP']
 
 		
-		self.cell_size = mp.Vector3(self.sx,self.sy,0)
+		self.cell_size = mp.Vector3(self.Variables["sx"],self.Variables["sy"],0)
 
-		self.pml_layers = [mp.PML(thickness=self.dpml)]
+		self.pml_layers = [mp.PML(thickness=self.Variables["dpml"])]
 
 
-		self.Coating = mp.Block(
-			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,mp.inf,mp.inf),
-			material=mp.Medium(index=self.nCoating)
+		OD = mp.Cylinder(
+			radius=self.Variables["capD"]/2,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
+			material=mp.Medium(index=self.Variables['nClad'])
 			)
 
-
-		self.Clad = mp.Block(
-			center=mp.Vector3(x=0,y=0,z=0),
-			size=mp.Vector3(x=mp.inf,y=2*self.R2,z=mp.inf),
-			material=mp.Medium(index=self.cladN)
+		ID = mp.Cylinder(
+			radius=(self.Variables["capD"] - (self.Variables['WallThick']*2))/2,
+			height=mp.inf,
+			axis=mp.Vector3(0,0,1),
+			material=mp.Medium(index=self.Variables['nPDMS'])
 			)
 
-		self.Core = mp.Block(
-			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,2*self.R1,mp.inf),
-			material=mp.Medium(index=self.coreN)
+		self.taperYpos = -(self.Variables["capD"]/2.0 + self.Variables["GAP"] + self.Variables["taperD"]/2)
+
+		Taper = mp.Block(
+			center=mp.Vector3(0,self.taperYpos,0),
+			size=mp.Vector3(mp.inf,self.Variables["taperD"],mp.inf),
+			material=mp.Medium(index=self.Variables['nClad'])
 			)
 
-		self.Objlist.extend([self.Coating,self.Clad,self.Core])
-
-	def buildPolished(self):
-
-		self.sx = self.GAP + 2*self.Width + 2*self.dpml + self.Pad
-		self.sy = 150 + 2*self.dpml
-
-		
-		self.cell_size = mp.Vector3(self.sx,self.sy,0)
-
-		self.pml_layers = [mp.PML(thickness=self.dpml)]
-
-		self.Coating = mp.Block(
-			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,mp.inf,mp.inf),
-			material=mp.Medium(index=self.nCoating)
-			)
-
-		self.Clad = mp.Block(
-			center=mp.Vector3(x=0,  y=(-self.R2/2 + self.CladLeft/2 + self.R1/2)  ,z=0),
-			size=mp.Vector3(x=mp.inf,  y= self.R2 + self.R1 + self.CladLeft   ,z=mp.inf),
-			material=mp.Medium(index=self.cladN)
-			)
-
-		self.Core = mp.Block(
-			center=mp.Vector3(0,0,0),
-			size=mp.Vector3(mp.inf,2*self.R1,mp.inf),
-			material=mp.Medium(index=self.coreN)
-			)
-
-		self.Objlist.extend([self.Coating,self.Clad,self.Core])
-
-
-
-	def ADDtrapazoidBubbles(self):
-
-		Center = -self.Pad/2 
-		TL    = self.Width
-		D     = self.Depth
-		angle = self.angle
-		
-		BL    = TL - 2*(D/np.tan((180-angle)*(np.pi/180)))
-				
-		verts = [
-	            
-				mp.Vector3(x=-TL/2,		y=D 	,z=0),
-	            mp.Vector3(x=TL/2 ,		y=D 	,z=0),
-	            mp.Vector3(x=BL/2 ,		y=0 	,z=0),
-	            mp.Vector3(x=-BL/2,		y=0 	,z=0)
-	        
-	            ]
-
-
-		self.LH = mp.Prism(center=mp.Vector3(x=-self.GAP/2 + Center,y=-D/2+self.R1+self.CladLeft,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.nCoating),
-	                     height=1
-	                     )
-
-		self.RH = mp.Prism(center=mp.Vector3(x=self.GAP/2 + Center,y=-D/2+self.R1+self.CladLeft,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.nCoating),
-	                     height=1
-	                     )
-
-		self.Objlist.extend([self.LH,self.RH])
+		self.Variables['Objlist'].extend([OD,ID,Taper])
 
 
 	def BuildModel(self,Plot=False,NormRun=False):   # builds sim and plots structure to file 
@@ -232,10 +139,28 @@ class Model:
 		kx = 0.4
 		kpoint = mp.Vector3(kx)
 
+		fcen = self.Variables['fcen']
+		df   = self.Variables['df']
+		sx   = self.Variables['sx']
+		sy   = self.Variables['sy']
+		dpml = self.Variables['dpml']
+		Objlist = self.Variables['Objlist']
+		res     = self.Variables['res']
+		Courant = self.Variables['Courant']
+		nfreq   = self.Variables['nfreq']
+		PAD     = self.Variables['PAD']
+		GAP		= self.Variables['GAP']
+		workingDir = self.Variables['workingDir']
+		dataFile   = self.Variables['dataFile']
+
+
 		self.src = [
-				mp.EigenModeSource(src=mp.GaussianSource(self.fcen,fwidth=self.df),
-				center=mp.Vector3(x=-(self.sx/2)+2*self.dpml,y=0),
-				size=mp.Vector3(y=40),
+				mp.EigenModeSource(src=mp.GaussianSource(
+					fcen,
+					fwidth=df
+					),
+				center=mp.Vector3(x=-(sx/2)+2*dpml,y=self.taperYpos),
+				size=mp.Vector3(y=5),
 				direction=mp.X,
 				eig_kpoint=kpoint,
 				eig_band=1,
@@ -247,14 +172,14 @@ class Model:
 		
 		self.sim = mp.Simulation(
 			cell_size=self.cell_size,
-			geometry=self.Objlist,
+			geometry=Objlist,
 			sources=self.src,
-			resolution=self.res,
+			resolution=res,
 			force_complex_fields=False,
-			eps_averaging=False,
+			eps_averaging=True,
 			boundary_layers=self.pml_layers,
 			progress_interval=30,
-			Courant=self.Courant
+			Courant=Courant
 			#geometry_center=mp.Vector3(x=0,y=-25,z=0)
 			#k_point=mp.Vector3(mp.X)
 			)
@@ -263,33 +188,33 @@ class Model:
 		self.mkALLDIRS()
 
 
-		# src flux
-		src_fr = mp.FluxRegion(center=mp.Vector3(-(self.sx/2) + 2*self.dpml+10,0,0), size=mp.Vector3(0,12,0))                            
-		self.refl = self.sim.add_flux(self.fcen, self.df, self.nfreq, src_fr)
-
-
+		print(fcen)
+		print(df)
+		print(nfreq)
 
 		# transmitted flux
-		tran_fr = mp.FluxRegion(center=mp.Vector3((self.sx/2) - 2*self.dpml ,0,0), size=mp.Vector3(0,12,0))
-		self.tranE = self.sim.add_flux(self.fcen, self.df, self.nfreq, tran_fr)
+		tran_fr = mp.FluxRegion(center=mp.Vector3((sx/2) - 2*dpml ,self.taperYpos,0), size=mp.Vector3(0,5,0))
+		
+		self.tranE = self.sim.add_flux(fcen, df, nfreq, tran_fr)
 
 
+		"""
 		if self.FluxRegion == True:
 			print("Adding flux") 
 			self.dft_fields = self.sim.add_dft_fields([mp.Dz,mp.Ez],
-                                self.fcen,0,1,
-                                center=mp.Vector3(-self.Pad/2,-self.Depth/2,0),
+                                fcen,0,1,
+                                center=mp.Vector3(-PAD/2,-self.Depth/2,0),
                                 size=mp.Vector3(1.2*self.GAP+self.Width,1.2*self.Depth,0),
                                 yee_grid=True)
-
+		"""
 		
 		fig,ax = plt.subplots(dpi=150)
 		if NormRun:
 			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
-			plt.savefig(self.workingDir+"NormModel_" + str(self.Datafile) +".pdf")
+			plt.savefig(workingDir+"NormModel_" + str(dataFile) +".pdf")
 		else:
 			self.sim.plot2D(ax=ax,eps_parameters={'alpha':0.8, 'interpolation':'none'},frequency=0)
-			plt.savefig(self.workingDir+"Model_" + str(self.Datafile) +".pdf")
+			plt.savefig(workingDir+"Model_" + str(dataFile) +".pdf")
 
 		
 
@@ -341,25 +266,13 @@ class Model:
 		"""
 
 		self.sim.run(
-			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(500,mp.output_efield_z),
-			until_after_sources=10*self.sx*self.coreN
+			mp.at_beginning(mp.output_epsilon),
+			mp.at_every(200,mp.output_efield_z),
+			until_after_sources=5000 #10*self.Variables['sx']*self.coreN
 			
 			)
-		#pt = mp.Vector3(y=-40)
 
-		#if self.BubblesNum == 1:
-			#dt = self.Width
-		#else:
-		#	dt = self.GAP
 
-		
-
-		#self.sim.run(
-			#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(500, mp.output_dpwr),
-		#	until_after_sources=mp.stop_when_fields_decayed(dt,mp.Ez,pt,self.DecayF)
-		#	)
 		
 
 		flux_freqs = mp.get_flux_freqs(self.refl)
@@ -408,91 +321,19 @@ class Model:
 		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
 		#plt.show()
 
-		if self.FluxRegion == True:
-			Dz = self.sim.get_dft_array(self.dft_fields,mp.Dz,0)
-			Ez = self.sim.get_dft_array(self.dft_fields,mp.Ez,0)
-			absorbed_power_density = 2*np.pi*self.fcen * np.imag(np.conj(Ez)*Dz)
-			
 
-			rx = (1.2*self.GAP+self.Width)/2.0
-			ry = 1.2*self.Depth/2.0
-
-			x = np.linspace(-rx,rx,Dz.shape[0])
-			y = np.linspace(-ry,ry,Dz.shape[1])
-			plt.pcolormesh(x,
-						y,
-						np.transpose(absorbed_power_density),
-						cmap='inferno_r',
-						shading='gouraud',
-						vmin=0,
-						vmax=np.amax(absorbed_power_density))
-			plt.xlabel("x (μm)")
-			plt.xticks(np.linspace(-rx,rx,5))
-			plt.ylabel("y (μm)")
-			plt.yticks(np.linspace(-ry,ry,5))
-			plt.gca().set_aspect('equal')
-			plt.savefig(self.workingDir+"FieldMap_" + str(self.Datafile) +".pdf")
-
-
-	def QuickRun(self):
+	def mkALLDIRS(self):
 		
-		print("")
-		print("")
-		print("Quick Run")
-		print("")
-		print("")
+		self.Variables["workingDir"] = '../data/'+self.Variables["today"]+'/'+self.Variables['filename']+'/'
 
-		#self.myRunFunction(self.monitorPts)
+		print('WD:',self.Variables["workingDir"])
 
-		self.sim.run(
-		#	#mp.at_beginning(mp.output_epsilon),
-			#mp.at_every(100,mp.output_efield_z),
-			until=2*self.sx*self.coreN
-			
-			)
+		try:
+			os.makedirs(self.Variables["workingDir"])
+		except:
+			print('AlreadyDir')
 
-		flux_freqs = mp.get_flux_freqs(self.refl)
-		refl_flux = mp.get_fluxes(self.refl)
-		tran_flux = mp.get_fluxes(self.tranE)
-		
-		wl = []
-		Rs = []
-		Ts = []
-		for i in range(self.nfreq):
-			wl = np.append(wl, 1/flux_freqs[i])
-			Rs = np.append(Rs,-refl_flux[i])
-			Ts = np.append(Ts,tran_flux[i])
-
-		plt.figure()
-		plt.plot(wl,Rs,'--',label='reflectance')
-		plt.plot(wl,Ts,label='transmittance')
-		plt.plot(wl,1-Rs-Ts,label='loss')
-		#plt.axis([5.0, 10.0, 0, 1])
-		plt.xlabel("wavelength (μm)")
-		plt.legend(loc="upper right")
-		plt.savefig(self.workingDir+"TransRef_" + str(self.Datafile) +".pdf")
-		#plt.show()
-
-
-	def TimestepFields(self):
-		
-		fig,axes = plt.subplots(1, 1,dpi=200)
-
-		self.sim.run(
-			until=self.SimT
-			)
-		
-		#self.sim.plot2D(fields=mp.Ez,plot_sources_flag=True,plot_monitors_flag=True)
-		self.sim.plot2D(
-			ax = axes,
-			#output_plane=mp.Volume(center=mp.Vector3(),size=mp.Vector3(self.SimSize,self.SimSize)),
-			fields=mp.Ez,
-			plot_sources_flag=True,
-			plot_monitors_flag=True,
-			plot_eps_flag=True,
-			eps_parameters={'alpha':0.8, 'interpolation':'none','cmap':'binary','contour':True}
-			)
-		plt.show()
+		self.sim.use_output_directory(self.Variables["workingDir"])
 
 
 	def SaveMeta(self):
@@ -572,13 +413,6 @@ class Model:
 			json.dump(metadata, file)
 
 
-	def pltModel(self,Plt):
-		plt.figure(dpi=200)
-		self.sim.plot2D(eps_parameters={'alpha':0.8, 'interpolation':'none'})
-		if Plt:
-			plt.show()
-		plt.savefig(self.workingDir+"Model.pdf")
-
 
 	def TicTocGenerator(self):
 		# Generator that returns time differences
@@ -616,35 +450,3 @@ class Model:
 		self.Silicatemp = np.array([22.83686643,40.36719542,70.32692845,103.3346833])
 		self.nSilica    = np.array([1.445300107,1.44555516,1.445847903,1.445958546])
 		self.SilicaFIT = np.polyfit(self.Silicatemp,self.nSilica,deg=1)
-
-
-
-	def addtriBubbles(self):
-
-		RW = self.Rw
-		TL = self.Width
-
-		verts = [
-	            
-	            mp.Vector3(x=-(RW/2+TL/2) ,y=self.R2 ,z=0)   ,
-	            mp.Vector3(x=(RW/2+TL/2)  ,y=self.R2 ,z=0)  ,
-	            mp.Vector3(x=(RW/2)       ,y=self.R2-self.Depth ,z=0)   ,
-	             mp.Vector3(x=-(RW/2)     ,y=self.R2-self.Depth ,z=0)
-	        
-	            ]
-
-
-		self.LH = mp.Prism(center=mp.Vector3(x=-self.GAP/2,y=0,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.PDMSn),
-	                     height=1
-	                     )
-
-		self.RH = mp.Prism(center=mp.Vector3(x=self.GAP/2,y=0,z=0),
-	                     vertices = verts,
-	                     material=mp.Medium(index=self.PDMSn),
-	                     height=1
-	                     )
-
-		self.Objlist.extend([self.LH,self.RH])
-		
