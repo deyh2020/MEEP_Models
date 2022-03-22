@@ -22,7 +22,7 @@ class Model:
 
 		self.Variables = {
 			#refractive indexes
-			"nAir":1.000,
+			"nAir": 1.000,
 			"nCore":1.445,
 			"nClad":1.440,
 			"nPDMS":1.410,
@@ -32,9 +32,9 @@ class Model:
 			"WallThick":10.000,
 			"GAP":0.667,
 			#Simulation area Properties
-			"PAD":10.000,
+			"PAD":2.000,
 			"res":10.000/1.0,    # would usually be 10px per wl but our smallest wg is 1um
-			"dpml":5,
+			"dpml":1.55,
 			#Simulation source Properties
 			"fcen":1.000/1.550,
 			"df":1.00e-2,
@@ -101,7 +101,7 @@ class Model:
 
 
 		self.Variables["sx"] = self.Variables['capD']+2*self.Variables['PAD']+2*self.Variables['dpml']
-		self.Variables["sy"] = self.Variables['capD']+2*self.Variables['PAD']+2*self.Variables['dpml']+self.Variables['taperD']+self.Variables['GAP']
+		self.Variables["sy"] = self.Variables['capD']+2*self.Variables['PAD']+2*self.Variables['dpml']+self.Variables['taperD']+self.Variables['GAP']+5
 
 		
 		self.cell_size = mp.Vector3(self.Variables["sx"],self.Variables["sy"],0)
