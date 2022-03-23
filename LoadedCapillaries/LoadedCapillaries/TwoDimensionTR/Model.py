@@ -63,7 +63,7 @@ class Model:
 
 
 		if self.Variables["normal"] == True:
-			self.buildFilledCapillary()  						#builds base polished fibre structure list		
+			self.buildNorm()  						#builds base polished fibre structure list		
 			self.BuildModel(NormRun=True,Plot=True) 
 
 			#Run normal model
@@ -87,13 +87,34 @@ class Model:
 
 		#self.SaveMeta()
 
-
 	def PlotStructure(self):	
 
 		self.Variables['Objlist'] = []			
-		self.buildFilledCapillary()  						#builds base polished fibre structure list
+		#self.buildFilledCapillary()  						#builds base polished fibre structure list
+		self.buildNorm()
 		self.BuildModel(NormRun=False,Plot=True) 
 		plt.show()
+
+	def buildNorm(self):
+
+		self.Variables["sx"] = self.Variables['capD']+2*self.Variables['PAD']+2*self.Variables['dpml']
+		self.Variables["sy"] = self.Variables['PAD']+2*self.Variables['dpml']+self.Variables['taperD']+self.Variables['GAP']+5
+
+		
+		self.cell_size = mp.Vector3(self.Variables["sx"],self.Variables["sy"],0)
+
+		self.pml_layers = [mp.PML(thickness=self.Variables["dpml"])]
+
+		self.taperYpos = 0
+
+		Taper = mp.Block(
+			center=mp.Vector3(0,0,0),
+			size=mp.Vector3(mp.inf,self.Variables["taperD"],mp.inf),
+			material=mp.Medium(index=self.Variables['nClad'])
+			)
+
+		self.Variables['Objlist'].extend([Taper])
+
 
 
 	def buildFilledCapillary(self):
@@ -233,14 +254,14 @@ class Model:
 		self.sim.run(
 		#	#mp.at_beginning(mp.output_epsilon),
 			#mp.at_every(100,mp.output_efield_z),
-			until_after_sources=5*self.sx*self.coreN
+			until_after_sources=self.Variables['sx']*self.Variables['nClad']
 			)
 
 		
 
 		
 		# for normalization run, save flux fields data for reflection plane
-		self.norm_refl = self.sim.get_flux_data(self.refl)
+		#self.norm_refl = self.sim.get_flux_data(self.refl)
 		# save incident power for transmission plane
 		self.norm_tran = mp.get_fluxes(self.tranE)
 
@@ -268,7 +289,7 @@ class Model:
 		self.sim.run(
 			mp.at_beginning(mp.output_epsilon),
 			mp.at_every(200,mp.output_efield_z),
-			until_after_sources=5000 #10*self.Variables['sx']*self.coreN
+			until_after_sources=self.Variables['sx']*self.Variables['nClad']
 			
 			)
 
